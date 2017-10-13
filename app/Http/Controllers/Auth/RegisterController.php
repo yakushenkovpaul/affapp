@@ -43,6 +43,16 @@ class RegisterController extends Controller
     }
 
     /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        return view('auth.register')->with('clubs', $this->service->getAllClubs());
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -72,7 +82,7 @@ class RegisterController extends Controller
                 'password' => bcrypt($data['password'])
             ]);
 
-            return $this->service->create($user, $data['password']);
+            return $this->service->create($user, $data['password'], $data);
         });
     }
 }

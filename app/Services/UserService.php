@@ -6,12 +6,14 @@ use DB;
 use Auth;
 use Mail;
 use Config;
+use SebastianBergmann\CodeCoverage\Report\PHP;
 use Session;
 use Exception;
 use App\Models\User;
 use App\Models\UserMeta;
 use App\Models\Team;
 use App\Models\Role;
+use App\Models\Club;
 use App\Events\UserRegisteredEmail;
 use App\Notifications\ActivateUserEmail;
 use Illuminate\Support\Facades\Schema;
@@ -42,16 +44,25 @@ class UserService
      */
     protected $role;
 
+    /**
+     * Club Service
+     * @var ClubService
+     */
+
+    protected $club;
+
     public function __construct(
         User $model,
         UserMeta $userMeta,
         Team $team,
-        Role $role
+        Role $role,
+        Club $club
     ) {
         $this->model = $model;
         $this->userMeta = $userMeta;
         $this->team = $team;
         $this->role = $role;
+        $this->club = $club;
     }
 
     /**
@@ -143,18 +154,26 @@ class UserService
     /**
      * Create a user's profile
      *
-     * @param  User $user User
-     * @param  string $password the user password
-     * @param  string $role the role of this user
-     * @param  boolean $sendEmail Whether to send the email or not
-     * @return User
+     * @param $user
+     * @param $password
+     * @param array $userMetaArray
+     * @param string $role
+     * @param bool $sendEmail
+     * @return mixed
+     * @throws Exception
      */
-    public function create($user, $password, $role = 'member', $sendEmail = true)
+
+    public function create($user, $password, $userMetaArray = array(), $role = 'customer', $sendEmail = true)
     {
         try {
-            DB::transaction(function () use ($user, $password, $role, $sendEmail) {
+            DB::transaction(function () use ($user, $password, $userMetaArray, $role, $sendEmail) {
                 $this->userMeta->firstOrCreate([
-                    'user_id' => $user->id
+                    'user_id' => $user->id,
+                    'lastname' => $userMetaArray['lastname'],
+                    'city' => $userMetaArray['city'],
+                    'birthday' => $userMetaArray['birthday'],
+                    'gender' => $userMetaArray['gender'],
+                    'club_id' => $userMetaArray['club_id'],
                 ]);
 
                 $this->assignRole($role, $user->id);
@@ -182,25 +201,9 @@ class UserService
      */
     public function update($userId, $payload)
     {
-        if (isset($payload['meta']) && ! isset($payload['meta']['terms_and_cond'])) {
-            throw new Exception("You must agree to the terms and conditions.", 1);
-        }
-
         try {
             return DB::transaction(function () use ($userId, $payload) {
                 $user = $this->model->find($userId);
-
-                if (isset($payload['meta']['marketing']) && ($payload['meta']['marketing'] == 1 || $payload['meta']['marketing'] == 'on')) {
-                    $payload['meta']['marketing'] = 1;
-                } else {
-                    $payload['meta']['marketing'] = 0;
-                }
-
-                if (isset($payload['meta']['terms_and_cond']) && ($payload['meta']['terms_and_cond'] == 1 || $payload['meta']['terms_and_cond'] == 'on')) {
-                    $payload['meta']['terms_and_cond'] = 1;
-                } else {
-                    $payload['meta']['terms_and_cond'] = 0;
-                }
 
                 $userMetaResult = (isset($payload['meta'])) ? $user->meta->update($payload['meta']) : true;
 
@@ -279,6 +282,12 @@ class UserService
         }
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | Roles
+    |--------------------------------------------------------------------------
+    */
+
     /**
      * Switch back
      *
@@ -312,12 +321,6 @@ class UserService
 
         $user->notify(new ActivateUserEmail($token));
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | Roles
-    |--------------------------------------------------------------------------
-    */
 
     /**
      * Assign a role to the user
@@ -409,5 +412,25 @@ class UserService
     {
         $user = $this->model->find($userId);
         $user->teams()->detach();
+    }
+
+    /**
+     * Return list of clubs
+     * @return array
+     */
+
+    public function getAllClubs()
+    {
+        $result = array();
+
+        if($return = $this->club->all(['id', 'name'])->toArray())
+        {
+            foreach ($return as $r)
+            {
+                $result[$r['name']] = $r['id'];
+            }
+        }
+
+        return $result;
     }
 }

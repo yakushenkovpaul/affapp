@@ -15,6 +15,7 @@
         <!-- Local -->
         <link rel="stylesheet" type="text/css" href="/css/raw.min.css">
         <link rel="stylesheet" type="text/css" href="/css/app.css?rnd=1">
+        <link rel="stylesheet" type="text/css" href="/assets/plugins/datetimepicker/css/bootstrap-datetimepicker.min.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,7 +30,7 @@
 
         @include("layouts.navigation")
 
-        <div class="app-wrapper container-fluid raw-margin-top-50">
+        <div class="app-wrapper container-fluid raw-margin-top-50 raw-margin-bottom-80">
             @yield("app-content")
         </div>
 
@@ -44,7 +45,7 @@
 
         <div class="pull-left raw100 navbar navbar-fixed-bottom">
             <div class="pull-left footer">
-                <p class="raw-margin-left-20">&copy; {!! date('Y'); !!} <a href="">You</a>
+                <p class="raw-margin-left-20">&copy; {!! date('Y') !!} <a href="">You</a>
                     @if (Session::get('original_user'))
                         <a class="btn btn-default pull-right btn-xs" href="/users/switch-back">Return to your Login</a>
                     @endif
@@ -60,6 +61,9 @@
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src="/js/app.js"></script>
+        <script src="/assets/plugins/moment/js/moment.js"></script>
+        <script src="/assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+        <!--<script src="/js/onload.js"></script>-->
         @yield("javascript")
     </body>
 </html>

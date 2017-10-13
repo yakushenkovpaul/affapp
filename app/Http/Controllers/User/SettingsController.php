@@ -25,8 +25,7 @@ class SettingsController extends Controller
         $user = $request->user();
 
         if ($user) {
-            return view('user.settings')
-            ->with('user', $user);
+            return view('user.settings', ['user' => $user, 'clubs' => $this->service->getAllClubs()]);
         }
 
         return back()->withErrors(['Could not find user']);

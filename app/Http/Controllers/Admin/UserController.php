@@ -104,7 +104,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = $this->service->find($id);
-        return view('admin.users.edit')->with('user', $user);
+
+        return view('admin.users.edit', ['user' => $user, 'clubs' => $this->service->getAllClubs()]);
     }
 
     /**

@@ -21,11 +21,17 @@ class UserMeta extends Model
      */
     protected $fillable = [
         'user_id',
-        'phone',
-        'marketing',
-        'terms_and_cond',
         'is_active',
         'activation_token',
+        'lastname',
+        'city',
+        'birthday',
+        'gender',
+        'club_id',
+    ];
+
+    protected $hidden = [
+        'rate',
     ];
 
     /**

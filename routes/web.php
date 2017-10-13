@@ -130,3 +130,39 @@ Route::group(['middleware' => ['auth', 'active']], function () {
         Route::get('roles/search', 'RoleController@index');
     });
 });
+
+/*
+|--------------------------------------------------------------------------
+| Merchant Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::resource('merchants', 'MerchantsController', ['except' => ['show']]);
+Route::post('merchants/search', [
+    'as' => 'merchants.search',
+    'uses' => 'MerchantsController@search'
+]);
+
+/*
+|--------------------------------------------------------------------------
+| Club Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::resource('clubs', 'ClubsController', ['except' => ['show']]);
+Route::post('clubs/search', [
+    'as' => 'clubs.search',
+    'uses' => 'ClubsController@search'
+]);
+
+/*
+|--------------------------------------------------------------------------
+| Sale Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::resource('sales', 'SalesController', ['except' => ['show']]);
+Route::post('sales/search', [
+    'as' => 'sales.search',
+    'uses' => 'SalesController@search'
+]);
