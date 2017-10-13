@@ -62,16 +62,6 @@
                 <input id="Cashback" class="form-control" type="number" name="cashback" step="any" placeholder="Cashback">
             </div>
 
-            <div class="form-group ">
-                <label class="control-label" for="Rate">Rate</label>
-                <input id="Rate" class="form-control" type="number" name="rate" placeholder="Rate">
-            </div>
-
-            <div class="form-group ">
-                <label class="control-label" for="Added">Added</label>
-                <input id="Added" class="form-control" type="number" name="added" placeholder="Added">
-            </div>
-
             {!! Form::submit('Create', ['class' => 'btn btn-primary pull-right']) !!}
 
             {!! Form::close() !!}
