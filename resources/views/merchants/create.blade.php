@@ -48,8 +48,8 @@
             </div>
 
             <div class="form-group ">
-                <label class="control-label" for="Status">Status</label>
-                <input id="Status" class="form-control" type="number" name="status" placeholder="Status">
+                @input_maker_label('Gender')
+                @input_maker_create('status', ['type' => 'select', 'label' => 'status', 'options' => [ 'Active' => '1', 'Inactive' => '0' ]], $merchant)
             </div>
 
             <div class="form-group ">
