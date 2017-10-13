@@ -49,7 +49,7 @@
 
             <div class="form-group ">
                 @input_maker_label('Gender')
-                @input_maker_create('status', ['type' => 'select', 'label' => 'status', 'options' => [ 'Active' => '1', 'Inactive' => '0' ]], $merchant)
+                @input_maker_create('status', ['type' => 'select', 'label' => 'status', 'options' => [ 'Active' => '1', 'Inactive' => '0' ]])
             </div>
 
             <div class="form-group ">
