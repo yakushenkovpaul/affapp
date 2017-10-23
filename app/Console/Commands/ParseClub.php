@@ -94,6 +94,7 @@ class ParseClub extends Command
         }
     }
 
+
     /**
      * Парсит объект
      *
