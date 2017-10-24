@@ -130,6 +130,9 @@ class ParseClub extends Command
 
                 if(!$array) continue;
 
+                var_dump($array);
+                exit;
+
                 foreach ($array as $a)
                 {
                     //пропускаем дубликаты
