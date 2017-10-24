@@ -42,7 +42,7 @@ class ParseClub extends Command
      */
     public function handle()
     {
-        self::parseList();
+        self::parseListEasy();
     }
 
     /**
@@ -79,6 +79,9 @@ class ParseClub extends Command
                 }
 
                 if(!$array) continue;
+
+                var_dump($array);
+                exit;
 
                 foreach ($array as $a)
                 {
@@ -129,9 +132,6 @@ class ParseClub extends Command
                 }
 
                 if(!$array) continue;
-
-                var_dump($array);
-                exit;
 
                 foreach ($array as $a)
                 {
