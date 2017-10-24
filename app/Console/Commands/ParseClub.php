@@ -46,6 +46,56 @@ class ParseClub extends Command
     }
 
     /**
+     * Парсит остатки, те клубы что
+     */
+
+    protected function parseListEasy()
+    {
+        $total = 999;
+        $count = $total;
+
+        for($i = 1; $i <= $total; $i++)
+        {
+            $count--;
+            echo $count . "\r";
+
+            sleep(1);
+
+            $url = str_replace('[code]', str_pad($i, 3, '0', STR_PAD_LEFT), $this->url);
+
+            $return = self::__file_get_contents($url);
+
+            if(preg_match_all('#<li>[^><]*?<a href=\"([^\"]*?)\"[^><]*?image-wrapper\">[^><]*?<div class=\"image\">[^><]*?<img src=\"([^\"]*?)\"[^~]*?<p class=\"name\">([^><]*?)<span[^><]*?><\/span><\/p>#si', $return, $match))
+            {
+                for($k = 0; $k < count($match[0]); $k++)
+                {
+                    $array[$k] = [
+                        '__url' => $match[1][$k],
+                        'image' => self::clearString($match[2][$k]),
+                        'name' => self::clearString($match[3][$k]),
+                        'zip' => '',
+                        'city' => '',
+                    ];
+                }
+
+                if(!$array) continue;
+
+                foreach ($array as $a)
+                {
+                    //пропускаем дубликаты
+                    if(Club::where('name', '=', $a['name'])->count())
+                    {
+                        continue;
+                    }
+
+                    self::store(self::parseItem($a));
+                }
+            }
+        }
+    }
+
+
+    /**
      * Парсит список
      */
 
