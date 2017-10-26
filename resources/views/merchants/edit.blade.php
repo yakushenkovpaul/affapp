@@ -25,6 +25,10 @@
             </div>
 
             <div class="raw-margin-top-24">
+                <img src="{{ $merchant->image }}" border="0">
+            </div>
+
+            <div class="raw-margin-top-24">
                 @input_maker_label('Description')
                 @input_maker_create('description', ['type' => 'textarea'], $merchant)
             </div>
@@ -50,14 +54,51 @@
             </div>
 
             <div class="raw-margin-top-24">
-                @input_maker_label('Commission')
-                @input_maker_create('commission', ['type' => 'string'], $merchant)
+                @input_maker_label('Timeleads')
+                @input_maker_create('timeleads', ['type' => 'string'], $merchant)
             </div>
 
             <div class="raw-margin-top-24">
-                @input_maker_label('Cashback')
-                @input_maker_create('cashback', ['type' => 'string'], $merchant)
+                @input_maker_label('Timesales')
+                @input_maker_create('timesales', ['type' => 'string'], $merchant)
             </div>
+
+            <div class="raw-margin-top-24">
+                @input_maker_label('Sale Percent Max')
+                @input_maker_create('sale_percent_max', ['type' => 'string'], $merchant)
+            </div>
+
+            <div class="raw-margin-top-24">
+                @input_maker_label('Sale Percent Min')
+                @input_maker_create('sale_percent_min', ['type' => 'string'], $merchant)
+            </div>
+
+            <div class="raw-margin-top-24">
+                @input_maker_label('Sale Fix Max')
+                @input_maker_create('sale_fix_max', ['type' => 'string'], $merchant)
+            </div>
+
+            <div class="raw-margin-top-24">
+                @input_maker_label('Sale Fix Min')
+                @input_maker_create('sale_fix_min', ['type' => 'string'], $merchant)
+            </div>
+
+            <div class="raw-margin-top-24">
+                @input_maker_label('Timeleads')
+                @input_maker_create('timeleads', ['type' => 'string'], $merchant)
+            </div>
+
+            <div class="raw-margin-top-24">
+                @input_maker_label('Lead max')
+                @input_maker_create('lead_max', ['type' => 'string'], $merchant)
+            </div>
+
+            <div class="raw-margin-top-24">
+                @input_maker_label('Lead min')
+                @input_maker_create('lead_min', ['type' => 'string'], $merchant)
+            </div>
+
+
 
             <div class="raw-margin-top-24">
             {!! Form::submit('Update', ['class' => 'btn btn-primary pull-right']) !!}

@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\ParseClub;
+use App\Console\Commands\ParseMerchant;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,6 +16,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         ParseClub::class,
+        ParseMerchant::class,
     ];
 
     /**

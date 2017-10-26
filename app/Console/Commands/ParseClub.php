@@ -197,10 +197,10 @@ class ParseClub extends Command
             $insert['total_paid'] = 0;
             $insert['fee'] = 10;
 
-            $club = new Club();
+            $record = new Club();
 
-            $club->fill($insert);
-            $club->save();
+            $record->fill($insert);
+            $record->save();
         }
     }
 

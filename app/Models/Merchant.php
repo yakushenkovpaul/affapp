@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
 
 class Merchant extends Model
 {
@@ -21,15 +22,44 @@ class Merchant extends Model
 		'seo_description',
 		'url',
 		'status',
-		'commission',
-		'cashback',
+        'timeleads',
+        'timesales',
+        'sale_percent_max',
+        'sale_percent_min',
+        'sale_fix_max',
+        'sale_fix_min',
+        'lead_max',
+        'lead_min',
+        'info',
 		'rate',
-		'added',
-    
+
 ];
 
     public static $rules = [
         // create rules
     ];
-    // Merchant 
+    // Merchant
+
+    /**
+     * User Categories
+     *
+     * @return Relationship
+     */
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
+
+    /**
+     * Check if user has category
+     *
+     * @param  string  $category
+     * @return boolean
+     */
+    public function hasCategory($category)
+    {
+        $categories = array_column($this->categories()->toArray(), 'name');
+        return array_search($category, $categories) > -1;
+    }
 }

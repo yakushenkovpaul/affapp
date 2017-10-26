@@ -68,3 +68,17 @@ $factory->define(App\Models\Sale::class, function (Faker\Generator $faker) {
 		'created_at' => 'atque',
     ];
 });
+
+/*
+|--------------------------------------------------------------------------
+| Category Factory
+|--------------------------------------------------------------------------
+*/
+
+$factory->define(App\Models\Category::class, function (Faker\Generator $faker) {
+    return [
+        'id' => '1',
+		'name' => 'dolore',
+		'main' => '1',
+    ];
+});

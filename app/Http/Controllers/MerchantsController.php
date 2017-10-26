@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\MerchantService;
 use App\Http\Requests\MerchantCreateRequest;
 use App\Http\Requests\MerchantUpdateRequest;
+use App\Models\Merchant;
 
 class MerchantsController extends Controller
 {
@@ -37,14 +39,16 @@ class MerchantsController extends Controller
         return view('merchants.index')->with('merchants', $merchants);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+
+
+    protected function create(array $data)
     {
-        return view('merchants.create');
+        return DB::transaction(function() use ($data) {
+            $merchant = Merchant::create($data);
+
+            return $this->service->create($merchant. $data);
+        });
     }
 
     /**
