@@ -64,7 +64,7 @@ class ParseMerchant extends Command
     {
         $added = 0;
 
-        for($page = 70; $page <= ceil(1040/self::Limit_per_page); $page ++)
+        for($page = 0; $page <= ceil(1040/self::Limit_per_page); $page ++)
         {
             $url = self::Url . '&' . self::getSignatureUrl() . '&items=' . self::Limit_per_page . '&page=' . $page;
 
@@ -107,7 +107,7 @@ class ParseMerchant extends Command
                 foreach ($array as $a)
                 {
                     //пропускаем дубликаты
-                    if(Merchant::where('name', '=', $a['name'])->count())
+                    if(Merchant::where('program_id', '=', $a['program_id'])->count())
                     {
                         continue;
                     }
@@ -136,7 +136,8 @@ class ParseMerchant extends Command
         if(!empty($array))
         {
             $insert = [
-                'name' => $array['name'],
+                'program_id' => $array['program_id'],
+                'name' => str_replace(' DE', '', $array['name']),
                 'image' => $array['image'],
                 'url' => $array['url'],
                 'status' => ($array['status'] == 'active')  ?   1   :   0,

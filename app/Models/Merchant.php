@@ -15,12 +15,14 @@ class Merchant extends Model
 
     public $fillable = [
 		'id',
+        'program_id',
 		'name',
 		'image',
 		'description',
 		'seo_title',
 		'seo_description',
 		'url',
+        'url_affilate',
 		'status',
         'timeleads',
         'timesales',

@@ -50,6 +50,11 @@
             </div>
 
             <div class="raw-margin-top-24">
+                @input_maker_label('Url affilate')
+                @input_maker_create('url_affilate', ['type' => 'string'], $merchant)
+            </div>
+
+            <div class="raw-margin-top-24">
                 @input_maker_label('Status')
                 @input_maker_create('status', ['type' => 'select', 'label' => 'status', 'options' => [ 'active' => '1', 'inactive' => '0' ]], $merchant)
             </div>
