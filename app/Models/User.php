@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Models\Role;
-use App\Models\Team;
 use App\Models\UserMeta;
 use App\Notifications\ResetPassword;
 use Illuminate\Notifications\Notifiable;
@@ -80,43 +79,6 @@ class User extends Authenticatable
                 return true;
             }
         });
-
-        return false;
-    }
-
-    /**
-     * Teams
-     *
-     * @return Relationship
-     */
-    public function teams()
-    {
-        return $this->belongsToMany(Team::class);
-    }
-
-    /**
-     * Team member
-     *
-     * @return boolean
-     */
-    public function isTeamMember($id)
-    {
-        $teams = array_column($this->teams->toArray(), 'id');
-        return array_search($id, $teams) > -1;
-    }
-
-    /**
-     * Team admin
-     *
-     * @return boolean
-     */
-    public function isTeamAdmin($id)
-    {
-        $team = $this->teams->find($id);
-
-        if ($team) {
-            return (int) $team->user_id === (int) $this->id;
-        }
 
         return false;
     }

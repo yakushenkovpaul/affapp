@@ -16,7 +16,7 @@ class PagesController extends Controller
      */
     public function home()
     {
-        return view('welcome');
+        return view('index');
     }
 
     /**
@@ -26,6 +26,6 @@ class PagesController extends Controller
      */
     public function dashboard()
     {
-        return view('dashboard');
+        return view('dashboard.main');
     }
 }

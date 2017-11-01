@@ -33,12 +33,6 @@ class UserService
     protected $userMeta;
 
     /**
-     * Team Service
-     * @var TeamService
-     */
-    protected $team;
-
-    /**
      * Role Service
      * @var RoleService
      */
@@ -54,13 +48,11 @@ class UserService
     public function __construct(
         User $model,
         UserMeta $userMeta,
-        Team $team,
         Role $role,
         Club $club
     ) {
         $this->model = $model;
         $this->userMeta = $userMeta;
-        $this->team = $team;
         $this->role = $role;
         $this->club = $club;
     }
@@ -252,7 +244,6 @@ class UserService
         try {
             return DB::transaction(function () use ($id) {
                 $this->unassignAllRoles($id);
-                $this->leaveAllTeams($id);
 
                 $userMetaResult = $this->userMeta->where('user_id', $id)->delete();
                 $userResult = $this->model->find($id)->delete();
@@ -367,52 +358,9 @@ class UserService
 
     /*
     |--------------------------------------------------------------------------
-    | Teams
+    | Clubs
     |--------------------------------------------------------------------------
     */
-
-    /**
-     * Join a team
-     *
-     * @param  integer $teamId
-     * @param  integer $userId
-     * @return void
-     */
-    public function joinTeam($teamId, $userId)
-    {
-        $team = $this->team->find($teamId);
-        $user = $this->model->find($userId);
-
-        $user->teams()->attach($team);
-    }
-
-    /**
-     * Leave a team
-     *
-     * @param  integer $teamId
-     * @param  integer $userId
-     * @return void
-     */
-    public function leaveTeam($teamId, $userId)
-    {
-        $team = $this->team->find($teamId);
-        $user = $this->model->find($userId);
-
-        $user->teams()->detach($team);
-    }
-
-    /**
-     * Leave all teams
-     *
-     * @param  integer $teamId
-     * @param  integer $userId
-     * @return void
-     */
-    public function leaveAllTeams($userId)
-    {
-        $user = $this->model->find($userId);
-        $user->teams()->detach();
-    }
 
     /**
      * Return list of clubs

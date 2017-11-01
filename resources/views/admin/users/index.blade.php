@@ -1,45 +1,58 @@
-@extends('dashboard')
+@extends('dashboard', ['pageTitle' => '_camelUpper_casePlural_ &raquo; Index'])
 
 @section('content')
 
-    <div class="row">
-        <div class="col-md-12">
-            <form id="" class="pull-right raw-margin-top-24 raw-margin-left-24" method="post" action="/admin/users/search">
-                {!! csrf_field() !!}
-                <input class="form-control" name="search" placeholder="Search">
-            </form>
-            <h1>User List</h1>
+    <!-- DASHBOARD ORDERS SECTION -->
+    <section class="clearfix bg-dark dashboardOrders">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="dashboardPageTitle">
+                        <h2>User List</h2>
+                    </div>
+                    @if ($users->isEmpty())
+                        <div class="well text-center">No users found.</div>
+                    @else
+                    <div class="table-responsive bgAdd"  data-pattern="priority-columns">
+                        <table id="ordersTable" class="table table-small-font table-bordered table-striped" cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th data-priority="1">Login</th>
+                                <th data-priority="4">Action</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Login</th>
+                                <th>Action</th>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            @foreach($users as $user)
+                                <tr>
+                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>
+                                        <form method="post" action="{!! route('users.destroy', [$user->id]) !!}">
+                                            {!! csrf_field() !!}
+                                            {!! method_field('DELETE') !!}
+                                            <div class="btn-group">
+                                                <a class="btn btn-primary" href="{!! route('users.edit', [$user->id]) !!}">Edit</a>
+                                                <button type="submit" onclick="return confirm('Are you sure you want to delete this user?')" class="btn btn-primary">Delete</button>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    @endif
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-striped raw-margin-top-24">
-
-                <thead>
-                    <th>Name</th>
-                    <th>Label</th>
-                    <th class="text-right">Actions</th>
-                </thead>
-                <tbody>
-                    @foreach($users as $user)
-                        <tr>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>
-                                <form method="post" action="{!! url('admin/users/'.$user->id) !!}">
-                                    {!! csrf_field() !!}
-                                    {!! method_field('DELETE') !!}
-                                    <button class="btn btn-danger btn-xs pull-right" type="submit" onclick="return confirm('Are you sure you want to delete this user?')"><i class="fa fa-trash"></i> Delete</button>
-                                </form>
-                                <a class="btn btn-warning btn-xs pull-right raw-margin-right-16" href="{{ url('admin/users/'.$user->id.'/edit') }}"><span class="fa fa-edit"></span> Edit</a>
-                            </td>
-                        </tr>
-                    @endforeach
-
-                </tbody>
-
-            </table>
-        </div>
-    </div>
+    </section>
 
 @stop
