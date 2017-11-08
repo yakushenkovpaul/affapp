@@ -2019,7 +2019,7 @@ a.link:hover {
 
 @media (min-width: 768px) {
   .navbar-default .navbar-nav.navbar-right {
-    margin-right: 450px;
+    margin-right: 165px;
   }
 }
 
@@ -3245,7 +3245,7 @@ footer {
 }
 
 .useLink ul li a:hover {
-  color: #ffffff;
+  color: #2196f3;
   text-decoration: underline;
 }
 
@@ -3258,7 +3258,6 @@ footer {
 @media (min-width: 992px) {
   .useLink ul li a {
     font-size: 14px;
-    color: #000000;;
   }
 }
 
@@ -7989,7 +7988,7 @@ body.rtl .navbar-default .navbar-nav.navbar-right {
 
 @media (min-width: 768px) {
   body.rtl .navbar-default .navbar-nav.navbar-right {
-    margin: 0 0 0 450px;
+    margin: 0 0 0 165px;
   }
 }
 
@@ -8259,6 +8258,4 @@ body.rtl .locationSelect .sbToggle {
 
 body.rtl .checkbox .pull-right.link {
   float: left !important;
-}bottom {
-    color:#FF0000;
 }
