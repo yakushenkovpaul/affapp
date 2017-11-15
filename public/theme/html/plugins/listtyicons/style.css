@@ -5537,5 +5537,22 @@ i {
 }
 .icon-wreath:before {
   content: "\f02d";
+}.bottomlinks ul li a {
+  line-height: 24px;
+  color: #cfcfcf;
+  font-size: 14px;
 }
-
+.bottomLinks ul li a {
+color: #FF0000;
+}
+.merchants_list h1 {
+}.merchants-list {
+    background-color: #fd1f97;
+}.merchants-list .page-header h2 {
+	color: #FFFFFF;
+}.merchants-list .page-header small {
+    color: #ffffff;
+}
+.club-buttons {
+float: right;;
+}

@@ -86,9 +86,7 @@ body {
 ul {
   margin: 0;
   padding: 0;
-}
-
-ul li {
+}ul li {
   list-style-type: none;
 }
 
@@ -118,8 +116,7 @@ h1, h2, h3, h4, h5 {
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
   margin-top: 0;
-  font-weight: 700;
-  color: #222222;
+  font-weight: 700;color: #222222;
 }
 
 h2 {
@@ -228,10 +225,7 @@ h5 {
   .container {
     width: 1170px;
   }
-}
-
-a {
-  color: #2196f3;
+}a {/* color: #2196f3 */
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
@@ -1776,9 +1770,7 @@ a.link:hover {
   border: none;
   margin: 0 0 60px 0;
   padding: 0;
-}
-
-.page-header h2 {
+}.page-header h2 {
   font-weight: 400;
   text-transform: capitalize;
   font-size: 30px;
@@ -3212,8 +3204,7 @@ footer {
   }
 }
 
-@media (min-width: 320px) {
-  .useLink {
+@media (min-width: 320px) {.useLink {
     margin-bottom: 25px;
   }
 }
@@ -3229,19 +3220,14 @@ footer {
 }
 
 @media (min-width: 992px) {
-  .useLink ul li {
-    margin: 0 0 15px 0;
+  .useLink ul li {margin: 0 0 15px 0;
   }
-}
-
-.useLink ul li a {
-  line-height: 24px;
-  color: #cfcfcf;
+}.useLink ul li a {
+  line-height: 24px;color: #cfcfcf;
   font-size: 14px;
 }
 
-.useLink ul li a i {
-  margin-right: 10px;
+.useLink ul li a i {margin-right: 10px;
 }
 
 .useLink ul li a:hover {
@@ -3255,10 +3241,8 @@ footer {
   }
 }
 
-@media (min-width: 992px) {
-  .useLink ul li a {
-    font-size: 14px;
-    color: #000000;;
+@media (min-width: 992px) {.useLink ul li a {
+    font-size: 14px;;
   }
 }
 
@@ -3396,12 +3380,10 @@ footer {
   }
 }
 
-.footerWhite .useLink ul li a {
-  color: #848484;
+.footerWhite .useLink ul li a {color: #848484;
 }
 
-.footerWhite .useLink ul li a:hover {
-  color: #2196f3;
+.footerWhite .useLink ul li a:hover {color: #2196f3;
 }
 
 .footerWhite .copyRightText p {
@@ -3530,8 +3512,7 @@ footer {
   width: 100%;
 }
 
-/*================= 5.2 CALL TO ACTION SECTION ==================*/
-.callAction {
+/*================= 5.2 CALL TO ACTION SECTION ==================*/.callAction {
   padding: 30px 0;
   background-color: #2196f3;
 }
@@ -3868,8 +3849,7 @@ footer {
   color: #2196f3;
 }
 
-.captionItem li a {
-  color: #2196f3;
+.captionItem li a {color: #2196f3;
 }
 
 .captionItem li a:hover {
