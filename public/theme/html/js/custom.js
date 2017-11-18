@@ -206,3 +206,14 @@ var owl = $('.owl-carousel.partnersLogoSlider');
     $(this).parent().hide();
   });
 });
+
+/**
+ * Created by pavelandreev on 18.11.17.
+ */
+
+$( document ).ready(function() {
+    $("#explore-more").click(function () {
+        $("#dynamic").append($("#dynamic").html());
+        return false;
+    });
+});

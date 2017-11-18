@@ -4897,7 +4897,7 @@ figure:hover .overlay {
 
 .servicesItem {
   border: 1px solid #e5e5e5;
-  padding: 40px 0;
+  padding: 15px 0;
   border-radius: 4px;
 }
 
@@ -4932,20 +4932,29 @@ figure:hover .overlay {
 }
 
 .servicesIcon {
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   border-radius: 100%;
   border: 1px solid #e5e5e5;
   margin: 0 0 15px 0;
   text-align: center;
-  line-height: 100px;
+  line-height: 45px;
   display: inline-block;
 }
 
+/* cyxapuk */
+.iconup
+{
+  float: right;
+  font-size: 48px;
+  cursor: pointer;
+}
+
+
 .servicesIcon i.icon-listy {
-  font-size: 45px;
+  font-size: 20px;
   color: #2196f3;
-  line-height: 100px;
+  line-height: 20px;
 }
 
 .servicesInfo h2 {
@@ -7444,6 +7453,29 @@ table.dataTable thead .sorting_desc_disabled:after {
   text-decoration: underline;
 }
 
+.listSidebarButton {
+  padding: 25px 30px;
+  border-radius: 4px;
+  display: block;
+  float: right;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .listSidebarButton {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .listSidebarButton {
+    width: 90%;
+    margin-bottom: 50px;
+  }
+}
+
 .featuresItems li {
   padding: 5px;
 }
@@ -7555,12 +7587,15 @@ button.close-btn {
   width: 100%;
   overflow: hidden;
   padding: 0;
+  height: 350px; /* cyxapuk */
 }
 
 .main-slider .slide {
   display: block;
   width: 100%;
-  height: 510px;
+  /*height: 510px;*/
+  /* cyxapuk */
+  height: 350px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7568,7 +7603,9 @@ button.close-btn {
 
 @media (min-width: 992px) {
   .main-slider .slide {
-    height: 538px;
+    /*height: 538px;*/
+    /* cyxapuk */
+    height: 350px;
   }
 }
 
@@ -7681,7 +7718,8 @@ button.close-btn {
 }
 
 .main-slider .owl-carousel .owl-controls .owl-nav {
-  margin-top: 0;
+  margin-top: 0px;
+  /* cyxapuk */
 }
 
 .main-slider .owl-carousel .owl-controls .owl-nav .owl-prev {
@@ -7813,7 +7851,9 @@ button.close-btn {
   position: absolute;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  top: 50%;
+  /*top: 50%;*/
+  /* cyxapuk */
+  top: 40%;
   left: 10%;
 }
 
@@ -7821,7 +7861,9 @@ button.close-btn {
   .main-slider .slide-inner1, .main-slider .slide-inner2, .main-slider .slide-inner4 {
     -webkit-transform: translate(0, -15%);
     transform: translate(0, -15%);
-    top: 50%;
+    /*top: 50%;*/
+    /* cyxapuk */
+    top: 40%;
     left: 0;
   }
 }

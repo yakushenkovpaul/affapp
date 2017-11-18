@@ -172,9 +172,10 @@
                         </div>
                     </div>
                     <div class="page-header text-center">
-                        <h2>Top clubs                <small>This are some of most popular shops</small></h2>
+                        <h2>Top clubs
+                            <small>This are some of most popular shops</small></h2>
                     </div>                     
-                    <div class="row">
+                    <div class="row" id="dynamic">
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="thingsBox thinsSpace">
                                 <div class="thingsImage">
@@ -517,14 +518,23 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-xs-12">
                             <div class="btnArea btnAreaBorder text-center">
-                                <a href="category-grid-full.html" class="btn btn-primary">Explore More</a>
+                                <a href="#" class="btn btn-primary" id="explore-more">Explore More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="iconup">
+                                <i class="icon-listy icon-up-arrow-1" onclick="$('html, body').animate({scrollTop: '0px'}, 300);" title="up"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>             
+            </section>
             <section class="clearfix merchants-list">
                 <div class="clearfix">
                     <div class="container">
