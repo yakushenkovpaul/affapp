@@ -7064,8 +7064,19 @@ table.dataTable thead .sorting_desc_disabled:after {
   font-weight: 400;
 }
 
-.itmeName {
-  line-height: 34px;
+.merchant-info .merchant-logo
+{
+  background-color: transparent;
+  border-bottom: 1px #e5e5e5 solid;
+  padding: 0 0 40px 0;
+}
+
+.merchant-info .listingReview
+{
+  padding-top: 20px;
+}
+
+.itmeName {line-height: 34px;
   font-family: 'Poppins', sans-serif;
   color: #222222;
   font-size: 14px;
@@ -7078,9 +7089,26 @@ table.dataTable thead .sorting_desc_disabled:after {
   display: inline-block;
   line-height: 34px;
   text-align: center;
-  background-color: #2196f3;
-  color: #fff;
+  background-color: #2196f3;/* color: #fff */
   border-radius: 100%;
+  font-size: 20px;
+  margin: 0 10px 0 0;
+  float: left;
+}
+
+.itmeName-cashback {line-height: 34px;
+  font-family: 'Poppins', sans-serif;
+  color: #222222;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.itmeName-cashback .iconBox {
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+  line-height: 34px;
+  text-align: center;
   font-size: 20px;
   margin: 0 10px 0 0;
   float: left;
