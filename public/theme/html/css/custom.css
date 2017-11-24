@@ -126,3 +126,30 @@
     color: #605f5d;
     background: #f0f0f0;
 }
+
+.visible-xs {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .visible-xs {
+        display: block;
+    }
+    .logo-fast
+    {
+        margin-bottom: 20px;
+        display: block;
+    }
+    .headerTitle
+    {
+        text-align: center;
+    }
+    .listingReview span {
+        margin-right: 10px;
+    }
+    .map-sidebar
+    {
+        width:100%;
+    }
+}
+

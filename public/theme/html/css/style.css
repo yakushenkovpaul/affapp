@@ -86,8 +86,7 @@ body {
 ul {
   margin: 0;
   padding: 0;
-}ul li {
-  list-style-type: none;
+}ul li {list-style-type: none;
 }
 
 p {
@@ -1091,12 +1090,10 @@ a.link:hover {
   margin: 30px 0;
 }
 
-.paginationCommon .pagination li {
-  float: left;
-  margin: 0 5px 5px 0;
+.paginationCommon .pagination li {float: left;/* margin: 0 5px 5px 0 */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .paginationCommon .pagination li {
     margin: 0 10px 0 0;
   }
@@ -1109,11 +1106,10 @@ a.link:hover {
   font-weight: 400;
   padding: 0;
   display: block;
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  font-size: 12px;
+  text-align: center;width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -2011,7 +2007,7 @@ a.link:hover {
 
 @media (min-width: 768px) {
   .navbar-default .navbar-nav.navbar-right {
-    margin-right: 450px;
+    margin-right: 150px;
   }
 }
 
@@ -4182,8 +4178,11 @@ footer {
 }
 
 @media (min-width: 768px) {
+  .bg-search .form-inline .form-group:first-child {
+    width: 50%;
+  }
   .bg-search .form-inline .form-group:last-child {
-    width: 12%;
+    width: 20%;
   }
 }
 
@@ -7588,7 +7587,7 @@ button.close-btn {
 }
 
 .map-sidebar {
-  width: 320px;
+  width: 325px;
 }
 
 .map-right {
@@ -8036,7 +8035,7 @@ body.rtl .navbar-default .navbar-nav.navbar-right {
 
 @media (min-width: 768px) {
   body.rtl .navbar-default .navbar-nav.navbar-right {
-    margin: 0 0 0 450px;
+    margin: 0 0 0 150px;
   }
 }
 
@@ -8308,4 +8307,7 @@ body.rtl .checkbox .pull-right.link {
   float: left !important;
 }bottom {
     color:#FF0000;
+}
+.panel-merchant {
+padding-bottom: 40px;;
 }
