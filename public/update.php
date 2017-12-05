@@ -11,9 +11,9 @@ $path = '/var/www/html/affapp/';
 if(file_exists($path))
 {
     $cmd = 'sudo bash; cd ' . $path . '; /usr/bin/git pull';
-    exec($cmd);
+    $result = exec($cmd);
 
-    echo 'OK' . PHP_EOL;
+    print $result . PHP_EOL;
 }
 else
 {
