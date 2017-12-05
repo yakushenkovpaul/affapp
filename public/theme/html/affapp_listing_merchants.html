@@ -68,22 +68,22 @@
                             <div class="collapse navbar-collapse navbar-ex1-collapse">
                                 <ul class="nav navbar-nav navbar-right">
                                     <li>
-                                        <a href="blog.html">News </a>
+                                        <a href="blog.html">online shops </a>
                                     </li>
                                     <li>
-                                        <a href="blog.html">Clubs </a>
+                                        <a href="blog.html">vereine </a>
                                     </li>
                                     <li>
-                                        <a href="blog.html">Merchants </a>
+                                        <a href="blog.html">wie es funktioniert </a>
                                     </li>
                                     <li>
-                                        <a href="blog.html">Contacts </a>
+                                        <a href="blog.html">support </a>
                                     </li>
                                 </ul>
                             </div>
                             <button class="btn btn-default navbar-btn" type="button" data-toggle="modal" data-target="#loginModal"> 
                                 <span class="visible-xs">Login</span> 
-                                <span>Login</span> 
+                                <span>Anmelden</span> 
                             </button>                             
                         </div>
                     </nav>
@@ -93,416 +93,316 @@
             <section class="main-slider" data-loop="true" data-autoplay="true" data-interval="7000">
                 <div class="inner">
                     <!-- Slide One -->
-                    <div class="slide slide1" style="background-image: url('http://affapp.cloud/theme/html/img/banner/slider-1.jpg');">
+                    <div class="slide slideResize slide4" style="background-image: url(img/banner/slider-12.jpg);">
+                        <div class="container">
+                            <div class="common-inner slide-inner4">
+                                <span class="h1 from-bottom">kaufe online und unterstütze Deinen Verein</span>
+                                <span class="h4 from-bottom">Kaufe online bei unseren Partnershops und Dein Verein erhält einen fixen oder prozentuellen Anteil von Deinem Einkauf zurück</span>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide slide1" style="background-image: url(img/banner/slider-10.jpg);">
                         <div class="container">
                             <div class="slide-inner1 common-inner">
-                                <span class="h1 from-bottom">Choose your vehicles</span>
-                                <span class="h4 from-bottom">Listty helps to find out great things arround you</span>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide slide1" style="background-image: url(img/banner/slider-9.jpg);">
+                        <div class="container">
+                            <div class="slide-inner1 common-inner">
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide slide1" style="background-image: url(img/banner/slider-8.png);">
+                        <div class="container">
+                            <div class="slide-inner1 common-inner">
                                 <br>
                             </div>
                         </div>
                     </div>
                     <!-- Slide Two -->
-                    <div class="slide slide2" style="background-image: url('http://affapp.cloud/theme/html/img/banner/slider-1.jpg');">
-                        <div class="container">
-                            <div class="slide-inner2 common-inner">
-                                <span class="h1 from-bottom">Choose your vehicles</span>
-                                <span class="h4 from-bottom">Listty helps to find out great things arround you</span>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
                     <!-- Slide Three -->
-                    <div class="slide slideResize slide4" style="background-image: url('http://affapp.cloud/theme/html/img/banner/slider-1.jpg');">
-                        <div class="container">
-                            <div class="common-inner slide-inner4">
-                                <span class="h1 from-bottom">Choose your vehicles</span>
-                                <span class="h4 from-bottom">Listty helps to find out great things arround you</span>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
             <section class="clearfix bg-light pr">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 ">
-                            <div class="bg-search">
-                                <form class="form-inline" action="category-grid.html" method="">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="enterLocation" placeholder="Enter shop title">
+                        <div class="bg-search">
+                            <form class="form-inline" action="category-grid.html" method="">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="enterLocation" placeholder="Shop Namen eingeben z.B. Otto.de">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Suchen 
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="form-group">
+                                    <div class="searchSelectbox">
+                                        <select name="guiest_id2" id="guiest_id2" class="select-drop">
+                                            <option value="0">Kategorie wählen</option>
+                                            <option value="1">Mode</option>
+                                            <option value="2">Auto</option>
+                                            <option value="3">Reise</option>
+                                            <option value="4">Dienstleistungen</option>
+                                        </select>
                                     </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">Search 
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="searchSelectbox">
-                                            <select name="guiest_id2" id="guiest_id2" class="select-drop">
-                                                <option value="0">Choose Make</option>
-                                                <option value="1">Choose Make 1</option>
-                                                <option value="2">Choose Make 2</option>
-                                                <option value="3">Choose Make 3</option>                                                 
-                                            </select>
-                                        </div>
-                                    </div>                                     
-                                </form>
-                            </div>
+                                </div>                                 
+                            </form>
                         </div>
                     </div>
                     <div class="page-header text-center">
-                        <h2>Top clubs<small>This are some of most popular shops</small></h2>
+                        <h2>Top Shops<small>Die am häufigsten besuchten Shops</small></h2>
                     </div>                     
-                    <div class="row" id="dynamic">
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="thingsBox thinsSpace">
-                                <div class="thingsImage">
-                                    <img src="img/things/things-1.jpg" alt="Image things">
-                                    <div class="thingsMask">
-                                        <ul class="list-inline rating">
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                        </ul>
-                                        <a href="blog-details.html"><h2>The City Theater <i class="fa fa-check-circle" aria-hidden="true"></i></h2></a>
-                                        <p>10 Bay Street Toronto Ontario Canada</p>
-                                    </div>
-                                </div>
-                                <div class="thingsCaption">
-                                    <ul class="list-inline captionItem">
-                                        <li>
-                                            <i class="fa fa-heart-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                        <li>
-                                            <a href="category-list-full.html">Hotel, Restaurant</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                    <div class="row" id="shops"> 
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" alt="Otto.de"></span></a>
                         </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="thingsBox thinsSpace">
-                                <div class="thingsImage">
-                                    <img src="img/things/things-2.jpg" alt="Image things">
-                                    <div class="thingsMask">
-                                        <ul class="list-inline rating">
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                        </ul>
-                                        <a href="blog-details.html"><h2>The City Theater</h2></a>
-                                        <p>10 Bay Street Toronto Ontario Canada</p>
-                                    </div>
-                                </div>
-                                <div class="thingsCaption">
-                                    <ul class="list-inline captionItem">
-                                        <li>
-                                            <i class="fa fa-heart-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                        <li>
-                                            <a href="category-grid-full.html">Hotel, Restaurant</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Tele2</a>
+                                </li>
+                                <li>
+                                    1,5€ 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/14496_lgo_tele2_nl.png" alt="Otto.de"></span></a>
                         </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="thingsBox thinsSpace">
-                                <div class="thingsImage">
-                                    <img src="img/things/things-3.jpg" alt="Image things">
-                                    <div class="thingsMask">
-                                        <ul class="list-inline rating">
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                        </ul>
-                                        <a href="blog-details.html"><h2>The City Theater <i class="fa fa-check-circle" aria-hidden="true"></i></h2></a>
-                                        <p>10 Bay Street Toronto Ontario Canada</p>
-                                    </div>
-                                </div>
-                                <div class="thingsCaption">
-                                    <ul class="list-inline captionItem">
-                                        <li>
-                                            <i class="fa fa-heart-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                        <li>
-                                            <a href="category-list-left.html">Hotel, Restaurant</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Hickies</a>
+                                </li>
+                                <li>
+                                    2,5%-15% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/18567_lgo_hickies_de.jpg" alt="Otto.de"></span></a>
                         </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="thingsBox thinsSpace">
-                                <div class="thingsImage">
-                                    <img src="img/things/things-1.jpg" alt="Image things">
-                                    <div class="thingsMask">
-                                        <ul class="list-inline rating">
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                        </ul>
-                                        <a href="blog-details.html"><h2>The City Theater</h2></a>
-                                        <p>10 Bay Street Toronto Ontario Canada</p>
-                                    </div>
-                                </div>
-                                <div class="thingsCaption">
-                                    <ul class="list-inline captionItem">
-                                        <li>
-                                            <i class="fa fa-heart-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                        <li>
-                                            <a href="category-grid-right.html">Hotel, Restaurant</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Submarino</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/13537_lgo_submarino_br.png" alt="Otto.de"></span></a>
                         </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="thingsBox thinsSpace">
-                                <div class="thingsImage">
-                                    <img src="img/things/things-2.jpg" alt="Image things">
-                                    <div class="thingsMask">
-                                        <ul class="list-inline rating">
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                        </ul>
-                                        <a href="blog-details.html"><h2>The City Theater <i class="fa fa-check-circle" aria-hidden="true"></i></h2></a>
-                                        <p>10 Bay Street Toronto Ontario Canada</p>
-                                    </div>
-                                </div>
-                                <div class="thingsCaption">
-                                    <ul class="list-inline captionItem">
-                                        <li>
-                                            <i class="fa fa-heart-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                        <li>
-                                            <a href="category-list-full.html">Hotel, Restaurant</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" alt="Otto.de"></span></a>
                         </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="thingsBox thinsSpace">
-                                <div class="thingsImage">
-                                    <img src="img/things/things-3.jpg" alt="Image things">
-                                    <div class="thingsMask">
-                                        <ul class="list-inline rating">
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                        </ul>
-                                        <a href="blog-details.html"><h2>The City Theater</h2></a>
-                                        <p>10 Bay Street Toronto Ontario Canada</p>
-                                    </div>
-                                </div>
-                                <div class="thingsCaption">
-                                    <ul class="list-inline captionItem">
-                                        <li>
-                                            <i class="fa fa-heart-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                        <li>
-                                            <a href="category-grid-full.html">Hotel, Restaurant</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" alt="Otto.de"></span></a>
                         </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="thingsBox thinsSpace">
-                                <div class="thingsImage">
-                                    <img src="img/things/things-1.jpg" alt="Image things">
-                                    <div class="thingsMask">
-                                        <ul class="list-inline rating">
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                        </ul>
-                                        <a href="blog-details.html"><h2>The City Theater <i class="fa fa-check-circle" aria-hidden="true"></i></h2></a>
-                                        <p>10 Bay Street Toronto Ontario Canada</p>
-                                    </div>
-                                </div>
-                                <div class="thingsCaption">
-                                    <ul class="list-inline captionItem">
-                                        <li>
-                                            <i class="fa fa-heart-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                        <li>
-                                            <a href="category-list-left.html">Hotel, Restaurant</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" alt="Otto.de"></span></a>
                         </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="thingsBox thinsSpace">
-                                <div class="thingsImage">
-                                    <img src="img/things/things-2.jpg" alt="Image things">
-                                    <div class="thingsMask">
-                                        <ul class="list-inline rating">
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                        </ul>
-                                        <a href="blog-details.html"><h2>The City Theater</h2></a>
-                                        <p>10 Bay Street Toronto Ontario Canada</p>
-                                    </div>
-                                </div>
-                                <div class="thingsCaption">
-                                    <ul class="list-inline captionItem">
-                                        <li>
-                                            <i class="fa fa-heart-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                        <li>
-                                            <a href="category-grid.html">Hotel, Restaurant</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" alt="Otto.de"></span></a>
                         </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="thingsBox thinsSpace">
-                                <div class="thingsImage">
-                                    <img src="img/things/things-2.jpg" alt="Image things">
-                                    <div class="thingsMask">
-                                        <ul class="list-inline rating">
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </li>
-                                        </ul>
-                                        <a href="blog-details.html"><h2>The City Theater</h2></a>
-                                        <p>10 Bay Street Toronto Ontario Canada</p>
-                                    </div>
-                                </div>
-                                <div class="thingsCaption">
-                                    <ul class="list-inline captionItem">
-                                        <li>
-                                            <i class="fa fa-heart-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                        <li>
-                                            <a href="category-list-full.html">Hotel, Restaurant</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/14496_lgo_tele2_nl.png" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/18567_lgo_hickies_de.jpg" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i> 
+                                </li>
+                                <li>
+                                    <a href="category-list-left.html">Telekom.de</a>
+                                </li>
+                                <li>
+                                    ab 2,5% 
+                                    <i class="fa fa-undo" aria-hidden="true"></i> 
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"><span><img src="img/brands/13537_lgo_submarino_br.png" alt="Otto.de"></span></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="btnArea btnAreaBorder text-center">
-                                <a href="#" class="btn btn-primary" id="explore-more">Explore More</a>
+                                <a href="category-grid-full.html" class="btn btn-primary">Mehr Shops</a>
                             </div>
                         </div>
                     </div>
@@ -519,7 +419,7 @@
                 <div class="clearfix">
                     <div class="container">
                         <div class="page-header text-center">
-                            <h2>Merchants list                <small>This are some of most popular shops</small></h2>
+                            <h2>Liste aller teilnehmenden Shops </h2>
                         </div>                         
                         <div class="row">
                             <div class="col-sm-3 col-xs-12">
@@ -528,34 +428,34 @@
                                 <div class="useLink">
                                     <ul class="list-unstyled">
                                         <li>
-                                            <a href="dashboard.html">Dashboard</a>
+                                            <a href="dashboard.html">Otto.de</a>
                                         </li>
                                         <li>
-                                            <a href="sign-up.html">Create Account</a>
+                                            <a href="dashboard.html">Otto.de</a>
                                         </li>
                                         <li>
-                                            <a href="login.html">Login</a>
+                                            <a href="dashboard.html">Otto.de</a>
                                         </li>
                                         <li>
-                                            <a href="add-listings.html">Add Listing</a>
+                                            <a href="dashboard.html">Otto.de</a>
                                         </li>
                                         <li>
-                                            <a href="edit-listings.html">Edit Listing</a>
+                                            <a href="dashboard.html">Otto.de</a>
                                         </li>
                                         <li>
-                                            <a href="dashboard.html">Dashboard</a>
+                                            <a href="dashboard.html">Otto.de</a>
                                         </li>
                                         <li>
-                                            <a href="sign-up.html">Create Account</a>
+                                            <a href="dashboard.html">Otto.de</a>
                                         </li>
                                         <li>
-                                            <a href="login.html">Login</a>
+                                            <a href="dashboard.html">Otto.de</a>
                                         </li>
                                         <li>
-                                            <a href="add-listings.html">Add Listing</a>
+                                            <a href="dashboard.html">Otto.de</a>
                                         </li>
                                         <li>
-                                            <a href="edit-listings.html">Edit Listing</a>
+                                            <a href="dashboard.html">Otto.de</a>
                                         </li>                                         
                                     </ul>
                                 </div>
@@ -566,34 +466,34 @@
                                 <div class="useLink">
                                     <ul class="list-unstyled">
                                         <li>
-                                            <a href="contact-us.html">Contact Us</a>
+                                            <a href="contact-us.html">Zalando.de</a>
                                         </li>
                                         <li>
-                                            <a href="terms-of-services.html">Terms and Conditions</a>
+                                            <a href="contact-us.html">Zalando.de</a>
                                         </li>
                                         <li>
-                                            <a href="how-it-works.html">How It Works</a>
+                                            <a href="contact-us.html">Zalando.de</a>
                                         </li>
                                         <li>
-                                            <a href="payment-process.html">Payment</a>
+                                            <a href="contact-us.html">Zalando.de</a>
                                         </li>
                                         <li>
-                                            <a href="pricing-table.html">Pricing</a>
+                                            <a href="contact-us.html">Zalando.de</a>
                                         </li>
                                         <li>
-                                            <a href="dashboard.html">Dashboard</a>
+                                            <a href="contact-us.html">Zalando.de</a>
                                         </li>
                                         <li>
-                                            <a href="sign-up.html">Create Account</a>
+                                            <a href="contact-us.html">Zalando.de</a>
                                         </li>
                                         <li>
-                                            <a href="login.html">Login</a>
+                                            <a href="contact-us.html">Zalando.de</a>
                                         </li>
                                         <li>
-                                            <a href="add-listings.html">Add Listing</a>
+                                            <a href="contact-us.html">Zalando.de</a>
                                         </li>
                                         <li>
-                                            <a href="edit-listings.html">Edit Listing</a>
+                                            <a href="contact-us.html">Zalando.de</a>
                                         </li>                                         
                                     </ul>
                                 </div>
@@ -604,34 +504,34 @@
                                 <div class="useLink">
                                     <ul class="list-unstyled">
                                         <li>
-                                            <a href="dashboard.html">Dashboard</a>
+                                            <a href="dashboard.html">eBay.de</a>
                                         </li>
                                         <li>
-                                            <a href="sign-up.html">Create Account</a>
+                                            <a href="dashboard.html">eBay.de</a>
                                         </li>
                                         <li>
-                                            <a href="login.html">Login</a>
+                                            <a href="dashboard.html">eBay.de</a>
                                         </li>
                                         <li>
-                                            <a href="add-listings.html">Add Listing</a>
+                                            <a href="dashboard.html">eBay.de</a>
                                         </li>
                                         <li>
-                                            <a href="edit-listings.html">Edit Listing</a>
+                                            <a href="dashboard.html">eBay.de</a>
                                         </li>
                                         <li>
-                                            <a href="dashboard.html">Dashboard</a>
+                                            <a href="dashboard.html">eBay.de</a>
                                         </li>
                                         <li>
-                                            <a href="sign-up.html">Create Account</a>
+                                            <a href="dashboard.html">eBay.de</a>
                                         </li>
                                         <li>
-                                            <a href="login.html">Login</a>
+                                            <a href="dashboard.html">eBay.de</a>
                                         </li>
                                         <li>
-                                            <a href="add-listings.html">Add Listing</a>
+                                            <a href="dashboard.html">eBay.de</a>
                                         </li>
                                         <li>
-                                            <a href="edit-listings.html">Edit Listing</a>
+                                            <a href="dashboard.html">eBay.de</a>
                                         </li>                                         
                                     </ul>
                                 </div>
@@ -642,34 +542,34 @@
                                 <div class="useLink">
                                     <ul class="list-unstyled">
                                         <li>
-                                            <a href="contact-us.html">Contact Us</a>
+                                            <a href="contact-us.html">Amazon.de</a>
                                         </li>
                                         <li>
-                                            <a href="terms-of-services.html">Terms and Conditions</a>
+                                            <a href="contact-us.html">Amazon.de</a>
                                         </li>
                                         <li>
-                                            <a href="how-it-works.html">How It Works</a>
+                                            <a href="contact-us.html">Amazon.de</a>
                                         </li>
                                         <li>
-                                            <a href="payment-process.html">Payment</a>
+                                            <a href="contact-us.html">Amazon.de</a>
                                         </li>
                                         <li>
-                                            <a href="pricing-table.html">Pricing</a>
+                                            <a href="contact-us.html">Amazon.de</a>
                                         </li>
                                         <li>
-                                            <a href="dashboard.html">Dashboard</a>
+                                            <a href="contact-us.html">Amazon.de</a>
                                         </li>
                                         <li>
-                                            <a href="sign-up.html">Create Account</a>
+                                            <a href="contact-us.html">Amazon.de</a>
                                         </li>
                                         <li>
-                                            <a href="login.html">Login</a>
+                                            <a href="contact-us.html">Amazon.de</a>
                                         </li>
                                         <li>
-                                            <a href="add-listings.html">Add Listing</a>
+                                            <a href="contact-us.html">Amazon.de</a>
                                         </li>
                                         <li>
-                                            <a href="edit-listings.html">Edit Listing</a>
+                                            <a href="contact-us.html">Amazon.de</a>
                                         </li>                                         
                                     </ul>
                                 </div>
@@ -679,72 +579,95 @@
                 </div>                 
             </section>             
             <!-- FOOTER -->
-            <footer style="background-image: url(img/background/bg-footer.jpg);">
+            <footer style="background-image: url(img/background/bg-footer-3.jpg);">
                 <!-- FOOTER INFO -->
                 <div class="clearfix footerInfo">
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-7 col-xs-12">
+                            <div class="col-sm-5 col-xs-12">
                                 <div class="footerText">
                                     <a href="index.html" class="footerLogo">
                                         <img src="img/logo-footer.png" alt="Footer Logo">
                                     </a>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
-                                    <ul class="list-styled list-contact">
-                                        <li>
-                                            <i class="fa fa-phone" aria-hidden="true"></i>[88] 657 524 332
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                                            <a href="#">info@listy.com</a>
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
                             <div class="col-sm-3 col-xs-12">
                                 <div class="footerInfoTitle">
-                                    <h4>Links</h4>
+                                    <h4>Information</h4>
                                 </div>
                                 <div class="useLink">
                                     <ul class="list-unstyled">
                                         <li>
-                                            <a href="dashboard.html">Dashboard</a>
+                                            <a href="dashboard.html">Was ist Cashback?</a>
                                         </li>
                                         <li>
-                                            <a href="sign-up.html">Create Account</a>
+                                            <a href="sign-up.html">Wie verdient donatics Geld?</a>
                                         </li>
                                         <li>
-                                            <a href="login.html">Login</a>
+                                            <a href="login.html">Neue Shops vorschlagen</a>
                                         </li>
                                         <li>
-                                            <a href="add-listings.html">Add Listing</a>
+                                            <a href="add-listings.html">Neue Vereine vorschlagen</a>
                                         </li>
                                         <li>
-                                            <a href="edit-listings.html">Edit Listing</a>
+                                            <a href="edit-listings.html">Freunde einladen</a>
+                                        </li>
+                                        <li>
+                                            <a href="edit-listings.html">donatIQ für Browser</a>
+                                        </li>
+                                        <li>
+                                            <a href="edit-listings.html">Kontakt</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-sm-2 col-xs-12">
                                 <div class="footerInfoTitle">
-                                    <h4>Company</h4>
+                                    <h4>Top Shops</h4>
                                 </div>
                                 <div class="useLink">
                                     <ul class="list-unstyled">
                                         <li>
-                                            <a href="contact-us.html">Contact Us</a>
+                                            <a href="dashboard.html">Otto.de</a>
                                         </li>
                                         <li>
-                                            <a href="terms-of-services.html">Terms and Conditions</a>
+                                            <a href="sign-up.html">Zalando.de</a>
                                         </li>
                                         <li>
-                                            <a href="how-it-works.html">How It Works</a>
+                                            <a href="login.html">Reifen</a>
                                         </li>
                                         <li>
-                                            <a href="payment-process.html">Payment</a>
+                                            <a href="add-listings.html">*</a>
                                         </li>
                                         <li>
-                                            <a href="pricing-table.html">Pricing</a>
+                                            <a href="edit-listings.html">*</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 col-xs-12">
+                                <div class="footerInfoTitle">
+                                    <h4>Unternehmen</h4>
+                                </div>
+                                <div class="useLink">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="contact-us.html">Über uns</a>
+                                        </li>
+                                        <li>
+                                            <a href="terms-of-services.html">Team</a>
+                                        </li>
+                                        <li>
+</li>
+                                        <li>
+                                            <a href="payment-process.html">ABG</a>
+                                        </li>
+                                        <li>
+                                            <a href="pricing-table.html">Datenschutzerklärung</a>
+                                        </li>
+                                        <li>
+                                            <a href="pricing-table.html">Impressum</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -768,16 +691,13 @@
                                                     <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                                 </li>
                                                 <li>
-                                                    <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-7 col-sm-pull-5 col-xs-12">
                                             <div class="copyRightText">
-                                                <p>Copyright © 2017. All Rights Reserved by <a href="#">Abdus</a></p>
+                                                <p>Copyright © 2017.</p>
                                             </div>
                                         </div>
                                     </div>

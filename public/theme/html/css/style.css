@@ -1764,7 +1764,7 @@ a.link:hover {
 /*=== 2.11 PAGE HEADER ===*/
 .page-header {
   border: none;
-  margin: 0 0 60px 0;
+  margin: 0 0 50px 0;
   padding: 0;
 }.page-header h2 {
   font-weight: 400;
@@ -3061,7 +3061,7 @@ footer {
 
 /*=== 4.2 FOOTER TOP ===*/
 .footerInfo {
-  padding: 96px 0 60px 0;
+  padding: 50px 0 60px 0;
 }
 
 @media (min-width: 768px) {
@@ -3642,7 +3642,7 @@ footer {
 
 .worksContent .caption h3 {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   margin: 0 0 30px 0;
   text-transform: inherit;
 }
@@ -3807,7 +3807,7 @@ footer {
   top: 0;
   opacity: 1;
   transition: all 0.4s;
-  padding: 40px 30px;
+  padding: 100px 30px;
 }
 
 .thingsMask h2 {
@@ -3922,7 +3922,7 @@ footer {
 
 /*=== 5.7 COUNT UP SECTION ===*/
 .countUpSection {
-  background-image: url("../img/background/bg-countdown.jpg");
+  background-image: url("../img/background/bg-field.jpeg");
   background-attachment: fixed;
   width: 100%;
   background-size: cover;
@@ -4108,7 +4108,7 @@ footer {
 }
 
 .bg-search {
-  margin: -170px 0 100px 0;
+  margin: -170px 0 50px 0;
   background-color: #373c48;
   border-radius: 4px;
   position: relative;
