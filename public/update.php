@@ -12,7 +12,7 @@ if(file_exists($path))
 {
     $cmd = 'cd ' . $path . '; /usr/bin/git pull';
     exec($cmd);
-    echo 'OK' . PHP_EOL;
+    echo 'OKEY' . PHP_EOL;
 }
 else
 {
