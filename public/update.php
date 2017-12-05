@@ -6,9 +6,6 @@
  * Time: 17:45
  */
 
-echo 'result:' . PHP_EOL;
-exit;
-
 $path = '/var/www/html/affapp/';
 
 if(file_exists($path))
@@ -16,6 +13,7 @@ if(file_exists($path))
     $cmd = 'sudo bash; cd ' . $path . '; /usr/bin/git pull';
     exec($cmd, $result);
 
+    echo 'result:' . PHP_EOL;
     print('<pre>');
     print_r($result);
 }
