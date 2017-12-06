@@ -10,7 +10,7 @@
         <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
         <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href="plugins/listtyicons/style.css" rel="stylesheet">
+        <link href="plugins/listtyicons/style.css?rnd=1" rel="stylesheet">
         <link href="plugins/bootstrapthumbnail/bootstrap-thumbnail.css" rel="stylesheet">
         <link href="plugins/datepicker/datepicker.min.css" rel="stylesheet">
         <link href="plugins/selectbox/select_option1.css" rel="stylesheet">
@@ -25,7 +25,6 @@
         <link href="https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff" rel="stylesheet">
         <!-- CUSTOM CSS -->
         <link href="css/style.css" rel="stylesheet">
-        <link href="css/custom.css" rel="stylesheet">
         <link href="css/reviews.css" rel="stylesheet">
         <!-- FAVICON -->
         <link href="img/favicon.png" rel="shortcut icon">
@@ -61,7 +60,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="affapp_index.html">
+                                <a class="navbar-brand" href="index.html">
                                     <img src="img/logo-heart.jpg" alt="logo">
                                 </a>
                             </div>
@@ -75,237 +74,249 @@
                                         <a href="affapp_listing_clubs.html">vereine </a>
                                     </li>
                                     <li>
-                                        <a href="blog.html">wie es funktioniert </a>
+                                        <a href="how-it-works.html">wie es funktioniert </a>
                                     </li>
                                     <li>
-                                        <a href="blog.html">support </a>
+                                        <a href="contact-us.html">support </a>
                                     </li>
                                 </ul>
                             </div>
                             <button class="btn btn-default navbar-btn" type="button" data-toggle="modal" data-target="#loginModal"> 
                                 <span class="visible-xs">Login</span> 
-                                <span>Login</span> 
+                                <span>Anmelden</span> 
                             </button>                             
                         </div>
                     </nav>
                 </div>
             </header>
-            <!-- CATEGORY SEARCH SECTION -->
-            <section class="clearfix searchArea banerInfo searchAreaGray">
-                <form>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-4 col-xs-12">
+            <!-- WORKS SECTION -->
+            <section class="clearfix p0">
+                <div id="map-canvas"></div>
+            </section>
+            <section class="clearfix bg-light pr">
+                <div class="container">
+                    <div class="row">
+                        <div class="bg-search">
+                            <form class="form-inline" action="category-grid.html" method="">
                                 <div class="form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-addon">Name</div>
-                                        <input type="text" class="form-control" id="findItem" placeholder="Name des Vereins">
-                                        <div class="input-group-addon addon-right"></div>
-                                    </div>
+                                    <input type="text" class="form-control" id="enterLocation" placeholder="Vereinnamen eingeben">
                                 </div>
-                            </div>
-                            <div class="col-sm-4 col-xs-12">
                                 <div class="form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-addon">Wo</div>
-                                        <input type="text" class="form-control" id="nearLocation" placeholder="z.B. Berlin">
-                                        <div class="input-group-addon addon-right">
-                                            <i class="icon-listy icon-target" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
+                                    <button type="submit" class="btn btn-primary">Suchen 
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
                                 </div>
-                            </div>
-                            <div class="col-sm-4 col-xs-12">
-                                <div class="searchPart">
-                                    <div class="searchPartInner">
-                                        <div class="searchPartTitle">Kategorie</div>
-                                        <div class="searchSelectboxes">
-                                            <select name="guiest_id32" id="guiest_id32" class="select-drop">
-                                                <option value="0">Alle Kategorien</option>
-                                                <option value="1">Sportsvereine</option>
-                                                <option value="2">Soziale Projekte</option>
-                                                <option value="3">Tierschutz</option>                                                 
-                                            </select>
-                                        </div>
+                                <div class="form-group">
+                                    <div class="searchSelectbox">
+                                        <select name="guiest_id2" id="guiest_id2" class="select-drop">
+                                            <option value="0">Kategorie wählen</option>
+                                            <option value="1">Mode</option>
+                                            <option value="2">Auto</option>
+                                            <option value="3">Reise</option>
+                                            <option value="4">Dienstleistungen</option>
+                                        </select>
                                     </div>
-                                </div>
+                                </div>                                 
+                            </form>
+                        </div>
+                    </div>
+                    <div class="page-header text-center">
+                        <h2>Aktive Vereine</h2>
+                    </div>                     
+                    <div class="row" id="shops"> 
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="affapp_club.html" class="interestContent"> <span> <img src="img/clubs/cb-1.jpeg" alt="Germania Fulda"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="affapp_club.html" class="interestContent"> <span> <img src="img/clubs/cb-1.jpeg" alt="Germania Fulda"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="affapp_club.html" class="interestContent"> <span> <img src="img/clubs/cb-1.jpeg" alt="Germania Fulda"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 8 k
+                                </li>
+                            </ul>
+                            <a href="affapp_club.html" class="interestContent"> <span> <img src="img/clubs/cb-1.jpeg" alt="Germania Fulda"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 7 k
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"> <span> <img src="img/clubs/cb-2.jpeg" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"> <span> <img src="img/clubs/cb-2.jpeg" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"> <span> <img src="img/clubs/cb-2.jpeg" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"> <span> <img src="img/clubs/cb-2.jpeg" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"> <span> <img src="img/clubs/cb-3.jpeg" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"> <span> <img src="img/clubs/cb-1.jpeg" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"> <span> <img src="img/clubs/cb-4.jpeg" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"> <span> <img src="img/clubs/cb-4.jpeg" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"> <span> <img src="img/clubs/cb-2.jpeg" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"> <span> <img src="img/clubs/cb-2.jpeg" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"> <span> <img src="img/clubs/cb-4.jpeg" alt="Otto.de"></span></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="affapp_club.html">Germania Fulda</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
+                                </li>
+                            </ul>
+                            <a href="category-grid-full.html" class="interestContent"> <span> <img src="img/clubs/cb-4.jpeg" alt="Otto.de"></span></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="btnArea btnAreaBorder text-center">
+                                <a href="category-grid-full.html" class="btn btn-primary">Mehr Laden</a>
                             </div>
                         </div>
                     </div>
-                </form>
-            </section>
-            <!-- CATEGORY LIST SECTION -->
-            <section class="clerfix">
-                <div class="container">
                     <div class="row">
-                        <div class="col-md-7 col-sm-6 col-xs-12">
-                            <div class="resultBar">
-                                <h2>Deine Suche ergab <span>8</span> Treffer</h2>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <ul class="list-inline">
-                                        <li>
-                                            <a href="affapp_club.html">Germania Fulda</a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                    </ul>
-                                    <a href="affapp_club.html" class="interestContent"><span><img src="img/clubs/cb-1.jpeg" alt="Germania Fulda"></span></a>
-                                </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <ul class="list-inline">
-                                        <li>
-                                            <a href="affapp_club.html">Germania Fulda</a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                    </ul>
-                                    <a href="affapp_club.html" class="interestContent"><span><img src="img/clubs/cb-1.jpeg" alt="Germania Fulda"></span></a>
-                                </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <ul class="list-inline">
-                                        <li>
-                                            <a href="affapp_club.html">Germania Fulda</a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                    </ul>
-                                    <a href="affapp_club.html" class="interestContent"><span><img src="img/clubs/cb-1.jpeg" alt="Germania Fulda"></span></a>
-                                </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <ul class="list-inline">
-                                        <li>
-                                            <a href="affapp_club.html">Germania Fulda</a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                    </ul>
-                                    <a href="affapp_club.html" class="interestContent"><span><img src="img/clubs/cb-1.jpeg" alt="Germania Fulda"></span></a>
-                                </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <ul class="list-inline">
-                                        <li>
-                                            <a href="affapp_club.html">Germania Fulda</a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                    </ul>
-                                    <a href="affapp_club.html" class="interestContent"><span><img src="img/clubs/cb-1.jpeg" alt="Germania Fulda"></span></a>
-                                </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <ul class="list-inline">
-                                        <li>
-                                            <a href="affapp_club.html">Germania Fulda</a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                    </ul>
-                                    <a href="affapp_club.html" class="interestContent"><span><img src="img/clubs/cb-1.jpeg" alt="Germania Fulda"></span></a>
-                                </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <ul class="list-inline">
-                                        <li>
-                                            <a href="affapp_club.html">Germania Fulda</a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                    </ul>
-                                    <a href="affapp_club.html" class="interestContent"><span><img src="img/clubs/cb-1.jpeg" alt="Germania Fulda"></span></a>
-                                </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <ul class="list-inline">
-                                        <li>
-                                            <a href="affapp_club.html">Germania Fulda</a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-user-o" aria-hidden="true"></i> 10 k
-                                        </li>
-                                    </ul>
-                                    <a href="affapp_club.html" class="interestContent"><span><img src="img/clubs/cb-1.jpeg" alt="Germania Fulda"></span></a>
-                                </div>
-                            </div>
-                            <div class="paginationCommon blogPagination categoryPagination">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination">
-                                        <li>
-                                            <a href="#" aria-label="Previous"><span aria-hidden="true"><i class="fa fa-angle-left" aria-hidden="true"></i></span></a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="#">1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">3</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">4</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">5</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="Next"><span aria-hidden="true"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-sm-6 col-xs-12">
-                            <div class="clearfix map-sidebar map-right map-margin-btm">
-                                <div id="map" style="height: 538px;"></div>
-                            </div>
-                            <div class="sidebarInner sidebarCategory">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">Verwandte Kategorien</div>
-                                    <div class="panel-body">
-                                        <ul class="list-unstyle categoryList">
-                                            <li>
-                                                <a href="#">Fast food</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Chinese restaurants</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Creole restaurants</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Seafood</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Thai restaurants</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Street food</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Japanese restaurants</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Greek restaurants</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>                             
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-xs-12">
-                            <div class="listSidebarButton">
-                                <button type="button" class="btn btn-primary btn-lg btn-block">Neuen Verein hinzufügen</button>
+                        <div class="col-xs-12">
+                            <div class="iconup">
+                                <i class="icon-listy icon-up-arrow-1" onclick="$('html, body').animate({scrollTop: '0px'}, 300);" title="up"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>             
             <!-- FOOTER -->
             <footer style="background-image: url(img/background/bg-footer-3.jpg);">
                 <!-- FOOTER INFO -->
