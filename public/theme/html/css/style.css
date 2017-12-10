@@ -8438,27 +8438,3 @@ body.rtl .locationSelect .sbToggle {
 body.rtl .checkbox .pull-right.link {
     float: left !important;
 }
-
-bottom {
-    color: #FF0000;
-}
-
-.panel-merchant {
-    padding-bottom: 40px;
-}
-
-.promo-value span {
-}
-
-.promo-value {
-    min-height: 50px;
-    position: relative;
-    font-size: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-weight: bold;
-    padding: 10px 15px 10px;
-    color: #ffffff;
-    border-radius: 5px;
-    margin-top: 20px;
-}
