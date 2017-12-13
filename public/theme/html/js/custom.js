@@ -216,4 +216,11 @@ $( document ).ready(function() {
         $("#dynamic").append($("#dynamic").html());
         return false;
     });
+    
+    $(".show-more").on('click', function() {
+    	$(this).prev().removeClass("promo-text");
+        $(this).hide();
+        return false;
+    })    
+    
 });

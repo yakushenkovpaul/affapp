@@ -93,8 +93,8 @@ max-width: 200px;;
 }
 
 .promo {
-    padding: 10px 30px;
-    border-radius: 10px;
+    padding: 15px 15px;
+    border-radius: 5px;
     position: relative;
     border: 1px solid #e5e5e5;
     margin-bottom: 20px;
@@ -111,12 +111,12 @@ max-width: 200px;;
 }
 
 .promo-code {
-    min-height: 50px;
+    min-height: 40px;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 18px;
-    padding: 20px 0px;
+    padding: 10px 0px;
 }
 
 .promo-green {
@@ -140,21 +140,63 @@ bottom {
 }
 
 .panel-merchant {
-    padding-bottom: 40px;
+    /* padding-bottom: 40px */
 }
 
 .promo-value span {
 }
 
 .promo-value {
-    min-height: 50px;
+    min-height: 20px;
     position: relative;
     font-size: 40px;
-    line-height: 40px;
+    line-height: 20px;
     text-align: center;
     font-weight: bold;
     padding: 10px 15px 10px;
     color: #ffffff;
     border-radius: 5px;
-    margin-top: 20px;
+    /* margin-top: 20px */
+}
+margin-top: 50px;;;;
+margin-top: 10px;overflow: hidden;word-wrap: none;;;;text-overflow: ellipsis;.promo-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.promo-text {
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+}
+div.promo .row {
+    /* margin-bottom: 5px; */
+}
+div.promo .row {
+  margin-bottom: 10px;
+}
+.promo-end {
+text-align: center;
+}
+.promo img {
+float: left;;
+padding-right: 10px;;;
+maring-bottom: 10px;;
+}
+@media screen and (max-width:479px) {
+.promo img {
+  float: none;
+};
+}.panel-topshop ul.left {
+    float: left;
+    width:53%;
+    padding-left:15px;
+}
+@media screen and (max-width:479px) {
+.merchant-title {
+  text-align: center;
+}
+}
+.itmeName-cashback b {
+padding-right: 5px;
 }
