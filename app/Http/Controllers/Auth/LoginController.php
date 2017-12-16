@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginLoginRequest;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -25,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'dashboard';
+    protected $redirectTo = 'user/dashboard';
 
     /**
      * Create a new controller instance.
@@ -37,16 +38,30 @@ class LoginController extends Controller
         $this->middleware('guest', ['except' => 'logout']);
     }
 
+
     /**
-     * Check user's role and redirect user based on their role
-     * @return
+     * Run after login
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
+
+    public function authenticated()
+    {
+        if (auth()->user()->hasRole('admin')) {
+            return response()->json(['path' => '/admin/dashboard']);
+        }
+
+        return response()->json(['path' => 'user/dashboard']);
+    }
+
+    /*
     public function authenticated()
     {
         if (auth()->user()->hasRole('admin')) {
             return redirect('/admin/dashboard');
         }
 
-        return redirect('dashboard');
+        return redirect('user/dashboard');
     }
+    */
 }

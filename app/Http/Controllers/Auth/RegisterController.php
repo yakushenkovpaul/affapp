@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Requests\RegisterRegisterRequest;
 use DB;
 use Validator;
 use App\Services\UserService;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Auth\Events\Registered;
+
 
 class RegisterController extends Controller
 {
@@ -29,7 +35,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'dashboard';
+    protected $redirectTo = 'user/dashboard';
 
     /**
      * Create a new controller instance.
@@ -53,19 +59,44 @@ class RegisterController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * Register new user
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @param RegisterRegisterRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    protected function validator(array $data)
+
+    public function register(RegisterRegisterRequest $request)
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
     }
+
+    /*
+     * Возвращает путь для редиректа
+     */
+
+    public function registered()
+    {
+        return response()->json(['path' => $this->redirectTo]);
+    }
+
+    /**
+     * Автоподстановка для клубов
+     *
+     * @return mixed
+     */
+
+    public function autocompleteClubs()
+    {
+        $term = Input::get('term');
+
+        return Response::json($this->service->getClubByAbc($term));
+    }
+
 
     /**
      * Create a new user instance after a valid registration.

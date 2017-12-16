@@ -19,20 +19,17 @@
     <link href="{{ asset('plugins/isotope/isotope.min.css?rnd=5') }}" rel="stylesheet">
     <link href="{{ asset('plugins/map/css/map.css?rnd=5') }}" rel="stylesheet">
     <!-- GOOGLE FONT -->
+    <!--
     <link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff" rel="stylesheet">
+    -->
     <!-- CUSTOM CSS -->
     <link href="{{ asset('css/style.css?rnd=5') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css?rnd=5') }}" rel="stylesheet">
     <link href="{{ asset('css/reviews.css?rnd=5') }}" rel="stylesheet">
+    <link href="{{ asset('css/frontend.css?rnd=5') }}" rel="stylesheet">
     <!-- FAVICON -->
     <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>

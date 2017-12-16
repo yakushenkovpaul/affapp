@@ -43,6 +43,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 */
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
+Route::get('register/autocompleteClubs', 'Auth\RegisterController@autocompleteClubs');
 
 Route::get('activate/token/{token}', 'Auth\ActivateController@activate');
 Route::group(['middleware' => ['auth']], function () {
@@ -72,11 +73,11 @@ Route::group(['middleware' => ['auth', 'active']], function () {
     */
 
     Route::group(['prefix' => 'user', 'namespace' => 'User'], function () {
-        Route::get('dashboard', 'DashboardController@dashboard');
-        Route::get('settings', 'SettingsController@settings');
-        Route::post('settings', 'SettingsController@update');
-        Route::get('password', 'PasswordController@password');
-        Route::post('password', 'PasswordController@update');
+        Route::get('user/dashboard', 'DashboardController@dashboard');
+        Route::get('user/settings', 'SettingsController@settings');
+        Route::post('user/settings', 'SettingsController@update');
+        Route::get('user/password', 'PasswordController@password');
+        Route::post('user/password', 'PasswordController@update');
     });
 
     /*

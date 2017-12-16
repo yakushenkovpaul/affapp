@@ -158,14 +158,15 @@ class UserService
     public function create($user, $password, $userMetaArray = array(), $role = 'customer', $sendEmail = true)
     {
         try {
+
             DB::transaction(function () use ($user, $password, $userMetaArray, $role, $sendEmail) {
                 $this->userMeta->firstOrCreate([
                     'user_id' => $user->id,
-                    'lastname' => $userMetaArray['lastname'],
-                    'city' => $userMetaArray['city'],
-                    'birthday' => $userMetaArray['birthday'],
-                    'gender' => $userMetaArray['gender'],
-                    'club_id' => $userMetaArray['club_id'],
+                    'lastname' => (!empty($userMetaArray['lastname'])) ? $userMetaArray['lastname'] :   null,
+                    'city' => (!empty($userMetaArray['city'])) ? $userMetaArray['city'] :   null,
+                    'birthday' => (!empty($userMetaArray['birthday'])) ? $userMetaArray['birthday'] :   null,
+                    'gender' => (!empty($userMetaArray['gender'])) ? $userMetaArray['gender'] :   null,
+                    'club_id' => (!empty($userMetaArray['club_id'])) ? $userMetaArray['club_id'] :   null,
                 ]);
 
                 $this->assignRole($role, $user->id);
@@ -180,7 +181,8 @@ class UserService
 
             return $user;
         } catch (Exception $e) {
-            throw new Exception("We were unable to generate your profile, please try again later.", 1);
+            #throw new Exception("We were unable to generate your profile, please try again later.", 1);
+            throw new Exception($e->getMessage(), 1);
         }
     }
 
@@ -381,4 +383,30 @@ class UserService
 
         return $result;
     }
+
+    /**
+     * Возвращает клубы по поисковому запросу
+     *
+     * @param string $find
+     * @return array
+     */
+
+    public function getClubByAbc($find = '')
+    {
+        $result = [];
+
+        if($return = $this->club->getClubsByAbc($find))
+        {
+            foreach ($return as $r)
+            {
+                $result[] = [
+                    'id' => $r->id,
+                    'value' => $r->name
+                ];
+            }
+        }
+
+        return $result;
+    }
+
 }

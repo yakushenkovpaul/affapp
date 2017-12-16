@@ -28,9 +28,5 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('admin', function ($user) {
             return ($user->roles->first()->name === 'admin');
         });
-
-        Gate::define('team-member', function ($user, $team) {
-            return ($user->teams->find($team->id));
-        });
     }
 }

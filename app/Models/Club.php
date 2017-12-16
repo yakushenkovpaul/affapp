@@ -33,5 +33,25 @@ class Club extends Model
     public static $rules = [
         // create rules
     ];
-    // Club 
+    // Club
+
+
+    /**
+     * Возвращает пять клубов по запросу
+     *
+     *
+     * @param string $abc
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|static[]
+     */
+
+    public function getClubsByAbc($abc)
+    {
+        return $this->newQuery()
+            ->where('name', 'LIKE', '%'.$abc.'%')
+            ->take(5)
+            ->select(['id', 'name'])
+            ->get();
+    }
+
+
 }

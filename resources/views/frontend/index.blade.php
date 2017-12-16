@@ -1,61 +1,11 @@
-@extends('layouts.front-master')
+@extends('frontendlayouts.front-master')
 
 @section('front-content')
 
     <body class="body-wrapper">
     <div class="page-loader" style="background: url(img/preloader.gif) center no-repeat #fff;"></div>
     <div class="main-wrapper">
-        <header id="pageTop" class="header">
-            <!-- TOP INFO BAR -->
-            <div class="nav-wrapper navbarWhite">
-                <div class="container-fluid header-bg">
-                    <div class="row">
-                        <div class="col-lg-4 col-sm-4 col-xs-6 header-left empty">empty
-                        </div>
-                        <div class="col-lg-8 col-sm-8 col-xs-6 header-right empty">empty
-                        </div>
-                    </div>
-                </div>
-                <!-- NAVBAR -->
-                <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
-                    <div class="container">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="affapp_index.html">
-                                <img src="{{ asset('img/logo-heart.jpg') }}" alt="logo">
-                            </a>
-                        </div>
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse navbar-ex1-collapse">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    <a href="affapp_listing_merchants.html">online shops </a>
-                                </li>
-                                <li>
-                                    <a href="affapp_listing_clubs.html">vereine </a>
-                                </li>
-                                <li>
-                                    <a href="how-it-works.html">wie es funktioniert </a>
-                                </li>
-                                <li>
-                                    <a href="contact-us.html">support </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <button class="btn btn-default navbar-btn" type="button" data-toggle="modal" data-target="#loginModal">
-                            <span class="visible-xs">Login</span>
-                            <span>anmelden</span>
-                        </button>
-                    </div>
-                </nav>
-            </div>
-        </header>
+        @include('frontendlayouts.front-top')
         <!-- WORKS SECTION -->
         <section class="clearfix worksArea">
             <div class="container">
@@ -103,7 +53,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="btnArea text-center">
-                            <a href="how-it-works.html" class="btn btn-primary">wie es funktioniert <em class="fa fa-play-circle" aria-hidden="true"></em></a>
+                            <a href="{!! url('/how-it-works') !!}" class="btn btn-primary">wie es funktioniert <em class="fa fa-play-circle" aria-hidden="true"></em></a>
                         </div>
                     </div>
                 </div>
@@ -322,7 +272,7 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="btnArea btnAreaBorder text-center">
-                        <a href="category-grid-full.html" class="btn btn-primary">Mehr Vereine</a>
+                        <a href="{!! url('clubs/') !!}" class="btn btn-primary">Mehr Vereine</a>
                     </div>
                 </div>
             </div>
@@ -619,7 +569,7 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="btnArea btnAreaBorder text-center">
-                        <a href="affapp_listing_merchants.html" class="btn btn-primary">Mehr Shops</a>
+                        <a href="{!! url('shops/') !!}" class="btn btn-primary">Mehr Shops</a>
                     </div>
                 </div>
             </div>
@@ -986,170 +936,6 @@
             </div>
         </section>
         <!-- FOOTER -->
-        <footer style="background-image: url(img/background/bg-footer-3.jpg);">
-            <!-- FOOTER INFO -->
-            <div class="clearfix footerInfo">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-5 col-xs-12">
-                            <div class="footerText">
-                                <a href="index.html" class="footerLogo">
-                                    <img src="{{ asset('img/logo-footer.png') }}" alt="Footer Logo">
-                                </a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 col-xs-12">
-                            <div class="footerInfoTitle">
-                                <h4>Information</h4>
-                            </div>
-                            <div class="useLink">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="dashboard.html">Was ist Cashback?</a>
-                                    </li>
-                                    <li>
-                                        <a href="sign-up.html">Wie verdient donatics Geld?</a>
-                                    </li>
-                                    <li>
-                                        <a href="login.html">Neue Shops vorschlagen</a>
-                                    </li>
-                                    <li>
-                                        <a href="add-listings.html">Neue Vereine vorschlagen</a>
-                                    </li>
-                                    <li>
-                                        <a href="edit-listings.html">Freunde einladen</a>
-                                    </li>
-                                    <li>
-                                        <a href="edit-listings.html">donatIQ für Browser</a>
-                                    </li>
-                                    <li>
-                                        <a href="edit-listings.html">Kontakt</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-xs-12">
-                            <div class="footerInfoTitle">
-                                <h4>Top Shops</h4>
-                            </div>
-                            <div class="useLink">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="dashboard.html">Otto.de</a>
-                                    </li>
-                                    <li>
-                                        <a href="sign-up.html">Zalando.de</a>
-                                    </li>
-                                    <li>
-                                        <a href="login.html">Reifen</a>
-                                    </li>
-                                    <li>
-                                        <a href="add-listings.html">*</a>
-                                    </li>
-                                    <li>
-                                        <a href="edit-listings.html">*</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-xs-12">
-                            <div class="footerInfoTitle">
-                                <h4>Unternehmen</h4>
-                            </div>
-                            <div class="useLink">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="contact-us.html">Über uns</a>
-                                    </li>
-                                    <li>
-                                        <a href="terms-of-services.html">Team</a>
-                                    </li>
-                                    <li>
-                                    </li>
-                                    <li>
-                                        <a href="payment-process.html">ABG</a>
-                                    </li>
-                                    <li>
-                                        <a href="pricing-table.html">Datenschutzerklärung</a>
-                                    </li>
-                                    <li>
-                                        <a href="pricing-table.html">Impressum</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- COPY RIGHT -->
-            <div class="clearfix copyRight">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="copyRightWrapper">
-                                <div class="row">
-                                    <div class="col-sm-5 col-sm-push-7 col-xs-12">
-                                        <ul class="list-inline socialLink">
-                                            <li>
-                                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-7 col-sm-pull-5 col-xs-12">
-                                        <div class="copyRightText">
-                                            <p>Copyright © 2017.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        @include('frontendlayouts.front-bottom')
     </div>
-    <!-- LOGIN  MODAL -->
-    <div id="loginModal" tabindex="-1" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Log In to your Account</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="loginForm">
-                        <div class="form-group">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                            <input type="email" class="form-control" id="email" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
-                            <input type="password" class="form-control" id="pwd" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Log In</button>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Remember me
-                            </label>
-                            <a href="#" class="pull-right link">Fogot Password?</a>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <p>Don’t have an Account? <a href="#" class="link">Sign up</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
 @stop
