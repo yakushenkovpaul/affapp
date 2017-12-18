@@ -19,7 +19,20 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', 'FrontendController@index');
+Route::get('/', 'Frontend\IndexController@index');
+
+Route::get('/club/{name}', 'Frontend\ClubController@club');
+Route::get('/clubs', 'Frontend\ClubController@clubs');
+Route::post('clubs/search', 'Frontend\ClubController@search');
+
+Route::get('/merchant/{name}', 'Frontend\MerchantController@shop');
+Route::get('/merchants', 'Frontend\MerchantController@shops');
+Route::get('merchants/autocompleteCategories', 'Frontend\MerchantController@autocompleteCategories');
+Route::post('merchants/search', 'Frontend\MerchantController@search');
+
+Route::get('/contact', 'Frontend\ContactController@contact');
+Route::get('/tutorial', 'Frontend\TutorialController@tutorial');
+Route::get('/cashback', 'Frontend\CashbackController@cashback');
 
 /*
 |--------------------------------------------------------------------------
@@ -47,8 +60,8 @@ Route::get('register/autocompleteClubs', 'Auth\RegisterController@autocompleteCl
 
 Route::get('activate/token/{token}', 'Auth\ActivateController@activate');
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('activate', 'Auth\ActivateController@showActivate');
-    Route::get('activate/send-token', 'Auth\ActivateController@sendToken');
+    Route::get('activate', 'Auth\ActivateController@showActivate')->middleWare('redirectifActive');
+    Route::get('activate/send-token', 'Auth\ActivateController@sendToken')->middleWare('redirectifActive');
 });
 
 /*
@@ -73,11 +86,11 @@ Route::group(['middleware' => ['auth', 'active']], function () {
     */
 
     Route::group(['prefix' => 'user', 'namespace' => 'User'], function () {
-        Route::get('user/dashboard', 'DashboardController@dashboard');
-        Route::get('user/settings', 'SettingsController@settings');
-        Route::post('user/settings', 'SettingsController@update');
-        Route::get('user/password', 'PasswordController@password');
-        Route::post('user/password', 'PasswordController@update');
+        Route::get('dashboard', 'DashboardController@dashboard');
+        Route::get('settings', 'SettingsController@settings');
+        Route::post('settings', 'SettingsController@update');
+        Route::get('password', 'PasswordController@password');
+        Route::post('password', 'PasswordController@update');
     });
 
     /*

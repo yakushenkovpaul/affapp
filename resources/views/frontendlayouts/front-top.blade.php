@@ -20,7 +20,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="affapp_index.html">
+                    <a class="navbar-brand" href="{!! url('/') !!}">
                         <img src="{{ asset('img/logo-heart.jpg') }}" alt="logo">
                     </a>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="{!! url('/shops') !!}">online shops </a>
+                            <a href="{!! url('/merchants') !!}">online shops </a>
                         </li>
                         <li>
                             <a href="{!! url('/clubs') !!}">vereine </a>
@@ -37,7 +37,7 @@
                             <a href="{!! url('/tutorial') !!}">wie es funktioniert </a>
                         </li>
                         <li>
-                            <a href="{!! url('/support') !!}">support </a>
+                            <a href="{!! url('/contact') !!}">Kontaktiere uns </a>
                         </li>
                     </ul>
                 </div>

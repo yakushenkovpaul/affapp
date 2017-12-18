@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Notifications\ActivateUserEmail;
 use App\Services\UserService;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class ActivateService
 {

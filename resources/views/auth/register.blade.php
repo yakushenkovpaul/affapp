@@ -2,8 +2,6 @@
 
 @section('front-content')
 
-    <body class="body-wrapper">
-    <div class="page-loader" style="background: url({{ asset('img/preloader.gif') }}) center no-repeat #fff;"></div>
     <div class="main-wrapper">
         <!-- HEADER -->
         <header id="pageTop" class="header">
@@ -89,6 +87,17 @@
                                         <button type="submit" class="btn btn-primary pull-left">Sing up</button>
                                     </div>
 
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="mail" value="1" checked>
+                                                Ja, Ich möchte aktuelle Informationen über E-Mail erhalten.
+                                            </label>
+                                        </div>
+                                        <p class="text-center">Indem ich mich bei affapp registriere, erkläre ich mich mit den
+                                        <a href="{!! url('/terms') !!}">Allgemeinen Geschäftsbedingungen of Use</a> und den
+                                            <a href="#">Datenschutzbestimmungen</a> einverstanden.</p>
+                                    </div>
                                     <input type="hidden" name="club_id" id="club_id">
                                 </form>
                             </div>

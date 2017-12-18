@@ -1,9 +1,6 @@
 @extends('frontendlayouts.front-master')
 
 @section('front-content')
-
-    <body class="body-wrapper">
-    <div class="page-loader" style="background: url({{ asset('img/preloader.gif') }}) center no-repeat #fff;"></div>
     <div class="main-wrapper">
         <!-- HEADER -->
         <header id="pageTop" class="header">
@@ -75,5 +72,4 @@
             </div>
         </section>
     </div>
-
 @stop

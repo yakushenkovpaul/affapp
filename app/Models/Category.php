@@ -34,4 +34,21 @@ class Category extends Model
         return Category::where('name', $name)->firstOrFail();
     }
 
+
+    /**
+     * Возвращает пять категорий по запросу
+     *
+     * @param $abc
+     * @return \Illuminate\Support\Collection
+     */
+
+    public function getCategoriesByAbc($abc)
+    {
+        return $this->newQuery()
+            ->where('name', 'LIKE', '%'.$abc.'%')
+            ->take(5)
+            ->select(['id', 'name'])
+            ->get();
+    }
+
 }

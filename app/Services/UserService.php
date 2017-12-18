@@ -166,7 +166,8 @@ class UserService
                     'city' => (!empty($userMetaArray['city'])) ? $userMetaArray['city'] :   null,
                     'birthday' => (!empty($userMetaArray['birthday'])) ? $userMetaArray['birthday'] :   null,
                     'gender' => (!empty($userMetaArray['gender'])) ? $userMetaArray['gender'] :   null,
-                    'club_id' => (!empty($userMetaArray['club_id'])) ? $userMetaArray['club_id'] :   null,
+                    'club_id' => (!empty($userMetaArray['club_id'])) ? $userMetaArray['club_id'] :   0,
+                    'mail' => (!empty($userMetaArray['mail'])) ? $userMetaArray['mail'] :   0,
                 ]);
 
                 $this->assignRole($role, $user->id);

@@ -1,9 +1,6 @@
 @extends('frontendlayouts.front-master')
 
 @section('front-content')
-
-    <body class="body-wrapper">
-    <div class="page-loader" style="background: url(img/preloader.gif) center no-repeat #fff;"></div>
     <div class="main-wrapper">
         @include('frontendlayouts.front-top')
         <!-- WORKS SECTION -->
@@ -53,7 +50,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="btnArea text-center">
-                            <a href="{!! url('/how-it-works') !!}" class="btn btn-primary">wie es funktioniert <em class="fa fa-play-circle" aria-hidden="true"></em></a>
+                            <a href="{!! url('/tutorial') !!}" class="btn btn-primary">wie es funktioniert <em class="fa fa-play-circle" aria-hidden="true"></em></a>
                         </div>
                     </div>
                 </div>
@@ -93,190 +90,25 @@
                 </div>
             </div>
         </section>
-        <section class="clearfix thingsArea">
-            <div class="container">
-                <div class="page-header text-center">
-                    <h2>Aktive Vereine</h2>
-                </div>
-                <div class="row" id="shops">
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Germania Fulda</a>
-                            </li>
-                        </ul>
-                        <a href="affapp_club.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-1.jpeg') }}" alt="Germania Fulda"></span></a>
+
+        @if ($clubs['data'])
+            <section class="clearfix thingsArea">
+                <div class="container">
+                    <div class="page-header text-center">
+                        <h2>Aktive Vereine</h2>
                     </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="affapp_club.html">Germania Fulda</a>
-                            </li>
-                        </ul>
-                        <a href="affapp_club.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-1.jpeg') }}" alt="Germania Fulda"></span></a>
+                    <div class="row" id="clubs">
+                        @include('listing.clubs')
                     </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Germania Fulda</a>
-                            </li>
-                        </ul>
-                        <a href="affapp_club.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-1.jpeg') }}" alt="Germania Fulda"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Germania Fulda</a>
-                            </li>
-                        </ul>
-                        <a href="affapp_club.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-1.jpeg') }}" alt="Germania Fulda"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Germania Fulda</a>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-2.jpeg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">FC Germania 1911 Köln-Mülheim</a>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-2.jpeg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Germania Fulda</a>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-2.jpeg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Germania Fulda</a>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-2.jpeg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">ESV Blau-Weiß Düsseldorf</a>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-3.jpeg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Germania Fulda</a>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-1.jpeg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">VfB Bretten</a>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-4.jpeg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <a href="category-list-left.html">VfB Bretten</a>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-4.jpeg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Germania Fulda</a>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-2.jpeg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Germania Fulda</a>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-2.jpeg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <a href="category-list-left.html">VfB Bretten</a>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-4.jpeg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <a href="category-list-left.html">VfB Bretten</a>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/clubs/cb-4.jpeg') }}" alt="Otto.de"></span></a>
+                    <div class="col-xs-12">
+                        <div class="btnArea btnAreaBorder text-center">
+                            <a href="{!! url('clubs/') !!}" class="btn btn-primary">Mehr Vereine</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-12">
-                    <div class="btnArea btnAreaBorder text-center">
-                        <a href="{!! url('clubs/') !!}" class="btn btn-primary">Mehr Vereine</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+        @endif
+
         <section class="clearfix callAction">
             <div class="container">
                 <div class="row">
@@ -301,11 +133,11 @@
                 <div class="page-header text-center">
                     <h2>finde hier alle online shops  <small></small></h2>
                 </div>
-                <form role="form">
+                <form role="form" method="POST" action="{!! url('merchants/search')  !!}" id="searchForm">
                     <div class="row">
                         <div class="col-xs-7 col-sm-3 col-md-10">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="enterLocation" placeholder="z.B. Otto.de">
+                                <input type="text" name="query" class="form-control" id="query" placeholder="Shop Namen eingeben z.B. Otto.de">
                             </div>
                         </div>
                         <div class="col-xs-5 col-md-2 col-sm-3">
@@ -316,264 +148,29 @@
                             </div>
                         </div>
                     </div>
+                    {!! csrf_field() !!}
                 </form>
             </div>
         </section>
-        <!-- INTEREST SECTION -->
-        <section class="clearfix thingsArea">
-            <div class="container">
-                <div class="page-header text-center">
-                    <h2>Meist gesuchte Shops</h2>
-                </div>
-                <div class="row" id="shops">
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/18999_lgo_telekom_affiliate_de.png') }}" alt="Otto.de"></span></a>
+        <!-- MERCHANTS SECTION -->
+        @if ($merchants['data'])
+            <section class="clearfix thingsArea">
+                <div class="container">
+                    <div class="page-header text-center">
+                        <h2>Meist gesuchte Shops</h2>
                     </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Tele2</a>
-                            </li>
-                            <li>
-                                1,5€
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/14496_lgo_tele2_nl.png') }}" alt="Otto.de"></span></a>
+                    <div class="row dymanic" id="shops">
+                        @include('listing.merchants')
                     </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Hickies</a>
-                            </li>
-                            <li>
-                                2,5%-15%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/18567_lgo_hickies_de.jpg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Submarino</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/13537_lgo_submarino_br.png') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/18999_lgo_telekom_affiliate_de.png') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/18999_lgo_telekom_affiliate_de.png') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/18999_lgo_telekom_affiliate_de.png') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/18999_lgo_telekom_affiliate_de.png') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/18999_lgo_telekom_affiliate_de.png') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/18999_lgo_telekom_affiliate_de.png') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/18999_lgo_telekom_affiliate_de.png') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/18999_lgo_telekom_affiliate_de.png') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/18999_lgo_telekom_affiliate_de.png') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/14496_lgo_tele2_nl.png') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/18567_lgo_hickies_de.jpg') }}" alt="Otto.de"></span></a>
-                    </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <ul class="list-inline">
-                            <li>
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            </li>
-                            <li>
-                                <a href="category-list-left.html">Telekom.de</a>
-                            </li>
-                            <li>
-                                ab 2,5%
-                                <i class="fa fa-undo" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <a href="category-grid-full.html" class="interestContent"><span><img src="{{ asset('img/brands/13537_lgo_submarino_br.png') }}" alt="Otto.de"></span></a>
+                    <div class="col-xs-12">
+                        <div class="btnArea btnAreaBorder text-center">
+                            <a href="{!! url('merchants/') !!}" class="btn btn-primary">Mehr Shops</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-12">
-                    <div class="btnArea btnAreaBorder text-center">
-                        <a href="{!! url('shops/') !!}" class="btn btn-primary">Mehr Shops</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+        @endif
+
         <!-- SLIDER SECTION -->
         <section class="carousel-reviews broun-block reviews">
             <div class="page-header text-center">

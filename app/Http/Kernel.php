@@ -61,5 +61,6 @@ class Kernel extends HttpKernel
         'permissions' => \App\Http\Middleware\Permissions::class,
         'roles' => \App\Http\Middleware\Roles::class,
         'active' => \App\Http\Middleware\Active::class,
+        'redirectifActive' => \App\Http\Middleware\RedirectIfActive::class,
     ];
 }

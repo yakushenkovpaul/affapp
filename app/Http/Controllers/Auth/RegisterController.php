@@ -55,7 +55,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('auth.register')->with('clubs', $this->service->getAllClubs());
+        return view('auth.register');
     }
 
     /**

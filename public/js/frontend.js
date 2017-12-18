@@ -49,6 +49,49 @@ $(document).ready(function()
         });
     });
 
+
+    var searchForm = $("#searchForm");
+
+    searchForm.submit(function(e){
+        e.preventDefault();
+
+        var formData = searchForm.serialize();
+
+        $.ajax({
+            url: searchForm.attr('action'),
+            type:'POST',
+            data:formData,
+            beforeSend: function() {
+                $('.page-loader').show();
+            },
+            complete: function() {
+                $('.page-loader').hide();
+            },
+            success:function(data){
+                console.log(data);
+                $('.dymanic').html(data.html);
+
+                if(data.next_page_url == null)
+                {
+                    $("#paginate").hide();
+                    $(".upPaginate").hide();
+                }
+                else
+                {
+                    $("#paginate").show();
+                    $(".upPaginate").show();
+                }
+            },
+            error: function (data) {
+                showErrors(data, 'bottom center');
+            }
+        });
+    });
+
+
+
+
+
     $(function()
     {
         $( "#club" ).autocomplete({
@@ -61,14 +104,73 @@ $(document).ready(function()
         });
     });
 
+    $(function()
+    {
+        $( "#category" ).autocomplete({
+            source: "merchants/autocompleteCategories",
+            minLength: 3,
+            select: function(event, ui) {
+                $('#category').val(ui.item.value);
+                $('#category_id').val(ui.item.id);
+            }
+        }).autocomplete( "widget" ).addClass( "z-index-600" );
+    });
+
+
+    $(document).ready(function() {
+        var _page = 1;
+        $(document).on('click', '#paginate', function (e) {
+            _page++;
+            getListing(_page);
+            e.preventDefault();
+        });
+    });
 
 });
 
+function getListing(page) {
+    $.ajax({
+        url: '?page=' + page,
+        dataType: 'json',
+        beforeSend: function() {
+            $('.page-loader').show();
+        },
+        complete: function() {
+            $('.page-loader').hide();
+        },
+    }).done(function (data) {
 
-function showErrors(response)
+        $('.dymanic').append(data.html);
+
+        if(data.next_page_url == null)
+        {
+            $("#paginate").hide();
+            $(".upPaginate").hide();
+        }
+        else
+        {
+            $("#paginate").show();
+            $(".upPaginate").show();
+        }
+
+    }).fail(function () {
+        console.log('List could not be loaded.');
+    });
+}
+
+
+function showErrors(response, target)
 {
     var gotErrors = false;
-    var errorPostion = "right middle";
+
+    if(target)
+    {
+        var errorPostion = target;
+    }
+    else
+    {
+        var errorPostion = "right middle";
+    }
 
     if(response.responseJSON.errors)
     {
@@ -87,4 +189,4 @@ function showError(key, value) {
     console.log(value);
 }
 
-console.log('frontend.js_ver26');
+console.log('frontend.js_ver48');

@@ -64,4 +64,79 @@ class Merchant extends Model
         $categories = array_column($this->categories()->toArray(), 'name');
         return array_search($category, $categories) > -1;
     }
+
+    /**
+     * Возвращает магазины
+     *
+     * @param $limit
+     * @param string $order
+     * @param string $sort
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+
+
+    public function getMerchants($limit, $order = 'created_at', $sort = 'desc')
+    {
+        return $this->newQuery()
+            ->orderBy($order, $sort)
+            ->select(['id', 'name', 'image'])
+            ->limit($limit)
+            ->get();
+    }
+
+    /**
+     * Возвращаем магазины с пагинацией
+     *
+     * @param $paginate
+     * @param string $order
+     * @param string $sort
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+
+    public function getMerchantsPaginate($paginate, $order = 'created_at', $sort = 'desc')
+    {
+        return $this->newQuery()
+            ->orderBy($order, $sort)
+            ->select(['id', 'name', 'image'])
+            ->paginate($paginate);
+    }
+
+
+    /**
+     * Возвращает магазины с отступом
+     *
+     * @param $limit
+     * @param $offset
+     * @param string $order
+     * @param string $sort
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+
+    public function getMerchantsOffset($limit, $offset, $order = 'created_at', $sort = 'desc')
+    {
+        return $this->newQuery()
+            ->orderBy($order, $sort)
+            ->select(['id', 'name', 'image'])
+            ->limit($limit)
+            ->offset($offset)
+            ->get();
+    }
+
+
+    /**
+     * Ищет магазины по названию c пагинацией
+     *
+     * @param $paginate
+     * @param $abc
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+
+    public function searchByNamePaginate($paginate, $abc)
+    {
+        return $this->newQuery()
+            ->where('name', 'LIKE', '%'.$abc.'%')
+            ->select(['id', 'name', 'image'])
+            ->paginate($paginate);
+    }
+
 }

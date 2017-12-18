@@ -1,4 +1,4 @@
-<footer style="background-image: url(img/background/bg-footer-3.jpg);">
+<footer style="background-image: url({{ asset('img/background/bg-footer-3.jpg') }});">
     <!-- FOOTER INFO -->
     <div class="clearfix footerInfo">
         <div class="container">
@@ -36,7 +36,7 @@
                                 <a href="#">donatIQ für Browser</a>
                             </li>
                             <li>
-                                <a href="{!! url('/contacts') !!}">Kontakt</a>
+                                <a href="{!! url('/contact') !!}">Kontakt</a>
                             </li>
                         </ul>
                     </div>

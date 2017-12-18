@@ -2,3 +2,16 @@
 {
     padding: 15px 15px;
 }
+.z-index-600
+{
+    z-index: 600;
+}
+@media (min-width: 768px) {
+    .bg-search-club .form-inline .form-group:first-child {
+        width: 75%;
+    }
+
+    .bg-search-club .form-inline .form-group:last-child {
+        width: 20%;
+    }
+}
