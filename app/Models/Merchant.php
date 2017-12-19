@@ -139,4 +139,17 @@ class Merchant extends Model
             ->paginate($paginate);
     }
 
+
+    /**
+     * Возвращает магазин
+     *
+     * @param $id
+     * @return \Illuminate\Database\Eloquent\Collection|Model|null|static|static[]
+     */
+
+    public function getMerchant($id)
+    {
+        return $this->newQuery()->find($id);
+    }
+
 }

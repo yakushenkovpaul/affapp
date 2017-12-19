@@ -48,13 +48,15 @@ class MerchantController extends Controller
     /**
      * Вывод магазина
      *
+     * @param $id
      * @param $name
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
-    public function shop($name)
+    public function shop($id, $name)
     {
-        return view('frontend.merchant');
+        return view('frontend.merchant')
+            ->with('merchant', $this->service->getMerchant($id));
     }
 
 

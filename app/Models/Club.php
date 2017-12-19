@@ -107,5 +107,18 @@ class Club extends Model
     }
 
 
+    /**
+     * Возвращает клуб
+     *
+     * @param $id
+     * @return \Illuminate\Database\Eloquent\Collection|Model|null|static|static[]
+     */
+
+    public function getClub($id)
+    {
+        return $this->newQuery()->find($id);
+    }
+
+
 
 }

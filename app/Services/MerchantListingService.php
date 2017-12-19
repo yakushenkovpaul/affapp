@@ -22,6 +22,25 @@ class MerchantListingService
     }
 
     /**
+     * Возвращает магазин
+     *
+     * @param $id
+     * @return array
+     */
+
+    public function getMerchant($id)
+    {
+        $result = [];
+
+        if($return = $this->merchant->getMerchant($id))
+        {
+            $result = collect($return)->toArray();
+        }
+
+        return $result;
+    }
+
+    /**
      * Возвращает категории по запросу
      *
      * @param $find

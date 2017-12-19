@@ -20,6 +20,25 @@ class ClubListingService
     }
 
 
+    /**
+     * Возвращает клуб
+     *
+     * @param $id
+     * @return array|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null|static|static[]
+     */
+
+    public function getClub($id)
+    {
+        $result = [];
+
+        if($return = $this->club->getClub($id))
+        {
+            $result = collect($return)->toArray();
+        }
+
+        return $result;
+    }
+
 
     /**
      * Возвращает клубы

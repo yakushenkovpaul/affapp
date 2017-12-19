@@ -49,13 +49,15 @@ class ClubController extends Controller
     /**
      * Вывод клуба
      *
+     * @param $id
      * @param $name
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
-    public function club($name)
+    public function club($id, $name)
     {
-        return view('frontend.club');
+        return view('frontend.club')
+            ->with('club', $this->service->getClub($id));
     }
 
 

@@ -14,7 +14,7 @@
                                 <ul class="merchant-info">
                                     <li class="merchant-logo">
                                         <center>
-                                            <img src="{{ asset('img/brands/13537_lgo_submarino_br.png') }}" alt="Otto.de">
+                                            <img src="{{ $merchant['image'] }}" alt="{{ $merchant['name'] }}">
                                         </center>
                                     </li>
                                     <li>
@@ -173,7 +173,7 @@
                     <div class="col-md-8 col-sm-7 col-xs-12 panel-body">
                         <div class="col-md-7 col-sm-12 merchant-title">
                             <h1>
-                                Merchant title</h1>
+                                {{ $merchant['name'] }}</h1>
                             <p>
                                 Average comisson per order is 5%.</p>
                         </div>
