@@ -8,7 +8,7 @@
         <section class="main-slider" data-loop="true" data-autoplay="true" data-interval="7000">
             <div class="inner">
                 <!-- Slide One -->
-                <div class="slide slideResize slide4" style="background-image: url(img/banner/slider-12.jpg);">
+                <div class="slide slideResize slide4" style="background-image: url({{ asset('img/banner/slider-12.jpg') }});">
                     <div class="container">
                         <div class="common-inner slide-inner4">
                             <span class="h1 from-bottom">kaufe online und unterstütze Deinen Verein</span>
@@ -24,14 +24,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide slide1" style="background-image: url(img/banner/slider-9.jpg);">
+                <div class="slide slide1" style="background-image: url({{ asset('img/banner/slider-9.jpg') }});">
                     <div class="container">
                         <div class="slide-inner1 common-inner">
                             <br>
                         </div>
                     </div>
                 </div>
-                <div class="slide slide1" style="background-image: url(img/banner/slider-8.png);">
+                <div class="slide slide1" style="background-image: url({{ asset('img/banner/slider-8.png') }});">
                     <div class="container">
                         <div class="slide-inner1 common-inner">
                             <br>
