@@ -8,6 +8,8 @@
                 <a href="{!! url('/club/' . $club['id'] . '/' . Format::slug($club['name'])) !!}" title="{{ $club['name'] }}">{{ $club['name'] }}</a>
             </li>
         </ul>
-        <a href="{!! url('/club/' . $club['id'] . '/' . Format::slug($club['name'])) !!}" class="interestContent" title="{{ $club['name'] }} link"><span><img src="{{ $club['image'] }}" alt="{{ $club['name'] }}"></span></a>
+        <a href="{!! url('/club/' . $club['id'] . '/' . Format::slug($club['name'])) !!}" class="interestContent" title="{{ $club['name'] }} link">
+            <span><img src="{{ $club['image'] }}" alt="{{ $club['name'] }}"></span>
+        </a>
     </div>
 @endforeach

@@ -79,7 +79,7 @@ class MerchantListingService
 
         if($return = $this->merchant->getMerchants($this->pagination))
         {
-            $result['data'] = collect($return)->toArray();
+            $result['data'] = self::prepareResult(collect($return)->toArray());
         }
 
         return $result;
@@ -118,7 +118,10 @@ class MerchantListingService
 
         if($return = $this->merchant->getMerchantsPaginate($this->pagination))
         {
-            $result = collect($return)->toArray();
+            if($result = collect($return)->toArray())
+            {
+                $result['data'] = $this->prepareResult($result['data']);
+            }
         }
 
         return $result;
@@ -146,6 +149,46 @@ class MerchantListingService
         }
 
         return $result;
+    }
+
+
+    /**
+     * Приводит результат к одному формату
+     *
+     * @param $result
+     * @return mixed
+     */
+
+    protected function prepareResult($result)
+    {
+        foreach ($result as $k => $v)
+        {
+            if(!empty($v['logo']))
+            {
+                $v['image'] = asset('storage/images/merchants/' . self::getPath($v['id']) . '/logo.png');
+            }
+            else
+            {
+                $v['image'] = asset('img/custom/merchant.png');
+            }
+
+            $result[$k] = $v;
+        }
+
+        return $result;
+    }
+
+
+    /**
+     * Возвращает путь относительно id
+     *
+     * @param $id
+     * @return string
+     */
+
+    public static function getPath($id)
+    {
+        return ceil($id/100) . DIRECTORY_SEPARATOR . $id;
     }
 
 }

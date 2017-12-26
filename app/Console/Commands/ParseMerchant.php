@@ -3,11 +3,10 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Orchestra\Parser\XmlServiceProvider;
-use SebastianBergmann\CodeCoverage\Report\PHP;
 use App\Models\Merchant;
 use App\Models\Category;
 use App\Services\MerchantService;
+use Illuminate\Support\Facades\Storage;
 
 
 //http://api.zanox.com/xml/2011-03-01/programs?partnership=DIRECT&connectid=5E1A678475AB9F9C01CF&region=DE&items=2
@@ -52,7 +51,66 @@ class ParseMerchant extends Command
      */
     public function handle()
     {
-        self::parseXml();
+        #self::parseXml();
+        self::saveLogo();
+    }
+
+
+    /**
+     * Сохраняет лого
+     */
+
+    protected function saveLogo()
+    {
+        $merchants = new Merchant();
+        $total = $count = $merchants->getMerchantsTotal();
+
+        for ($page = 0; $page <= ceil($total/10); $page++)
+        {
+            if($result = $merchants->getMerchantsPerPage(10, $page))
+            {
+                foreach ($result as $r)
+                {
+                    $count--;
+
+                    try
+                    {
+                        $path = 'images/merchants/' . self::getPath($r->id);
+
+                        if(!Storage::disk('public')->exists($path))
+                        {
+                            Storage::disk('public')->makeDirectory($path);
+                        }
+
+                        if($contents = @file_get_contents($r['image']))
+                        {
+                            Storage::disk('public')->put($path . '/logo.png', $contents);
+
+                            $r->logo = 1;
+                            $r->save();
+                        }
+                    }
+                    catch (Exception $e) {
+
+                    }
+
+                    echo $count . "\r";
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Возвращает путь относительно id
+     *
+     * @param $id
+     * @return string
+     */
+
+    protected function getPath($id)
+    {
+        return ceil($id/100) . DIRECTORY_SEPARATOR . $id;
     }
 
 

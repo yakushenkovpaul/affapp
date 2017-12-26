@@ -16,6 +16,7 @@ class Club extends Model
 		'id',
 		'name',
 		'image',
+        'logo',
 		'url',
 		'country',
 		'address',
@@ -66,7 +67,7 @@ class Club extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image', 'url'])
+            ->select(['id', 'name', 'image', 'url', 'logo'])
             ->paginate($paginate);
     }
 
@@ -84,10 +85,42 @@ class Club extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image', 'url'])
+            ->select(['id', 'name', 'image', 'url', 'logo'])
             ->limit($limit)
             ->get();
     }
+
+    /**
+     * Возвращает клубы с отступом взависимости от переданной страницы
+     * Актуально в основом для консольных задач
+     *
+     * @param $limit
+     * @param $page
+     * @param string $order
+     * @param string $sort
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+
+    public function getClubsPerPage($limit, $page, $order = 'id', $sort = 'desc')
+    {
+        return $this->newQuery()
+            ->orderBy($order, $sort)
+            ->offset($page * $limit)
+            ->limit($limit)
+            ->get();
+    }
+
+    /**
+     * Возвращает общее кол-во клубов
+     *
+     * @return int
+     */
+
+    public function getClubsTotal()
+    {
+        return $this->newQuery()->count();
+    }
+
 
     /**
      * Ищет клубы с пагинацией

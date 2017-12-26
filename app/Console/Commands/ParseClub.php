@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use SebastianBergmann\CodeCoverage\Report\PHP;
 use App\Models\Club;
+use Illuminate\Support\Facades\Storage;
 
 
 class ParseClub extends Command
@@ -43,7 +43,69 @@ class ParseClub extends Command
     public function handle()
     {
         self::parseListEasy();
+        #self::saveLogo();
     }
+
+
+    /**
+     * Сохраняет лого клубов
+     */
+
+    protected function saveLogo()
+    {
+        $clubs = new Club;
+        $total = $count = $clubs->getClubsTotal();
+
+        for ($page = 0; $page <= ceil($total/10); $page++)
+        {
+            if($result = $clubs->getClubsPerPage(10, $page))
+            {
+                foreach ($result as $r)
+                {
+                    $count--;
+
+                    try
+                    {
+                        $head = array_change_key_case(get_headers($r['image'], TRUE));
+
+                        if($head['content-length'] != 2608)
+                        {
+                            $path = 'images/clubs/' . self::getPath($r->id);
+
+                            if(!Storage::disk('public')->exists($path))
+                            {
+                                Storage::disk('public')->makeDirectory($path);
+                            }
+
+                            $contents = @file_get_contents($r['image']);
+                            Storage::disk('public')->put($path . '/logo.png', $contents);
+
+                            $r->logo = 1;
+                            $r->save();
+                        }
+                    }
+                    catch (Exception $e) {
+
+                    }
+
+                    echo $count . "\r";
+                }
+            }
+        }
+    }
+
+    /**
+     * Возвращает путь относительно id
+     *
+     * @param $id
+     * @return string
+     */
+
+    protected function getPath($id)
+    {
+        return ceil($id/100) . DIRECTORY_SEPARATOR . $id;
+    }
+
 
     /**
      * Парсит остатки, те клубы что

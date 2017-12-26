@@ -16,6 +16,7 @@ class Merchant extends Model
     public $fillable = [
 		'id',
         'program_id',
+        'logo',
 		'name',
 		'image',
 		'description',
@@ -79,7 +80,7 @@ class Merchant extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image'])
+            ->select(['id', 'name', 'image', 'logo'])
             ->limit($limit)
             ->get();
     }
@@ -97,7 +98,7 @@ class Merchant extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image'])
+            ->select(['id', 'name', 'image', 'logo'])
             ->paginate($paginate);
     }
 
@@ -151,5 +152,39 @@ class Merchant extends Model
     {
         return $this->newQuery()->find($id);
     }
+
+
+    /**
+     * Возвращает общее кол-во магазинов
+     *
+     * @return int
+     */
+
+    public function getMerchantsTotal()
+    {
+        return $this->newQuery()->count();
+    }
+
+
+    /**
+     * Возвращает магазины с отступом взависимости от переданной страницы
+     * Актуально в основом для консольных задач
+     *
+     * @param $limit
+     * @param $page
+     * @param string $order
+     * @param string $sort
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+
+    public function getMerchantsPerPage($limit, $page, $order = 'id', $sort = 'desc')
+    {
+        return $this->newQuery()
+            ->orderBy($order, $sort)
+            ->offset($page * $limit)
+            ->limit($limit)
+            ->get();
+    }
+
 
 }

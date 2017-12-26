@@ -50,9 +50,9 @@ class ClubListingService
     {
         $result = [];
 
-        if($return = $this->club->getClubs($this->pagination))
+        if($return = $this->club->getClubs($this->pagination, 'logo'))
         {
-            $result['data'] = collect($return)->toArray();
+            $result['data'] = $this->prepareResult(collect($return)->toArray());
         }
 
         return $result;
@@ -68,9 +68,12 @@ class ClubListingService
     {
         $result = [];
 
-        if($return = $this->club->getClubsPaginate($this->pagination))
+        if($return = $this->club->getClubsPaginate($this->pagination, 'logo'))
         {
-            $result = collect($return)->toArray();
+            if($result = collect($return)->toArray())
+            {
+                $result['data'] = $this->prepareResult($result['data']);
+            }
         }
 
         return $result;
@@ -91,6 +94,46 @@ class ClubListingService
         }
 
         return $result;
+    }
+
+
+    /**
+     * Приводит результат к одному формату
+     *
+     * @param $result
+     * @return mixed
+     */
+
+    protected function prepareResult($result)
+    {
+        foreach ($result as $k => $v)
+        {
+            if(!empty($v['logo']))
+            {
+                $v['image'] = asset('storage/images/clubs/' . self::getPath($v['id']) . '/logo.png');
+            }
+            else
+            {
+                $v['image'] = asset('img/custom/club.png');
+            }
+
+            $result[$k] = $v;
+        }
+
+        return $result;
+    }
+
+
+    /**
+     * Возвращает путь относительно id
+     *
+     * @param $id
+     * @return string
+     */
+
+    public static function getPath($id)
+    {
+        return ceil($id/100) . DIRECTORY_SEPARATOR . $id;
     }
 
 }
