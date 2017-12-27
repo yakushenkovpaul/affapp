@@ -23,7 +23,7 @@
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox"> Remember me
+                            <input type="checkbox"> Angemeldet bleiben
                         </label>
                         <a href="{!! url('password/reset') !!}" class="pull-right link">Fogot Password?</a>
                     </div>
