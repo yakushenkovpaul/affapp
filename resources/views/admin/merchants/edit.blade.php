@@ -21,6 +21,10 @@
                                     <img src="{{ $merchant->image }}" border="0">
                                 </div>
                                 <div class="form-group col-xs-12">
+                                    @input_maker_label('Priority')
+                                    @input_maker_create('main', ['type' => 'select', 'label' => 'priority', 'options' => [ 'yes' => '1', 'no' => '0' ]], $merchant)
+                                </div>
+                                <div class="form-group col-xs-12">
                                     @input_maker_label('Description')
                                     @input_maker_create('description', ['type' => 'textarea'], $merchant)
                                 </div>

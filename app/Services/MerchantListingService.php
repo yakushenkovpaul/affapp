@@ -188,6 +188,23 @@ class MerchantListingService
                 $v['image'] = asset('img/custom/merchant.png');
             }
 
+            $v['cashback'] = 0;
+
+            if(isset($v['sale_percent_min']) && $v['sale_percent_min'] > 0)
+            {
+                $v['cashback'] = $v['sale_percent_min']*0.85;
+            }
+
+            if(!$v['cashback'] && isset($v['sale_percent_min']) && $v['sale_percent_min'] > 0)
+            {
+                $v['cashback'] = $v['sale_percent_min']*0.85;
+            }
+
+            if(!$v['cashback'])
+            {
+                $v['cashback'] = 10.55;
+            }
+
             $result[$k] = $v;
         }
 

@@ -9,7 +9,7 @@
                     <a href="{!! url('/merchant/' . $merchant['id'] . '/' . Format::slug($merchant['name'])) !!}" title="{{ $merchant['name'] }}">{{ char_limit($merchant['name'], 20, ['exceededText' => false]) }}</a>
                 </li>
                 <li>
-                    ab 2,5%
+                    ab {{ number_format($merchant['cashback'], 2) }}%
                     <i class="fa fa-undo" aria-hidden="true"></i>
                 </li>
             </ul>

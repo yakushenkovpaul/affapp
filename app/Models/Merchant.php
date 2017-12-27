@@ -82,7 +82,7 @@ class Merchant extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image', 'logo'])
+            ->select(['id', 'name', 'image', 'logo', 'sale_percent_min', 'sale_fix_min'])
             ->limit($limit)
             ->get();
     }
@@ -100,7 +100,7 @@ class Merchant extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image', 'logo'])
+            ->select(['id', 'name', 'image', 'logo', 'sale_percent_min', 'sale_fix_min'])
             ->paginate($paginate);
     }
 
