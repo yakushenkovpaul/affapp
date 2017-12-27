@@ -31,7 +31,9 @@ class IndexController extends Controller
     {
         return view('frontend.index')
             ->with('clubs', $this->serviceClub->getClubs())
-            ->with('merchants', $this->serviceMerchant->getMerchants());
+            ->with('clubs_total', $this->serviceClub->getClubsTotal())
+            ->with('merchants', $this->serviceMerchant->getMerchants())
+            ->with('merchants_total', $this->serviceMerchant->getMerchantsTotal());
     }
 
 }

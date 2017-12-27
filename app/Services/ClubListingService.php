@@ -58,6 +58,17 @@ class ClubListingService
         return $result;
     }
 
+    /**
+     * Возвращает общее число клубов
+     *
+     * @return int
+     */
+
+    public function getClubsTotal()
+    {
+        return $this->club->getClubsTotal();
+    }
+
 
     /**
      * Возвращает клубы с пагинацией

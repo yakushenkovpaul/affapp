@@ -86,6 +86,18 @@ class MerchantListingService
         return $result;
     }
 
+
+    /**
+     * Возвращает общее число магазинов
+     *
+     * @return int
+     */
+
+    public function getMerchantsTotal()
+    {
+        return $this->merchant->getMerchantsTotal();
+    }
+
     /**
      * Возвращает магазины с отступом
      *

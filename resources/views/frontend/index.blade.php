@@ -60,31 +60,31 @@
         <section class="clearfix countUpSection">
             <div class="container">
                 <div class="page-header text-center">
-                    <h2>warum Wir?</h2>
+                    <h2>Seit Beginn des Projekts haben wir</h2>
                 </div>
                 <div class="row">
                     <div class="col-sm-3 col-xs-12">
                         <div class="text-center countItem">
-                            <div class="counter">140</div>
-                            <div class="counterInfo bg-color-1">online shops</div>
+                            <div class="counter">{{ $merchants_total }}</div>
+                            <div class="counterInfo bg-color-1">Online Shops Debei</div>
                         </div>
                     </div>
                     <div class="col-sm-3 col-xs-12">
                         <div class="text-center countItem">
-                            <div class="counter">60</div>
-                            <div class="counterInfo bg-color-2">Vereine</div>
+                            <div class="counter">{{ $clubs_total }}</div>
+                            <div class="counterInfo bg-color-2">Vereinsseiten Hinzugefugt</div>
                         </div>
                     </div>
                     <div class="col-sm-3 col-xs-12">
                         <div class="text-center countItem">
                             <div class="counter">180</div>
-                            <div class="counterInfo bg-color-3">Nutzer</div>
+                            <div class="counterInfo bg-color-3">Fussballspiele Angeschaut</div>
                         </div>
                     </div>
                     <div class="col-sm-3 col-xs-12">
                         <div class="text-center countItem">
                             <div class="counter">90</div>
-                            <div class="counterInfo bg-color-4">werden ausbezahlt</div>
+                            <div class="counterInfo bg-color-4">Liter Bier Getrunken</div>
                         </div>
                     </div>
                 </div>

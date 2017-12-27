@@ -15,6 +15,7 @@ class Merchant extends Model
 
     public $fillable = [
 		'id',
+        'main',
         'program_id',
         'logo',
 		'name',
