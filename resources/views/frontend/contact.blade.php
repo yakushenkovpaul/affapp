@@ -91,5 +91,7 @@
             </div>
         </div>
     </section>
+    <!-- FOOTER -->
+    @include('frontendlayouts.front-bottom')
 
 @stop

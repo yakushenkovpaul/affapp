@@ -106,11 +106,11 @@ class MerchantListingService
      * @return array
      */
 
-    public function getMerchantsOffset($limit, $offset)
+    public function getMerchantsOffset($limit, $offset, $order = 'created_at', $sort = 'desc')
     {
         $result = [];
 
-        if($return = $this->merchant->getMerchantsOffset($limit, $offset))
+        if($return = $this->merchant->getMerchantsOffset($limit, $offset, $order, $sort))
         {
             $result['data'] = collect($return)->toArray();
         }
@@ -219,9 +219,48 @@ class MerchantListingService
      * @return string
      */
 
-    public static function getPath($id)
+    protected static function getPath($id)
     {
         return ceil($id/100) . DIRECTORY_SEPARATOR . $id;
     }
+
+
+
+
+
+
+
+
+
+    /* Статические методы */
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Возвращает топовые магазины
+     *
+     * @param $limit
+     * @return mixed
+     */
+
+    public static function getMerchantsTopStatic($limit)
+    {
+        $result = [];
+
+        if($return = Merchant::getMerchantsOffsetStatic($limit, 0, 'main', 'desc'))
+        {
+            $result['data'] = collect($return)->toArray();
+        }
+
+        return $result;
+    }
+
 
 }

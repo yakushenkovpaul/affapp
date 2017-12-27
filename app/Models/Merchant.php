@@ -115,7 +115,7 @@ class Merchant extends Model
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
 
-    public function getMerchantsOffset($limit, $offset, $order = 'created_at', $sort = 'desc')
+    public function getMerchantsOffset($limit, $offset, $order, $sort)
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
@@ -124,7 +124,6 @@ class Merchant extends Model
             ->offset($offset)
             ->get();
     }
-
 
     /**
      * Ищет магазины по названию c пагинацией
@@ -214,6 +213,33 @@ class Merchant extends Model
             ->limit($limit)
             ->get();
     }
+
+
+
+
+
+
+
+
+    /* Статические методы */
+
+    /**
+     * Возвращает магазины с отступом
+     * Статический вызов
+     *
+     * @param $limit
+     * @param $offset
+     * @param $order
+     * @param $sort
+     * @return mixed
+     */
+
+
+    public static function getMerchantsOffsetStatic($limit, $offset, $order, $sort)
+    {
+        return (new static)->getMerchantsOffset($limit, $offset, $order, $sort);
+    }
+
 
 
 }

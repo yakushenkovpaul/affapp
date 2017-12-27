@@ -41,10 +41,17 @@
                         </li>
                     </ul>
                 </div>
-                <button class="btn btn-default navbar-btn" type="button" data-toggle="modal" data-target="#loginModal">
-                    <span class="visible-xs">Login</span>
-                    <span>anmelden</span>
-                </button>
+                @if(isset($user))
+                    <button class="btn btn-default navbar-btn" type="button" onclick="location.href='{!! url('/user/dashboard') !!}';">
+                        <span class="visible-xs">Mein account</span>
+                        <span>Mein account</span>
+                    </button>
+                @else
+                    <button class="btn btn-default navbar-btn" type="button" data-toggle="modal" data-target="#loginModal">
+                        <span class="visible-xs">anmelden</span>
+                        <span>anmelden</span>
+                    </button>
+                @endif
             </div>
         </nav>
     </div>

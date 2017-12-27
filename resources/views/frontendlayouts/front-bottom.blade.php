@@ -1,3 +1,12 @@
+<?php
+
+use App\Services\MerchantListingService;
+
+$merchantsTop = MerchantListingService::getMerchantsTopStatic(5);
+
+?>
+
+
 <footer style="background-image: url({{ asset('img/background/bg-footer-3.jpg') }});">
     <!-- FOOTER INFO -->
     <div class="clearfix footerInfo">
@@ -35,30 +44,22 @@
                         </ul>
                     </div>
                 </div>
+                @if (isset($merchantsTop['data']))
                 <div class="col-sm-2 col-xs-12">
                     <div class="footerInfoTitle">
-                        <h4>Top Shops</h4>
+                        <h4>Top shops</h4>
                     </div>
                     <div class="useLink">
                         <ul class="list-unstyled">
+                            @foreach ($merchantsTop['data'] as $merchant)
                             <li>
-                                <a href="dashboard.html">Otto.de</a>
+                                <a href="{!! url('/merchant/' . $merchant['id'] . '/' . Format::slug($merchant['name'])) !!}"  title="{{ $merchant['name'] }} link">{{ $merchant['name'] }}</a>
                             </li>
-                            <li>
-                                <a href="sign-up.html">Zalando.de</a>
-                            </li>
-                            <li>
-                                <a href="login.html">Reifen</a>
-                            </li>
-                            <li>
-                                <a href="add-listings.html">*</a>
-                            </li>
-                            <li>
-                                <a href="edit-listings.html">*</a>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
+                @endif
                 <div class="col-sm-2 col-xs-12">
                     <div class="footerInfoTitle">
                         <h4>Unternehmen</h4>
