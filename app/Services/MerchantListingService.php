@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Category;
+use App\Models\CategoryMerchant;
 use App\Models\Merchant;
 
 class MerchantListingService
@@ -143,9 +144,12 @@ class MerchantListingService
             }
         }
 
-        if(empty($query) && !empty($category_id))
+        if(!empty($category_id))
         {
-
+            if($return = $this->merchant->searchByCategoryPaginate($this->pagination, $category_id, $query))
+            {
+                $result = collect($return)->toArray();
+            }
         }
 
         return $result;

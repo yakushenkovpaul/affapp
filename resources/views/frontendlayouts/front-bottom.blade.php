@@ -21,16 +21,10 @@
                                 <a href="{!! url('/cashback') !!}">Was ist Cashback?</a>
                             </li>
                             <li>
-                                <a href="#">Wie verdient donatics Geld?</a>
+                                <a href="{!! url('/neue-vereine-vorschlagen') !!}">Neue Vereine vorschlagen</a>
                             </li>
                             <li>
-                                <a href="#">Neue Shops vorschlagen</a>
-                            </li>
-                            <li>
-                                <a href="#">Neue Vereine vorschlagen</a>
-                            </li>
-                            <li>
-                                <a href="{!! url('/friends') !!}">Freunde einladen</a>
+                                <a href="{!! url('/freunde-einladen') !!}">Freunde einladen</a>
                             </li>
                             <li>
                                 <a href="#">donatIQ für Browser</a>
@@ -72,21 +66,19 @@
                     <div class="useLink">
                         <ul class="list-unstyled">
                             <li>
-                                <a href="contact-us.html">Über uns</a>
+                                <a href="{!! url('/about') !!}">Über uns</a>
                             </li>
                             <li>
-                                <a href="terms-of-services.html">Team</a>
+                                <a href="{!! url('/datenschutz') !!}">Datenschutz</a>
                             </li>
                             <li>
-                            </li>
-                            <li>
-                                <a href="payment-process.html">ABG</a>
+                                <a href="{!! url('/agb') !!}">ABG</a>
                             </li>
                             <li>
                                 <a href="pricing-table.html">Datenschutzerklärung</a>
                             </li>
                             <li>
-                                <a href="pricing-table.html">Impressum</a>
+                                <a href="{!! url('/impressum') !!}">Impressum</a>
                             </li>
                         </ul>
                     </div>

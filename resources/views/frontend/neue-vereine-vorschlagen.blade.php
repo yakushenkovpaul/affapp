@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="pageTitle">
-                            <h2>Cashback</h2>
+                            <h2>Neue vereine vorschlagen</h2>
                         </div>
                     </div>
                 </div>

@@ -43,14 +43,13 @@ class Merchant extends Model
     ];
     // Merchant
 
+
     /**
-     * User Categories
-     *
-     * @return Relationship
      */
+
     public function categories()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(\App\Models\Category::class);
     }
 
 
@@ -60,11 +59,13 @@ class Merchant extends Model
      * @param  string  $category
      * @return boolean
      */
+    /*
     public function hasCategory($category)
     {
         $categories = array_column($this->categories()->toArray(), 'name');
         return array_search($category, $categories) > -1;
     }
+    */
 
     /**
      * Возвращает магазины
@@ -138,6 +139,33 @@ class Merchant extends Model
             ->where('name', 'LIKE', '%'.$abc.'%')
             ->select(['id', 'name', 'image'])
             ->paginate($paginate);
+    }
+
+
+    /**
+     * Ищет магазины по категории
+     * Дополнительный параметр - название
+     *
+     * @param $paginate
+     * @param $category_id
+     * @param string $abc
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+
+    public function searchByCategoryPaginate($paginate, $category_id, $abc = '')
+    {
+        $query = $this->newQuery();
+
+        if(!empty($abc))
+        {
+            $query->where('name', 'LIKE', '%'.$abc.'%');
+        }
+
+        return $query
+            ->select(['id', 'name', 'image'])
+            ->whereHas('categories', function($query) use ($category_id) {
+                $query->where('category_id', $category_id);
+            })->paginate($this->pagination);
     }
 
 

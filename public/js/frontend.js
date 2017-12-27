@@ -108,12 +108,20 @@ $(document).ready(function()
     {
         $( "#category" ).autocomplete({
             source: "merchants/autocompleteCategories",
-            minLength: 3,
+            minLength: 1,
             select: function(event, ui) {
                 $('#category').val(ui.item.value);
                 $('#category_id').val(ui.item.id);
             }
         }).autocomplete( "widget" ).addClass( "z-index-600" );
+    });
+
+    $("#category").keyup(function() {
+
+        if (!$(this).val()) {
+            $('#category_id').val(0);
+        }
+
     });
 
 
@@ -189,4 +197,4 @@ function showError(key, value) {
     console.log(value);
 }
 
-console.log('frontend.js_ver48');
+console.log('frontend.js_ver52');

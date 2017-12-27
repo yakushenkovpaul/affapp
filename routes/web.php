@@ -30,8 +30,17 @@ Route::get('/merchants', 'Frontend\MerchantController@shops');
 Route::get('merchants/autocompleteCategories', 'Frontend\MerchantController@autocompleteCategories');
 Route::post('merchants/search', 'Frontend\MerchantController@search');
 
+Route::get('/tutorial', 'Frontend\TutorialController@index');
+Route::get('/about', 'Frontend\AboutController@index');
+Route::get('/agb', 'Frontend\AgbController@index');
+Route::get('/datenschutz', 'Frontend\DatenschutzController@index');
+Route::get('/impressum', 'Frontend\ImpressumController@index');
+Route::get('/neue-vereine-vorschlagen', 'Frontend\NeueVereineVorschlagenController@index');
+Route::get('/freunde-einladen', 'Frontend\FreundeEinladenController@index');
+
+
 Route::get('/contact', 'Frontend\ContactController@contact');
-Route::get('/tutorial', 'Frontend\TutorialController@tutorial');
+
 Route::get('/cashback', 'Frontend\CashbackController@cashback');
 
 /*
