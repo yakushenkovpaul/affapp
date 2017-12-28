@@ -5,10 +5,10 @@
                 <i class="fa fa-heart-o" aria-hidden="true"></i>
             </li>
             <li>
-                <a href="{!! url('/club/' . $club['id'] . '/' . Format::slug($club['name'])) !!}" title="{{ $club['name'] }}">{{ $club['name'] }}</a>
+                <a href="{!! url('/club/' . $club['id'] . '/' . Format::slug($club['dir'])) !!}" title="{{ $club['name'] }}">{{ $club['name'] }}</a>
             </li>
         </ul>
-        <a href="{!! url('/club/' . $club['id'] . '/' . Format::slug($club['name'])) !!}" class="interestContent" title="{{ $club['name'] }} link">
+        <a href="{!! url('/club/' . $club['id'] . '/' . Format::slug($club['dir'])) !!}" class="interestContent" title="{{ $club['name'] }} link">
             <span><img src="{{ $club['image'] }}" alt="{{ $club['name'] }}"></span>
         </a>
     </div>

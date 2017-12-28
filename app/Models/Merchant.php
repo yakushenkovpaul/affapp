@@ -19,6 +19,7 @@ class Merchant extends Model
         'program_id',
         'logo',
 		'name',
+        'dir',
 		'image',
 		'description',
 		'seo_title',
@@ -82,7 +83,7 @@ class Merchant extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image', 'logo', 'sale_percent_min', 'sale_fix_min'])
+            ->select(['id', 'name', 'image', 'dir', 'logo', 'sale_percent_min', 'sale_fix_min'])
             ->limit($limit)
             ->get();
     }
@@ -100,7 +101,7 @@ class Merchant extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image', 'logo', 'sale_percent_min', 'sale_fix_min'])
+            ->select(['id', 'name', 'image', 'dir', 'logo', 'sale_percent_min', 'sale_fix_min'])
             ->paginate($paginate);
     }
 
@@ -119,7 +120,7 @@ class Merchant extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image'])
+            ->select(['id', 'name', 'image', 'dir'])
             ->limit($limit)
             ->offset($offset)
             ->get();
@@ -137,7 +138,7 @@ class Merchant extends Model
     {
         return $this->newQuery()
             ->where('name', 'LIKE', '%'.$abc.'%')
-            ->select(['id', 'name', 'image'])
+            ->select(['id', 'name', 'image', 'dir'])
             ->paginate($paginate);
     }
 
@@ -162,7 +163,7 @@ class Merchant extends Model
         }
 
         return $query
-            ->select(['id', 'name', 'image'])
+            ->select(['id', 'name', 'image', 'dir'])
             ->whereHas('categories', function($query) use ($category_id) {
                 $query->where('category_id', $category_id);
             })->paginate($this->pagination);

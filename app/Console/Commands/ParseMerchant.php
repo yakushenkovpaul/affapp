@@ -7,6 +7,8 @@ use App\Models\Merchant;
 use App\Models\Category;
 use App\Services\MerchantService;
 use Illuminate\Support\Facades\Storage;
+use PHPUnit\Exception;
+use Regulus\TetraText\Facade as Format;
 
 
 //http://api.zanox.com/xml/2011-03-01/programs?partnership=DIRECT&connectid=5E1A678475AB9F9C01CF&region=DE&items=2
@@ -52,7 +54,43 @@ class ParseMerchant extends Command
     public function handle()
     {
         #self::parseXml();
-        self::saveLogo();
+        #self::saveLogo();
+        self::saveDir();
+    }
+
+
+
+    /**
+     * Сохраняет директорию
+     */
+
+    protected function saveDir()
+    {
+        $merchants = new Merchant;
+        $total = $count = $merchants->getMerchantsTotal();
+
+        for ($page = 0; $page <= ceil($total/100); $page++)
+        {
+            if($result = $merchants->getMerchantsPerPage(100, $page))
+            {
+                foreach ($result as $r)
+                {
+                    $count--;
+
+                    try
+                    {
+                        $r->name = $this->_getName($r->name);
+                        $r->dir = $this->getDir($r->name);
+                        $r->save();
+                    }
+                    catch (Exception $e) {
+
+                    }
+
+                    echo $count . "\r";
+                }
+            }
+        }
     }
 
 
@@ -75,17 +113,8 @@ class ParseMerchant extends Command
 
                     try
                     {
-                        $path = 'images/merchants/' . self::getPath($r->id);
-
-                        if(!Storage::disk('public')->exists($path))
+                        if($this->storeImage($r->id, $r['image']))
                         {
-                            Storage::disk('public')->makeDirectory($path);
-                        }
-
-                        if($contents = @file_get_contents($r['image']))
-                        {
-                            Storage::disk('public')->put($path . '/logo.png', $contents);
-
                             $r->logo = 1;
                             $r->save();
                         }
@@ -98,19 +127,6 @@ class ParseMerchant extends Command
                 }
             }
         }
-    }
-
-
-    /**
-     * Возвращает путь относительно id
-     *
-     * @param $id
-     * @return string
-     */
-
-    protected function getPath($id)
-    {
-        return ceil($id/100) . DIRECTORY_SEPARATOR . $id;
     }
 
 
@@ -195,7 +211,7 @@ class ParseMerchant extends Command
         {
             $insert = [
                 'program_id' => $array['program_id'],
-                'name' => str_replace(' DE', '', $array['name']),
+                'name' => $this->_getName($array['name']),
                 'image' => $array['image'],
                 'url' => $array['url'],
                 'status' => ($array['status'] == 'active')  ?   1   :   0,
@@ -248,4 +264,124 @@ class ParseMerchant extends Command
 
         return 'connectid=' . self::ConnectId . '&date=' . urlencode($time_stamp) . '&nonce=' . $nonce . '&signature=' . urlencode($signature);
     }
+
+
+    /**
+     * Возвращает директорию в формате слага
+     *
+     * @param $str
+     * @return mixed
+     */
+
+    private function getDir($str)
+    {
+        if($str)
+        {
+            $str =  Format::slug($str);
+        }
+
+        return $str;
+    }
+
+    /**
+     * Возвращает имя
+     *
+     * @param $str
+     * @return mixed|null|string
+     */
+
+    private function _getName($str)
+    {
+        if($str)
+        {
+            $str = $this->clearString($str);
+            $str = str_replace(' DE', '', $str);
+            
+            if(preg_match("#(.*)?migrated#si", $str, $match))
+            {
+                if(!empty($match[1]))
+                {
+                    if($temp = explode(' ', $match[1]))
+                    {
+                        foreach ($temp as $k => $v)
+                        {
+                            if(strlen($v) <= 3)
+                            {
+                                unset($temp[$k]);
+                            }
+                        }
+
+                        $match[1] = join(' ' , $temp);
+
+                        if(preg_match("#[0-9A-z \.\-]*#si", $match[1], $match2))
+                        {
+                            return trim($match2[0]);
+                        }
+                    }
+                }
+            }
+        }
+
+        return $str;
+    }
+
+
+    /**
+     * Возвращает true, если картинка сохранена
+     *
+     * @param $object_id
+     * @param $url
+     * @return bool
+     */
+
+    private function storeImage($object_id, $url)
+    {
+        $path = 'images/merchants/' . self::getPath($object_id);
+
+        if(!Storage::disk('public')->exists($path))
+        {
+            Storage::disk('public')->makeDirectory($path);
+        }
+
+        $contents = @file_get_contents($url);
+        Storage::disk('public')->put($path . '/logo.png', $contents);
+
+        return true;
+    }
+
+
+    /**
+     * Возвращает путь относительно id
+     *
+     * @param $id
+     * @return string
+     */
+
+    private function getPath($id)
+    {
+        return ceil($id/100) . DIRECTORY_SEPARATOR . $id;
+    }
+
+
+    /**
+     * Чистит строку
+     *
+     * @param null $str
+     * @return null|string
+     */
+
+    private function clearString($str = null)
+    {
+        if($str)
+        {
+            $str = trim($str);
+            $str = strip_tags($str);
+            $str = preg_replace("/&#?[a-z0-9]{2,8};/i","", $str);
+        }
+
+        return $str;
+    }
+
+
+
 }

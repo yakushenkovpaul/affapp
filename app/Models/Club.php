@@ -15,6 +15,7 @@ class Club extends Model
     public $fillable = [
 		'id',
 		'name',
+        'dir',
 		'image',
         'logo',
 		'url',
@@ -67,7 +68,7 @@ class Club extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image', 'url', 'logo'])
+            ->select(['id', 'name', 'image', 'url', 'logo', 'dir'])
             ->paginate($paginate);
     }
 
@@ -85,7 +86,7 @@ class Club extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image', 'url', 'logo'])
+            ->select(['id', 'name', 'image', 'url', 'logo', 'dir'])
             ->limit($limit)
             ->get();
     }
@@ -135,7 +136,7 @@ class Club extends Model
     {
         return $this->newQuery()
             ->where('name', 'LIKE', '%'.$abc.'%')
-            ->select(['id', 'name', 'image'])
+            ->select(['id', 'name', 'image', 'dir'])
             ->paginate($paginate);
     }
 

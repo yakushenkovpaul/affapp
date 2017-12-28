@@ -5,7 +5,8 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\Club;
 use Illuminate\Support\Facades\Storage;
-
+use PHPUnit\Exception;
+use Regulus\TetraText\Facade as Format;
 
 class ParseClub extends Command
 {
@@ -42,10 +43,44 @@ class ParseClub extends Command
      */
     public function handle()
     {
-        self::parseListEasy();
+        #self::parseListEasy();
         #self::saveLogo();
+        self::saveDir();
     }
 
+
+    /**
+     * Сохраняет директорию
+     */
+
+    protected function saveDir()
+    {
+        $clubs = new Club;
+        $total = $count = $clubs->getClubsTotal();
+
+        for ($page = 0; $page <= ceil($total/100); $page++)
+        {
+            if($result = $clubs->getClubsPerPage(100, $page))
+            {
+                foreach ($result as $r)
+                {
+                    $count--;
+
+                    try
+                    {
+                        $r->name = $this->_getName($r->name);
+                        $r->dir = $this->getDir($r->name);
+                        $r->save();
+                    }
+                    catch (Exception $e) {
+
+                    }
+
+                    echo $count . "\r";
+                }
+            }
+        }
+    }
 
     /**
      * Сохраняет лого клубов
@@ -66,20 +101,8 @@ class ParseClub extends Command
 
                     try
                     {
-                        $head = array_change_key_case(get_headers($r['image'], TRUE));
-
-                        if($head['content-length'] != 2608)
+                        if($this->storeImage($r->id,$r['image']))
                         {
-                            $path = 'images/clubs/' . self::getPath($r->id);
-
-                            if(!Storage::disk('public')->exists($path))
-                            {
-                                Storage::disk('public')->makeDirectory($path);
-                            }
-
-                            $contents = @file_get_contents($r['image']);
-                            Storage::disk('public')->put($path . '/logo.png', $contents);
-
                             $r->logo = 1;
                             $r->save();
                         }
@@ -92,18 +115,6 @@ class ParseClub extends Command
                 }
             }
         }
-    }
-
-    /**
-     * Возвращает путь относительно id
-     *
-     * @param $id
-     * @return string
-     */
-
-    protected function getPath($id)
-    {
-        return ceil($id/100) . DIRECTORY_SEPARATOR . $id;
     }
 
 
@@ -241,12 +252,13 @@ class ParseClub extends Command
      */
 
 
-    protected function store($array = null)
+    private function store($array = null)
     {
         if(!empty($array))
         {
             $insert = [];
-            $insert['name'] = (!empty($array['name'])) ?   $array['name']   :   '';
+            $insert['name'] = (!empty($array['name'])) ?   $this->_getName($array['name'])   :   '';
+            $insert['dir'] = (!empty($array['name'])) ?   $this->getDir($array['name'])   :   '';
             $insert['image'] = (!empty($array['image'])) ?   'http:' . $array['image']   :   '';
             $insert['address'] = (!empty($array['address'])) ?   $array['address']   :   '';
             $insert['zip'] = (!empty($array['zip'])) ?   $array['zip']   :   '';
@@ -262,7 +274,14 @@ class ParseClub extends Command
             $record = new Club();
 
             $record->fill($insert);
-            $record->save();
+            $object_id = $record->save();
+
+            if($this->storeImage($object_id, $insert['image']))
+            {
+                $record->logo = 1;
+                $record->save();
+            }
+
         }
     }
 
@@ -273,7 +292,7 @@ class ParseClub extends Command
      * @return bool|string
      */
 
-    protected function __file_get_contents($url)
+    private function __file_get_contents($url)
     {
         #echo 'Parse url: ' . $url . PHP_EOL;
 
@@ -287,7 +306,7 @@ class ParseClub extends Command
      * @return null|string
      */
 
-    protected function clearString($str = null)
+    private function clearString($str = null)
     {
         if($str)
         {
@@ -297,6 +316,87 @@ class ParseClub extends Command
         }
 
         return $str;
+    }
+
+    /**
+     * Возвращает директорию в формате слага
+     *
+     * @param $str
+     * @return mixed
+     */
+
+    private function getDir($str)
+    {
+        if($str)
+        {
+            $str =  Format::slug($str);
+        }
+
+        return $str;
+    }
+
+    /**
+     * Возвращает имя
+     *
+     * @param $str
+     * @return mixed|null|string
+     */
+
+    private function _getName($str)
+    {
+        if($str)
+        {
+            $str = $this->clearString($str);
+            $str = str_replace('e.V.', '', $str);
+            $str = str_replace('e.V', '', $str);
+            $str = str_replace('1.', '', $str);
+        }
+
+        return $str;
+    }
+
+
+    /**
+     * Возвращает true, если картинка сохранена
+     *
+     * @param $object_id
+     * @param $url
+     * @return bool
+     */
+
+    private function storeImage($object_id, $url)
+    {
+        $head = array_change_key_case(get_headers($url, TRUE));
+
+        if($head['content-length'] != 2608)
+        {
+            $path = 'images/clubs/' . self::getPath($object_id);
+
+            if(!Storage::disk('public')->exists($path))
+            {
+                Storage::disk('public')->makeDirectory($path);
+            }
+
+            $contents = @file_get_contents($url);
+            Storage::disk('public')->put($path . '/logo.png', $contents);
+
+            return true;
+        }
+
+        return false;
+    }
+
+
+    /**
+     * Возвращает путь относительно id
+     *
+     * @param $id
+     * @return string
+     */
+
+    private function getPath($id)
+    {
+        return ceil($id/100) . DIRECTORY_SEPARATOR . $id;
     }
 
 }
