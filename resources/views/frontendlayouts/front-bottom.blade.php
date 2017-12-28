@@ -1,12 +1,3 @@
-<?php
-
-use App\Services\MerchantListingService;
-
-$merchantsTop = MerchantListingService::getMerchantsTopStatic(5);
-
-?>
-
-
 <footer style="background-image: url({{ asset('img/background/bg-footer-3.jpg') }});">
     <!-- FOOTER INFO -->
     <div class="clearfix footerInfo">

@@ -1,11 +1,3 @@
-<?php
-
-use Illuminate\Support\Facades\Auth;
-
-$user = (Auth::user())  ?   Auth::user()    :   null;
-
-?>
-
 <header id="pageTop" class="header">
     <!-- TOP INFO BAR -->
     <div class="nav-wrapper navbarWhite">

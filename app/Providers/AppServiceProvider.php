@@ -14,14 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::directive('__dir', function ($expression) {
-            list($greet, $name) = explode(', ', $expression);
-
-            $expression = trim($expression);
-            $expression = mb_strtolower($expression);
-
-            return "<?php echo {$expression}; ?>";
-        });
+        view()->composer('frontendlayouts.front-top', 'App\Http\Composers\TopComposer');
+        view()->composer('frontendlayouts.front-bottom', 'App\Http\Composers\BottomComposer');
     }
 
     /**
