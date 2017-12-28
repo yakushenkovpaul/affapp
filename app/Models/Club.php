@@ -18,6 +18,8 @@ class Club extends Model
         'dir',
 		'image',
         'logo',
+        'lat',
+        'lng',
 		'url',
 		'country',
 		'address',

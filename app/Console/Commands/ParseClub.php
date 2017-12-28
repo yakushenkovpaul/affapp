@@ -2,11 +2,14 @@
 
 namespace App\Console\Commands;
 
+use App\Library\Gps;
 use Illuminate\Console\Command;
 use App\Models\Club;
 use Illuminate\Support\Facades\Storage;
 use PHPUnit\Exception;
 use Regulus\TetraText\Facade as Format;
+use SebastianBergmann\CodeCoverage\Report\PHP;
+
 
 class ParseClub extends Command
 {
@@ -45,7 +48,76 @@ class ParseClub extends Command
     {
         #self::parseListEasy();
         #self::saveLogo();
-        self::saveDir();
+        #self::saveDir();
+        self::saveGps();
+    }
+
+
+    /**
+     * Сохраняет gps координаты
+     */
+
+    protected function saveGps()
+    {
+        $clubs = new Club;
+        $total = $count = $clubs->getClubsTotal();
+
+        for ($page = 0; $page <= ceil($total/100); $page++)
+        {
+            if($result = $clubs->getClubsPerPage(100, $page))
+            {
+                foreach ($result as $r)
+                {
+                    $count--;
+
+                    try
+                    {
+                        if($gps = $this->getGps($r->address))
+                        {
+                            $r->lat = $gps[0];
+                            $r->lng = $gps[1];
+                            $r->save();
+                        }
+                    }
+                    catch (Exception $e) {
+
+                    }
+
+                    echo $count . "\r";
+                }
+            }
+        }
+    }
+
+    /**
+     * Возвращает gps координаты
+     *
+     * @param string $str
+     * @return array
+     */
+
+    protected function getGps($str = '')
+    {
+        $result= [];
+
+        if(!empty($str))
+        {
+            if(preg_match("#Postfach#si", $str))
+            {
+                $temp = explode(',', $str);
+
+                if(!empty($temp[1]))
+                {
+                    $result = Gps::getGPSByAddress($temp[1]);
+                }
+            }
+            else
+            {
+                $result = Gps::getGPSByAddress($str);
+            }
+        }
+
+        return $result;
     }
 
 
