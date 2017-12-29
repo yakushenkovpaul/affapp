@@ -60,11 +60,22 @@ class ParseClub extends Command
     protected function saveGps()
     {
         $clubs = new Club;
-        $total = $count = $clubs->getClubsTotal();
+        $total = $count = $clubs->newQuery()
+            ->where('address', '<>', '')
+            ->where('lat', '=', 0)
+            ->count();
 
         for ($page = 0; $page <= ceil($total/100); $page++)
         {
-            if($result = $clubs->getClubsPerPage(100, $page))
+            if($result =
+                $clubs->newQuery()
+                    ->where('address', '<>', '')
+                    ->where('lat', '=', 0)
+                    ->orderBy('id', 'DESC')
+                    ->offset($page * 100)
+                    ->limit(100)
+                    ->get()
+            )
             {
                 foreach ($result as $r)
                 {
