@@ -83,8 +83,13 @@ class ParseClub extends Command
 
                     try
                     {
+                        echo '[' . $r->address . ']' . PHP_EOL;
+
                         if($gps = $this->getGps($r->address))
                         {
+                            var_dump($gps);
+                            exit;
+
                             $r->lat = $gps[0];
                             $r->lng = $gps[1];
                             $r->save();
