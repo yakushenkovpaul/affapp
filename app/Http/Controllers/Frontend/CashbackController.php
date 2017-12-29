@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 
 class CashbackController extends Controller
 {
-    public function cashback()
+    public function index()
     {
         return view('frontend.cashback');
     }
+
+
 
 }

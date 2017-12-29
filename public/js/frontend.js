@@ -89,6 +89,33 @@ $(document).ready(function()
     });
 
 
+    var contactForm = $("#contactForm");
+
+    contactForm.submit(function(e){
+        e.preventDefault();
+
+        var formData = contactForm.serialize();
+
+        $.ajax({
+            url: "contact",
+            type:'POST',
+            data:formData,
+            beforeSend: function() {
+                $('.page-loader').show();
+            },
+            success:function(data){
+                $.notify("Thank you. Your message was sent", "info");
+                $('.page-loader').hide();
+                contactForm.trigger('reset');
+            },
+            error: function (data) {
+                $('.page-loader').hide();
+                showErrors(data, 'top middle');
+            }
+        });
+    });
+
+
 
 
 
@@ -197,4 +224,4 @@ function showError(key, value) {
     console.log(value);
 }
 
-console.log('frontend.js_ver52');
+console.log('frontend.js_ver60');

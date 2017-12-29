@@ -39,9 +39,10 @@ Route::get('/neue-vereine-vorschlagen', 'Frontend\NeueVereineVorschlagenControll
 Route::get('/freunde-einladen', 'Frontend\FreundeEinladenController@index');
 
 
-Route::get('/contact', 'Frontend\ContactController@contact');
+Route::get('/contact', 'Frontend\ContactController@index');
+Route::post('contact', 'Frontend\ContactController@post');
 
-Route::get('/cashback', 'Frontend\CashbackController@cashback');
+Route::get('/cashback', 'Frontend\CashbackController@index');
 
 /*
 |--------------------------------------------------------------------------
