@@ -79,21 +79,16 @@ class ParseClub extends Command
             {
                 foreach ($result as $r)
                 {
+                    usleep(5000);
                     $count--;
 
                     try
                     {
                         if($gps = $this->getGps($r->address))
                         {
-                            echo '>' . $r->address . PHP_EOL;
-
-                            var_dump($gps);
-                            exit;
-
                             $r->lat = $gps[0];
                             $r->lng = $gps[1];
                             $r->save();
-                            usleep(5000);
                         }
                     }
                     catch (Exception $e) {
