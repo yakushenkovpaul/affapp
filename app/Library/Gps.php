@@ -10,6 +10,8 @@ class Gps
 
         $url = "http://maps.google.com/maps/api/geocode/json?sensor=false&address=$address";
 
+        echo $url . PHP_EOL;
+
         $response = file_get_contents($url);
 
         $json = json_decode($response, true);
