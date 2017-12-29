@@ -8,7 +8,8 @@ class Gps
     {
         $address = str_replace(" ", "+", $address);
 
-        $url = "http://maps.google.com/maps/api/geocode/json?sensor=false&address=$address";
+        #$url = "http://maps.google.com/maps/api/geocode/json?sensor=false&address=$address";
+        $url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $address . "&key=AIzaSyCTkPlXNmkTTvdC9wu9xeVPYJEuMJ5Z6GU";
 
         $response = file_get_contents($url);
 
