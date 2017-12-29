@@ -120,12 +120,19 @@ class ParseClub extends Command
 
                 if(!empty($temp[1]))
                 {
-                    $result = Gps::getGPSByAddress($temp[1]);
+                    $result = Gps::getGPSByAddress($temp[1] . ',Germany');
                 }
             }
             else
             {
-                $result = Gps::getGPSByAddress($str);
+                $temp = explode(',', $str);
+
+                if(!empty($temp[1]))
+                {
+                    $result = Gps::getGPSByAddress($temp[1] . ',Germany');
+                }
+
+                #$result = Gps::getGPSByAddress($str . ',Germany');
             }
         }
 
