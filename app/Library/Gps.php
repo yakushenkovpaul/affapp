@@ -21,6 +21,9 @@ class Gps
             return [];
         }
 
+        var_dump($json);
+        exit;
+
         return array ($json['results'][0]['geometry']['location']['lat'], $json['results'][0]['geometry']['location']['lng']);
     }
 }
