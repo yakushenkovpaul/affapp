@@ -85,12 +85,10 @@ class ParseClub extends Command
                     {
                         if($gps = $this->getGps($r->address))
                         {
-                            var_dump($gps);
-                            exit;
-
                             $r->lat = $gps[0];
                             $r->lng = $gps[1];
                             $r->save();
+                            usleep(5000);
                         }
                     }
                     catch (Exception $e) {
