@@ -56,7 +56,7 @@
 }
 
 .logo-fast {
-    float: ;
+
 }
 
 .logo-fast {
@@ -68,20 +68,10 @@
     padding: 20px 10px 20px 0px;
 }
 
-@media screen and (max-width:1199px) {
-    /* .list-inline {
-white-space: nowrap;;
-overflow: hidden;;
-text-overflow: ellipsis;;
-max-width: 200px;;
-} */
-    /* .list-inline a {w } */
-    .list-inline {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 200px;
-    }
+.list-inline {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 270px;
 }
 
 .club-buttons a {
