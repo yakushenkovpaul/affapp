@@ -19,12 +19,12 @@
     <link href="{{ asset('plugins/isotope/isotope.min.css?rnd=12') }}" rel="stylesheet">
     <link href="{{ asset('plugins/map/css/map.css?rnd=12') }}" rel="stylesheet">
     <!-- GOOGLE FONT -->
-    <!--
+
     <link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff" rel="stylesheet">
-    -->
+
     <!-- CUSTOM CSS -->
     <link href="{{ asset('css/style.css?rnd=12') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css?rnd=12') }}" rel="stylesheet">

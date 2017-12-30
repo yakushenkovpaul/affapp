@@ -165,6 +165,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Regulus\TetraText\TetraTextServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Overtrue\LaravelFollow\FollowServiceProvider::class,
         /*
          * Package Service Providers...
          */
