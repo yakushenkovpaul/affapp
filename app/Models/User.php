@@ -7,10 +7,15 @@ use App\Models\UserMeta;
 use App\Notifications\ResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Overtrue\LaravelFollow\Traits\CanFollow;
+use Overtrue\LaravelFollow\Traits\CanLike;
+use Overtrue\LaravelFollow\Traits\CanFavorite;
+use Overtrue\LaravelFollow\Traits\CanSubscribe;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use CanFollow, CanLike, CanFavorite, CanSubscribe;
 
     /**
      * The database table used by the model.

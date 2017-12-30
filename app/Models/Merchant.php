@@ -4,9 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
+use Overtrue\LaravelFollow\Traits\CanBeLiked;
+use Overtrue\LaravelFollow\Traits\CanBeFavorited;
 
 class Merchant extends Model
 {
+    use CanBeLiked, CanBeFavorited;
+
     public $table = "merchants";
 
     public $primaryKey = "id";

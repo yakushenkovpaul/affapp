@@ -4,9 +4,13 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MerchantSearchRequest;
+use App\Models\Merchant;
 use App\Services\MerchantListingService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use SebastianBergmann\CodeCoverage\Report\PHP;
+use App\Models\Club;
 
 
 class MerchantController extends Controller

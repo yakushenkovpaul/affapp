@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Category;
 use App\Models\CategoryMerchant;
 use App\Models\Merchant;
+use Illuminate\Support\Facades\Auth;
 
 class MerchantListingService
 {
@@ -169,7 +170,7 @@ class MerchantListingService
 
 
     /**
-     * Приводит массиво результатов к одному формату
+     * Возвращает массив результатов в едином формате
      *
      * @param $array
      * @return mixed
@@ -177,9 +178,23 @@ class MerchantListingService
 
     protected function prepareResultArray($array)
     {
+        $params = [];
+
+        if($user = Auth::user())
+        {
+            $params['favorites'] = collect(
+                $user->favorites($this->merchant)->whereIn('id',
+                    collect($array)->map(function ($item, $key) {
+                        return $item['id'];
+                    }))->select('id')->get()
+            )->map(function ($item, $key) {
+                return $item['id'];
+            })->all();
+        }
+
         foreach ($array as $k => $v)
         {
-            $array[$k] = self::prepareResult($v);
+            $array[$k] = self::prepareResult($v, $params);
         }
 
         return $array;
@@ -187,13 +202,14 @@ class MerchantListingService
 
 
     /**
-     * Подводит результат к одному формату
+     * Возвращает результат в едином формате
      *
      * @param $array
+     * @param $params
      * @return mixed
      */
 
-    protected function prepareResult($array)
+    protected function prepareResult($array, $params = [])
     {
         if(!empty($array['logo']))
         {
@@ -219,6 +235,18 @@ class MerchantListingService
         if(!$array['cashback'])
         {
             $array['cashback'] = 10.55;
+        }
+
+        if(isset($params['favorites']))
+        {
+            if(in_array($array['id'], $params['favorites']))
+            {
+                $array['fav'] = true;
+            }
+            else
+            {
+                $array['fav'] = false;
+            }
         }
 
         return $array;

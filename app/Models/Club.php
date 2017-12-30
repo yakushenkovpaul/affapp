@@ -3,9 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Overtrue\LaravelFollow\Traits\CanBeLiked;
+use Overtrue\LaravelFollow\Traits\CanBeFavorited;
 
 class Club extends Model
 {
+    use CanBeLiked, CanBeFavorited;
+
     public $table = "clubs";
 
     public $primaryKey = "id";

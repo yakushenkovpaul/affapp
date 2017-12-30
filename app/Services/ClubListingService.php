@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Club;
 use App\Models\Merchant;
+use Illuminate\Support\Facades\Auth;
 
 class ClubListingService
 {
@@ -52,7 +53,7 @@ class ClubListingService
 
         if($return = $this->club->getClubs($this->pagination, 'logo'))
         {
-            $result['data'] = $this->prepareResult(collect($return)->toArray());
+            $result['data'] = $this->prepareResultArray(collect($return)->toArray());
         }
 
         return $result;
@@ -83,7 +84,7 @@ class ClubListingService
         {
             if($result = collect($return)->toArray())
             {
-                $result['data'] = $this->prepareResult($result['data']);
+                $result['data'] = $this->prepareResultArray($result['data']);
             }
         }
 
@@ -109,29 +110,67 @@ class ClubListingService
 
 
     /**
-     * Приводит результат к одному формату
+     * Возвращает массив результатов в едином формате
      *
-     * @param $result
+     * @param $array
      * @return mixed
      */
 
-    protected function prepareResult($result)
+    protected function prepareResultArray($array)
     {
-        foreach ($result as $k => $v)
+        $params = [];
+
+        if($user = Auth::user())
         {
-            if(!empty($v['logo']))
+            $params['favorites'] = collect(
+                $user->favorites($this->club)->whereIn('id',
+                    collect($array)->map(function ($item, $key) {
+                        return $item['id'];
+                    }))->select('id')->get()
+            )->map(function ($item, $key) {
+                return $item['id'];
+            })->all();
+        }
+
+        foreach ($array as $k => $v)
+        {
+            $array[$k] = self::prepareResult($v, $params);
+        }
+
+        return $array;
+    }
+
+    /**
+     * Возвращает результат в едином формате
+     *
+     * @param $array
+     * @return mixed
+     */
+
+    protected function prepareResult($array, $params = [])
+    {
+        if(!empty($array['logo']))
+        {
+            $array['image'] = asset('storage/images/clubs/' . self::getPath($array['id']) . '/logo.png');
+        }
+        else
+        {
+            $array['image'] = asset('img/custom/club.png');
+        }
+
+        if(isset($params['favorites']))
+        {
+            if(in_array($array['id'], $params['favorites']))
             {
-                $v['image'] = asset('storage/images/clubs/' . self::getPath($v['id']) . '/logo.png');
+                $array['fav'] = true;
             }
             else
             {
-                $v['image'] = asset('img/custom/club.png');
+                $array['fav'] = false;
             }
-
-            $result[$k] = $v;
         }
 
-        return $result;
+        return $array;
     }
 
 

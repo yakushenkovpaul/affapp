@@ -14,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('frontendlayouts.front-top', 'App\Http\Composers\TopComposer');
+        view()->composer('frontendlayouts.front-top', 'App\Http\Composers\PublicComposer');
+        view()->composer('listing.clubs', 'App\Http\Composers\PublicComposer');
+        view()->composer('listing.merchants', 'App\Http\Composers\PublicComposer');
         view()->composer('frontendlayouts.front-bottom', 'App\Http\Composers\BottomComposer');
     }
 

@@ -44,6 +44,17 @@ Route::post('contact', 'Frontend\ContactController@post');
 
 Route::get('/cashback', 'Frontend\CashbackController@index');
 
+
+/*
+|--------------------------------------------------------------------------
+| Actions
+|--------------------------------------------------------------------------
+*/
+
+Route::post('fav-merchant', 'Actions\FavoritesController@merchant')->middleware(['auth']);
+Route::post('fav-club', 'Actions\FavoritesController@club')->middleware(['auth']);
+
+
 /*
 |--------------------------------------------------------------------------
 | Login/ Logout/ Password

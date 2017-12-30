@@ -116,9 +116,6 @@ $(document).ready(function()
     });
 
 
-
-
-
     $(function()
     {
         $( "#club" ).autocomplete({
@@ -167,6 +164,32 @@ $(document).ready(function()
     });
 
 });
+
+
+function fav(id, url) {
+
+    $.ajax({
+        url: url,
+        type:'POST',
+        data: { id : id, "_token": $('meta[name="csrf_token"]').attr('content') },
+        success:function(data){
+            if(data['result'] == true)
+            {
+                $('#' + url + '-' + id).removeClass('fa-heart-o');
+                $('#' + url + '-' + id).addClass('fa-heart');
+                $.notify("Thank you. " + data['name'] + " was added to favorites", "info");
+            }
+            else
+            {
+                $('#' + url + '-' + id).removeClass('fa-heart');
+                $('#' + url + '-' + id).addClass('fa-heart-o');
+                $.notify(data['name'] + " was removed from favorites", "info");
+            }
+        }
+    });
+}
+
+
 
 function getListing(page) {
     $.ajax({
@@ -231,4 +254,4 @@ function showError(key, value) {
 
 
 
-console.log('frontend.js_ver62');
+console.log('frontend.js_ver71');
