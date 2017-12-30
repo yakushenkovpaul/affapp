@@ -108,7 +108,10 @@ p {
 }
 
 @media (min-width: 768px) {
-    p {font-size: 14px;line-height: 26px;margin-bottom: 25px;
+    p {
+        font-size: 14px;
+        line-height: 26px;
+        margin-bottom: 25px;
     }
 }
 
@@ -118,7 +121,7 @@ h3,
 h4,
 h5 {
     font-family: 'Poppins', sans-serif;
-    /*text-transform: uppercase;*/
+    text-transform: uppercase;
     margin-top: 0;
     font-weight: 700;
     color: #222222;
@@ -324,7 +327,7 @@ section {
 
 @media (min-width: 768px) {
     section {
-        padding: 50px 0;
+        padding: 100px 0;
     }
 }
 
@@ -7026,7 +7029,8 @@ table.dataTable thead .sorting_desc_disabled:after {
     margin: 0;
 }
 
-.panel-card .panel-body {/* padding: 30px 20px */
+.panel-card .panel-body {
+    padding: 30px 20px;
 }
 
 .panel-card .panel-body h2 {
@@ -7054,7 +7058,8 @@ table.dataTable thead .sorting_desc_disabled:after {
     color: #f25656;
 }
 
-.panel-card .panel-body.plr {padding: 0 20px;
+.panel-card .panel-body.plr {
+    padding: 0 20px;
 }
 
 .panel-card .panel-body.panel-message {
@@ -7074,7 +7079,8 @@ table.dataTable thead .sorting_desc_disabled:after {
     padding: 19px 20px 15px 20px;
 }
 
-.panel-card .panel-list.list-padding li {padding: 15px 0;
+.panel-card .panel-list.list-padding li {
+    padding: 15px 0;
 }
 
 .panel-card .panel-list.list-padding-sm li {
@@ -7163,7 +7169,8 @@ table.dataTable thead .sorting_desc_disabled:after {
 .merchant-info .merchant-logo {
     background-color: transparent;
 
-    /* border-bottom: 1px #e5e5e5 solid */padding: 0 0 32px 0;
+    /* border-bottom: 1px #e5e5e5 solid */
+    padding: 0 0 20px 0;
 }
 
 .merchant-info .listingReview {
@@ -7193,15 +7200,21 @@ table.dataTable thead .sorting_desc_disabled:after {
     float: left;
 }
 
-.itmeName-cashback {/* line-height: 34px */font-family: 'Poppins', sans-serif;color: #222222;font-size: 14px;font-weight: 400;
+.itmeName-cashback {
+    line-height: 34px;
+    font-family: 'Poppins', sans-serif;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .itmeName-cashback .iconBox {
     width: 34px;
     height: 34px;
-    display: inline-block;/* line-height: 34px */
+    display: inline-block;
+    line-height: 34px;
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
     margin: 0 10px 0 0;
     float: left;
 }

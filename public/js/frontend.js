@@ -161,6 +161,11 @@ $(document).ready(function()
         });
     });
 
+    $(".show-more").on('click' , function () {
+        $(this).prev().toggleClass( 'promo-text', '' );
+        return false;
+    });
+
 });
 
 function getListing(page) {
@@ -224,4 +229,6 @@ function showError(key, value) {
     console.log(value);
 }
 
-console.log('frontend.js_ver60');
+
+
+console.log('frontend.js_ver62');

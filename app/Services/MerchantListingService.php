@@ -35,7 +35,7 @@ class MerchantListingService
 
         if($return = $this->merchant->getMerchant($id))
         {
-            $result = collect($return)->toArray();
+            $result = self::prepareResult(collect($return)->toArray());
         }
 
         return $result;
@@ -80,7 +80,7 @@ class MerchantListingService
 
         if($return = $this->merchant->getMerchants($this->pagination))
         {
-            $result['data'] = self::prepareResult(collect($return)->toArray());
+            $result['data'] = self::prepareResultArray(collect($return)->toArray());
         }
 
         return $result;
@@ -133,7 +133,7 @@ class MerchantListingService
         {
             if($result = collect($return)->toArray())
             {
-                $result['data'] = $this->prepareResult($result['data']);
+                $result['data'] = $this->prepareResultArray($result['data']);
             }
         }
 
@@ -169,46 +169,59 @@ class MerchantListingService
 
 
     /**
-     * Приводит результат к одному формату
+     * Приводит массиво результатов к одному формату
      *
-     * @param $result
+     * @param $array
      * @return mixed
      */
 
-    protected function prepareResult($result)
+    protected function prepareResultArray($array)
     {
-        foreach ($result as $k => $v)
+        foreach ($array as $k => $v)
         {
-            if(!empty($v['logo']))
-            {
-                $v['image'] = asset('storage/images/merchants/' . self::getPath($v['id']) . '/logo.png');
-            }
-            else
-            {
-                $v['image'] = asset('img/custom/merchant.png');
-            }
-
-            $v['cashback'] = 0;
-
-            if(isset($v['sale_percent_min']) && $v['sale_percent_min'] > 0)
-            {
-                $v['cashback'] = $v['sale_percent_min']*0.85;
-            }
-
-            if(!$v['cashback'] && isset($v['sale_percent_min']) && $v['sale_percent_min'] > 0)
-            {
-                $v['cashback'] = $v['sale_percent_min']*0.85;
-            }
-
-            if(!$v['cashback'])
-            {
-                $v['cashback'] = 10.55;
-            }
-
-            $result[$k] = $v;
+            $array[$k] = self::prepareResult($v);
         }
 
-        return $result;
+        return $array;
+    }
+
+
+    /**
+     * Подводит результат к одному формату
+     *
+     * @param $array
+     * @return mixed
+     */
+
+    protected function prepareResult($array)
+    {
+        if(!empty($array['logo']))
+        {
+            $array['image'] = asset('storage/images/merchants/' . self::getPath($array['id']) . '/logo.png');
+        }
+        else
+        {
+            $array['image'] = asset('img/custom/merchant.png');
+        }
+
+        $array['cashback'] = 0;
+
+        if(isset($array['sale_percent_min']) && $array['sale_percent_min'] > 0)
+        {
+            $array['cashback'] = $array['sale_percent_min']*0.85;
+        }
+
+        if(!$array['cashback'] && isset($array['sale_percent_min']) && $array['sale_percent_min'] > 0)
+        {
+            $array['cashback'] = $array['sale_percent_min']*0.85;
+        }
+
+        if(!$array['cashback'])
+        {
+            $array['cashback'] = 10.55;
+        }
+
+        return $array;
     }
 
 

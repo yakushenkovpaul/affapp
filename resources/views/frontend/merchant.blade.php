@@ -37,7 +37,7 @@
                                                         <i class="fa fa-star" aria-hidden="true"></i>
                                                     </li>
                                                 </ul>
-                                                <b>4.6/5 - 35 голосов</b>
+                                                <b>123 Bewertungen</b>
                                             </center>
                                         </div>
                                     </li>
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                         <div class="panel panel-default panel-card hidden-xs">
-                            <div class="panel-heading">Cash back</div>
+                            <div class="panel-heading">Cash back detalliert</div>
                             <div class="panel-body cashback">
                                 <ul class="list-styled panel-list list-padding">
                                     <li>
@@ -80,52 +80,52 @@
                             </div>
                         </div>
                         <div class="panel panel-default panel-card panel-topshop hidden-xs">
-                            <div class="panel-heading" id="categories11">Top shop</div>
+                            <div class="panel-heading" id="categories11">Top shops</div>
                             <div>
                                 <ul class="panel-list list-padding left">
                                     <li class="listWrapper">
-                                        <span class="itmeName"><i class="icon-listy icon-tea-cup-1 iconBox"></i>Restaurants</span>
+                                        <span class="itmeName">Restaurants</span>
                                     </li>
                                     <li class="listWrapper">
-                                        <span class="itmeName"><i class="icon-listy icon-building iconBox"></i>Hotels</span>
+                                        <span class="itmeName">Hotels</span>
                                     </li>
                                     <li class="listWrapper">
-                                        <span class="itmeName"><i class="icon-listy icon-juice iconBox"></i>Nightclubs</span>
+                                        <span class="itmeName">Nightclubs</span>
                                     </li>
                                     <li class="listWrapper">
-                                        <span class="itmeName"><i class="icon-listy icon-tea-cup-1 iconBox"></i>Restaurants</span>
+                                        <span class="itmeName">Restaurants</span>
                                     </li>
                                     <li class="listWrapper">
-                                        <span class="itmeName"><i class="icon-listy icon-building iconBox"></i>Hotels</span>
+                                        <span class="itmeName">Hotels</span>
                                     </li>
                                     <li class="listWrapper">
-                                        <span class="itmeName"><i class="icon-listy icon-juice iconBox"></i>Nightclubs</span>
+                                        <span class="itmeName">Nightclubs</span>
                                     </li>
                                 </ul>
                                 <ul class="panel-list list-padding right">
                                     <li class="listWrapper">
-                                        <span class="itmeName"><i class="icon-listy icon-tea-cup-1 iconBox"></i>Restaurants</span>
+                                        <span class="itmeName">Restaurants</span>
                                     </li>
                                     <li class="listWrapper">
-                                        <span class="itmeName"><i class="icon-listy icon-building iconBox"></i>Hotels</span>
+                                        <span class="itmeName">Hotels</span>
                                     </li>
                                     <li class="listWrapper">
-                                        <span class="itmeName"><i class="icon-listy icon-juice iconBox"></i>Nightclubs</span>
+                                        <span class="itmeName">Nightclubs</span>
                                     </li>
                                     <li class="listWrapper">
-                                        <span class="itmeName"><i class="icon-listy icon-tea-cup-1 iconBox"></i>Restaurants</span>
+                                        <span class="itmeName">Restaurants</span>
                                     </li>
                                     <li class="listWrapper">
-                                        <span class="itmeName"><i class="icon-listy icon-building iconBox"></i>Hotels</span>
+                                        <span class="itmeName">Hotels</span>
                                     </li>
                                     <li class="listWrapper">
-                                        <span class="itmeName"><i class="icon-listy icon-juice iconBox"></i>Nightclubs</span>
+                                        <span class="itmeName">Nightclubs</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="panel panel-default panel-card panel-topshop hidden-xs">
-                            <div class="panel-heading">Categories</div>
+                            <div class="panel-heading">Kategorien</div>
                             <div>
                                 <ul class="panel-list list-padding left">
                                     <li class="listWrapper">
@@ -171,209 +171,224 @@
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-7 col-xs-12 panel-body">
-                        <div class="col-md-7 col-sm-12 merchant-title">
-                            <h1>
-                                {{ $merchant['name'] }}</h1>
-                            <p>
-                                Average comisson per order is 5%.</p>
+                        <div class="col-md-6 col-sm-12 merchant-title">
+                            <h1>{{ $merchant['name'] }}</h1>
+                            <p>Durchschnittliches Cashback beträgt {{ $merchant['cashback'] }}%.</p>
                         </div>
-                        <div class="col-md-5 col-sm-12">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">Visit shop</button>
+                        <div class="col-md-6 col-sm-12">
+                            <a href="{{ $merchant['url'] }}" class="btn btn-primary btn-lg btn-block" title="{{ $merchant['name'] }}" target="_blank">Zum Shop gehen &amp; gutes tun</a>
                         </div>
                         <section>
                             <div class="col-xs-12 col-sm-12 col-md-12 promo">
                                 <div class="row">
-                                    <div class="col-sm-8 col-md-9">
+                                    <div class="col-sm-8 col-md-8">
                                         <h4>Скидка 10% + доставка Первого заказа!</h4>
                                         <div class="promo-text">
-                                            sit ea detraxit menandri mediocritatem, in mel dicant mentitum.&nbsp;sit ea detraxit menandri mediocritatem, in mel dicant mentitum.sit ea detraxit menandri mediocritatem, in mel dicant mentitum.
-                                        </div>
-                                        <a href="#" class="show-more"><i class="fa fa-caret-down" aria-hidden="true"></i> Show more</a>
-                                    </div>
-                                    <div class="col-sm-4 col-md-3">
-                                        <div class="promo-value promo-green">5%</div>
-                                        <div class="promo-code">
-                                            <a data-toggle="collapse" href="#code-1" class="open-code promo-code">Get a code</a>
-                                            <div id="code-1" class="collapse code">
-                                                LV5MAY14
-                                            </div>
+                                            Bis zu 30% Rabatt auf Animona VOM FEINSTEN Bundles.
+
+                                            <br>
+                                            Gültig bis:
+                                            31.01.2018
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-6 col-sm-7 col-md-9">
-                                        <div class="promo-view">
-                                            <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;Viewed 276
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-5 col-md-3">
-                                        <div class="promo-end">
-                                            <i class="fa fa-history" aria-hidden="true"></i>&nbsp;18 days
+                                    <div class="col-sm-6 col-md-4">
+                                        <a data-toggle="collapse" href="#code-1" class="open-value promo-code collapsed" aria-expanded="false">
+                                            <div class="promo-value promo-green">code anzeigen</div>
+                                        </a>
+                                        <div id="code-1" class="code collapse" aria-expanded="false" style="height: 0px;">
+                                            LV5MAY14
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 promo">
                                 <div class="row">
-                                    <div class="col-sm-8 col-md-9">
+                                    <div class="col-sm-8 col-md-8">
                                         <h4>Скидка 10% + доставка Первого заказа!</h4>
-                                        <center>
-                                            <img src="{{ asset('img/brands/18999_lgo_telekom_affiliate_de.png') }}" alt="Otto.de">
-                                        </center>
                                         <div class="promo-text">
                                             sit ea detraxit menandri mediocritatem, in mel dicant mentitum.&nbsp;sit ea detraxit menandri mediocritatem, in mel dicant mentitum.sit ea detraxit menandri mediocritatem, in mel dicant mentitum.
                                         </div>
                                         <a href="#" class="show-more"><i class="fa fa-caret-down" aria-hidden="true"></i> Show more</a>
                                     </div>
-                                    <div class="col-sm-4 col-md-3">
-                                        <div class="promo-value promo-red">5%</div>
-                                        <div class="promo-code">
-                                            <a data-toggle="collapse" href="#code-2" class="open-code promo-code">Get a code</a>
-                                            <div id="code-2" class="collapse code">
-                                                LV5MAY14
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-6 col-sm-7 col-md-9">
-                                        <div class="promo-view">
-                                            <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;Viewed 276
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-5 col-md-3">
-                                        <div class="promo-end">
-                                            <i class="fa fa-history" aria-hidden="true"></i>&nbsp;18 days
+                                    <div class="col-sm-6 col-md-4">
+                                        <a data-toggle="collapse" href="#code-2" class="open-value promo-code collapsed" aria-expanded="false">
+                                            <div class="promo-value promo-green">code anzeigen</div>
+                                        </a>
+                                        <div id="code-2" class="code collapse" aria-expanded="false" style="height: 0px;">
+                                            LV5MAY14
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 promo">
                                 <div class="row">
-                                    <div class="col-sm-8 col-md-9">
+                                    <div class="col-sm-8 col-md-8">
                                         <h4>Скидка 10% + доставка Первого заказа!</h4>
                                         <div class="promo-text">
-                                            sit ea detraxit menandri mediocritatem, in mel dicant mentitum.&nbsp;sit ea detraxit menandri mediocritatem, in mel dicant mentitum.sit ea detraxit menandri mediocritatem, in mel dicant mentitum.
-                                        </div>
-                                        <a href="#" class="show-more"><i class="fa fa-caret-down" aria-hidden="true"></i> Show more</a>
-                                    </div>
-                                    <div class="col-sm-4 col-md-3">
-                                        <div class="promo-value promo-green">5%</div>
-                                        <div class="promo-code">
-                                            <a data-toggle="collapse" href="#code-3" class="open-code promo-code">Get a code</a>
-                                            <div id="code-3" class="collapse code">
-                                                LV5MAY14
-                                            </div>
+                                            Bis zu 30% Rabatt auf Animona VOM FEINSTEN Bundles.
+
+                                            <br>
+                                            Gültig bis:
+                                            31.01.2018
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-6 col-sm-7 col-md-9">
-                                        <div class="promo-view">
-                                            <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;Viewed 276
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-5 col-md-3">
-                                        <div class="promo-end">
-                                            <i class="fa fa-history" aria-hidden="true"></i>&nbsp;18 days
+                                    <div class="col-sm-6 col-md-4">
+                                        <a data-toggle="collapse" href="#code-2" class="open-value promo-code collapsed" aria-expanded="false">
+                                            <div class="promo-value promo-green">code anzeigen</div>
+                                        </a>
+                                        <div id="code-2" class="code collapse" aria-expanded="false" style="height: 0px;">
+                                            LV5MAY14
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 promo">
                                 <div class="row">
-                                    <div class="col-sm-8 col-md-9">
+                                    <div class="col-sm-8 col-md-8">
                                         <h4>Скидка 10% + доставка Первого заказа!</h4>
-                                        <center>
-                                            <img src="{{ asset('img/brands/14496_lgo_tele2_nl.png') }}" alt="Otto.de">
-                                        </center>
                                         <div class="promo-text">
-                                            sit ea detraxit menandri mediocritatem, in mel dicant mentitum.&nbsp;sit ea detraxit menandri mediocritatem, in mel dicant mentitum.sit ea detraxit menandri mediocritatem, in mel dicant mentitum.
+                                            Bis zu 30% Rabatt auf Animona VOM FEINSTEN Bundles.
+
+                                            <br>
+                                            Gültig bis:
+                                            31.01.2018
                                         </div>
-                                        <a href="#" class="show-more"><i class="fa fa-caret-down" aria-hidden="true"></i> Show more</a>
                                     </div>
-                                    <div class="col-sm-4 col-md-3">
-                                        <div class="promo-value promo-red">5%</div>
-                                        <div class="promo-code">
-                                            <a data-toggle="collapse" href="#code-4" class="open-code promo-code">Get a code</a>
-                                            <div id="code-4" class="collapse code">
-                                                LV5MAY14
-                                            </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <a data-toggle="collapse" href="#code-2" class="open-value promo-code collapsed" aria-expanded="false">
+                                            <div class="promo-value promo-green">code anzeigen</div>
+                                        </a>
+                                        <div id="code-2" class="code collapse" aria-expanded="false" style="height: 0px;">
+                                            LV5MAY14
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 promo">
                                 <div class="row">
-                                    <div class="col-xs-6 col-sm-7 col-md-9">
-                                        <div class="promo-view">
-                                            <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;Viewed 276
+                                    <div class="col-sm-8 col-md-8">
+                                        <h4>Скидка 10% + доставка Первого заказа!</h4>
+                                        <div class="promo-text">
+                                            Bis zu 30% Rabatt auf Animona VOM FEINSTEN Bundles.
+
+                                            <br>
+                                            Gültig bis:
+                                            31.01.2018
                                         </div>
                                     </div>
-                                    <div class="col-xs-6 col-sm-5 col-md-3">
-                                        <div class="promo-end">
-                                            <i class="fa fa-history" aria-hidden="true"></i>&nbsp;18 days
+                                    <div class="col-sm-6 col-md-4">
+                                        <a data-toggle="collapse" href="#code-2" class="open-value promo-code collapsed" aria-expanded="false">
+                                            <div class="promo-value promo-green">code anzeigen</div>
+                                        </a>
+                                        <div id="code-2" class="code collapse" aria-expanded="false" style="height: 0px;">
+                                            LV5MAY14
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 promo">
+                                <div class="row">
+                                    <div class="col-sm-8 col-md-8">
+                                        <h4>Скидка 10% + доставка Первого заказа!</h4>
+                                        <div class="promo-text">
+                                            Bis zu 30% Rabatt auf Animona VOM FEINSTEN Bundles.
+
+                                            <br>
+                                            Gültig bis:
+                                            31.01.2018
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <a data-toggle="collapse" href="#code-2" class="open-value promo-code collapsed" aria-expanded="false">
+                                            <div class="promo-value promo-green">code anzeigen</div>
+                                        </a>
+                                        <div id="code-2" class="code collapse" aria-expanded="false" style="height: 0px;">
+                                            LV5MAY14
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 promo">
+                                <div class="row">
+                                    <div class="col-sm-8 col-md-8">
+                                        <h4>Скидка 10% + доставка Первого заказа!</h4>
+                                        <div class="promo-text">
+                                            Bis zu 30% Rabatt auf Animona VOM FEINSTEN Bundles.
+
+                                            <br>
+                                            Gültig bis:
+                                            31.01.2018
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <a data-toggle="collapse" href="#code-2" class="open-value promo-code collapsed" aria-expanded="false">
+                                            <div class="promo-value promo-green">code anzeigen</div>
+                                        </a>
+                                        <div id="code-2" class="code collapse" aria-expanded="false" style="height: 0px;">
+                                            LV5MAY14
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 promo">
+                                <div class="row">
+                                    <div class="col-sm-8 col-md-8">
+                                        <h4>Скидка 10% + доставка Первого заказа!</h4>
+                                        <div class="promo-text">
+                                            Bis zu 30% Rabatt auf Animona VOM FEINSTEN Bundles.
+
+                                            <br>
+                                            Gültig bis:
+                                            31.01.2018
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <a data-toggle="collapse" href="#code-2" class="open-value promo-code collapsed" aria-expanded="false">
+                                            <div class="promo-value promo-green">code anzeigen</div>
+                                        </a>
+                                        <div id="code-2" class="code collapse" aria-expanded="false" style="height: 0px;">
+                                            LV5MAY14
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
                         <section>
-                            <div class="blogInnerWrapper">
-                                <div class="thumbnail blogInner">
+                            <div class="thumbnail blogContent">
+                                <div class="caption">
+                                    <h3>{{ $merchant['name'] }}</h3>
                                     <img src="{{ asset('img/blog/blog-1.jpg') }}" alt="Image blog" class="img-responsive">
-                                    <div class="caption">
-                                        <h4>Nov 22, 2016   by <a href="#">Admin</a></h4>
-                                        <h3><a href="blog-details.html">Donec id dolor in erat imperdiet.</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt  labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
-                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt  labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est. </p>
+                                    <h2>Merchant Title</h2>
+                                    <p>Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est. </p>
+                                    <p>Sed eiusmod tempor incididunt  labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    <h2>Merchant Title</h2>
+                                    <p>Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est. </p>
+                                    <p>Mod tempor incididunt  labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                                 </div>
-                                <br />
-                                <br />
-                                <div class="thumbnail blogInner">
-                                    <div id="blog-carousel-id" class="carousel slide" data-ride="carousel">
-                                        <div class="carousel-inner">
-                                            <div class="item">
-                                                <img src="{{ asset('img/blog/blog-2.jpg') }}" alt="Image blog">
-                                            </div>
-                                            <div class="item active">
-                                                <img src="{{ asset('img/blog/blog-1.jpg') }}" alt="Image blog">
-                                            </div>
+                            </div>
+                            <div class="commentArea">
+                                <h3>Leave A Comment</h3>
+                                <form action="#" class="deafultForm">
+                                    <div class="row">
+                                        <div class="form-group col-xs-12">
+                                            <label for="messageBox" class="control-label">Message</label>
+                                            <textarea class="form-control" rows="3"></textarea>
                                         </div>
-                                        <a class="left carousel-control" href="#blog-carousel-id" data-slide="prev"><i class="icon-listy icon-left-arrow-3"></i></a>
-                                        <a class="right carousel-control" href="#blog-carousel-id" data-slide="next"><i class="icon-listy icon-right-arrow-3"></i></a>
+                                        <div class="form-group col-sm-6 col-xs-12">
+                                            <label for="userName" class="control-label">Name</label>
+                                            <input type="text" class="form-control" id="userName">
+                                        </div>
+                                        <div class="form-group col-sm-6 col-xs-12">
+                                            <label for="userEmail" class="control-label">Email</label>
+                                            <input type="email" class="form-control" id="userEmail">
+                                        </div>
+                                        <div class="form-group col-xs-12">
+                                            <button type="submit" class="btn btn-primary">Get Started</button>
+                                        </div>
                                     </div>
-                                    <div class="caption">
-                                        <h4>Nov 22, 2016   by <a href="#">Admin</a></h4>
-                                        <h3><a href="blog-details.html">Donec id dolor in erat imperdiet.</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt  labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
-                                    </div>
-                                </div>
-                                <div class="thumbnail blogInner">
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jdMXyXuualc"></iframe>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nov 22, 2016   by <a href="#">Admin</a></h4>
-                                        <h3><a href="blog-details.html">Donec id dolor in erat imperdiet.</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt  labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
-                                    </div>
-                                </div>
-                                <div class="thumbnail blogInner">
-                                    <div class="iframWrapper">
-                                        <iframe scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/273828810&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nov 22, 2016   by <a href="#">Admin</a></h4>
-                                        <h3><a href="blog-details.html">Donec id dolor in erat imperdiet.</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt  labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
-                                    </div>
-                                </div>
-                                <div class="thumbnail blogInner ">
-                                    <div class="caption">
-                                        <h4>Nov 22, 2016   by <a href="#">Admin</a></h4>
-                                        <h3><a href="blog-details.html">Donec id dolor in erat imperdiet.</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt  labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </section>
                     </div>
