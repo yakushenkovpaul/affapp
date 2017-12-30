@@ -1435,7 +1435,7 @@
             </div>
         </section>
         <!-- FOOTER -->
-        @include('userlayouts.user-bottom')
+        @include('frontendlayouts.front-bottom')
     </div>
 
 @stop

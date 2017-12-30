@@ -40,13 +40,8 @@
                         <li>
                             <a href="{!! url('/contact') !!}">Kontaktiere uns </a>
                         </li>
-                        <li class=" dropdown singleDrop">
-                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">admin <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="{!! url('user/dashboard') !!}">Dashboard</a></li>
-                                <li><a href="{!! url('user/settings') !!}">Settings</a></li>
-                                <li><a href="{!! url('logout') !!}">Logout</a></li>
-                            </ul>
+                        <li>
+                            <a href="{!! url('logout') !!}">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -70,14 +65,33 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-dash">
                     <ul class="nav navbar-nav mr0">
-                        <li class="active">
-                            <a href="dashboard.html"><i class="fa fa-tachometer icon-dash" aria-hidden="true"></i> Übersicht</a>
+                        @if (\Request::is('user/dashboard'))
+                            <li class="active">
+                        @else
+                            <li>
+                        @endif
+                            <a href="{!! url('user/dashboard') !!}"><i class="fa fa-tachometer icon-dash" aria-hidden="true"></i> Dashboard</a>
                         </li>
-                        <li>
-                            <a href="oders.html"><i class="fa fa-cogs icon-dash" aria-hidden="true"></i> Meine Bestellungen</a>
+                        @if (\Request::is('user/settings'))
+                            <li class="active">
+                        @else
+                            <li>
+                        @endif
+                            <a href="{!! url('user/settings') !!}"><i class="fa fa-cogs icon-dash" aria-hidden="true"></i> Settings</a>
                         </li>
-                        <li>
-                            <a href="profile.html"><i class="fa fa-user icon-dash" aria-hidden="true"></i> Persönliche Einstellungen</a>
+                        @if (\Request::is('user/favoritesMerchants'))
+                            <li class="active">
+                        @else
+                            <li>
+                        @endif
+                            <a href="{!! url('user/favoritesMerchants') !!}"><i class="fa fa-shopping-basket icon-dash" aria-hidden="true"></i> Favorites merchants</a>
+                        </li>
+                        @if (\Request::is('user/favoritesClubs'))
+                            <li class="active">
+                        @else
+                            <li>
+                        @endif
+                            <a href="{!! url('user/favoritesClubs') !!}"><i class="fa fa-futbol-o icon-dash" aria-hidden="true"></i> Favorites clubs</a>
                         </li>
                     </ul>
                     <div class="row adjustRow">

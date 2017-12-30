@@ -260,4 +260,38 @@ class MerchantService
         $merchant->categories()->detach();
     }
 
+
+    /**
+     * Возвращает список клубов в избранном
+     *
+     * @return array
+     */
+
+    public function favoritesList()
+    {
+        $result = [];
+
+        if($user = request()->user())
+        {
+            $result = $user->favorites($this->model)->paginate($this->pagination);
+        }
+
+        return $result;
+    }
+
+    /**
+     * Убирает из списка избранного
+     *
+     * @param $id
+     * @return mixed
+     */
+
+    public function favoritesDestroy($id)
+    {
+        if($user = request()->user())
+        {
+            return $user->unfavorite($this->find($id));
+        }
+    }
+
 }
