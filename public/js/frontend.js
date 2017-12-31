@@ -169,7 +169,7 @@ $(document).ready(function()
 function fav(id, url) {
 
     $.ajax({
-        url: url,
+        url: 'actions/' + url,
         type:'POST',
         data: { id : id, "_token": $('meta[name="csrf_token"]').attr('content') },
         success:function(data){
@@ -254,4 +254,4 @@ function showError(key, value) {
 
 
 
-console.log('frontend.js_ver71');
+console.log('frontend.js_ver72');

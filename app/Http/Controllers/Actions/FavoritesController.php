@@ -32,10 +32,10 @@ class FavoritesController
                 {
                     return response()->json(['result'=>true, 'name' => $model->name]);
                 }
+
+                return response()->json(['result'=>false, 'name' => $model->name]);
             }
         }
-
-        return response()->json(['result'=>false, 'name' => $model->name]);
     }
 
     /**
@@ -56,10 +56,10 @@ class FavoritesController
                 {
                     return response()->json(['result'=>true, 'name' => $model->name]);
                 }
+
+                return response()->json(['result'=>false, 'name' => $model->name]);
             }
         }
-
-        return response()->json(['result'=>false, 'name' => $model->name]);
     }
 
 }
