@@ -45,4 +45,15 @@ class UserMeta extends Model
         return User::where('id', $this->user_id)->first();
     }
 
+    /**
+     * User club
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+
+    public function club()
+    {
+        return $this->belongsTo(Club::class);
+    }
+
 }

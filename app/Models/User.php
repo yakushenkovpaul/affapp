@@ -48,6 +48,7 @@ class User extends Authenticatable
         return $this->hasOne(UserMeta::class);
     }
 
+
     /**
      * User Roles
      *

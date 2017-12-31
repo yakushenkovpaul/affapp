@@ -1,7 +1,7 @@
 @foreach ($clubs['data'] as $club)
     <div class="col-sm-3 col-xs-12">
         <ul class="list-inline">
-            @if (isset($user))
+            @if (isset($club['fav']))
                 <li>
                     @if ($club['fav'])
                         <i class="fa fa-heart favorite" aria-hidden="true" id="fav-club-{{ $club['id'] }}" onclick="fav({{ $club['id'] }}, 'fav-club')"></i>

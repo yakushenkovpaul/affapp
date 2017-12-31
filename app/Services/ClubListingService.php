@@ -31,10 +31,20 @@ class ClubListingService
     public function getClub($id)
     {
         $result = [];
+        $params = [];
 
         if($return = $this->club->getClub($id))
         {
-            $result = collect($return)->toArray();
+            if($user = Auth::user())
+            {
+                $params['favorites'] = collect(
+                    $user->favorites($this->club)->where('id', '=', $id)->select('id')->get()
+                )->map(function ($item, $key) {
+                    return $item['id'];
+                })->all();
+            }
+
+            $result = $this->prepareResult(collect($return)->toArray(), $params);
         }
 
         return $result;
@@ -106,6 +116,20 @@ class ClubListingService
         }
 
         return $result;
+    }
+
+    /**
+     * Возвращает клуб авторизированного пользователя
+     *
+     * @return array
+     */
+
+    public function getUserClub()
+    {
+        if($user = Auth::user())
+        {
+            return $this->prepareResult(collect($user->meta->club)->toArray());
+        }
     }
 
 

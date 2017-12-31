@@ -15,7 +15,7 @@
                                     <div class="servicesInfo">
                                         <h2>{{ $club['name'] }}</h2>
                                     </div>
-                                    <img src="{{ asset('img/clubs/cb-1.jpeg') }}" border="0">
+                                    <img src="{{ $club['image'] }}" alt="{{ $club['name'] }}">
                                 </li>
                                 <li>
                                     <div class="servicesIcon">
@@ -49,16 +49,28 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12">
-                        <div class="listingTitleArea">
-                            <div class="listingReview">
-                                <div class="club-buttons">
-                                    <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i>Zu meinem Verein hinzufügen</a>
-                                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Verein merken und einkaufen</a>
-                                </div>
-                            </div>
+                    @if (isset($club['fav']))
+                        <div class="col-sm-6 col-md-6 col-xs-12">
+                            <a href="{{ $club['url'] }}" title="{{ $club['name'] }}" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>Verein merken und einkaufen
+                            </a>
                         </div>
-                    </div>
+                        <div class="col-sm-6 col-md-6 col-xs-12">
+                            <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10" onclick="fav({{ $club['id'] }}, 'fav-club')">
+                                    @if ($club['fav'])
+                                        <i id="fav-club-{{ $club['id'] }}" class="fa fa-heart" aria-hidden="true"></i>Zu meinem Verein hinzufügen
+                                    @else
+                                        <i id="fav-club-{{ $club['id'] }}" class="fa fa-heart-o" aria-hidden="true"></i>Zu meinem Verein hinzufügen
+                                    @endif
+                             </button>
+                        </div>
+                    @else
+                        <div class="col-sm-12 col-md-12 col-xs-12">
+                            <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>Verein merken und einkaufen
+                            </button>
+                        </div>
+                    @endif
                 </div>
             </div>
         </section>

@@ -12,9 +12,11 @@
                             <ul class="list-inline listServices">
                                 <li>
                                     <div class="servicesInfo">
-                                        <h2>Club name</h2>
+                                        <h2>{{ $club['name'] }}</h2>
                                     </div>
-                                    <img src="{{ asset('img/clubs/cb-1.jpeg') }}" border="0">
+                                    <a href="{!! url('/club/' . $club['id'] . '/' . Format::slug($club['dir'])) !!}" title="{{ $club['name'] }}">
+                                        <img src="{{ $club['image'] }}" alt="{{ $club['name'] }}">
+                                    </a>
                                 </li>
                                 <li>
                                     <div class="servicesIcon">

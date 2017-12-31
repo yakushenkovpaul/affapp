@@ -33,10 +33,20 @@ class MerchantListingService
     public function getMerchant($id)
     {
         $result = [];
+        $params = [];
 
         if($return = $this->merchant->getMerchant($id))
         {
-            $result = self::prepareResult(collect($return)->toArray());
+            if($user = Auth::user())
+            {
+                $params['favorites'] = collect(
+                    $user->favorites($this->merchant)->where('id', '=', $id)->select('id')->get()
+                )->map(function ($item, $key) {
+                    return $item['id'];
+                })->all();
+            }
+
+            $result = self::prepareResult(collect($return)->toArray(), $params);
         }
 
         return $result;

@@ -165,11 +165,17 @@ $(document).ready(function()
 
 });
 
+/**
+ * Добавление в фавориты из листинга
+ *
+ * @param id
+ * @param url
+ */
 
 function fav(id, url) {
 
     $.ajax({
-        url: 'actions/' + url,
+        url: location.origin + '/actions/' + url,
         type:'POST',
         data: { id : id, "_token": $('meta[name="csrf_token"]').attr('content') },
         success:function(data){
@@ -254,4 +260,4 @@ function showError(key, value) {
 
 
 
-console.log('frontend.js_ver72');
+console.log('frontend.js_ver77');

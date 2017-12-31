@@ -2,7 +2,7 @@
     @foreach ($merchants['data'] as $merchant)
         <div class="col-sm-3 col-xs-12">
             <ul class="list-inline list-inline-list">
-                @if (isset($user))
+                @if (isset($merchant['fav']))
                 <li>
                     @if ($merchant['fav'])
                         <i class="fa fa-heart favorite" aria-hidden="true" id="fav-merchant-{{ $merchant['id'] }}" onclick="fav({{ $merchant['id'] }}, 'fav-merchant')"></i>

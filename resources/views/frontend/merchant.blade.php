@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 col-sm-5 col-xs-12">
-                        <div class="panel-merchant">
+                        <div class="panel-merchant  raw-margin-bottom-53">
                             <div class="panel-body merchant">
                                 <ul class="merchant-info">
                                     <li class="merchant-logo">
@@ -171,13 +171,38 @@
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-7 col-xs-12 panel-body">
-                        <div class="col-md-6 col-sm-12 merchant-title">
-                            <h1>{{ $merchant['name'] }}</h1>
-                            <p>Durchschnittliches Cashback beträgt {{ $merchant['cashback'] }}%.</p>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 merchant-title">
+                                <h1>{{ $merchant['name'] }}</h1>
+                                <p>Durchschnittliches Cashback beträgt {{ $merchant['cashback'] }}%.</p>
+                            </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
-                            <a href="{{ $merchant['url'] }}" class="btn btn-primary btn-lg btn-block" title="{{ $merchant['name'] }}" target="_blank">Zum Shop gehen &amp; gutes tun</a>
+
+                        <div class="row">
+                            @if (isset($merchant['fav']))
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <a href="{{ $merchant['url'] }}" title="{{ $merchant['name'] }}" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>Zum Shop gehen &amp; gutes tun
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10" onclick="fav({{ $merchant['id'] }}, 'fav-merchant')">
+                                        @if ($merchant['fav'])
+                                            <i id="fav-merchant-{{ $merchant['id'] }}" class="fa fa-heart" aria-hidden="true"></i>Zu meinem Verein hinzufügen
+                                        @else
+                                            <i id="fav-merchant-{{ $merchant['id'] }}" class="fa fa-heart-o" aria-hidden="true"></i>Zu meinem Verein hinzufügen
+                                        @endif
+                                    </button>
+                                </div>
+                            @else
+                                <div class="col-sm-12 col-md-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>Zum Shop gehen &amp; gutes tun
+                                    </button>
+                                </div>
+                            @endif
                         </div>
+
                         <section>
                             <div class="col-xs-12 col-sm-12 col-md-12 promo">
                                 <div class="row">
