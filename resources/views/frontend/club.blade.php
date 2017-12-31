@@ -78,7 +78,11 @@
         <section class="clearfix paddingAdjustTop">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-md-8 col-xs-12">
+                    @if ($club['address'])
+                        <div class="col-sm-6 col-md-8 col-xs-12">
+                    @else
+                        <div class="col-sm-12 col-md-12 col-xs-12">
+                    @endif
                         <div class="listDetailsInfo">
                             <div class="detailsInfoBox">
                                 <h3>Über {{ $club['name'] }}</h3>
@@ -126,6 +130,7 @@
                             </div>
                         </div>
                     </div>
+                    @if ($club['address'])
                     <div class="col-sm-6 col-md-4 col-xs-12">
                         <div class="clearfix map-sidebar map-right">
                             <div id="map" style="height: 538px; margin-bottom:40px;"></div>
@@ -136,18 +141,7 @@
                                 <ul class="list-unstyled list-address">
                                     <li>
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        16/14 Babor Road, Mohammad pur
-                                        <br> Dhaka, Bangladesh
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-phone" aria-hidden="true"></i>
-                                        +55 654 545 122
-                                        <br> +55 654 545 123
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        <a href="#">info @example.com</a>
-                                        <a href="#">info@bayernmunich.com</a>
+                                        {{ $club['address'] }}
                                     </li>
                                 </ul>
                             </div>
@@ -158,6 +152,14 @@
                             <button type="button" class="btn btn-primary btn-lg btn-block">Neuen Verein hinzufügen</button>
                         </div>
                     </div>
+
+                    <script>
+                        var map_image = '{{ asset('img/map/marker.png') }}';
+                        var map_lat = {{ $club['lat'] }};
+                        var map_lng = {{ $club['lng'] }};
+                    </script>
+
+                    @endif
                 </div>
             </div>
         </section>
