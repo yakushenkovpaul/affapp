@@ -94,7 +94,7 @@ var mapStyles = [
 function initialize() {
     var mapOptions = {
         center: new google.maps.LatLng(map_lat, map_lng),
-        zoom: 12,
+        zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         styles:mapStyles,
         scrollwheel: false
@@ -129,12 +129,19 @@ function initialize() {
                 infobox.isOpen = false;
             });
         });
-
         $.each(data, function (i, value) {
             var markerCenter = new google.maps.LatLng(value.latitude, value.longitude);
 
+            var verified = '';
+
+
+            if (value.verified) {
+                verified = '<div class="marker-verified"><i class="fa fa-check"></i></div>';
+            }
+
+            /*
             function getMarkerContent(value){
-                var content='<div id="marker-'+ value.id +'" class="flip-container">' +
+                var content='<div id="marker-'+ value.id +'" class="flip-container">'+ verified +
                 '<div class="flipper">'+
                 '<div class="front">'+
                 '<img src="'+value.image+'">'+
@@ -154,28 +161,33 @@ function initialize() {
                 flat: true,
                 position: markerCenter,
                 map: map,
-                shadow: 1,
+                shadow: 0,
                 content:markerContent,
-                title: value.title,
+                title:"Fábrica de Porcelana da Vista Alegre",
                 is_logged_in:value.is_logged_in
             });
 
-
             markers.push(marker);
+            */
+
+            var marker = new google.maps.Marker({
+                position: markerCenter,
+                map: map,
+                title: 'Hello World!'
+            });
 
             // This event expects a click on a marker
             // When this event is fired the Info Window is opened.
             google.maps.event.addListener(marker, 'click', function() {
 
                 var content = '<div class="infobox-close"><i class="fa fa-close"></i></div>'+
-                    '<div id="iw-container" style="background-color: #9BA2AB;">' +
-                    '<div class="iw-content">' +
-                    '<div class="iw-subTitle">'+ marker.data.title +'</div>' +
-                    '<p>' + marker.data.address + '</p>'+
-                    '<br /><br /><p><a href="' + location.origin + '/club/' + marker.data.id + '/' + marker.data.dir + '">Go to club</a></p>'+
-                    '</div>' +
-                    '<div class="iw-bottom-gradient"></div>' +
-                    '</div>';
+                '<div id="iw-container" style="background-image: url(' + marker.data.image + ');">' +
+                '<div class="iw-content">' +
+                '<div class="iw-subTitle">'+ marker.data.title +'</div>' +
+                '<p>' + marker.data.address + '</p>'+
+                '</div>' +
+                '<div class="iw-bottom-gradient"></div>' +
+                '</div>';
 
                 if (!infobox.isOpen) {
                     infobox.setContent(content);

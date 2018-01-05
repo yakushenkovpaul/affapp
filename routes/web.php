@@ -25,6 +25,7 @@ Route::get('/club/{id}/{name}', 'Frontend\ClubController@club')->where(['id' => 
 Route::get('/clubs', 'Frontend\ClubController@clubs');
 Route::post('clubs/search', 'Frontend\ClubController@search');
 
+
 Route::get('/merchant/{id}/{name}', 'Frontend\MerchantController@shop')->where(['id' => '[0-9]+']);
 Route::get('/merchants', 'Frontend\MerchantController@shops');
 Route::get('merchants/autocompleteCategories', 'Frontend\MerchantController@autocompleteCategories');
@@ -54,6 +55,17 @@ Route::get('/cashback', 'Frontend\CashbackController@index');
 Route::group(['prefix' => 'actions', 'namespace' => 'Actions', 'middleware' => 'auth'], function () {
     Route::any('fav-merchant', 'FavoritesController@merchant');
     Route::any('fav-club', 'FavoritesController@club');
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| JS
+|--------------------------------------------------------------------------
+*/
+
+Route::group(['prefix' => 'js'], function () {
+    Route::get('clubs/searchGps/{lat}/{lng}', 'Frontend\ClubController@searchGps');
 });
 
 /*

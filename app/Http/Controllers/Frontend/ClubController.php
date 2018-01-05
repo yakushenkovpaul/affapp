@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ClubSearchGpsRequest;
 use App\Http\Requests\ClubSearchRequest;
 use App\Services\ClubListingService;
 use Illuminate\Http\Request;
@@ -58,6 +59,23 @@ class ClubController extends Controller
     {
         return view('frontend.club')
             ->with('club', $this->service->getClub($id));
+    }
+
+
+    /**
+     * Поиск по jps координатам
+     *
+     * @param $lat
+     * @param $lng
+     * @return \Illuminate\Http\JsonResponse
+     */
+
+
+    public function searchGps(ClubSearchGpsRequest $request, $lat, $lng)
+    {
+        $result = $this->service->getSearchGps($lat, $lng);
+
+        return response()->json($result);
     }
 
 

@@ -119,6 +119,46 @@ class ClubListingService
     }
 
     /**
+     * Возвращает поиск по координатам
+     *
+     * @param $lat
+     * @param $lng
+     * @return array
+     */
+
+
+    public function getSearchGps($lat, $lng)
+    {
+        $result = [];
+
+        if($return = $this->club->searchByGps($lat, $lng))
+        {
+            if($temp = collect($return)->toArray())
+            {
+                foreach ($temp as $t)
+                {
+                    $t = $this->prepareResult($t);
+
+                    $result[] = [
+                        "id" => $t['id'],
+                        "is_logged_in" => 1,
+                        "title" => $t['name'],
+                        "address" => $t['address'],
+                        "dir" => $t['dir'],
+                        "image" => $t['image'],
+                        "verified" => true,
+                        "latitude" => $t['lat'],
+                        "longitude" => $t['lng'],
+                    ];
+                }
+            }
+        }
+
+        return $result;
+    }
+
+
+    /**
      * Возвращает клуб авторизированного пользователя
      *
      * @return array

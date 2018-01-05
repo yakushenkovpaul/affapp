@@ -49,6 +49,15 @@
                 </div>
             </div>
         </section>
+
+        <script>
+
+            var map_lat = 52.5200;
+            var map_lng = 13.4050;
+            var map_url = '{!! url('js/clubs/searchGps') !!}/' + map_lat + '/' + map_lng;
+
+        </script>
+
         <!-- FOOTER -->
         @include('frontendlayouts.front-bottom')
     </div>

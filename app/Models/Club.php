@@ -146,6 +146,25 @@ class Club extends Model
             ->paginate($paginate);
     }
 
+    /**
+     * Ищет клубы по координатам
+     *
+     * @param $lat
+     * @param $lng
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|static[]
+     */
+
+    public function searchByGps($lat, $lng)
+    {
+        return $this->newQuery()
+            ->whereBetween('lat', [$lat - 1*0.018, $lat + 1*0.018])
+            ->whereBetween('lng', [$lng - 10*0.018, $lng + 10*0.018])
+            ->where('logo', '!=', '')
+            ->take(100)
+            ->get();
+    }
+
+
 
     /**
      * Возвращает клуб
