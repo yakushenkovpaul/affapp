@@ -15,7 +15,7 @@
                             <img src="{{ asset('img/works/star.png') }}" alt="Image works">
                             <div class="caption">
                                 <a href="how-it-works.html"><h3>Wähle einen Verein zum Unterstützen</h3></a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt  labore et dolore magna aliqua.</p>
+                                <p>Bestimme, welchem Verein oder welcher Organisation Du helfen möchtest.</p>
                             </div>
                         </div>
                     </div>
@@ -23,8 +23,8 @@
                         <div class="thumbnail text-center worksContent">
                             <img src="{{ asset('img/works/link.png') }}" alt="Image works">
                             <div class="caption">
-                                <a href="how-it-works.html"><h3>Klicke auf unseren Partner Link</h3></a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt  labore et dolore magna aliqua.</p>
+                                <a href="how-it-works.html"><h3>Kaufe wie gewohnt online ein</h3></a>
+                                <p>Kaufe ganz normal bei mehr als 300 bekannten Shops online ein.</p>
                             </div>
                         </div>
                     </div>
@@ -32,8 +32,8 @@
                         <div class="thumbnail text-center worksContent">
                             <img src="{{ asset('img/works/cart.png') }}" alt="Image works">
                             <div class="caption">
-                                <a href="how-it-works.html"><h3>Kaufe ganz normal online ein</h3></a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt  labore et dolore magna aliqua.</p>
+                                <a href="how-it-works.html"><h3>Nutze dabei unsere Partnerlinks.</h3></a>
+                                <p>Verwendest Du dabei unsere Partnerlinks erhalten wir eine Provision von Partner Shops.</p>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                             <img src="{{ asset('img/works/donate.png') }}" alt="Image works">
                             <div class="caption">
                                 <a href="how-it-works.html"><h3>Dein Verein erhält Provision vom Kauf</h3></a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt  labore et dolore magna aliqua.</p>
+                                <p>Die somit erhaltene Provision zahlen wir an Deinen Verein aus.</p>
                             </div>
                         </div>
                     </div>
