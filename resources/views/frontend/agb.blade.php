@@ -32,7 +32,7 @@
 1.2. Ergänzend zu diesen Nutzungsbedingungen gelten die Datenschutzbestimmungen von Gooding, welche zu beachten sind. sowie die Teilnahmebedingungen für Sportvereine.</p>
                             </li>
                             <li>
-                                <h3>Business deletion</h3>
+                                <h3>2. . Geltungsbereich</h3>
                                 <p>We reserve the right to remove any business listings if we feel that they're infringing on any laws or if they contain objectionable material such as adult content (including images, vulgar language, content or links). In such cases, the business poster will receive a full refund for the listing.</p>
                             </li>
                             <li>
