@@ -163,7 +163,10 @@ class MerchantListingService
         {
             if($return = $this->merchant->searchByNamePaginate($this->pagination, $query))
             {
-                $result = collect($return)->toArray();
+                if($result = collect($return)->toArray())
+                {
+                    $result['data'] = $this->prepareResultArray($result['data']);
+                }
             }
         }
 
@@ -171,7 +174,10 @@ class MerchantListingService
         {
             if($return = $this->merchant->searchByCategoryPaginate($this->pagination, $category_id, $query))
             {
-                $result = collect($return)->toArray();
+                if($result = collect($return)->toArray())
+                {
+                    $result['data'] = $this->prepareResultArray($result['data']);
+                }
             }
         }
 

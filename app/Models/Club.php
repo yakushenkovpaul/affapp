@@ -142,7 +142,7 @@ class Club extends Model
     {
         return $this->newQuery()
             ->where('name', 'LIKE', '%'.$abc.'%')
-            ->select(['id', 'name', 'image', 'dir'])
+            ->select(['id', 'name', 'image', 'url', 'logo', 'dir'])
             ->paginate($paginate);
     }
 
