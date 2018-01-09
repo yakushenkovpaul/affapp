@@ -10,7 +10,7 @@ $path = '/var/www/html/affapp/';
 
 if(file_exists($path))
 {
-    $cmd = 'sudo bash; cd ' . $path . '; /usr/bin/git pull';
+    $cmd = 'cd ' . $path . '; /usr/bin/git pull';
 
     exec($cmd, $result);
 
