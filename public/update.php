@@ -12,8 +12,6 @@ if(file_exists($path))
 {
     $cmd = 'cd ' . $path . '; /usr/bin/git pull';
 
-    echo $cmd . PHP_EOL;
-
     exec($cmd, $result);
 
     print('<pre>');
