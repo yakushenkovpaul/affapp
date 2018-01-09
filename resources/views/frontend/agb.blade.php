@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="pageTitle">
-                            <h2>Agb</h2>
+                            <h2>Allgemeine Geschäftsbedingungen</h2>
                         </div>
                     </div>
                 </div>
@@ -24,11 +24,12 @@
                     <div class="col-xs-12">
                         <ul class="list-unstyled termsList">
                             <li>
-                                <p>To advertise your business please ensure that you read and abide by the following terms and conditions.</p>
+                                <p>Definitionen.</p>
                             </li>
                             <li>
-                                <h3>Fair use of site</h3>
-                                <p>We are not responsible for any damages caused by the use of this website, or by posting business listings here. Please use our site at your own discretion and exercise good judgement as well as common sense when advertising business here.</p>
+                                <h3>1. Geltungsbereich</h3>
+                                <p>1.1. Diese Nutzungsbedingungen gelten für alle auf der Gooding-Plattform registrierten Nutzer sowie für nicht registrierte Nutzer (Besucher). Allgemeine Geschäftsbedingungen der Nutzer, die von den vorliegenden Nutzungsbedingungen abweichen oder im Widerspruch stehen, gelten nicht und werden von Gooding nicht berücksichtigt. Alle Leistungen auf der Gooding-Plattform werden ausschließlich auf Grundlage dieser Nutzungsbedingungen erbracht. Diese Nutzungsbedingungen regeln die Rechte und Pflichten der registrierten Nutzer bzw. Besucher beim Besuch der Gooding-Plattform sowie bei der Nutzung der angebotenen Leistungen. Mit der Nutzung der Gooding-Plattform erklärt sich der Nutzer mit diesen Nutzungsbedingungen einverstanden.
+1.2. Ergänzend zu diesen Nutzungsbedingungen gelten die Datenschutzbestimmungen von Gooding, welche zu beachten sind. sowie die Teilnahmebedingungen für Sportvereine.</p>
                             </li>
                             <li>
                                 <h3>Business deletion</h3>
