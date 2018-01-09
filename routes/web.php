@@ -57,6 +57,7 @@ Route::group(['prefix' => 'actions', 'namespace' => 'Actions', 'middleware' => '
     Route::any('fav-club', 'FavoritesController@club');
 });
 
+
 /*
 |--------------------------------------------------------------------------
 | JS
