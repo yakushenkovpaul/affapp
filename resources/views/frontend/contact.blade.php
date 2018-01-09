@@ -4,7 +4,7 @@
 
     <div class="main-wrapper">
         @include('frontendlayouts.front-top')
-        <section class="clearfix pageTitleSection bg-image" style="background-image: url({{ asset('img/background/bg-page-title.jpg')}});">
+        <section class="clearfix pageTitleSection bg-image" style="background-image: url({{ asset('img/background/bg-mailbox-3.jpg')}});">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
