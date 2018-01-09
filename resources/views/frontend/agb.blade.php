@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="pageTitle">
-                            <h2>[bbb]Allgemeine Geschäftsbedingungen</h2>
+                            <h2>Allgemeine Geschäftsbedingungen</h2>
                         </div>
                     </div>
                 </div>
