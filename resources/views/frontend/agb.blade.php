@@ -28,8 +28,8 @@
                             </li>
                             <li>
                                 <h3>1. Geltungsbereich</h3>
-                                <p>1.1. Diese Nutzungsbedingungen gelten für alle auf der Gooding-Plattform registrierten Nutzer sowie für nicht registrierte Nutzer (Besucher). Allgemeine Geschäftsbedingungen der Nutzer, die von den vorliegenden Nutzungsbedingungen abweichen oder im Widerspruch stehen, gelten nicht und werden von Gooding nicht berücksichtigt. Alle Leistungen auf der Gooding-Plattform werden ausschließlich auf Grundlage dieser Nutzungsbedingungen erbracht. Diese Nutzungsbedingungen regeln die Rechte und Pflichten der registrierten Nutzer bzw. Besucher beim Besuch der Gooding-Plattform sowie bei der Nutzung der angebotenen Leistungen. Mit der Nutzung der Gooding-Plattform erklärt sich der Nutzer mit diesen Nutzungsbedingungen einverstanden.
-1.2. Ergänzend zu diesen Nutzungsbedingungen gelten die Datenschutzbestimmungen von Gooding, welche zu beachten sind. sowie die Teilnahmebedingungen für Sportvereine.</p>
+                                <p>1.1. Diese Nutzungsbedingungen gelten sowohl für alle auf der Donatiq-Plattform registrierten Nutzer als auch für alle nicht registrierte Nutzer der Donatiq-Plattform (Besucher). Sie regeln ihre Rechte und Pflichten beim Besuch der donatiq-Plattform sowie bei der Nutzung der angebotenen Leistungen. Alle vom Service erbrachten Leistungen auf der Donatiq-Plattform werden ausschließlich auf Grundlage dieser Nutzungsbedingungen erbracht. Mit der Nutzung der donatiq-Plattform erklärt sich der Nutzer und Besucher mit diesen Nutzungsbedingungen einverstanden.
+.1.2. Ergänzend zu diesen Nutzungsbedingungen gelten die Datenschutzbestimmungen, sowie die Teilnahmebedingungen für Vereine. </p>
                             </li>
                             <li>
                                 <h3>2. . Geltungsbereich</h3>
