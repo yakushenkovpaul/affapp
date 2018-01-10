@@ -21,6 +21,7 @@ if(file_exists($path))
 
     $output = shell_exec($cmd);
     echo "<pre>$output</pre>";
+    echo "end" . PHP_EOL;
 }
 else
 {
