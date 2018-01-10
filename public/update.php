@@ -11,14 +11,12 @@ $path = '/var/www/html/affapp/';
 if(file_exists($path))
 {
     $cmd = 'cd ' . $path . '; /usr/bin/git pull';
-
     /*
     exec($cmd, $result);
 
     print('<pre>');
     print_r($result);
     */
-
     $output = shell_exec($cmd);
     echo "<pre>$output</pre>";
 }
