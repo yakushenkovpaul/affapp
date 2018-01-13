@@ -11,27 +11,29 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="dashboardPageTitle">
-                            <h2>Favorites merchants</h2>
+                            <h2><i class="fa fa-shopping-cart icon-dash" aria-hidden="true"></i> Lieblingsshops</h2>
                         </div>
                         @if ($merchants->isEmpty())
-                            <div class="well text-center">No merchants found.</div>
+                            <div class="well text-center">Noch keine Shops gespeichert. Klicke 
+                            
+                            <a href="http://www.affapp.cloud/merchants"> hier</a>, um neue Shops hinzuzufügen</div>
                         @else
                             <div class="table-responsive bgAdd"  data-pattern="priority-columns">
                                 <table id="ordersTable" class="table table-small-font table-bordered table-striped" cellspacing="0" width="100%">
                                     <thead>
                                     <tr>
-                                        <th>Merchant ID</th>
+                                        <th>Shop ID</th>
                                         <th data-priority="1">Name</th>
-                                        <th data-priority="2">Url</th>
-                                        <th data-priority="3">Action</th>
+                                        <th data-priority="2">Shopseite</th>
+                                        <th data-priority="3">Entfernen</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
                                     <tr>
-                                        <th>Merchant ID</th>
+                                        <th>Shop ID</th>
                                         <th>Name</th>
-                                        <th>Url</th>
-                                        <th>Action</th>
+                                        <th>Shopseite</th>
+                                        <th>Entfernen</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
@@ -45,7 +47,7 @@
                                                     {!! csrf_field() !!}
                                                     {!! method_field('DELETE') !!}
                                                     <div class="btn-group">
-                                                        <button type="submit" onclick="return confirm('Are you sure you want to delete this merchant?')" class="btn btn-primary">Delete</button>
+                                                        <button type="submit" onclick="return confirm('Bist Du sicher, dass dieser Shop aus Deiner Liste gelöscht werden soll?')" class="btn btn-primary">Löschen</button>
                                                     </div>
                                                 </form>
                                             </td>
