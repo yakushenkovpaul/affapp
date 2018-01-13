@@ -70,28 +70,28 @@
                         @else
                             <li>
                         @endif
-                            <a href="{!! url('user/dashboard') !!}"><i class="fa fa-tachometer icon-dash" aria-hidden="true"></i> Dashboard</a>
+                            <a href="{!! url('user/dashboard') !!}"><i class="fa fa-tachometer icon-dash" aria-hidden="true"></i> Übersicht</a>
                         </li>
                         @if (\Request::is('user/settings'))
                             <li class="active">
                         @else
                             <li>
                         @endif
-                            <a href="{!! url('user/settings') !!}"><i class="fa fa-cogs icon-dash" aria-hidden="true"></i> Settings</a>
+                            <a href="{!! url('user/settings') !!}"><i class="fa fa-cogs icon-dash" aria-hidden="true"></i> Benutzereinstellungen</a>
                         </li>
                         @if (\Request::is('user/favoritesMerchants'))
                             <li class="active">
                         @else
                             <li>
                         @endif
-                            <a href="{!! url('user/favoritesMerchants') !!}"><i class="fa fa-shopping-basket icon-dash" aria-hidden="true"></i> Favorites merchants</a>
+                            <a href="{!! url('user/favoritesMerchants') !!}"><i class="fa fa-shopping-cart icon-dash" aria-hidden="true"></i> Lieblingsshops</a>
                         </li>
                         @if (\Request::is('user/favoritesClubs'))
                             <li class="active">
                         @else
                             <li>
                         @endif
-                            <a href="{!! url('user/favoritesClubs') !!}"><i class="fa fa-futbol-o icon-dash" aria-hidden="true"></i> Favorites clubs</a>
+                            <a href="{!! url('user/favoritesClubs') !!}"><i class="fa fa-trophy icon-dash" aria-hidden="true"></i> Meine Lieblingsvereine</a>
                         </li>
                     </ul>
                     <div class="row adjustRow">
