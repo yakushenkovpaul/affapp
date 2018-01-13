@@ -33,7 +33,7 @@
                             <img src="{{ asset('img/works/link.png') }}" alt="Image works">
                             <div class="caption">
                                 <a href="how-it-works.html"><h3>Verwende dabei unsere Partnerlinks</h3></a>
-                                <p>Verwendest Du dabei unsere Partnerlinks erhalten wir eine Provision von Partner Shops.</p>
+                                <p>Verwendest Du dabei unsere Partnerlinks, erhalten wir eine Provision von Partner Shops.</p>
                             </div>
                         </div>
                     </div>
@@ -41,8 +41,8 @@
                         <div class="thumbnail text-center worksContent">
                             <img src="{{ asset('img/works/donate.png') }}" alt="Image works">
                             <div class="caption">
-                                <a href="how-it-works.html"><h3>Dein Verein erhält Provision vom Kauf</h3></a>
-                                <p>Die somit erhaltene Provision zahlen wir an Deinen Verein aus.</p>
+                                <a href="how-it-works.html"><h3>Freue Dich des zusätzlichen  Verein erhält Provision vom Kauf</h3></a>
+                                <p>Die erhaltene Provision überweisen wir an Deinen Verein.</p>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-sm-3 col-xs-12">
                         <div class="text-center countItem">
-                            <div class="counter">72/div>
+                            <div class="counter">72</div>
                             <div class="counterInfo bg-color-4">Liter Bier dabei getrunken</div>
                         </div>
                     </div>
@@ -137,7 +137,7 @@
                     <div class="row">
                         <div class="col-xs-7 col-sm-3 col-md-10">
                             <div class="form-group">
-                                <input type="text" name="query" class="form-control" id="query" placeholder=hier den Onlineshop eingeben z.B. SportScheck">
+                                <input type="text" name="query" class="form-control" id="query" placeholder="z.B. SportScheck">
                             </div>
                         </div>
                         <div class="col-xs-5 col-md-2 col-sm-3">
