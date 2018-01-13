@@ -14,7 +14,7 @@
                         <div class="thumbnail text-center worksContent">
                             <img src="{{ asset('img/works/star.png') }}" alt="Image works">
                             <div class="caption">
-                                <a href="how-it-works.html"><h3>Wähle einen Verein zum Unterstützen</h3></a>
+                                <h3>Wähle einen Verein zum Unterstützen</h3>
                                 <p>Bestimme, welchem Verein oder welcher Organisation Du helfen möchtest.</p>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                         <div class="thumbnail text-center worksContent">
                             <img src="{{ asset('img/works/cart.png') }}" alt="Image works">
                             <div class="caption">
-                                <a href="how-it-works.html"><h3>Kaufe wie gewohnt online ein</h3></a>
+                                <h3>Kaufe wie gewohnt online ein</h3>
                                 <p>Kaufe ganz normal bei mehr als 300 bekannten Onlineshops ein.</p>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                         <div class="thumbnail text-center worksContent">
                             <img src="{{ asset('img/works/link.png') }}" alt="Image works">
                             <div class="caption">
-                                <a href="how-it-works.html"><h3>Verwende dabei unsere Partnerlinks</h3></a>
+                                <h3>Verwende dabei unsere Partnerlinks</h3>
                                 <p>Verwendest Du dabei unsere Partnerlinks, erhalten wir eine Provision von Partner Shops.</p>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                         <div class="thumbnail text-center worksContent">
                             <img src="{{ asset('img/works/donate.png') }}" alt="Image works">
                             <div class="caption">
-                                <a href="how-it-works.html"><h3>Freue Dich des zusätzlichen  Verein erhält Provision vom Kauf</h3></a>
+                                <h3>Freu Dich über zusätzliche Spenden</h3>
                                 <p>Die erhaltene Provision überweisen wir an Deinen Verein.</p>
                             </div>
                         </div>
