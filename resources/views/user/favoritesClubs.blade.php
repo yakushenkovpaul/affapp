@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="dashboardPageTitle">
-                            <h2>Meine Lieblingsvereine</h2>
+                             <h2><i class="fa fa-trophy icon-dash" aria-hidden="true"></i> Meine Lieblingsvereine</h2>
                         </div>
                         @if ($clubs->isEmpty())
                             <div class="well text-center">No clubs found.</div>
@@ -23,7 +23,7 @@
                                         <th>ID</th>
                                         <th data-priority="1">Name</th>
                                         <th data-priority="2">Url</th>
-                                        <th data-priority="3">Action</th>
+                                        <th data-priority="3">Entfernen</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
@@ -31,7 +31,7 @@
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Url</th>
-                                        <th>Action</th>
+                                        <th>Entfernen</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
