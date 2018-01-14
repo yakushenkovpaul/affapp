@@ -460,6 +460,7 @@ section {
 .btn-secondary {
     transition: all 0.3s ease-in-out;
     background-color: #fff;
+    color: #2196f3;	
 }
 
 .btn-secondary > i {
