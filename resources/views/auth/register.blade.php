@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="center-block col-md-5 col-sm-6 col-xs-12">
                         <div class="panel panel-default loginPanel">
-                            <div class="panel-heading text-center">Account Registrieren</div>
+                            <div class="panel-heading text-center">Registrierung</div>
                             <div class="panel-body">
                                 <form method="POST" action="{!! url('/register') !!}" class="loginForm" id="signupForm">
                                     {!! csrf_field() !!}
@@ -79,7 +79,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary pull-left">Jetzt registrieren</button>
+                                        <button type="submit" class="btn btn-primary pull-left">Registrieren</button>
                                     </div>
 
                                     <div class="form-group">
