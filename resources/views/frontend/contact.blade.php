@@ -7,11 +7,7 @@
         <section class="clearfix pageTitleSection bg-image" style="background-image: url({{ asset('img/background/bg-mailbox-3.jpg')}});">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12">
-                        <div class="pageTitle">
-                            <h2>Contact Us</h2>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -26,8 +22,12 @@
                 </div>
                 <div class="col-sm-8 col-xs-12">
                     <div class="signUpFormArea">
-                        <div class="priceTableTitle">
+                        <div class="col-xs-12">
+                            <div class="pageTitle">
                             <h2>Kontakt</h2>
+                        </div>
+                    </div>
+                        <div class="priceTableTitle">
                             <p>Lasst uns wissen, was wir besser machen können und schreibt uns eine Nachricht.</p>
                         </div>
                         <div class="signUpForm">
@@ -36,7 +36,7 @@
                                 <div class="formSection">
                                     <div class="row">
                                         <div class="form-group col-sm-6 col-xs-12">
-                                            <label for="selectSome" class="control-label" id="contact_subject">Subject*</label>
+                                            <label for="selectSome" class="control-label" id="contact_subject">Betreff*</label>
                                             <div class="contactSelect">
                                                 <select name="contact_subject" class="select-drop" style="display: none;">
                                                     <option value="">-- Betreff Wählen --</option>
