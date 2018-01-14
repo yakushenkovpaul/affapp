@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="center-block col-md-5 col-sm-6 col-xs-12">
                         <div class="panel panel-default loginPanel">
-                            <div class="panel-heading text-center">Sign up</div>
+                            <div class="panel-heading text-center">Account Registrieren</div>
                             <div class="panel-body">
                                 <form method="POST" action="{!! url('/register') !!}" class="loginForm" id="signupForm">
                                     {!! csrf_field() !!}
@@ -69,22 +69,17 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Password</label>
+                                        <label>Passwort</label>
                                         <input id="password" class="form-control" type="password" name="password">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Confirm Password</label>
+                                        <label>Passwort bestätigen</label>
                                         <input id="password_confirmation" class="form-control" type="password" name="password_confirmation">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="userName">Club</label>
-                                        <input id="club" class="form-control" type="text" name="club" value="{{ old('club') }}" placeholder="enter club">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary pull-left">Sing up</button>
+                                        <button type="submit" class="btn btn-primary pull-left">Jetzt registrieren</button>
                                     </div>
 
                                     <div class="form-group">
@@ -94,9 +89,9 @@
                                                 Ja, Ich möchte aktuelle Informationen über E-Mail erhalten.
                                             </label>
                                         </div>
-                                        <p class="text-center">Indem ich mich bei affapp registriere, erkläre ich mich mit den
-                                        <a href="{!! url('/terms') !!}">Allgemeinen Geschäftsbedingungen of Use</a> und den
-                                            <a href="#">Datenschutzbestimmungen</a> einverstanden.</p>
+                                        <p class="text-center">Indem ich mich bei DonatIQ registriere, erkläre ich mich mit den
+                                        <a href="{!! url('/terms') !!}">Allgemeinen Geschäftsbedingungen</a> und den
+                                            <a href="{!! url('/terms') !!}">Datenschutzbestimmungen</a> einverstanden.</p>
                                     </div>
                                     <input type="hidden" name="club_id" id="club_id">
                                 </form>
