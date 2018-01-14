@@ -181,19 +181,20 @@
                         <div class="row">
                             @if (isset($merchant['fav']))
                                 <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <button type="button" class="btn btn-secondary btn-lg btn-block raw-margin-top-10" onclick="fav({{ $merchant['id'] }}, 'fav-merchant')">
+                                        @if ($merchant['fav'])
+                                            <i id="fav-merchant-{{ $merchant['id'] }}" class="fa fa-heart" aria-hidden="true"></i>Aus meinen Lieblingsshops löschen
+                                        @else
+                                            <i id="fav-merchant-{{ $merchant['id'] }}" class="fa fa-heart-o" aria-hidden="true"></i>Zu Lieblingsshops hinzufügen
+                                        @endif
+                                    </button>
+                                </div>                     
+                                <div class="col-sm-6 col-md-6 col-xs-12">
                                     <a href="{{ $merchant['url'] }}" title="{{ $merchant['name'] }}" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>Zum Shop gehen &amp; gutes tun
                                     </a>
                                 </div>
-                                <div class="col-sm-6 col-md-6 col-xs-12">
-                                    <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10" onclick="fav({{ $merchant['id'] }}, 'fav-merchant')">
-                                        @if ($merchant['fav'])
-                                            <i id="fav-merchant-{{ $merchant['id'] }}" class="fa fa-heart" aria-hidden="true"></i>Zu meinem Verein hinzufügen
-                                        @else
-                                            <i id="fav-merchant-{{ $merchant['id'] }}" class="fa fa-heart-o" aria-hidden="true"></i>Zu meinem Verein hinzufügen
-                                        @endif
-                                    </button>
-                                </div>
+                                
                             @else
                                 <div class="col-sm-12 col-md-12 col-xs-12">
                                     <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
