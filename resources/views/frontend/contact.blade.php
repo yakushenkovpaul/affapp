@@ -5,16 +5,10 @@
     <div class="main-wrapper">
         @include('frontendlayouts.front-top')
         <section class="clearfix pageTitleSection bg-image" style="background-image: url({{ asset('img/background/bg-mailbox-3.jpg')}});">
-            <div class="container">
-                <div class="row">
-                    
-                </div>
-            </div>
         </section>
     </div>
 
-
-    <section class="clearfix">
+<section class="clearfix">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-xs-12">
@@ -22,12 +16,8 @@
                 </div>
                 <div class="col-sm-8 col-xs-12">
                     <div class="signUpFormArea">
-                        <div class="col-xs-12">
-                            <div class="pageTitle">
-                            <h2>Kontakt</h2>
-                        </div>
-                    </div>
                         <div class="priceTableTitle">
+                            <h2>Kontakt</h2>
                             <p>Lasst uns wissen, was wir besser machen können und schreibt uns eine Nachricht.</p>
                         </div>
                         <div class="signUpForm">
