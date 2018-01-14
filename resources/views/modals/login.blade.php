@@ -5,7 +5,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Bei DonatIQ Anmelden</h4>
+                <h4 class="modal-title">Anmelden</h4>
             </div>
             <div class="modal-body">
                 <form method="POST" action="{!! url('/login') !!}" class="loginForm" id="loginForm">
@@ -19,18 +19,18 @@
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                        <button type="submit" class="btn btn-primary btn-block">Anmelden</button>
                     </div>
                     <div class="checkbox">
                         <label>
                             <input type="checkbox"> Angemeldet bleiben
                         </label>
-                        <a href="{!! url('password/reset') !!}" class="pull-right link">Fogot Password?</a>
+                        <a href="{!! url('password/reset') !!}" class="pull-right link">Password vergessen?</a>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <p>Don’t have an Account? <a href="{!! url('/register') !!}" class="link">Sign up</a></p>
+                <p>Noch kein Account? <a href="{!! url('/register') !!}" class="link">Hier registrieren</a></p>
             </div>
         </div>
     </div>
