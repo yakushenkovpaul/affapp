@@ -105,7 +105,27 @@ Wenn es auch andere Vereine und ihre Vereinsmitglieder mitmachen, werden die Onl
         </div>
     </div>
 </section>
-
+<section class="clearfix callAction">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-9 col-xs-12">
+                <div class="callInfo">
+                    <h4><span>DonatIQ</span> ist der <span>smarte weg</span> <br>zum zusätzlichen Finanzieren Deines Vereins</h4>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-12">
+                <div class="btnArea">
+                    <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#loginModal"> 
+                        <span class="visible-xs">Login</span> 
+                        <span>Anmelden</span> 
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+ @include('frontendlayouts.front-bottom')
 
     </div>
 
