@@ -180,16 +180,16 @@
 
                         <div class="row">
                             @if (isset($merchant['fav']))
-                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                <div class="col-sm-6 col-md-4 col-xs-12">
                                     <button type="button" class="btn btn-secondary btn-lg btn-block raw-margin-top-10" onclick="fav({{ $merchant['id'] }}, 'fav-merchant')">
                                         @if ($merchant['fav'])
-                                            <i id="fav-merchant-{{ $merchant['id'] }}" class="fa fa-heart" aria-hidden="true"></i>Aus meinen Lieblingsshops löschen
+                                            <i id="fav-merchant-{{ $merchant['id'] }}" class="fa fa-heart" aria-hidden="true"></i>Mein Lieblingsshop
                                         @else
-                                            <i id="fav-merchant-{{ $merchant['id'] }}" class="fa fa-heart-o" aria-hidden="true"></i>Zu Lieblingsshops hinzufügen
+                                            <i id="fav-merchant-{{ $merchant['id'] }}" class="fa fa-heart-o" aria-hidden="true"></i>Mein Lieblingsshop
                                         @endif
                                     </button>
                                 </div>                     
-                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                <div class="col-sm-6 col-md-8 col-xs-12">
                                     <a href="{{ $merchant['url'] }}" title="{{ $merchant['name'] }}" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>Zum Shop gehen &amp; gutes tun
                                     </a>
@@ -382,14 +382,17 @@
                         <section>
                             <div class="thumbnail blogContent">
                                 <div class="caption">
-                                    <h3>{{ $merchant['name'] }}</h3>
-                                    <img src="{{ asset('img/blog/blog-1.jpg') }}" alt="Image blog" class="img-responsive">
+                                    <h2>{{ $merchant['name'] }}</h2>
+                                    <center>
+                                            <img src="{{ $merchant['image'] }}" alt="{{ $merchant['name'] }}">
+                                        </center>
+                                    
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt  labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                                     <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est. </p>
-                                    <h2>Merchant Title</h2>
+                                    <h2>Cashback von {{ $merchant['name'] }} </h2>
                                     <p>Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est. </p>
                                     <p>Sed eiusmod tempor incididunt  labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    <h2>Merchant Title</h2>
+                                    <h2>Verein helfen und beim {{ $merchant['name'] }} mit Gutscheinen sparen</h2>
                                     <p>Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est. </p>
                                     <p>Mod tempor incididunt  labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                                 </div>
