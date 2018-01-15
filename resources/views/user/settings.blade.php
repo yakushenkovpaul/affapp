@@ -93,32 +93,28 @@
                                 </div>
                             </div>
                             <div class="dashboardBoxBg mt30">
-    <div class="profileIntro">
-        <h3>Update password</h3>
-        <div class="row">
-            <div class="form-group col-xs-12">
-                <label for="currentPassword">Current Password</label>
-                <input type="password" class="form-control" id="currentPassword" placeholder="********">
-            </div>
-            <div class="form-group col-xs-12">
-                <label for="newPassword">New Password</label>
-                <input type="password" class="form-control" id="newPassword" placeholder="New Password">
-            </div>
-            <div class="form-group col-xs-12">
-                <label for="confirmPassword">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
-            </div>
-        </div>
-    </div>
-</div>
-                            
-                            
-                            
-                            
+                                <div class="profileIntro">
+                                    <h3>Passwort ändern</h3>
+                                        <div class="row">
+                                            <div class="form-group col-xs-12">
+                                                <label for="currentPassword">Aktuelles Passwort</label>
+                                                <input type="password" class="form-control" id="currentPassword" placeholder="********">
+                                            </div>
+                                            <div class="form-group col-xs-12">
+                                                <label for="newPassword">Neues Passwort</label>
+                                                <input type="password" class="form-control" id="newPassword" placeholder="Neues Passwort">
+                                            </div>
+                                            <div class="form-group col-xs-12">
+                                                <label for="confirmPassword">Passwort bestätigen</label>
+                                                <input type="password" class="form-control" id="confirmPassword" placeholder="Passwort bestätigen">
+                                            </div>
+                                        </div>
+                                  </div>
+                               </div>
                             <div class="form-footer text-center btn-area">
-                                <a class="btn btn-primary pull-left" href="{{ URL::previous() }}">Cancel</a>
-                                <!--<a class="btn btn-primary center-block" href="/user/password">Change Password</a>-->
-                                <button class="btn btn-primary pull-right" type="submit">Update</button>
+                                <a class="btn btn-primary pull-left" href="{{ URL::previous() }}">Abbrechen</a>
+                                <!--<a class="btn btn-primary center-block" href="/user/password">Passwort ändern</a>-->
+                                <button class="btn btn-primary pull-right" type="submit">Speichern</button>
                             </div>
                         </form>
                     </div>
