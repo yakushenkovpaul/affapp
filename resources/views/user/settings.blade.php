@@ -12,7 +12,7 @@
                     <div class="col-md-4 col-sm-5 col-xs-12">
                         <div class="dashboardBoxBg mb30">
                             <div class="profileImage">
-                                <img src="img/dashboard/avatar-t1-7.png" alt="Image User" class="img-circle">
+                                <img src="http://www.affapp.cloud/img/dashboard/avatar-t1-7.png" alt="Image User" class="img-circle">
                                     <div class="file-upload profileImageUpload">
                                         <div class="upload-area">
                                             <input type="file" name="img[]" class="file">
@@ -40,22 +40,54 @@
                             <div class="dashboardBoxBg mb30">
                                 <div class="profileIntro paraMargin">
                                 <h3>Benutzerdaten</h3>
+                                    
+                                    
+                                    
                                     <div class="row">
-                                        <div class="form-group col-xs-12">
-                                            @input_maker_label('Email')
-                                            @input_maker_create('email', ['type' => 'string'], $user)
-                                        </div>
-                                        <div class="form-group col-xs-12">
+                                    <div class="form-group col-xs-12">
+                                            @input_maker_label('Anrede')
+                                            @input_maker_create('meta[gender]', ['type' => 'select', 'label' => 'gender', 'options' => [ 'Herr' => 'male', 'Frau' => 'female' ]], $user)
+                                    </div>
+                                    <div class="form-group col-xs-12">
                                             @input_maker_label('Name')
                                             @input_maker_create('name', ['type' => 'string'], $user)
                                         </div>
+                                    <div class="form-group col-xs-12">
+                                            @input_maker_label('Nachname')
+                                            @input_maker_create('meta[lastname]', ['type' => 'string'], $user)
+                                    </div>
+                                    <div class="form-group col-xs-12">
+                                            @input_maker_label('Email')
+                                            @input_maker_create('email', ['type' => 'string'], $user)
+                                        </div>
+                                        
+                                     <div class="form-group col-xs-12">
+                                            @input_maker_label('Stadt')
+                                            @input_maker_create('meta[city]', ['type' => 'string'], $user)
+                                     </div>
 
-                                        @include('user.meta')
+                                     <div class="form-group col-xs-12">
+                                            @input_maker_label('Geburtstag')
+                                            @input_maker_create('meta[birthday]', ['type' => 'string' , 'class' => 'datepicker'], $user)
+                                     </div>
 
-                                        <div class="form-group col-xs-12">
+                                        <!--
+                                     <div class="raw-margin-top-24">
+                                            <label for="Birthday">Birthday</label>
+                                            <input id="Meta[birthday]" class="form-control" type="text" name="meta[birthday]" value="09/06/1984" placeholder="Meta birthday">
+                                     </div>
+                                        -->
+
+                                     <div class="form-group col-xs-12">
+                                            @input_maker_label('Activate')
+                                            <input type="checkbox" name="meta[is_active]" value="1" @if ($user->meta->is_active) checked @endif>
+                                     </div>
+                                        
+
+                                     <div class="form-group col-xs-12">
                                             @input_maker_label('Role')
                                             @input_maker_create('roles', ['type' => 'relationship', 'model' => 'App\Models\Role', 'label' => 'label', 'value' => 'name'], $user)
-                                        </div>
+                                     </div>
 
                                     </div>
                                 </div>
@@ -67,6 +99,28 @@
                             </div>
                         </form>
                     </div>
+    <div class="dashboardBoxBg mt30">
+    <div class="profileIntro">
+        <h3>Update password</h3>
+        <div class="row">
+            <div class="form-group col-xs-12">
+                <label for="currentPassword">Current Password</label>
+                <input type="password" class="form-control" id="currentPassword" placeholder="********">
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="newPassword">New Password</label>
+                <input type="password" class="form-control" id="newPassword" placeholder="New Password">
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+            </div>
+            <div class="form-group col-xs-12">
+                <button class="btn btn-primary" type="button">Change Password</button>
+            </div>
+        </div>
+    </div>
+</div>
                 </div>
             </div>
         </section>
