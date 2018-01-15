@@ -92,14 +92,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-footer text-center btn-area">
-                                <a class="btn btn-primary pull-left" href="{{ URL::previous() }}">Cancel</a>
-                                <!--<a class="btn btn-primary center-block" href="/user/password">Change Password</a>-->
-                                <button class="btn btn-primary pull-right" type="submit">Update</button>
-                            </div>
-                        </form>
-                    </div>
-    <div class="dashboardBoxBg mt30">
+                            <div class="dashboardBoxBg mt30">
     <div class="profileIntro">
         <h3>Update password</h3>
         <div class="row">
@@ -115,12 +108,21 @@
                 <label for="confirmPassword">Confirm Password</label>
                 <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
             </div>
-            <div class="form-group col-xs-12">
-                <button class="btn btn-primary" type="button">Change Password</button>
-            </div>
         </div>
     </div>
 </div>
+                            
+                            
+                            
+                            
+                            <div class="form-footer text-center btn-area">
+                                <a class="btn btn-primary pull-left" href="{{ URL::previous() }}">Cancel</a>
+                                <!--<a class="btn btn-primary center-block" href="/user/password">Change Password</a>-->
+                                <button class="btn btn-primary pull-right" type="submit">Update</button>
+                            </div>
+                        </form>
+                    </div>
+    
                 </div>
             </div>
         </section>
