@@ -90,8 +90,8 @@
                                             </label>
                                         </div>
                                         <p class="text-center">Indem ich mich bei DonatIQ registriere, erkläre ich mich mit den
-                                        <a href="{!! url('/terms') !!}">Allgemeinen Geschäftsbedingungen</a> und den
-                                            <a href="{!! url('/terms') !!}">Datenschutzbestimmungen</a> einverstanden.</p>
+                                        <a href="{!! url('/agb') !!}">Allgemeinen Geschäftsbedingungen</a> und den
+                                            <a href="{!! url('/agb#datenschutz') !!}">Datenschutzbestimmungen</a> einverstanden.</p>
                                     </div>
                                     <input type="hidden" name="club_id" id="club_id">
                                 </form>
