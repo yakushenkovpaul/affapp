@@ -9,14 +9,37 @@
         <section class="clearfix bg-dark listingSection">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-md-4 col-sm-5 col-xs-12">
+                        <div class="dashboardBoxBg mb30">
+                            <div class="profileImage">
+                                <img src="img/dashboard/avatar-t1-7.png" alt="Image User" class="img-circle">
+                                    <div class="file-upload profileImageUpload">
+                                        <div class="upload-area">
+                                            <input type="file" name="img[]" class="file">
+                                                <button class="browse" type="button">Profilbild ändern 
+                                                    <i class="fa fa-pencil-square-o icon-dash" aria-hidden="true"></i>
+                                                </button>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="profileUserInfo bt profileName">
+                                <h2>John Doe</h2>
+                                <h5>Nutzer seit: <span>15/01/2017</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
                         <form method="POST" action="/user/settings">
                             {!! csrf_field() !!}
-                            <div class="dashboardPageTitle">
-                                <h2>Settings</h2>
-                            </div>
+                            <div class="dashboardBoxBg">
+                                    <div class="profileIntro">
+                                        <h2>Dein Profil</h2>
+                                        <p>Hier kannst Du Deine persönliche Profileinstellugen vornemhmen.</p>
+                                    </div>
+                                </div>
                             <div class="dashboardBoxBg mb30">
                                 <div class="profileIntro paraMargin">
+                                <h3>Benutzerdaten</h3>
                                     <div class="row">
                                         <div class="form-group col-xs-12">
                                             @input_maker_label('Email')
