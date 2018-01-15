@@ -79,19 +79,19 @@
                         @endif
                             <a href="{!! url('user/settings') !!}"><i class="fa fa-cogs icon-dash" aria-hidden="true"></i> Benutzereinstellungen</a>
                         </li>
+                        @if (\Request::is('user/favoritesClubs'))
+                            <li class="active">
+                        @else
+                            <li>
+                        @endif
+                            <a href="{!! url('user/favoritesClubs') !!}"><i class="fa fa-trophy icon-dash" aria-hidden="true"></i> Lieblingsvereine</a>
+                        </li>
                         @if (\Request::is('user/favoritesMerchants'))
                             <li class="active">
                         @else
                             <li>
                         @endif
                             <a href="{!! url('user/favoritesMerchants') !!}"><i class="fa fa-shopping-cart icon-dash" aria-hidden="true"></i> Lieblingsshops</a>
-                        </li>
-                        @if (\Request::is('user/favoritesClubs'))
-                            <li class="active">
-                        @else
-                            <li>
-                        @endif
-                            <a href="{!! url('user/favoritesClubs') !!}"><i class="fa fa-trophy icon-dash" aria-hidden="true"></i> Meine Lieblingsvereine</a>
                         </li>
                     </ul>
                     <div class="row adjustRow">
