@@ -30,8 +30,11 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <p>Noch kein Account? <a href="{!! url('/register') !!}" class="link">Hier registrieren</a></p>
-            </div>
+                <p>Noch kein Account? </p>
+                        <div class="text-center">
+                            <a href="{!! url('/register') !!}" class="btn btn-secondary">Registrieren</a>
+                        </div>
+                     </div>
         </div>
     </div>
 </div>
