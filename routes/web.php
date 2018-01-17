@@ -26,6 +26,7 @@ Route::get('/clubs', 'Frontend\ClubController@clubs');
 Route::post('clubs/search', 'Frontend\ClubController@search');
 
 
+Route::get('/merchant/{id}/go', 'Frontend\MerchantController@go')->where(['id' => '[0-9]+']);
 Route::get('/merchant/{id}/{name}', 'Frontend\MerchantController@shop')->where(['id' => '[0-9]+']);
 Route::get('/merchants', 'Frontend\MerchantController@shops');
 Route::get('merchants/autocompleteCategories', 'Frontend\MerchantController@autocompleteCategories');

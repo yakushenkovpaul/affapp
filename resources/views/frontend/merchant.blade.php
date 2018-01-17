@@ -197,9 +197,9 @@
                                 
                             @else
                                 <div class="col-sm-12 col-md-12 col-xs-12">
-                                    <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
+                                    <a href="{!! url('/merchant/' . $merchant['id'] . '/go') !!}" target="_blank" title="{{ $merchant['name'] }}" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>Zum Shop gehen &amp; gutes tun
-                                    </button>
+                                    </a>
                                 </div>
                             @endif
                         </div>

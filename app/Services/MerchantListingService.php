@@ -48,7 +48,6 @@ class MerchantListingService
 
             $result = self::prepareResult(collect($return)->toArray(), $params);
         }
-
         return $result;
     }
 

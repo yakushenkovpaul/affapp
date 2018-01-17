@@ -63,6 +63,20 @@ class MerchantController extends Controller
             ->with('merchant', $this->service->getMerchant($id));
     }
 
+    /**
+     * Редирект на магазин
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+
+    public function go($id)
+    {
+        if($merchant = $this->service->getMerchant($id))
+        {
+            return response()->redirectTo($merchant['url']);
+        }
+    }
 
     /**
      * Автоподстановка категорий в форму поиска
