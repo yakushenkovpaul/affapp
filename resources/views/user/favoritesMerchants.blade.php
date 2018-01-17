@@ -41,7 +41,7 @@
                                         <tr>
                                             <td>{{ $merchant->id }}</td>
                                             <td>{{ $merchant->name }}</td>
-                                            <td><a href="{{ $merchant->url }}" target="_blank">{{ str_limit($merchant->url, 50) }}</a></td>
+                                            <td><a href="{!! url('/merchant/' . $merchant['id'] . '/' . Format::slug($merchant['dir'])) !!}" target="_blank">{{ char_limit($merchant['name'], 20, ['exceededText' => false]) }}</a></td>
                                             <td>
                                                 <form method="post" action="{!! route('favoritesMerchants.destroy', [$merchant->id]) !!}">
                                                     {!! csrf_field() !!}
