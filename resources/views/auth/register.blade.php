@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="center-block col-md-5 col-sm-6 col-xs-12">
                         <div class="panel panel-default loginPanel">
-                            <div class="panel-heading text-center">Registrierung</div>
+                            <div class="panel-heading text-center">Registrierung[1]</div>
                             <div class="panel-body">
                                 <form method="POST" action="{!! url('/register') !!}" class="loginForm" id="signupForm">
                                     {!! csrf_field() !!}
