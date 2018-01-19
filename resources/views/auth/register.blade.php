@@ -79,6 +79,11 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="userName">Club</label>
+                                        <input id="club" class="form-control" type="text" name="club" value="{{ old('club') }}">
+                                    </div>
+
+                                    <div class="form-group">
                                         <button type="submit" class="btn btn-primary pull-left">Registrieren</button>
                                     </div>
 

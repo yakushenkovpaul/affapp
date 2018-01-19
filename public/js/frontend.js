@@ -8,14 +8,14 @@ $(document).ready(function()
         var formData = loginForm.serialize();
 
         $.ajax({
-            url: "login",
+            url: location.origin + "/login",
             type:'POST',
             data:formData,
             beforeSend: function() {
                 $('.page-loader').show();
             },
             success:function(data){
-                window.location.href = data.path;
+                window.location.href = location.origin + '/' + data.path;
             },
             error: function (data) {
                 $('.page-loader').hide();
@@ -33,14 +33,14 @@ $(document).ready(function()
         var formData = registerForm.serialize();
 
         $.ajax({
-            url: "register",
+            url: location.origin + "/register",
             type:'POST',
             data:formData,
             beforeSend: function() {
                 $('.page-loader').show();
             },
             success:function(data){
-                window.location.href = data.path;
+                window.location.href = location.origin + '/' + data.path;
             },
             error: function (data) {
                 $('.page-loader').hide();
@@ -68,7 +68,6 @@ $(document).ready(function()
                 $('.page-loader').hide();
             },
             success:function(data){
-                console.log(data);
                 $('.dymanic').html(data.html);
 
                 if(data.next_page_url == null)
@@ -97,7 +96,7 @@ $(document).ready(function()
         var formData = contactForm.serialize();
 
         $.ajax({
-            url: "contact",
+            url: location.origin + "/contact",
             type:'POST',
             data:formData,
             beforeSend: function() {
@@ -119,7 +118,7 @@ $(document).ready(function()
     $(function()
     {
         $( "#club" ).autocomplete({
-            source: "register/autocompleteClubs",
+            source: location.origin + "/register/autocompleteClubs",
             minLength: 3,
             select: function(event, ui) {
                 $('#club').val(ui.item.value);
@@ -131,7 +130,7 @@ $(document).ready(function()
     $(function()
     {
         $( "#category" ).autocomplete({
-            source: "merchants/autocompleteCategories",
+            source: location.origin + "/merchants/autocompleteCategories",
             minLength: 1,
             select: function(event, ui) {
                 $('#category').val(ui.item.value);
@@ -260,4 +259,4 @@ function showError(key, value) {
 
 
 
-console.log('frontend.js_ver77');
+console.log('frontend.js_ver78');
