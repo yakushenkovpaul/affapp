@@ -37,6 +37,10 @@
                                     @input_maker_create('seo_description', ['type' => 'textarea'], $merchant)
                                 </div>
                                 <div class="form-group col-xs-12">
+                                    @input_maker_label('Cashback info')
+                                    @input_maker_create('cashback_info', ['type' => 'textarea'], $merchant)
+                                </div>
+                                <div class="form-group col-xs-12">
                                     @input_maker_label('Url')
                                     @input_maker_create('url', ['type' => 'string'], $merchant)
                                 </div>

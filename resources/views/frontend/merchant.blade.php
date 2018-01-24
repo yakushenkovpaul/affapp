@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 col-sm-5 col-xs-12">
-                        <div class="panel-merchant  raw-margin-bottom-53">
+                        <div class="panel-merchant raw-margin-bottom-28">
                             <div class="panel-body merchant">
                                 <ul class="merchant-info">
                                     <li class="merchant-logo">
@@ -44,6 +44,20 @@
                                 </ul>
                             </div>
                         </div>
+                        <p>
+                            Durchschnittliches Cashback beträgt {{ $merchant['cashback'] }}%.
+                            @if($merchant['cashback_info'])
+                            <a href="#" class="show-more-cashback-info">
+                                <i class="fa fa-caret-down" aria-hidden="true"></i> Mehr
+                            </a>
+                            @endif
+                        </p>
+                        @if($merchant['cashback_info'])
+                        <p class="cashback_info">
+                            {!! nl2br(e($merchant['cashback_info'])) !!}
+                        </p>
+                        @endif
+
                         <div class="panel panel-default panel-card hidden-xs">
                             <div class="panel-heading">Cash back detalliert</div>
                             <div class="panel-body cashback">
@@ -174,14 +188,13 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-12 merchant-title">
                                 <h1>{{ $merchant['name'] }}</h1>
-                                <p>Durchschnittliches Cashback beträgt {{ $merchant['cashback'] }}%.</p>
                             </div>
                         </div>
 
                         <div class="row">
                             @if (isset($merchant['fav']))
                                 <div class="col-sm-6 col-md-4 col-xs-12">
-                                    <button type="button" class="btn btn-secondary btn-lg btn-block raw-margin-top-10" onclick="fav({{ $merchant['id'] }}, 'fav-merchant')">
+                                    <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10" onclick="fav({{ $merchant['id'] }}, 'fav-merchant')">
                                         @if ($merchant['fav'])
                                             <i id="fav-merchant-{{ $merchant['id'] }}" class="fa fa-heart" aria-hidden="true"></i>Mein Lieblingsshop
                                         @else
@@ -234,7 +247,7 @@
                                         <div class="promo-text">
                                             sit ea detraxit menandri mediocritatem, in mel dicant mentitum.&nbsp;sit ea detraxit menandri mediocritatem, in mel dicant mentitum.sit ea detraxit menandri mediocritatem, in mel dicant mentitum.
                                         </div>
-                                        <a href="#" class="show-more"><i class="fa fa-caret-down" aria-hidden="true"></i> Show more</a>
+                                        <a href="#" class="show-more"><i class="fa fa-caret-down" aria-hidden="true"></i> Mehr</a>
                                     </div>
                                     <div class="col-sm-6 col-md-4">
                                         <a data-toggle="collapse" href="#code-2" class="open-value promo-code collapsed" aria-expanded="false">

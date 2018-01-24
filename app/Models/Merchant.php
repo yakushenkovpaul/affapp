@@ -26,6 +26,7 @@ class Merchant extends Model
         'dir',
 		'image',
 		'description',
+		'cashback_info',
 		'seo_title',
 		'seo_description',
 		'url',
@@ -87,7 +88,7 @@ class Merchant extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image', 'dir', 'logo', 'sale_percent_min', 'sale_fix_min'])
+            ->select(['id', 'name', 'image', 'dir', 'logo', 'cashback_info', 'sale_percent_min', 'sale_fix_min'])
             ->limit($limit)
             ->get();
     }
@@ -105,7 +106,7 @@ class Merchant extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image', 'dir', 'logo', 'sale_percent_min', 'sale_fix_min'])
+            ->select(['id', 'name', 'image', 'dir', 'logo', 'cashback_info', 'sale_percent_min', 'sale_fix_min'])
             ->paginate($paginate);
     }
 
@@ -124,7 +125,7 @@ class Merchant extends Model
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
-            ->select(['id', 'name', 'image', 'dir', 'logo', 'sale_percent_min', 'sale_fix_min'])
+            ->select(['id', 'name', 'image', 'dir', 'logo', 'cashback_info', 'sale_percent_min', 'sale_fix_min'])
             ->limit($limit)
             ->offset($offset)
             ->get();
@@ -142,7 +143,7 @@ class Merchant extends Model
     {
         return $this->newQuery()
             ->where('name', 'LIKE', '%'.$abc.'%')
-            ->select(['id', 'name', 'image', 'dir', 'logo', 'sale_percent_min', 'sale_fix_min'])
+            ->select(['id', 'name', 'image', 'dir', 'logo', 'cashback_info', 'sale_percent_min', 'sale_fix_min'])
             ->paginate($paginate);
     }
 
@@ -167,7 +168,7 @@ class Merchant extends Model
         }
 
         return $query
-            ->select(['id', 'name', 'image', 'dir', 'logo', 'sale_percent_min', 'sale_fix_min'])
+            ->select(['id', 'name', 'image', 'dir', 'logo', 'cashback_info', 'sale_percent_min', 'sale_fix_min'])
             ->whereHas('categories', function($query) use ($category_id) {
                 $query->where('category_id', $category_id);
             })->paginate($this->pagination);

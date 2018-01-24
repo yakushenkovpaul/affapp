@@ -162,6 +162,11 @@ $(document).ready(function()
         return false;
     });
 
+    $(".show-more-cashback-info").on('click' , function () {
+        $(".cashback_info").toggle();
+        return false;
+    });
+
 });
 
 /**

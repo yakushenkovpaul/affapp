@@ -7164,7 +7164,7 @@ table.dataTable thead .sorting_desc_disabled:after {
 .merchant-info .merchant-logo {
     background-color: transparent;
 
-    /* border-bottom: 1px #e5e5e5 solid */padding: 0 0 32px 0;
+    /* border-bottom: 1px #e5e5e5 solid */padding: 0 0 4px 0;
 }
 
 .merchant-info .listingReview {

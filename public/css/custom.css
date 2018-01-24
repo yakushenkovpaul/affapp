@@ -200,3 +200,8 @@ div.promo .row {
 {
     background-color: #ffffff;
 }
+
+.cashback_info
+{
+    display: none;
+}
