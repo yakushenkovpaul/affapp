@@ -58,43 +58,26 @@
                         </p>
                         @endif
 
-                        <div class="panel panel-default panel-card hidden-xs">
-                            <div class="panel-heading">Cash back detalliert</div>
-                            <div class="panel-body cashback">
-                                <ul class="list-styled panel-list list-padding">
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        
                         <div class="panel panel-default panel-card panel-topshop hidden-xs">
-                            <div class="panel-heading" id="categories11">Top shops</div>
+                            <div class="panel-heading" id="categories11">Weitere Top Shops</div>
+                            
+                            <!--dynamic merchants part starts-->
+                                @if (isset($merchants_offset_0['data']))
+                                <div class="footerInfoTitle">
+                                </div>
+                                    <div class="useLink">
+                                        <ul class="list-unstyled">
+                                            @foreach ($merchants_offset_0['data'] as $merchant)
+                                                <li>
+                                                    <a href="{!! url('/merchant/' . Format::slug($merchant['name'])) !!}" title="{{ $merchant['name'] }}">{{ char_limit($merchant['name'], 20, ['exceededText' => false]) }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul> 
+                                    </div>
+                        @endif
+                            <!--dynamic merchants part ends-->
+                            
                             <div>
                                 <ul class="panel-list list-padding left">
                                     <li class="listWrapper">
