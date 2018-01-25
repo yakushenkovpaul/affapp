@@ -11,20 +11,18 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-5 col-xs-12">
                         <div class="dashboardBoxBg mb30">
-                            <div class="profileImage">
-                                <img src="http://www.affapp.cloud/img/dashboard/avatar-t1-7.png" alt="Image User" class="img-circle">
-                                    <div class="file-upload profileImageUpload">
-                                        <div class="upload-area">
-                                            <input type="file" name="img[]" class="file">
-                                                <button class="browse" type="button">Profilbild ändern 
-                                                    <i class="fa fa-pencil-square-o icon-dash" aria-hidden="true"></i>
-                                                </button>
-                                        </div>
-                                    </div>
+                            <div class="profileImage center-block">
+                                <select name="avatar" id="avatarmenu">
+                                    <option value="1" title="{{ asset('img/dashboard/' . $user['name'] . '/1.png') }}"></option>
+                                    <option value="2" title="{{ asset('img/dashboard/male/2.png') }}"></option>
+                                    <option value="3" title="{{ asset('img/dashboard/male/3.png') }}"></option>
+                                    <option value="4" title="{{ asset('img/dashboard/male/4.png') }}"></option>
+                                    <option value="5" title="{{ asset('img/dashboard/male/5.png') }}"></option>
+                                </select>
                             </div>
                             <div class="profileUserInfo bt profileName">
-                                <h2>John Doe</h2>
-                                <h5>Nutzer seit: <span>15/01/2017</span></h5>
+                                <h2>{{ $user['name'] }} {{ $user->meta['lastname'] }}</h2>
+                                <h5>Nutzer seit: <span>{{ $user->meta['created_at']->format('d/m/Y') }}</span></h5>
                             </div>
                         </div>
                     </div>
@@ -92,7 +90,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="dashboardBoxBg mt30">
+                            <!--<div class="dashboardBoxBg mt30">
                                 <div class="profileIntro">
                                     <h3>Passwort ändern</h3>
                                         <div class="row">
@@ -110,7 +108,7 @@
                                             </div>
                                         </div>
                                   </div>
-                               </div>
+                               </div> -->
                             <div class="form-footer text-center btn-area">
                                 <a class="btn btn-primary pull-left" href="{{ URL::previous() }}">Abbrechen</a>
                                 <!--<a class="btn btn-primary center-block" href="/user/password">Passwort ändern</a>-->
