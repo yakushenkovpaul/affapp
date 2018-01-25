@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'accepted'             => 'The :attribute must be accepted.',
+    'accepted'             => 'Das Feld :attribute muss akzeptiert werdenY.',
     'active_url'           => 'The :attribute is not a valid URL.',
     'after'                => 'The :attribute must be a date after :date.',
     'after_or_equal'       => 'The :attribute must be a date after or equal to :date.',
@@ -30,7 +30,7 @@ return [
         'array'   => 'The :attribute must have between :min and :max items.',
     ],
     'boolean'              => 'The :attribute field must be true or false.',
-    'confirmed'            => 'The :attribute confirmation does not match.',
+    'confirmed'            => 'Die :attribute Wiederholung stimmt nicht überein.',
     'date'                 => 'The :attribute is not a valid date.',
     'date_format'          => 'The :attribute does not match the format :format.',
     'different'            => 'The :attribute and :other must be different.',
@@ -84,7 +84,7 @@ return [
     ],
     'string'               => 'The :attribute must be a string.',
     'timezone'             => 'The :attribute must be a valid zone.',
-    'unique'               => 'The :attribute has already been taken.',
+    'unique'               => ':attribute ist bereits vergeben.',
     'uploaded'             => 'The :attribute failed to upload.',
     'url'                  => 'The :attribute format is invalid.',
 
