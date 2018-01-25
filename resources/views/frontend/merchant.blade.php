@@ -60,18 +60,9 @@
 
                         
                         <div class="panel panel-default panel-card panel-topshop hidden-xs">
-                            <div class="panel-heading" id="categories11">Weitere Top Shops</div>
-                            
-                            
-                              
-                            
+                            <div class="panel-heading" id="categories11">Weitere Top Shops</div>                           
                             <div>
-                                <ul class="panel-list list-padding left">
-                                    @foreach ($merchants_offset_0['data'] as $merchant)
-                                    <li>
-                                        <a href="{!! url('/merchant/' . Format::slug($merchant['name'])) !!}" title="{{ $merchant['name'] }}">{{ char_limit($merchant['name'], 20, ['exceededText' => false]) }}</a>
-                                    </li>
-                                    @endforeach
+                                <ul class="panel-list list-padding left">                                   
                                     <li class="listWrapper">
                                         <span class="itmeName">Restaurants</span>
                                     </li>
