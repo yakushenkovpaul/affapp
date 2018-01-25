@@ -63,38 +63,15 @@
                             <div class="panel-heading" id="categories11">Weitere Top Shops</div>
                             
                             
-                                @if (isset($merchants_offset_0['data']))
-                                <div class="footerInfoTitle">
-                                </div>
-                                    <div class="useLink">
-                                        <ul class="list-unstyled">
-                                            @foreach ($merchants_offset_0['data'] as $merchant)
-                                                <li>
-                                                    <a href="{!! url('/merchant/' . Format::slug($merchant['name'])) !!}" title="{{ $merchant['name'] }}">{{ char_limit($merchant['name'], 20, ['exceededText' => false]) }}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul> 
-                                    </div>
-                        @endif
-                         
-                        @if (isset($merchants_offset_0['data']))
-                        <div class="col-sm-3 col-xs-12">
-                            <div class="footerInfoTitle">
-                            </div>
-                            <div class="useLink">
-                                <ul class="list-unstyled">
+                              
+                            
+                            <div>
+                                <ul class="panel-list list-padding left">
                                     @foreach ($merchants_offset_0['data'] as $merchant)
                                     <li>
                                         <a href="{!! url('/merchant/' . Format::slug($merchant['name'])) !!}" title="{{ $merchant['name'] }}">{{ char_limit($merchant['name'], 20, ['exceededText' => false]) }}</a>
                                     </li>
                                     @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                        @endif 
-                            
-                            <div>
-                                <ul class="panel-list list-padding left">
                                     <li class="listWrapper">
                                         <span class="itmeName">Restaurants</span>
                                     </li>
