@@ -58,45 +58,11 @@
                         </p>
                         @endif
 
-                        <div class="panel panel-default panel-card hidden-xs">
-                            <div class="panel-heading">Cash back detalliert</div>
-                            <div class="panel-body cashback">
-                                <ul class="list-styled panel-list list-padding">
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                    <li>
-                                            <span class="itmeName-cashback"><a href="#"><i class="icon-money-bag iconBox"></i></a><b>1.5%</b>
-                                            - Category one </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        
                         <div class="panel panel-default panel-card panel-topshop hidden-xs">
-                            <div class="panel-heading" id="categories11">Top shops</div>
+                            <div class="panel-heading" id="categories11">Weitere Top Shops</div>                           
                             <div>
-                                <ul class="panel-list list-padding left">
+                                <ul class="panel-list list-padding left">                                   
                                     <li class="listWrapper">
                                         <span class="itmeName">Restaurants</span>
                                     </li>
