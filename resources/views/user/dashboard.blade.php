@@ -15,9 +15,9 @@
                     <div class="panel-body plr">
                         <ul class="list-styled panel-list list-padding">
                             <li class="listWrapper">
-                                <a href="affapp_club.html">
-                                    <img src="storage/images/clubs/15/1420/logo.png" border="0" alt="Germania Fulda">
-                                </a>
+                                <a href="{!! url('/club/' . $club['id'] . '/' . Format::slug($club['dir'])) !!}" title="{{ $club['name'] }}">
+                                        <img src="{{ $club['image'] }}" alt="{{ $club['name'] }}">
+                                    </a>
                             </li>
                         </ul>
                     </div>
