@@ -16,7 +16,7 @@
                         <ul class="list-styled panel-list list-padding">
                             <li class="listWrapper">
                                 <a href="http://www.affapp.cloud/club/1420/hansa-07-futsal">
-                                       <img src="img/clubs/cb-1.jpeg" border="0" alt="Germania Fulda">
+                                       <img src="http://www.affapp.cloud/storage/images/clubs/15/1420/logo.png" border="0" alt="Germania Fulda">
                                     </a>
                             </li>
                         </ul>
