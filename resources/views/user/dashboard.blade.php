@@ -15,8 +15,8 @@
                     <div class="panel-body plr">
                         <ul class="list-styled panel-list list-padding">
                             <li class="listWrapper">
-                                <a href="{!! url('/club/' . $club['id'] . '/' . Format::slug($club['dir'])) !!}" title="{{ $club['name'] }}">
-                                        <img src="{{ $club['image'] }}" alt="{{ $club['name'] }}">
+                                <a href="http://www.affapp.cloud/club/1420/hansa-07-futsal">
+                                       <img src="img/clubs/cb-1.jpeg" border="0" alt="Germania Fulda">
                                     </a>
                             </li>
                         </ul>
