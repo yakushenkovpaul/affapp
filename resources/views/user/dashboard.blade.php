@@ -16,7 +16,7 @@
                         <ul class="list-styled panel-list list-padding">
                             <li class="listWrapper">
                                 <a href="affapp_club.html">
-                                    <img src="img/clubs/cb-1.jpeg" border="0" alt="Germania Fulda">
+                                    <img src="storage/images/clubs/15/1420/logo.png" border="0" alt="Germania Fulda">
                                 </a>
                             </li>
                         </ul>
@@ -627,11 +627,11 @@
                     <div class="panel-body plr">
                         <ul class="list-styled panel-list list-padding">
                             <li class="listWrapper">
-                                <a href="http://www.affapp.cloud/merchant/1036/dreamhack"><span class="itmeName"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" width="45" alt="Otto.de"></span> Telekom.de</span></a> 
+                                <a href="http://www.affapp.cloud/merchant/1036/dreamhack"><span class="itmeName"><span><img src="images/merchants/9/872/logo.png" width="45" alt="Otto.de"></span> Telekom.de</span></a> 
                                 <span class="itemSubmit">Getätigte Einkäufe: <strong>250</strong></span>
                             </li>
                             <li class="listWrapper">
-                                <a href="http://www.affapp.cloud/merchant/1036/dreamhack"><span class="itmeName"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" width="45" alt="Otto.de"></span> Telekom.de</span></a> 
+                                <a href="http://www.affapp.cloud/merchant/1036/dreamhack"><span class="itmeName"><span><img src="http://www.affapp.cloud/storage/images/merchants/9/872/logo.png" width="45" alt="Otto.de"></span> Telekom.de</span></a> 
                                 <span class="itemSubmit">Getätigte Einkäufe: <strong>250</strong></span>
                             </li>
                             <li class="listWrapper">
@@ -666,31 +666,31 @@
                     <div class="panel-body plr">
                         <ul class="list-styled panel-list list-padding-sm">
                             <li class="listWrapper">
-                                <span class="recentUserInfo"><img src="img/dashboard/avatar-t1-1.png" alt="Image User" class="img-circle">Adam Smith</span> 
+                                <span class="recentUserInfo"><img src="http://www.affapp.cloud/img/dashboard/male/5.png" alt="Image User" class="img-circle">Adam Smith</span> 
                                 <span class="userTime">Active 10m ago</span>
                             </li>
                             <li class="listWrapper">
-                                <span class="recentUserInfo"><img src="img/dashboard/avatar-t1-3.png" alt="Image User" class="img-circle">Adam Smith</span> 
+                                <span class="recentUserInfo"><img src="http://www.affapp.cloud/img/dashboard/male/4.png" alt="Image User" class="img-circle">Adam Smith</span> 
                                 <span class="userTime">Active 12m ago</span>
                             </li>
                             <li class="listWrapper">
-                                <span class="recentUserInfo"><img src="img/dashboard/avatar-t1-4.png" alt="Image User" class="img-circle">Adam Smith</span> 
+                                <span class="recentUserInfo"><img src="http://www.affapp.cloud/img/dashboard/male/3.png" alt="Image User" class="img-circle">Adam Smith</span> 
                                 <span class="userTime">Active 15m ago</span>
                             </li>
                             <li class="listWrapper">
-                                <span class="recentUserInfo"><img src="img/dashboard/avatar-t1-5.png" alt="Image User" class="img-circle">Adam Smith</span> 
+                                <span class="recentUserInfo"><img src="http://www.affapp.cloud/img/dashboard/male/1.png" alt="Image User" class="img-circle">Adam Smith</span> 
                                 <span class="userTime">Active 17m ago</span>
                             </li>
                             <li class="listWrapper">
-                                <span class="recentUserInfo"><img src="img/dashboard/avatar-t1-8.png" alt="Image User" class="img-circle">Adam Smith</span> 
+                                <span class="recentUserInfo"><img src="http://www.affapp.cloud/img/dashboard/male/2.png" alt="Image User" class="img-circle">Adam Smith</span> 
                                 <span class="userTime">Active 19m ago</span>
                             </li>
                             <li class="listWrapper">
-                                <span class="recentUserInfo"><img src="img/dashboard/avatar-t1-9.png" alt="Image User" class="img-circle">Adam Smith</span> 
+                                <span class="recentUserInfo"><img src="http://www.affapp.cloud/img/dashboard/female/5.png" alt="Image User" class="img-circle">Adam Smith</span> 
                                 <span class="userTime">Active 14m ago</span>
                             </li>
                             <li class="listWrapper">
-                                <span class="recentUserInfo"><img src="img/dashboard/avatar-t1-7.png" alt="Image User" class="img-circle">Adam Smith</span> 
+                                <span class="recentUserInfo"><img src="http://www.affapp.cloud/img/dashboard/female/1.png" alt="Image User" class="img-circle">Adam Smith</span> 
                                 <span class="userTime">Active 1h ago</span>
                             </li>
                         </ul>
