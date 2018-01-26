@@ -15,20 +15,23 @@ class CreateClubsTable extends Migration
     {
         Schema::create('clubs', function (Blueprint $table) {
             $table->increments('id');
-		$table->string('name');
-		$table->string('image');
-		$table->string('url');
-		$table->string('country');
-		$table->string('address');
-		$table->string('zip');
-		$table->string('contacts');
-		$table->string('bank_details');
-		$table->integer('fans');
-		$table->float('total_commission');
-		$table->float('total_paid');
-		$table->integer('rate');
-		$table->float('fee');
-
+            $table->string('name');
+            $table->string('image');
+            $table->tinyInteger('logo')->default(0);
+            $table->string('country');
+            $table->string('address');
+            $table->string('zip');
+            $table->string('contacts')->nullable();
+            $table->string('bank_details')->nullable();
+            $table->integer('fans');
+            $table->float('total_commission');
+            $table->float('total_paid');
+            $table->integer('rate');
+            $table->float('fee');
+            $table->string('url');
+            $table->string('dir');
+            $table->float('lat');
+            $table->float('lng');
             $table->timestamps();
         });
     }

@@ -17,15 +17,16 @@ class CreateUserMetaTable extends Migration
 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
-            $table->string('phone')->nullable();
-
             $table->boolean('is_active')->default(0);
             $table->string('activation_token')->nullable();
-
-            $table->boolean('marketing')->default(0);
-            $table->boolean('terms_and_cond')->default(1);
-
+            $table->string('lastname')->nullable();
+            $table->string('city')->nullable();
+            $table->string('birthday')->nullable();
+            $table->string('gender')->default(1);
+            $table->integer('club_id')->default(0);
+            $table->integer('rate')->default(0);
+            $table->tinyInteger('mail')->default(1);
+            $table->tinyInteger('avatar')->default(1);
             $table->timestamps();
         });
     }

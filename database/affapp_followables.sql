@@ -1,0 +1,6 @@
+INSERT INTO affapp.followables (user_id, followable_id, followable_type, relation, created_at) VALUES (14, 872, 'App\\Models\\Merchant', 'favorite', '2018-01-05 09:58:37');
+INSERT INTO affapp.followables (user_id, followable_id, followable_type, relation, created_at) VALUES (37, 7666, 'App\\Models\\Club', 'favorite', '2018-01-10 22:32:44');
+INSERT INTO affapp.followables (user_id, followable_id, followable_type, relation, created_at) VALUES (37, 876, 'App\\Models\\Merchant', 'favorite', '2018-01-13 17:43:08');
+INSERT INTO affapp.followables (user_id, followable_id, followable_type, relation, created_at) VALUES (37, 1022, 'App\\Models\\Merchant', 'favorite', '2018-01-13 17:43:46');
+INSERT INTO affapp.followables (user_id, followable_id, followable_type, relation, created_at) VALUES (37, 1033, 'App\\Models\\Merchant', 'favorite', '2018-01-13 19:43:20');
+INSERT INTO affapp.followables (user_id, followable_id, followable_type, relation, created_at) VALUES (37, 1030, 'App\\Models\\Merchant', 'favorite', '2018-01-14 12:16:34');

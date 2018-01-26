@@ -29,6 +29,7 @@ class UserMeta extends Model
         'gender',
         'club_id',
         'mail',
+        'avatar'
     ];
 
     protected $hidden = [

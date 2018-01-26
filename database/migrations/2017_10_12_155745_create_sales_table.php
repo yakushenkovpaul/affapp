@@ -15,16 +15,16 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->increments('id');
-		$table->boolean('status');
-		$table->float('value');
-		$table->float('comission');
-		$table->integer('merchant_id');
-		$table->integer('user_id');
-		$table->integer('club_id');
-		$table->float('service_fee');
-		$table->float('commission');
-		$table->string('updated_at');
-		$table->string('created_at');
+            $table->boolean('status');
+            $table->float('value');
+            $table->float('comission');
+            $table->integer('merchant_id');
+            $table->integer('user_id');
+            $table->integer('club_id');
+            $table->float('service_fee');
+            $table->float('commission');
+            $table->string('updated_at');
+            $table->string('created_at');
 
             
         });
