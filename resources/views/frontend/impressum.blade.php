@@ -23,13 +23,8 @@
                 <div class="row">
                     <div class="col-xs-8">
                         <ul class="list-unstyled termsList">
-                           
                             <li>
-                                <h3></h3>
-                               
-                            </li>
-                            <li>
-                                <h3>Haftungsausschluss.</h3> <br>
+                                <h3>Haftungsausschluss</h3> <br>
                                 <h3>1. Inhalt des Onlineangebots</h3>
                                 <p>Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
                             </li>
