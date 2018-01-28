@@ -183,13 +183,13 @@
                         <!-- Bottom Carousel Indicators -->
                         <ol class="carousel-indicators">
                             <li data-target="#quote-carousel" data-slide-to="0" class="active">
-                                <img class="img-responsive " src="img/dashboard/male/1.png" alt="">
+                                <img class="img-responsive " src="img/dashboard/male/2.png" alt="">
                             </li>
                             <li data-target="#quote-carousel" data-slide-to="1">
-                                <img class="img-responsive" src="img/dashboard/avatar-t1-13.png" alt="">
+                                <img class="img-responsive" src="img/dashboard/male/9.png" alt="">
                             </li>
                             <li data-target="#quote-carousel" data-slide-to="2">
-                                <img class="img-responsive" src="img/dashboard/avatar-t1-14.png" alt="">
+                                <img class="img-responsive" src="img/dashboard/female/4.png" alt="">
                             </li>
                         </ol>
                         <!-- Carousel Slides / Quotes -->
