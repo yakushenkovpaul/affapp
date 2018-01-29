@@ -126,7 +126,7 @@ var id = document.getElementById('map-canvas');
 if(id){
     function initMap() {
       var map = new google.maps.Map( id, {
-        center: {lat: -33.91722, lng: 151.23064},
+        center: {lat: 52.4973777, lng: 13.3957458},
         zoom: 14,
         styles:mapStyles
       });
