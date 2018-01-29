@@ -5,52 +5,124 @@
     <div class="main-wrapper">
     @include('frontendlayouts.front-top')
 
-        <section class="clearfix pageTitleSection">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="pageTitle">
-                            <h2>Neue vereine vorschlagen</h2>
+<section class="clearfix bg-dark listingSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <form action="" method="" class="listing__form">
+                    <div class="dashboardPageTitle text-center">
+                        <h2>Neuen Verein vorschlagen</h2>
+                    </div>
+                    <div class="dashboardBoxBg mb30">
+                        <div class="profileIntro paraMargin">
+                            <h3>Beschreibung</h3>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <label for="listingTitle">Name des Vereins</label>
+                                    <input type="text" class="form-control" id="listingTitle" placeholder="Name ">
+                                </div>
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <label for="listingCategory">Kategorie</label>
+                                    <div class="contactSelect">
+                                        <select name="guiest_id9" id="guiest_id9" class="select-drop">
+                                            <option value="0">Alle Kategorien</option>
+                                            <option value="1">Sport</option>
+                                            <option value="2">Tierschutz</option>
+                                            <option value="3">Kinderorganisation</option>                                             
+
+                                            <option value="4">Anderes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    <label for="discribeTheListing">Beschreibung des Vereins</label>
+                                    <textarea class="form-control" rows="3" placeholder="Beschreibung"></textarea>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="clearfix termsInfoSection">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <ul class="list-unstyled termsList">
-                            <li>
-                                <p>To advertise your business please ensure that you read and abide by the following terms and conditions.</p>
-                            </li>
-                            <li>
-                                <h3>Fair use of site</h3>
-                                <p>We are not responsible for any damages caused by the use of this website, or by posting business listings here. Please use our site at your own discretion and exercise good judgement as well as common sense when advertising business here.</p>
-                            </li>
-                            <li>
-                                <h3>Business deletion</h3>
-                                <p>We reserve the right to remove any business listings if we feel that they're infringing on any laws or if they contain objectionable material such as adult content (including images, vulgar language, content or links). In such cases, the business poster will receive a full refund for the listing.</p>
-                            </li>
-                            <li>
-                                <h3>Security and privacy</h3>
-                                <p>We make every possible attempt to keep your personal information safe, using the latest technology in Internet security. However, you should be aware that our site, as well as any other site, can potentially be a target for hackers. Please do not post any information on the site that is sensitive or that you would not want disclosed in case of an unlikely security breach. We use cookies to store information locally for advanced features of the site's operation, such as favorites, notes and alerts. Your personal details are not shared, rented or sold to any external companies or advertisers under any circumstances. Your credit card details and Paypal account details are only known to Paypal. You may review Paypal's agreements and policies for further information about how they safeguard your information. For security information, please visit: Paypal's security center .  For more information, please view Paypal's current <a href="#">privacy policy</a>.</p>
-                            </li>
-                            <li>
-                                <h3>Governing Law</h3>
-                                <p>These Terms shall be governed and construed in accordance with the laws of Ontario, Canada, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.</p>
-                            </li>
-                            <li>
-                                <h3>Contact Us</h3>
-                                <p>f you have any questions, concerns, or suggestions regarding this terms, please <a href="contact-us.html">contact us</a>.</p>
-                            </li>
-                        </ul>
+                    <div class="dashboardBoxBg mb30">
+                        <div class="profileIntro paraMargin">
+                            <h3>Kontakt</h3>
+                            <div class="row">
+                                <div class="form-group col-sm-12 col-xs-12">
+                                    <label for="listingAddress">Adresse</label>
+                                    <input type="text" class="form-control" id="listingAddress" placeholder="z.B. Wrangelstraße 98, 10997 Berlin">
+                                </div>
+                                <div class="form-group col-sm-6 col-sm-push-6 col-xs-12">
+                                    <div class="mapArea">
+                                        <div class="clearfix">
+                                            <div id="map-canvas"></div>
+                                        </div>
+                                        <span class="help-block">Füge  genaue Adresse des Vereins oben ein, um Karte zu aktualisieren</span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-6 col-sm-pull-6 col-xs-12">
+                                    <label for="listingPhone">Telefonnummer</label>
+                                    <input type="text" class="form-control" id="listingPhone" placeholder="+49 30 123456789 ">
+                                </div>
+                                <div class="form-group col-sm-6 col-sm-pull-6 col-xs-12">
+                                    <label for="listingEmail">Kontakt Email</label>
+                                    <input type="text" class="form-control" id="listingEmail" placeholder="kontakt@meinverein.de">
+                                </div>
+                                <div class="form-group col-sm-6 col-sm-pull-6 col-xs-12">
+                                    <label for="listingWebsite">Vereinsseite</label>
+                                    <input type="text" class="form-control" id="listingWebsite" placeholder="http://">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="dashboardBoxBg mb30">
+                        <div class="profileIntro paraMargin">
+                            <h3>Bilder</h3>
+                            <div class="row">
+                                <div class="form-group col-xs-12">
+                                    <div class="imageUploader text-center">
+                                        <div class="file-upload">
+                                            <div class="upload-area">
+                                                <input type="file" name="img[]" class="file">
+                                                <button class="browse" type="button">KLicke hier oder Ziehe die bilder auf die fläche</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboardBoxBg mb30">
+                        <div class="profileIntro paraMargin">
+                            <h3>Social Media</h3>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <label for="facebookUrl">Facebook URL</label>
+                                    <input type="text" class="form-control" id="linkedUrl" placeholder="http://linkedin.com/listty">
+                                </div>
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <label for="facebookUrl">Instagram URL</label>
+                                    <input type="text" class="form-control" id="facebookUrl" placeholder="http://facebook.com/listty">
+                                </div>
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <label for="twitterUrl">Twitter URL</label>
+                                    <input type="text" class="form-control" id="twitterUrl" placeholder="http://twitter.com/listty">
+                                </div>
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <label for="youtubeUrl">You Tube URL</label>
+                                    <input type="text" class="form-control" id="youtubeUrl" placeholder="http://youtube.com/listty">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-footer text-center">
+                        <button type="submit" class="btn-submit">Verein vorschlagen</button>
+                    </div>
+                </form>
             </div>
-        </section>
+        </div>
+    </div>
+</section>       
+
+
+       
         <!-- FOOTER -->
         @include('frontendlayouts.front-bottom')
     </div>
