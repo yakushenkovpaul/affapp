@@ -58,7 +58,31 @@
                         </p>
                         @endif
 
-                        
+                        <div class="panel panel-default panel-card panel-topshop hidden-xs">
+                            <div class="panel-heading" id="categories11">Weitere Top Shops</div>
+                            <div>
+                                @if (isset($merchants_offset_1['data']))
+                                <ul class="panel-list list-padding left">
+                                    @foreach ($merchants_offset_0['data'] as $_merchant)
+                                        <li class="listWrapper">
+                                            <span class="itmeName"><a href="{!! url('/merchant/' . $_merchant['id'] . '/' . Format::slug($_merchant['dir'])) !!}" title="{{ $_merchant['name'] }}">{{ char_limit($_merchant['name'], 20, ['exceededText' => false]) }}</a></span>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                                @endif
+                                @if (isset($merchants_offset_1['data']))
+                                <ul class="panel-list list-padding right">
+                                    @foreach ($merchants_offset_1['data'] as $_merchant)
+                                    <li class="listWrapper">
+                                        <span class="itmeName"><a href="{!! url('/merchant/' . $_merchant['id'] . '/' . Format::slug($_merchant['dir'])) !!}" title="{{ $_merchant['name'] }}">{{ char_limit($_merchant['name'], 20, ['exceededText' => false]) }}</a></span>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                                @endif
+                            </div>
+                        </div>
+
+                        <!--
                         <div class="panel panel-default panel-card panel-topshop hidden-xs">
                             <div class="panel-heading" id="categories11">Weitere Top Shops</div>                           
                             <div>
@@ -104,6 +128,7 @@
                                 </ul>
                             </div>
                         </div>
+                        -->
                         <div class="panel panel-default panel-card panel-topshop hidden-xs">
                             <div class="panel-heading">Kategorien</div>
                             <div>
@@ -169,7 +194,7 @@
                                     </button>
                                 </div>                     
                                 <div class="col-sm-6 col-md-8 col-xs-12">
-                                    <a href="{{ $merchant['url'] }}" title="{{ $merchant['name'] }}" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
+                                    <a href="{!! url('/merchant/' . $merchant['id'] . '/go') !!}" target="_blank" title="{{ $merchant['name'] }}" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>Zum Shop gehen &amp; gutes tun
                                     </a>
                                 </div>

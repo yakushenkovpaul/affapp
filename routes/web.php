@@ -21,14 +21,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Frontend\IndexController@index');
 
-Route::get('/club/{id}/{name}', 'Frontend\ClubController@club')->where(['id' => '[0-9]+']);;
+Route::get('/club/{id}/{name}', 'Frontend\ClubController@club')->where(['id' => '[0-9]+'])->middleWare('storeClub');
 Route::get('/clubs', 'Frontend\ClubController@clubs');
 Route::post('clubs/search', 'Frontend\ClubController@search');
 
 
-Route::get('/merchant/{id}/go', 'Frontend\MerchantController@go')->where(['id' => '[0-9]+']);
-Route::get('/merchant/{id}/{name}', 'Frontend\MerchantController@shop')->where(['id' => '[0-9]+']);
-Route::get('/merchants', 'Frontend\MerchantController@shops');
+Route::get('/merchant/{id}/go', 'Frontend\MerchantController@go')->where(['id' => '[0-9]+'])->middleWare('merchantGo');
+Route::get('/merchant/{id}/{name}', 'Frontend\MerchantController@merchant')->where(['id' => '[0-9]+']);
+Route::get('/merchants', 'Frontend\MerchantController@merchants');
 Route::get('merchants/autocompleteCategories', 'Frontend\MerchantController@autocompleteCategories');
 Route::post('merchants/search', 'Frontend\MerchantController@search');
 

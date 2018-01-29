@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\MerchantGo;
+use App\Http\Middleware\StoreClub;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -62,5 +64,7 @@ class Kernel extends HttpKernel
         'roles' => \App\Http\Middleware\Roles::class,
         'active' => \App\Http\Middleware\Active::class,
         'redirectifActive' => \App\Http\Middleware\RedirectIfActive::class,
+        'storeClub' => \App\Http\Middleware\StoreClub::class,
+        'merchantGo' => \App\Http\Middleware\MerchantGo::class,
     ];
 }

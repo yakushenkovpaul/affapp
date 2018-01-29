@@ -4,13 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MerchantSearchRequest;
-use App\Models\Merchant;
 use App\Services\MerchantListingService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
-use SebastianBergmann\CodeCoverage\Report\PHP;
-use App\Models\Club;
+
 
 
 class MerchantController extends Controller
@@ -26,7 +23,7 @@ class MerchantController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
-    public function shops(Request $request)
+    public function merchants(Request $request)
     {
         $result = $this->service->getMerchantsPaginate();
 
@@ -57,9 +54,11 @@ class MerchantController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
-    public function shop($id, $name)
+    public function merchant($id, $name)
     {
         return view('frontend.merchant')
+            ->with('merchants_offset_0', $this->service->getMerchantsOffset(6,0))
+            ->with('merchants_offset_1', $this->service->getMerchantsOffset(6,6))
             ->with('merchant', $this->service->getMerchant($id));
     }
 
@@ -70,10 +69,36 @@ class MerchantController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
 
-    public function go($id)
+    public function go(Request $request, $id)
     {
         if($merchant = $this->service->getMerchant($id))
         {
+            if($merchant['url_affilate'])
+            {
+                $user_id = 999999;
+                $club_id = $request->session()->get('_club_id');
+                #$request->session()->forget('_club_id');
+                #$request->session()->save();
+
+                if($request->user())
+                {
+                    $user_id = $request->user()->id;
+                }
+
+                if (strpos($merchant['url_affilate'], '?') !== false) {
+                    $redirect = $merchant['url_affilate'] . '&zpar0=' . $user_id . '&zpar1=' . $club_id;
+                }
+                else
+                {
+                    $redirect = $merchant['url_affilate'] . '?zpar0=' . $user_id . '&zpar1=' . $club_id;
+                }
+
+                echo $redirect . PHP_EOL;
+                exit;
+
+                return response()->redirectTo($redirect);
+            }
+
             return response()->redirectTo($merchant['url']);
         }
     }

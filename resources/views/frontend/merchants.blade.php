@@ -100,9 +100,9 @@
                             </div>
                             <div class="useLink">
                                 <ul class="list-unstyled">
-                                    @foreach ($merchants_offset_0['data'] as $merchant)
+                                    @foreach ($merchants_offset_0['data'] as $_merchant)
                                     <li>
-                                        <a href="{!! url('/merchant/' . Format::slug($merchant['name'])) !!}" title="{{ $merchant['name'] }}">{{ char_limit($merchant['name'], 20, ['exceededText' => false]) }}</a>
+                                        <a href="{!! url('/merchant/' . $_merchant['id'] . '/' . Format::slug($_merchant['dir'])) !!}" title="{{ $_merchant['name'] }}">{{ char_limit($_merchant['name'], 20, ['exceededText' => false]) }}</a>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -116,9 +116,9 @@
                                 </div>
                                 <div class="useLink">
                                     <ul class="list-unstyled">
-                                        @foreach ($merchants_offset_1['data'] as $merchant)
+                                        @foreach ($merchants_offset_1['data'] as $_merchant)
                                             <li>
-                                                <a href="{!! url('/merchant/' . Format::slug($merchant['name'])) !!}" title="{{ $merchant['name'] }}">{{ char_limit($merchant['name'], 20, ['exceededText' => false]) }}</a>
+                                                <a href="{!! url('/merchant/' . $_merchant['id'] . '/' . Format::slug($_merchant['dir'])) !!}" title="{{ $_merchant['name'] }}">{{ char_limit($_merchant['name'], 20, ['exceededText' => false]) }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -133,9 +133,9 @@
                                 </div>
                                 <div class="useLink">
                                     <ul class="list-unstyled">
-                                        @foreach ($merchants_offset_2['data'] as $merchant)
+                                        @foreach ($merchants_offset_2['data'] as $_merchant)
                                             <li>
-                                                <a href="{!! url('/merchant/' . Format::slug($merchant['name'])) !!}" title="{{ $merchant['name'] }}">{{ char_limit($merchant['name'], 20, ['exceededText' => false]) }}</a>
+                                                <a href="{!! url('/merchant/' . $_merchant['id'] . '/' . Format::slug($_merchant['dir'])) !!}" title="{{ $_merchant['name'] }}">{{ char_limit($_merchant['name'], 20, ['exceededText' => false]) }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -150,9 +150,9 @@
                                 </div>
                                 <div class="useLink">
                                     <ul class="list-unstyled">
-                                        @foreach ($merchants_offset_3['data'] as $merchant)
+                                        @foreach ($merchants_offset_3['data'] as $_merchant)
                                             <li>
-                                                <a href="{!! url('/merchant/' . Format::slug($merchant['name'])) !!}" title="{{ $merchant['name'] }}">{{ char_limit($merchant['name'], 20, ['exceededText' => false]) }}</a>
+                                                <a href="{!! url('/merchant/' . $_merchant['id'] . '/' . Format::slug($_merchant['dir'])) !!}" title="{{ $_merchant['name'] }}">{{ char_limit($_merchant['name'], 20, ['exceededText' => false]) }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
