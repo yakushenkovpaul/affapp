@@ -8,7 +8,7 @@
         <section class="clearfix pageTitleSection">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-8">
+                    <div class="col-xs-12">
                         <div class="pageTitle">
                             <h2>Nutzungsbedingungen</h2>
                         </div>
@@ -21,7 +21,7 @@
         <section class="clearfix termsInfoSection">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-xs-8">
                         <ul class="list-unstyled termsList">
                             <li>
                                 <p>Definitionen.</p>
