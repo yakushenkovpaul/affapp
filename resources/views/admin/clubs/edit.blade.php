@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    {!! Form::model($club, ['route' => ['clubs.update', $club->id], 'method' => 'patch', 'class' => 'listing__form']) !!}
+                    {!! Form::model($club, ['files' => true, 'route' => ['clubs.update', $club->id], 'method' => 'patch', 'class' => 'listing__form']) !!}
                     <div class="dashboardPageTitle">
                         <h2>Edit Club: [{{ $club->name }}]</h2>
                     </div>
@@ -17,12 +17,34 @@
                                     @input_maker_label('Name')
                                     @input_maker_create('name', ['type' => 'string'], $club)
                                 </div>
+                                @if ($club->logo)
                                 <div class="form-group col-xs-12">
-                                    <img src="{{ $club->image }}" border="0">
+                                    <img src="{{ asset('storage/images/clubs/' . \App\Services\ClubService::getPath($club->id) . '/logo.png') }}" border="0">
+                                </div>
+                                @endif
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Image')
+                                    @input_maker_create('image', ['type' => 'file'])
                                 </div>
                                 <div class="form-group col-xs-12">
                                     @input_maker_label('Url')
                                     @input_maker_create('url', ['type' => 'string'], $club)
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Status')
+                                    @input_maker_create('status', ['type' => 'select', 'label' => 'status', 'options' => [ 'Active' => '1', 'Pending' => '2', 'Disable' => '0' ]], $club)
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Phone')
+                                    @input_maker_create('phone', ['type' => 'string'], $club)
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Email')
+                                    @input_maker_create('email', ['type' => 'string'], $club)
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Description')
+                                    @input_maker_create('description', ['type' => 'textarea'], $club)
                                 </div>
                                 <div class="form-group col-xs-12">
                                     @input_maker_label('Country')
@@ -47,6 +69,22 @@
                                 <div class="form-group col-xs-12">
                                     @input_maker_label('Fee')
                                     @input_maker_create('fee', ['type' => 'string'], $club)
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Facebook')
+                                    @input_maker_create('facebook', ['type' => 'string'], $club)
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Twitter')
+                                    @input_maker_create('twitter', ['type' => 'string'], $club)
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Instagram')
+                                    @input_maker_create('instagram', ['type' => 'string'], $club)
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Youtube')
+                                    @input_maker_create('youtube', ['type' => 'string'], $club)
                                 </div>
                             </div>
                         </div>

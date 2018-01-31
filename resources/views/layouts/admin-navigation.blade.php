@@ -27,7 +27,15 @@
                         </ul>
                     </li>
                     <li @if(Request::is('admin/merchants', 'admin/merchants/*')) class="active" @endif><a href="{!! url('admin/merchants') !!}"><i class="fa fa-shopping-cart icon-dash" aria-hidden="true"></i> Merchants</a></li>
-                    <li @if(Request::is('admin/clubs', 'admin/clubs/*')) class="active" @endif><a href="{!! url('admin/clubs') !!}"><i class="fa fa fa-soccer-ball-o icon-dash" aria-hidden="true"></i> Clubs</a></li>
+
+                    <li class="dropdown singleDrop">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-soccer-ball-o icon-dash" aria-hidden="true"></i> Clubs <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li @if(Request::is('admin/clubs', 'admin/clubs/*')) class="active" @endif><a href="{!! url('admin/clubs') !!}">All</a></li>
+                            <li @if(Request::is('admin/clubs/?view=pending', 'admin/clubs/?view=pending*')) class="active" @endif><a href="{!! url('admin/clubs/?view=pending') !!}">Pending</a></li>
+                        </ul>
+                    </li>
+
                     <li @if(Request::is('admin/sales', 'admin/sales/*')) class="active" @endif><a href="{!! url('admin/sales') !!}"><i class="fa fa-pie-chart icon-dash" aria-hidden="true"></i> Sales</a></li>
                     @endif
                 </ul>

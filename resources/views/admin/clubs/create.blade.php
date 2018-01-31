@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    {!! Form::open(['route' => 'clubs.store', 'class' => 'listing__form']) !!}
+                    {!! Form::open(['files' => true, 'route' => 'clubs.store', 'class' => 'listing__form']) !!}
 
                     <div class="dashboardPageTitle">
                         <h2>Club Create</h2>
@@ -20,15 +20,31 @@
                                 </div>
                                 <div class="form-group col-xs-12">
                                     @input_maker_label('Image')
-                                    @input_maker_create('image', ['type' => 'string'])
+                                    @input_maker_create('image', ['type' => 'file'])
                                 </div>
                                 <div class="form-group col-xs-12">
                                     @input_maker_label('Url')
                                     @input_maker_create('url', ['type' => 'string'])
                                 </div>
                                 <div class="form-group col-xs-12">
+                                    @input_maker_label('Status')
+                                    @input_maker_create('status', ['type' => 'select', 'label' => 'status', 'options' => [ 'Active' => '1', 'Pending' => '2', 'Disable' => '0' ]])
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Phone')
+                                    @input_maker_create('phone', ['type' => 'string'])
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Email')
+                                    @input_maker_create('email', ['type' => 'string'])
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Description')
+                                    @input_maker_create('description', ['type' => 'textarea'])
+                                </div>
+                                <div class="form-group col-xs-12">
                                     @input_maker_label('Country')
-                                    @input_maker_create('country', ['type' => 'string'])
+                                    @input_maker_create('country', ['type' => 'string', 'value' => 'Germany'])
                                 </div>
                                 <div class="form-group col-xs-12">
                                     @input_maker_label('Address')
@@ -49,6 +65,22 @@
                                 <div class="form-group col-xs-12">
                                     @input_maker_label('Fee')
                                     @input_maker_create('fee', ['type' => 'string'])
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Facebook')
+                                    @input_maker_create('facebook', ['type' => 'string'])
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Twitter')
+                                    @input_maker_create('twitter', ['type' => 'string'])
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Instagram')
+                                    @input_maker_create('instagram', ['type' => 'string'])
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    @input_maker_label('Youtube')
+                                    @input_maker_create('youtube', ['type' => 'string'])
                                 </div>
                             </div>
                         </div>

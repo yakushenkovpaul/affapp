@@ -38,6 +38,7 @@ Route::get('/agb', 'Frontend\AgbController@index');
 Route::get('/datenschutz', 'Frontend\DatenschutzController@index');
 Route::get('/impressum', 'Frontend\ImpressumController@index');
 Route::get('/neue-vereine-vorschlagen', 'Frontend\NeueVereineVorschlagenController@index');
+Route::post('neue-vereine-vorschlagen', 'Frontend\NeueVereineVorschlagenController@store');
 Route::get('/freunde-einladen', 'Frontend\FreundeEinladenController@index');
 
 

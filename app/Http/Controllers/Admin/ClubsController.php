@@ -22,7 +22,15 @@ class ClubsController extends Controller
      */
     public function index(Request $request)
     {
-        $clubs = $this->service->paginated();
+        if($request->view == 'pending')
+        {
+            $clubs = $this->service->pending();
+        }
+        else
+        {
+            $clubs = $this->service->paginated();
+        }
+
         return view('admin.clubs.index')->with('clubs', $clubs);
     }
 
@@ -58,10 +66,10 @@ class ClubsController extends Controller
         $result = $this->service->create($request->except('_token'));
 
         if ($result) {
-            return redirect(route('admin.clubs.edit', ['id' => $result->id]))->with('message', 'Successfully created');
+            return redirect(route('clubs.edit', ['id' => $result->id]))->with('message', 'Successfully created');
         }
 
-        return redirect(route('admin.clubs.index'))->with('message', 'Failed to create');
+        return redirect(route('clubs.index'))->with('message', 'Failed to create');
     }
 
     /**
@@ -105,9 +113,9 @@ class ClubsController extends Controller
         $result = $this->service->destroy($id);
 
         if ($result) {
-            return redirect(route('admin.clubs.index'))->with('message', 'Successfully deleted');
+            return redirect(route('clubs.index'))->with('message', 'Successfully deleted');
         }
 
-        return redirect(route('admin.clubs.index'))->with('message', 'Failed to delete');
+        return redirect(route('clubs.index'))->with('message', 'Failed to delete');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Club;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Storage;
 
 class ClubService
 {
@@ -52,6 +53,11 @@ class ClubService
         return $this->model->paginate($this->pagination);
     }
 
+    public function pending()
+    {
+        return $this->model->where('status', '=', 2)->paginate($this->pagination);
+    }
+
     /**
      * Search the model
      *
@@ -74,6 +80,31 @@ class ClubService
         ]);
     }
 
+    public function uploadImage($object_id)
+    {
+        if(!empty($object_id) && !empty(request()->file('image')))
+        {
+            $path = 'images/clubs/' . self::getPath($object_id);
+
+
+            if(!Storage::disk('public')->exists($path))
+            {
+                Storage::disk('public')->makeDirectory($path);
+            }
+
+            Storage::disk('public')->putFileAs(
+                $path, request()->file('image'), 'logo.png'
+            );
+
+        }
+    }
+
+
+    public static function getPath($id)
+    {
+        return ceil($id/100) . DIRECTORY_SEPARATOR . $id;
+    }
+
     /**
      * Create the model item
      *
@@ -82,7 +113,9 @@ class ClubService
      */
     public function create($payload)
     {
-        return $this->model->create($payload);
+        $return = $this->model->create($payload);
+        self::uploadImage($return->id);
+        return $return;
     }
 
     /**
@@ -105,7 +138,9 @@ class ClubService
      */
     public function update($id, $payload)
     {
-        return $this->find($id)->update($payload);
+        $return = $this->find($id)->update($payload);
+        self::uploadImage($id);
+        return $return;
     }
 
     /**

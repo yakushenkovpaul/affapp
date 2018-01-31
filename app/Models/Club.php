@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Overtrue\LaravelFollow\Traits\CanBeLiked;
 use Overtrue\LaravelFollow\Traits\CanBeFavorited;
+use Illuminate\Support\Facades\Storage;
 
 class Club extends Model
 {
@@ -33,16 +34,71 @@ class Club extends Model
 		'fans',
 		'total_commission',
 		'total_paid',
-		'fee'
+		'fee',
+        'confirm',
+        'facebook',
+        'twitter',
+        'instagram',
+        'youtube',
+        'description',
+        'status',
+        'phone',
+        'email'
     ];
 
     protected $hidden = ['rate'];
 
     public static $rules = [
-        // create rules
+        'name' => 'required|min:3|max:255',
     ];
     // Club
+    public $attributes = [
+        'status' => 2,
+        'country' => 'Germany',
+        'category' => 'sport',
+        'fee' => 0.00,
+    ];
 
+    /**
+     * Переопределяем метод, чтобы можно было задать дефолтные значения для переменных
+     *
+     * @param $array
+     */
+
+    protected function prepare($array)
+    {
+        foreach ($array as $k => $v)
+        {
+            if(is_null($v))
+            {
+                if(isset($this->attributes[$k]))
+                {
+                    $array[$k] = $this->attributes[$k];
+                }
+            }
+        }
+
+        if(!empty($array['image']))
+        {
+            $array['image'] = 'logo.png';
+            $array['logo'] = 1;
+        }
+
+        return $array;
+    }
+
+
+    public function update(array $attributes = [], array $options = [])
+    {
+        return parent::update($this->prepare($attributes) , $options);
+    }
+
+
+
+    public function create($array)
+    {
+        return parent::create($this->prepare($array));
+    }
 
     /**
      * Возвращает пять клубов по запросу

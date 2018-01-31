@@ -42,7 +42,15 @@
                                     <td>{{ $club->id }}</td>
                                     <td>{{ $club->name }}</td>
                                     <td><a href="{{ $club->url }}" target="_blank">{{ str_limit($club->url, 50) }}</a></td>
-                                    <td><span class="label label-success">Active</span></td>
+                                    <td>
+                                        @if ($club->status == 1)
+                                            <span class="label label-success">Active</span>
+                                        @elseif ($club->status == 2)
+                                            <span class="label label-warning">Pending</span>
+                                        @else
+                                            <span class="label label-danger">Disable</span>
+                                        @endif
+                                    </td>
                                     <td>
                                         <form method="post" action="{!! route('clubs.destroy', [$club->id]) !!}">
                                             {!! csrf_field() !!}
