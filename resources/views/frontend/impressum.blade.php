@@ -62,9 +62,9 @@
                                 <p><b>Registergericht:</b></p>
                                 <p>Amtsgericht Charlottenburg, Berlin</p>
                                 <p><b>Handelsregisternummer:</b></p>
-                                <p>HRB 127132</p>
+                                <p></p>
                                 <p><b>Ust-IdNr.:</b></p>
-                                <p>DE271592727</p>
+                                <p></p>
                             </li>
                         </ul>
                     </div>
