@@ -38,4 +38,4 @@
     <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
 </head>
 <body class="body-wrapper">
-<div class="page-loader" style="background: url({{ asset('img/preloader.gif') }}) center no-repeat #fff;"></div>
+<!--<div class="page-loader" style="background: url({{ asset('img/preloader.gif') }}) center no-repeat #fff;"></div>-->

@@ -1,5 +1,9 @@
 jQuery(document).ready(function(){
   'use strict';
+//============================== PRE LOADER =============================================
+  $(window).load(function() {
+    $(".page-loader").fadeOut();
+  });
 
 //============================== SELECT BOX =========================
   $('.select-drop').selectbox();
