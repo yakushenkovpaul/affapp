@@ -1,9 +1,9 @@
-@extends('frontendlayouts.front-master')
+@extends('layouts.frontend.front-master')
 
 @section('front-content')
 
     <div class="main-wrapper">
-        @include('frontendlayouts.front-top')
+        @include('layouts.frontend.front-top')
         <!-- WORKS SECTION -->
         <section class="clearfix p0">
             <div id="map-canvas"></div>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="row dymanic" id="clubs">
                     @if ($clubs['data'])
-                        @include('listing.clubs')
+                        @include('frontend.listing.clubs')
                     @endif
                 </div>
                 <div class="row">
@@ -59,7 +59,7 @@
         </script>
 
         <!-- FOOTER -->
-        @include('frontendlayouts.front-bottom')
+        @include('layouts.frontend.front-bottom')
     </div>
 
 @stop

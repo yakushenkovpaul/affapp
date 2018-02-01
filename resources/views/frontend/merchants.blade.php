@@ -1,9 +1,9 @@
-@extends('frontendlayouts.front-master')
+@extends('layouts.frontend.front-master')
 
 @section('front-content')
 
     <div class="main-wrapper">
-    @include('frontendlayouts.front-top')
+    @include('layouts.frontend.front-top')
         <!-- WORKS SECTION -->
         <section class="main-slider" data-loop="true" data-autoplay="true" data-interval="7000">
             <div class="inner">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="row dymanic" id="shops">
                     @if ($merchants['data'])
-                        @include('listing.merchants')
+                        @include('frontend.listing.merchants')
                     @endif
                 </div>
                 <div class="row">
@@ -166,7 +166,7 @@
             </div>
         </section>
         <!-- FOOTER -->
-        @include('frontendlayouts.front-bottom')
+        @include('layouts.frontend.front-bottom')
     </div>
     
 @stop    

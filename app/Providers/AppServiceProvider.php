@@ -14,10 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('frontendlayouts.front-top', 'App\Http\Composers\PublicComposer');
-        view()->composer('listing.clubs', 'App\Http\Composers\PublicComposer');
-        view()->composer('listing.merchants', 'App\Http\Composers\PublicComposer');
-        view()->composer('frontendlayouts.front-bottom', 'App\Http\Composers\BottomComposer');
+        view()->composer('layouts.frontend.front-top', 'App\Http\Composers\PublicComposer');
+        view()->composer('frontend.listing.clubs', 'App\Http\Composers\PublicComposer');
+        view()->composer('frontend.listing.merchants', 'App\Http\Composers\PublicComposer');
+        view()->composer('layouts.frontend.front-bottom', 'App\Http\Composers\BottomComposer');
     }
 
     /**

@@ -1,9 +1,9 @@
-@extends('frontendlayouts.front-master')
+@extends('layouts.frontend.front-master')
 
 @section('front-content')
 
     <div class="main-wrapper">
-    @include('frontendlayouts.front-top')
+    @include('layouts.frontend.front-top')
 
     <section class="clearfix bg-dark listingSection">
         <div class="container">
@@ -131,7 +131,7 @@
     </script>
        
     <!-- FOOTER -->
-    @include('frontendlayouts.front-bottom')
+    @include('layouts.frontend.front-bottom')
     </div>
 
 @stop

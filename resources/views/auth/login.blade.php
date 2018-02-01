@@ -1,4 +1,4 @@
-@extends('frontendlayouts.front-master')
+@extends('layouts.frontend.front-master')
 
 @section('front-content')
     <div class="main-wrapper">

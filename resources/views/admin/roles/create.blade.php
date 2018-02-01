@@ -1,6 +1,6 @@
-@extends('dashboard', ['pageTitle' => '_camelUpper_casePlural_ &raquo; Create'])
+@extends('layouts.admin.admin-master', ['pageTitle' => '_camelUpper_casePlural_ &raquo; Create'])
 
-@section('content')
+@section('admin-content')
 
     <section class="clearfix bg-dark listingSection">
         <div class="container">

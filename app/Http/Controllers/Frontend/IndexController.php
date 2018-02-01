@@ -32,7 +32,7 @@ class IndexController extends Controller
     {
         if($user = Auth::user())
         {
-            return view('frontend_auth.index')
+            return view('frontend.auth.index')
                 ->with('club', $this->serviceClub->getUserClub())
                 ->with('clubs', $this->serviceClub->getClubs())
                 ->with('clubs_total', $this->serviceClub->getClubsTotal())

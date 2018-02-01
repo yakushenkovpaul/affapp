@@ -1,9 +1,9 @@
-@extends('frontendlayouts.front-master')
+@extends('layouts.frontend.front-master')
 
 @section('front-content')
 
     <div class="main-wrapper">
-    @include('frontendlayouts.front-top')
+    @include('layouts.frontend.front-top')
 
         <section class="clearfix pageTitleSection">
             <div class="container">
@@ -72,7 +72,7 @@
             </div>
         </section>
         <!-- FOOTER -->
-        @include('frontendlayouts.front-bottom')
+        @include('layouts.frontend.front-bottom')
     </div>
 
 @stop

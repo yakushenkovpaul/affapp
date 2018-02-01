@@ -1,10 +1,10 @@
-@extends('userlayouts.user-master')
+@extends('layouts.user.user-master')
 
 @section('user-content')
 
     <div class="main-wrapper">
     <!-- HEADER -->
-    @include('userlayouts.user-top')
+    @include('layouts.user.user-top')
     <!-- SETTINGS SECTION -->
 
         <section class="clearfix bg-dark listingSection">
@@ -119,7 +119,7 @@
             </div>
         </section>
         <!-- FOOTER -->
-        @include('frontendlayouts.front-bottom')
+        @include('layouts.frontend.front-bottom')
     </div>
 
 @stop

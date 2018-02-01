@@ -114,31 +114,6 @@ $(document).ready(function()
     });
 
 
-    var addClubForm = $("#addClubFo1rm");
-
-    addClubForm.submit(function(e){
-        e.preventDefault();
-
-        var formData = addClubForm.serialize();
-
-        $.ajax({
-            url: location.origin + "/neue-vereine-vorschlagen",
-            type:'POST',
-            data:formData,
-            beforeSend: function() {
-                $('.page-loader').show();
-            },
-            success:function(data){
-                $.notify("Thank you. Your club will send to approve", "info");
-                $('.page-loader').hide();
-            },
-            error: function (data) {
-                $('.page-loader').hide();
-                showErrors(data);
-            }
-        });
-    });
-
     $(function()
     {
         $( "#club" ).autocomplete({

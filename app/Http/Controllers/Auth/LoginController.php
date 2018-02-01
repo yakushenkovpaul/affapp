@@ -48,7 +48,7 @@ class LoginController extends Controller
     public function authenticated()
     {
         if (auth()->user()->hasRole('admin')) {
-            return response()->json(['path' => '/admin/dashboard']);
+            return response()->json(['path' => 'admin/dashboard']);
         }
 
         return response()->json(['path' => 'user/dashboard']);

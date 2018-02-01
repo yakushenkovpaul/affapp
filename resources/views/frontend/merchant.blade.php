@@ -1,9 +1,9 @@
-@extends('frontendlayouts.front-master')
+@extends('layouts.frontend.front-master')
 
 @section('front-content')
 
     <div class="main-wrapper">
-    @include('frontendlayouts.front-top')
+    @include('layouts.frontend.front-top')
         <!-- LISTINGS DETAILS IMAGE SECTION -->
         <section class="clearfix paddingAdjustBottom">
             <div class="container">
@@ -430,7 +430,7 @@
         </section>
         <!-- LISTINGS DETAILS INFO SECTION -->
         <!-- FOOTER_HERE -->
-        @include('frontendlayouts.front-bottom')
+        @include('layouts.frontend.front-bottom')
     </div>
 
 @stop

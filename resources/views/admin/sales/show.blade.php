@@ -1,6 +1,6 @@
-@extends('dashboard', ['pageTitle' => '_camelUpper_casePlural_ &raquo; Show'])
+@extends('layouts.admin.admin-master', ['pageTitle' => '_camelUpper_casePlural_ &raquo; Show'])
 
-@section('content')
+@section('admin-content')
 
     <div class="container">
         <div class="col-md-12">

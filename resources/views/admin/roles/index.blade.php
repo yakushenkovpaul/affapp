@@ -1,6 +1,6 @@
-@extends('dashboard', ['pageTitle' => '_camelUpper_casePlural_ &raquo; Index'])
+@extends('layouts.admin.admin-master', ['pageTitle' => '_camelUpper_casePlural_ &raquo; Index'])
 
-@section('content')
+@section('admin-content')
 
     <!-- DASHBOARD ORDERS SECTION -->
     <section class="clearfix bg-dark dashboardOrders">

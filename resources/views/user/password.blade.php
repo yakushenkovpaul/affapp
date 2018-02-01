@@ -1,6 +1,6 @@
-@extends('dashboard')
+@extends('layouts.user.user-master')
 
-@section('content')
+@section('user-content')
 
     <div class="row">
         <div class="col-md-12">
