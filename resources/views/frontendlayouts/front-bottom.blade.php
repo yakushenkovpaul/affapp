@@ -64,7 +64,7 @@
                                 <a href="{!! url('/datenschutz') !!}">Datenschutz</a>
                             </li>
                             <li>
-                                <a href="{!! url('/agb') !!}">ABG</a>
+                                <a href="{!! url('/agb') !!}">AGB</a>
                             </li>
                             <li>
                                 <a href="pricing-table.html">Datenschutzerklärung</a>
