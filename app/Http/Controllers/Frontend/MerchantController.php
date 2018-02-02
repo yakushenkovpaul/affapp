@@ -30,7 +30,7 @@ class MerchantController extends Controller
         if ($request->ajax()) {
 
             return response()->json([
-                'html' => view('listing.merchants')
+                'html' => view('frontend.listing.merchants')
                     ->with('merchants', $result)
                     ->render(),
                 'next_page_url' => $result['next_page_url']
@@ -141,7 +141,7 @@ class MerchantController extends Controller
         }
 
         return response()->json([
-            'html' => view('listing.merchants')
+            'html' => view('frontend.listing.merchants')
                 ->with('merchants', $result)
                 ->render(),
             'next_page_url' => $result['next_page_url']

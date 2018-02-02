@@ -112,6 +112,7 @@ class Club extends Model
     {
         return $this->newQuery()
             ->where('name', 'LIKE', '%'.$abc.'%')
+            ->where('status', '=', 1)
             ->take(5)
             ->select(['id', 'name'])
             ->get();
@@ -129,6 +130,7 @@ class Club extends Model
     public function getClubsPaginate($paginate, $order = 'created_at', $sort = 'desc')
     {
         return $this->newQuery()
+            ->where('status', '=', 1)
             ->orderBy($order, $sort)
             ->select(['id', 'name', 'image', 'url', 'logo', 'dir'])
             ->paginate($paginate);
@@ -147,6 +149,7 @@ class Club extends Model
     public function getClubs($limit, $order = 'created_at', $sort = 'desc')
     {
         return $this->newQuery()
+            ->where('status', '=', 1)
             ->orderBy($order, $sort)
             ->select(['id', 'name', 'image', 'url', 'logo', 'dir'])
             ->limit($limit)
@@ -167,6 +170,7 @@ class Club extends Model
     public function getClubsPerPage($limit, $page, $order = 'id', $sort = 'desc')
     {
         return $this->newQuery()
+            ->where('status', '=', 1)
             ->orderBy($order, $sort)
             ->offset($page * $limit)
             ->limit($limit)
@@ -198,6 +202,7 @@ class Club extends Model
     {
         return $this->newQuery()
             ->where('name', 'LIKE', '%'.$abc.'%')
+            ->where('status', '=', 1)
             ->select(['id', 'name', 'image', 'url', 'logo', 'dir'])
             ->paginate($paginate);
     }

@@ -35,7 +35,7 @@ class ClubController extends Controller
         if ($request->ajax()) {
 
             return response()->json([
-                'html' => view('listing.clubs')
+                'html' => view('frontend.listing.clubs')
                     ->with('clubs', $result)
                     ->render(),
                 'next_page_url' => $result['next_page_url']
@@ -102,7 +102,7 @@ class ClubController extends Controller
         }
 
         return response()->json([
-                'html' => view('listing.clubs')
+                'html' => view('frontend.listing.clubs')
                     ->with('clubs', $result)
                     ->render(),
                 'next_page_url' => $result['next_page_url']
