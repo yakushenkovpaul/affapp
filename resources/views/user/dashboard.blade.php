@@ -15,9 +15,11 @@
                     <div class="panel-body plr">
                         <ul class="list-styled panel-list list-padding">
                             <li class="listWrapper">
-                                <a href="http://www.affapp.cloud/club/1420/hansa-07-futsal">
-                                       <img src="http://www.affapp.cloud/storage/images/clubs/15/1420/logo.png" border="0" alt="Germania Fulda">
+                                <div class="center-block">
+                                    <a href="{!! url('/club/' . $club['id'] . '/' . Format::slug($club['dir'])) !!}" title="{{ $club['name'] }}">
+                                        <img src="{{ $club['image'] }}" alt="{{ $club['name'] }}">
                                     </a>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -625,36 +627,20 @@
                     <div class="panel-heading" id="categories_3">Am häufigsten benutzen Shops
 </div>
                     <div class="panel-body plr">
-                        <ul class="list-styled panel-list list-padding">
-                            <li class="listWrapper">
-                                <a href="http://www.affapp.cloud/merchant/1036/dreamhack"><span class="itmeName"><span><img src="images/merchants/9/872/logo.png" width="45" alt="Otto.de"></span> Telekom.de</span></a> 
-                                <span class="itemSubmit">Getätigte Einkäufe: <strong>250</strong></span>
-                            </li>
-                            <li class="listWrapper">
-                                <a href="http://www.affapp.cloud/merchant/1036/dreamhack"><span class="itmeName"><span><img src="http://www.affapp.cloud/storage/images/merchants/9/872/logo.png" width="45" alt="Otto.de"></span> Telekom.de</span></a> 
-                                <span class="itemSubmit">Getätigte Einkäufe: <strong>250</strong></span>
-                            </li>
-                            <li class="listWrapper">
-                                <a href="http://www.affapp.cloud/merchant/1036/dreamhack"><span class="itmeName"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" width="45" alt="Otto.de"></span> Telekom.de</span></a> 
-                                <span class="itemSubmit">Getätigte Einkäufe: <strong>250</strong></span>
-                            </li>
-                            <li class="listWrapper">
-                                <a href="http://www.affapp.cloud/merchant/1036/dreamhack"><span class="itmeName"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" width="45" alt="Otto.de"></span> Telekom.de</span></a> 
-                                <span class="itemSubmit">Getätigte Einkäufe: <strong>250</strong></span>
-                            </li>
-                            <li class="listWrapper">
-                                <a href="http://www.affapp.cloud/merchant/1036/dreamhack"><span class="itmeName"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" width="45" alt="Otto.de"></span> Telekom.de</span></a> 
-                                <span class="itemSubmit">Getätigte Einkäufe: <strong>250</strong></span>
-                            </li>
-                            <li class="listWrapper">
-                                <a href="http://www.affapp.cloud/merchant/1036/dreamhack"><span class="itmeName"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" width="45" alt="Otto.de"></span> Telekom.de</span></a> 
-                                <span class="itemSubmit">Getätigte Einkäufe: <strong>250</strong></span>
-                            </li>
-                            <li class="listWrapper">
-                                <a href="http://www.affapp.cloud/merchant/1036/dreamhack"><span class="itmeName"><span><img src="img/brands/18999_lgo_telekom_affiliate_de.png" width="45" alt="Otto.de"></span> Telekom.de</span></a> 
-                                <span class="itemSubmit">Getätigte Einkäufe: <strong>250</strong></span>
-                            </li>                                        
-                        </ul>
+                        @if (isset($merchants['data']))
+                            <ul class="list-styled panel-list list-padding">
+                                @foreach ($merchants['data'] as $merchant)
+                                    <li class="listWrapper">
+                                        <a target="_blank" href="{!! url('/merchant/' . $merchant['id'] . '/' . Format::slug($merchant['dir'])) !!}" title="{{ $merchant['name'] }}">
+                                            <span class="itmeName">
+                                                <span><img src="{{ $merchant['image'] }}" alt="{{ $merchant['name'] }}" width="45"></span>
+                                                {{ $merchant['name'] }}
+                                            </span></a>
+                                        <span class="itemSubmit">Getätigte Einkäufe: <strong>250</strong></span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
                     </div>
                 </div>
             </div>

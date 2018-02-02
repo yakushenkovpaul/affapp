@@ -319,4 +319,24 @@ class MerchantListingService
     }
 
 
+    /**
+     * Возвращает топовые магазины для дашборда в настройках пользователя
+     *
+     * @param $limit
+     * @return mixed
+     */
+
+    public static function getMerchantsDashboard($limit)
+    {
+        $result = [];
+
+        if($return = Merchant::getMerchantsOffsetStatic($limit, 0, 'main', 'desc'))
+        {
+            $result['data'] = collect($return)->toArray();
+        }
+
+        return $result;
+    }
+
+
 }
