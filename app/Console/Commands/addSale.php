@@ -63,8 +63,8 @@ class addSale extends Command
             $time = Carbon::parse('-' . rand(1,7) . ' day');
 
             $data = [
-                'user_id' => $user->id,
-                //'user_id' => 45,
+                //'user_id' => $user->id,
+                'user_id' => 45,
                 'merchant_id' => rand(1,1036),
                 'service_fee' => $service_fee,
                 'club_id' => 259,
