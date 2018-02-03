@@ -29,7 +29,7 @@ class SaleService
     public function __construct(Sale $sale)
     {
         $this->model        = $sale;
-        $this->pagination   = env('PAGINATION', 25);
+        $this->pagination   = env('PAGINATION', 10);
     }
 
     /**
@@ -117,5 +117,29 @@ class SaleService
     public function destroy($id)
     {
         return $this->model->destroy($id);
+    }
+
+    /**
+     * Return club sales
+     *
+     * @param $club_id
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+
+    public function club($club_id)
+    {
+        return $this->model->club($this->pagination, $club_id);
+    }
+
+    /**
+     * Return most recent clubs merchants
+     *
+     * @param $club_id
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+
+    public function clubMerchants($club_id)
+    {
+        return $this->model->clubMerchants($this->pagination, $club_id);
     }
 }

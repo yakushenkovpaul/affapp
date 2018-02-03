@@ -15,14 +15,13 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('status');
-            $table->float('value');
-            $table->float('comission');
-            $table->integer('merchant_id');
-            $table->integer('user_id');
-            $table->integer('club_id');
-            $table->float('service_fee');
-            $table->float('commission');
+            $table->boolean('status')->default(0);
+            $table->float('value')->default(0);
+            $table->integer('merchant_id')->default(0);
+            $table->integer('user_id')->default(0);;
+            $table->integer('club_id')->default(0);;
+            $table->float('service_fee')->default(0);
+            $table->float('commission')->default(0);
             $table->string('updated_at');
             $table->string('created_at');
 

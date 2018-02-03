@@ -20,12 +20,15 @@
 <script src="{{ asset('plugins/fancybox/jquery.fancybox.pack.js?rnd=3') }}"></script>
 <script src="{{ asset('plugins/isotope/isotope-triger.min.js?rnd=3') }}"></script>
 <script src="{{ asset('js/searchmap.js?rnd=3') }}"></script>
-<!-- Flot
-<script src="{{ asset('plugins/flot/jquery.flot.js?rnd=3') }}"></script>
-<script src="{{ asset('plugins/flot/jquery.flot.time.js?rnd=3') }}"></script>
-<script src="{{ asset('js/chart.js?rnd=3') }}"></script>
--->
 <script src="{{ asset('js/custom.js?rnd=3') }}"></script>
 <script src="{{ asset('js/backend.js?rnd=3') }}"></script>
+
+@if (isset($graphs))
+    <!-- Flot -->
+    <script src="{{ asset('plugins/flot/jquery.flot.js') }}"></script>
+    <script src="{{ asset('plugins/flot/jquery.flot.time.js') }}"></script>
+    <script src="{{ asset('js/chart.js?rnd=2') }}"></script>
+@endif
+
 </body>
 </html>

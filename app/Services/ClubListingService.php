@@ -50,7 +50,6 @@ class ClubListingService
         return $result;
     }
 
-
     /**
      * Возвращает клубы
      * @return array

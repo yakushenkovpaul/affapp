@@ -48,6 +48,17 @@ class User extends Authenticatable
         return $this->hasOne(UserMeta::class);
     }
 
+    /**
+     * User Sales
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+
+    public function sales()
+    {
+        return $this->hasMany(Sale::class, 'user_id', 'id');
+    }
+
 
     /**
      * User Roles
@@ -98,6 +109,17 @@ class User extends Authenticatable
     public function findByEmail($email)
     {
         return $this->where('email', $email)->first();
+    }
+
+    /**
+     * Find by Email Like
+     *
+     * @return User
+     */
+
+    public function findByEmailLike()
+    {
+        return $this->where('email', 'LIKE', '%.testing@gmail.com%')->inRandomOrder()->first();
     }
 
     /**

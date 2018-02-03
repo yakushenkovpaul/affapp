@@ -10,21 +10,29 @@ use App\Services\UserService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserUpdateRequest;
 use App\Services\ClubListingService;
+use App\Services\IndexesService;
+use App\Services\SaleService;
 
 class DashboardController extends Controller
 {
     public $service_club;
     public $service_merchant;
+    public $service_indexes;
+    public $service_sales;
 
     public function __construct(
         UserService $userService,
         ClubListingService $clubService,
-        MerchantListingService $merchantService
+        MerchantListingService $merchantService,
+        IndexesService $indexesService,
+        SaleService $saleService
     )
     {
         $this->service = $userService;
         $this->service_club = $clubService;
         $this->service_merchant = $merchantService;
+        $this->service_indexes = $indexesService;
+        $this->service_sales = $saleService;
     }
 
 
@@ -39,13 +47,27 @@ class DashboardController extends Controller
 
         if ($user) {
 
-            $club = $this->service_club->getClub($user->meta->club_id);
-            $merchants = $this->service_merchant->getMerchantsDashboard(10);
+            $club_id = $user->meta->club_id;
+            $club = $this->service_club->getClub($club_id);
+
+            $clubCommissionTotal = $this->service_indexes->getClubsCommissionTotal($club_id);
+            $clubSalesTotal = $this->service_indexes->getClubSalesTotal($club_id);
+            $clubFansTotal = $this->service_indexes->getClubFansTotal($club_id);
+
+
+            $userSales = $user->sales()->orderBy('updated_at','DESC')->paginate(10);
+            $sales = $this->service_sales->club($club_id);
+            $salesMerchants = $this->service_sales->clubMerchants($club_id);
 
             return view('user.dashboard')
                 ->with('user', $user)
-                ->with('merchants', $merchants)
-                ->with('club', $club);
+                ->with('userSales', $userSales)
+                ->with('club', $club)
+                ->with('sales', $sales)
+                ->with('salesMerchants', $salesMerchants)
+                ->with('clubCommissionTotal', $clubCommissionTotal)
+                ->with('clubSalesTotal', $clubSalesTotal)
+                ->with('clubFansTotal', $clubFansTotal);
         }
 
         return back()->withErrors(['Could not find user']);

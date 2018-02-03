@@ -2,6 +2,7 @@
 
 @section('admin-content')
 
+
     <!-- DASHBOARD SECTION -->
     <section class="clearfix bg-dark equalHeight dashboardSection">
         <div class="container">
@@ -102,7 +103,7 @@
     </section>
 
     @php
-        $graphs = 111;
+        $graphs = 1;
     @endphp
 
 @stop

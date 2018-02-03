@@ -108,6 +108,17 @@ class UserService
     }
 
     /**
+     * Find random user by email like
+     *
+     * @return User
+     */
+
+    public function findByEmailLike()
+    {
+        return $this->model->findByEmailLike();
+    }
+
+    /**
      * Find by Role ID
      * @param  integer $id
      * @return Collection
@@ -168,6 +179,8 @@ class UserService
                     'gender' => (!empty($userMetaArray['gender'])) ? $userMetaArray['gender'] :   null,
                     'club_id' => (!empty($userMetaArray['club_id'])) ? $userMetaArray['club_id'] :   0,
                     'mail' => (!empty($userMetaArray['mail'])) ? $userMetaArray['mail'] :   0,
+                    'avatar' => (!empty($userMetaArray['avatar'])) ? $userMetaArray['avatar'] :   0, //удалить после dummy данных
+                    'is_active' => (!empty($userMetaArray['is_active'])) ? $userMetaArray['is_active'] :   0, //удалить после dummy данных
                 ]);
 
                 $this->assignRole($role, $user->id);

@@ -188,7 +188,6 @@ class Club extends Model
         return $this->newQuery()->count();
     }
 
-
     /**
      * Ищет клубы с пагинацией
      *
@@ -238,7 +237,4 @@ class Club extends Model
     {
         return $this->newQuery()->find($id);
     }
-
-
-
 }
