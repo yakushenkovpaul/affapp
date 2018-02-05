@@ -62,6 +62,7 @@ class addSale extends Command
             $commission = $value * ($service_fee/100);
             $time = Carbon::parse('-' . rand(0,40) . ' day');
 
+
             $data = [
                 'user_id' => $user->id,
                 //'user_id' => 45,
