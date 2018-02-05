@@ -109,63 +109,28 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-xs-12">
-                <div class="panel panel-default panel-card">
-                    <div class="panel-heading" id="categories">Meine letzte Bestellungen</div>
-                    <div class="table-wrapper">
-                        <div class="table-responsive bgAdd fixed-solution" data-pattern="priority-columns">
-                            <table id="ordersTable" class="table table-small-font table-bordered table-striped" cellspacing="0" width="100%">
-                                <thead>
-                                    <tr>
-                                        <th id="ordersTable-col-0">Kauf ID</th>
-                                        <th data-priority="" id="ordersTable-col-1">Online Shop</th>
-                                        <th data-priority="2" id="ordersTable-col-2">Cashback</th>
-                                        <th data-priority="6" id="ordersTable-col-3">Kaufdatum</th>
-                                        <th data-priority="3" id="ordersTable-col-5">Status</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th data-org-colspan="1" data-columns="ordersTable-col-0">Order ID</th>
-                                        <th data-org-colspan="1" data-columns="ordersTable-col-1">Customer</th>
-                                        <th data-org-colspan="1" data-priority="2" data-columns="ordersTable-col-2">Amount</th>
-                                        <th data-org-colspan="1" data-priority="6" data-columns="ordersTable-col-3">Date Added</th>
-                                        <th data-org-colspan="1" data-priority="6" data-columns="ordersTable-col-4">Date Modified</th>
-                                        <th data-org-colspan="1" data-priority="3" data-columns="ordersTable-col-5">Status</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    @foreach($userSales as $sale)
-                                        <tr>
-                                            <td data-org-colspan="1" data-columns="ordersTable-col-0">{{ $sale->id }}</td>
-                                            <td data-org-colspan="1" data-columns="ordersTable-col-1">
-                                                <a target="_blank" href="{!! url('/merchant/' . $sale->merchant->id . '/' . Format::slug($sale->merchant->dir)) !!}" title="{{ $sale->merchant->name }}">{{ $sale->merchant->name }}</a></td>
-                                            <td data-org-colspan="1" data-priority="2" data-columns="ordersTable-col-2">${{ $sale->value }}</td>
-                                            <td data-org-colspan="1" data-priority="6" data-columns="ordersTable-col-3">{{ $sale->updated_at->format('d/m/Y') }}</td>
-                                            @if ($sale->status == 1)
-                                                <td data-org-colspan="1" data-priority="3" data-columns="ordersTable-col-5">
-                                                    <span class="label label-success">approved</span>
-                                                </td>
-                                            @else
-                                                <td data-org-colspan="1" data-priority="3" data-columns="ordersTable-col-5">
-                                                    <span class="label label-warning">pending</span>
-                                                </td>
-                                            @endif
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                <div class="table-wrapper">
+                    <div class="btn-toolbar">
+                        <div class="btn-group focus-btn-group">
+                            <button class="btn btn-default">
+                                <span class="glyphicon glyphicon-screenshot"></span> Meine letzte Bestellungen
+                            </button>
                         </div>
+                    </div>
+
+                    <div class="dynamic_orders_user" id="page_user_dashboard">
+                        @include('user.listing.sales', ['listing_sales' => $userSales])
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                {!! $userSales; !!}
-            </div>
-        </div>
+
+
+
+
     </div>
     @endif
     @if ($sales->isEmpty())
@@ -173,7 +138,7 @@
             <div class="well text-center">No orders found.</div>
         </div>
     @else
-        <div class="container">
+        <div class="container" style="margin-top: 90px">
             <div class="row">
                 <div class="col-md-8 col-sm-7 col-xs-12">
                     <div class="panel panel-default panel-card">
@@ -230,59 +195,14 @@
                             </button>
                         </div>
                     </div>
-                    <div class="table-responsive bgAdd fixed-solution" data-pattern="priority-columns">
 
-                        <table id="ordersTable" class="table table-small-font table-bordered table-striped" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th id="ordersTable-col-0">Kauf ID</th>
-                                    <th data-priority="" id="ordersTable-col-1">Online Shop</th>
-                                    <th data-priority="2" id="ordersTable-col-2">Cashback</th>
-                                    <th data-priority="6" id="ordersTable-col-3">Kaufdatum</th>
-                                    <th data-priority="3" id="ordersTable-col-5">Status</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th data-org-colspan="1" data-columns="ordersTable-col-0">Order ID</th>
-                                    <th data-org-colspan="1" data-columns="ordersTable-col-1">Customer</th>
-                                    <th data-org-colspan="1" data-priority="2" data-columns="ordersTable-col-2">Amount</th>
-                                    <th data-org-colspan="1" data-priority="6" data-columns="ordersTable-col-3">Date Added</th>
-                                    <th data-org-colspan="1" data-priority="6" data-columns="ordersTable-col-4">Date Modified</th>
-                                    <th data-org-colspan="1" data-priority="3" data-columns="ordersTable-col-5">Status</th>
-                                    <th data-org-colspan="1" data-priority="2" data-columns="ordersTable-col-6">Action</th>
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                            @foreach($sales as $sale)
-                                <tr>
-                                    <td data-org-colspan="1" data-columns="ordersTable-col-0">{{ $sale->id }}</td>
-                                    <td data-org-colspan="1" data-columns="ordersTable-col-1">
-                                        <a target="_blank" href="{!! url('/merchant/' . $sale->merchant->id . '/' . Format::slug($sale->merchant->dir)) !!}" title="{{ $sale->merchant->name }}">{{ $sale->merchant->name }}</a></td>
-                                    <td data-org-colspan="1" data-priority="2" data-columns="ordersTable-col-2">${{ $sale->value }}</td>
-                                    <td data-org-colspan="1" data-priority="6" data-columns="ordersTable-col-3">{{ $sale->updated_at->format('d/m/Y') }}</td>
-                                    @if ($sale->status == 1)
-                                        <td data-org-colspan="1" data-priority="3" data-columns="ordersTable-col-5">
-                                            <span class="label label-success">approved</span>
-                                        </td>
-                                    @else
-                                        <td data-org-colspan="1" data-priority="3" data-columns="ordersTable-col-5">
-                                            <span class="label label-warning">pending</span>
-                                        </td>
-                                    @endif
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                    <div class="dynamic_orders_all" id="page_user_dashboard">
+                        @include('user.listing.sales', ['listing_sales' => $sales])
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                {!! $sales; !!}
-            </div>
-        </div>
+
     </div>
     @endif
 </section>

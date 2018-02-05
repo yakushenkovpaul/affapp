@@ -36,6 +36,34 @@ class DashboardController extends Controller
     }
 
 
+
+    public function listingSales(Request $request)
+    {
+        if ($request->ajax()) {
+
+            $user = $request->user();
+
+            if($user)
+            {
+                if (isset($request->page_user_order)) {
+                    $listing_sales = $user->sales()->orderBy('updated_at', 'DESC')->paginate(10, ['*'], 'page_user_order');;
+                }
+
+                if (isset($request->page)) {
+                    $listing_sales = $this->service_sales->club($user->meta->club_id);;
+                }
+
+                return response()->json([
+                    'html' => view('user.listing.sales')
+                        ->with('user', $user)
+                        ->with('listing_sales', $listing_sales)
+                        ->render(),
+                ]);
+            }
+        }
+    }
+
+
     /**
      * @param Request $request
      * @return $this|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -48,16 +76,16 @@ class DashboardController extends Controller
         if ($user) {
 
             $club_id = $user->meta->club_id;
+
             $club = $this->service_club->getClub($club_id);
 
             $clubCommissionTotal = $this->service_indexes->getClubsCommissionTotal($club_id);
             $clubSalesTotal = $this->service_indexes->getClubSalesTotal($club_id);
             $clubFansTotal = $this->service_indexes->getClubFansTotal($club_id);
 
-
-            $userSales = $user->sales()->orderBy('updated_at','DESC')->paginate(10);
-            $sales = $this->service_sales->club($club_id);
             $salesMerchants = $this->service_sales->clubMerchants($club_id);
+            $userSales = $user->sales()->orderBy('updated_at','DESC')->paginate(10, ['*'], 'page_user_order');
+            $sales = $this->service_sales->club($club_id);
 
             return view('user.dashboard')
                 ->with('user', $user)
