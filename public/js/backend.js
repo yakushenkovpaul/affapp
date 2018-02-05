@@ -6,8 +6,35 @@ $(document).ready(function()
         console.log($(this).val());
     });
 
-    //аякс листинг заказов в дашборде пользователя
+
     $(document).ready(function() {
+
+        $(document).on('click', '.graph_submit', function (e) {
+
+            var id = $(this).attr('id');
+
+            $.ajax({
+                type: 'post',
+                url: location.origin + "/user/dashboardGraph",
+                dataType: 'json',
+                data: { "period": $(this).attr('id'), "_token": $('meta[name="csrf_token"]').attr('content') },
+                beforeSend: function() {
+                    $('.page-loader').show();
+                },
+                complete: function() {
+                    $('.page-loader').hide();
+                },
+            }).done(function (data) {
+                $(".dynamic_graph").html(data.html);
+                $(".graph_submit").removeClass('active');
+                $("#" + id).addClass('active');
+            }).fail(function () {
+                console.log('Graph could not be loaded.');
+            });
+
+        });
+
+        //аякс листинг заказов в дашборде пользователя
         $(document).on('click', '#page_user_dashboard .pagination a', function (e) {
             if ($(this).attr('href').indexOf("?page_user_order=") >= 0)
             {

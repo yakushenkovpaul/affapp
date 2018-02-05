@@ -53,7 +53,7 @@
                         Cashback in Euro 
 </div>
                     <div class="panel-body">
-                        <h2>{{ $clubCommissionTotal }} €</h2>
+                        <h2>{{ number_format($clubCommissionTotal, 0, '.', '') }} €</h2>
                         <p>Veränderung zum letzten Monat um <span class="resultInfo resultUp">+10%                     <i class="fa fa-level-up"></i></span></p>
                     </div>
                 </div>
@@ -66,48 +66,9 @@
         </div>
     @else
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="panel panel-default panel-card">
-                    <div class="panel-heading">
-                        Übersicht Bestellungen
-                        <span class="rightContent"><span class="dateRange"><label>Seit:</label><div class="dateSelect">
-                                <div class="input-group date ed-datepicker filterDate" data-provide="datepicker">
-                                    <input type="text" class="form-control" placeholder="mm/dd/yyyy">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div></span><span class="dateRange"><label>Bis:</label><div class="dateSelect">
-                                <div class="input-group date ed-datepicker filterDate" data-provide="datepicker">
-                                    <input type="text" class="form-control" placeholder="mm/dd/yyyy">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div></span><span class="btn-group btn-panel"><button type="button" class="btn btn-primary active">Täglich</button><button type="button" class="btn btn-primary">Wöchentlich</button><button type="button" class="btn btn-primary">Monatlich</button></span></span>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-sm-3 col-xs-12">
-                                <div class="chartInfo">
-                                    <h2>{{ $clubSalesTotal }}</h2>
-                                    <p>Gesamt Bestellungen</p>
-                                </div>
-                                <div class="chartInfo">
-                                    <h2>{{ $clubCommissionTotal }} €</h2>
-                                    <p>Gesamt Auszahlungen</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-9 col-xs-12">
-                                <div class="flot-chart">
-                                    <div class="flot-chart-content" id="flot-dashboard-chart"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+        <div class="dynamic_graph">
+            @include('user.dashboard.graph')
         </div>
 
         <div class="row">
@@ -122,7 +83,7 @@
                     </div>
 
                     <div class="dynamic_orders_user" id="page_user_dashboard">
-                        @include('user.listing.sales', ['listing_sales' => $userSales])
+                        @include('user.dashboard.sales', ['listing_sales' => $userSales])
                     </div>
                 </div>
             </div>
@@ -138,7 +99,7 @@
             <div class="well text-center">No orders found.</div>
         </div>
     @else
-        <div class="container" style="margin-top: 90px">
+        <div class="container" style="margin-top: 90px;">
             <div class="row">
                 <div class="col-md-8 col-sm-7 col-xs-12">
                     <div class="panel panel-default panel-card">
@@ -197,7 +158,7 @@
                     </div>
 
                     <div class="dynamic_orders_all" id="page_user_dashboard">
-                        @include('user.listing.sales', ['listing_sales' => $sales])
+                        @include('user.dashboard.sales', ['listing_sales' => $sales])
                     </div>
                 </div>
             </div>
@@ -207,37 +168,7 @@
     @endif
 </section>
         <!-- FOOTER -->
-        @php
-            $graphs = 1;
-        @endphp
 
-        <script>
-            function gd(year, month, day) {
-                return new Date(year, month - 1, day).getTime();
-            }
-
-            var data2 = [
-                [gd(2012, 1, 1), 7], [gd(2012, 1, 2), 6], [gd(2012, 1, 3), 4], [gd(2012, 1, 4), 8],
-                [gd(2012, 1, 5), 9], [gd(2012, 1, 6), 7], [gd(2012, 1, 7), 5], [gd(2012, 1, 8), 4],
-                [gd(2012, 1, 9), 7], [gd(2012, 1, 10), 8], [gd(2012, 1, 11), 9], [gd(2012, 1, 12), 6],
-                [gd(2012, 1, 13), 4], [gd(2012, 1, 14), 5], [gd(2012, 1, 15), 11], [gd(2012, 1, 16), 8],
-                [gd(2012, 1, 17), 8], [gd(2012, 1, 18), 11], [gd(2012, 1, 19), 11], [gd(2012, 1, 20), 6],
-                [gd(2012, 1, 21), 6], [gd(2012, 1, 22), 8], [gd(2012, 1, 23), 11], [gd(2012, 1, 24), 13],
-                [gd(2012, 1, 25), 7], [gd(2012, 1, 26), 9], [gd(2012, 1, 27), 9], [gd(2012, 1, 28), 8],
-                [gd(2012, 1, 29), 5], [gd(2012, 1, 30), 8], [gd(2012, 1, 31), 25]
-            ];
-
-            var data3 = [
-                [gd(2012, 1, 1), 800], [gd(2012, 1, 2), 500], [gd(2012, 1, 3), 600], [gd(2012, 1, 4), 700],
-                [gd(2012, 1, 5), 500], [gd(2012, 1, 6), 456], [gd(2012, 1, 7), 800], [gd(2012, 1, 8), 589],
-                [gd(2012, 1, 9), 467], [gd(2012, 1, 10), 876], [gd(2012, 1, 11), 689], [gd(2012, 1, 12), 700],
-                [gd(2012, 1, 13), 500], [gd(2012, 1, 14), 600], [gd(2012, 1, 15), 700], [gd(2012, 1, 16), 786],
-                [gd(2012, 1, 17), 345], [gd(2012, 1, 18), 888], [gd(2012, 1, 19), 888], [gd(2012, 1, 20), 888],
-                [gd(2012, 1, 21), 987], [gd(2012, 1, 22), 444], [gd(2012, 1, 23), 999], [gd(2012, 1, 24), 567],
-                [gd(2012, 1, 25), 786], [gd(2012, 1, 26), 666], [gd(2012, 1, 27), 888], [gd(2012, 1, 28), 900],
-                [gd(2012, 1, 29), 178], [gd(2012, 1, 30), 555], [gd(2012, 1, 31), 993]
-            ];
-        </script>
 
         @include('layouts.frontend.front-bottom')
     </div>

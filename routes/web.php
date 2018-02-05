@@ -122,7 +122,8 @@ Route::group(['middleware' => ['auth', 'active']], function () {
 
     Route::group(['prefix' => 'user', 'namespace' => 'User'], function () {
         Route::get('dashboard', 'DashboardController@dashboard');
-        Route::post('dashboard', 'DashboardController@listingSales');
+        Route::post('dashboard', 'DashboardController@ajaxListingSales');
+        Route::post('dashboardGraph', 'DashboardController@ajaxGraph');
         Route::get('settings', 'SettingsController@settings');
         Route::post('settings', 'SettingsController@update');
         Route::get('password', 'PasswordController@password');
