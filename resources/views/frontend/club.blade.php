@@ -23,16 +23,16 @@
                                     </div>
                                     <div class="servicesInfo">
                                         <h2>100500 Nutzer</h2>
-                                        <p>helfen dem Verein beim Shoppen</p>
+                                        <p>unterstützen {{ $club['name'] }}</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="servicesIcon">
-                                        <i class="icon-listy icon-candy"></i>
+                                        <i class="icon-listy icon-shopping-bag-2"></i>
                                     </div>
                                     <div class="servicesInfo">
                                         <h2>10250 Bestellungen</h2>
-                                        <p>sind registriert</p>
+                                        <p>sind eingegangen</p>
                                     </div>
                                 </li>
                                 <li>
