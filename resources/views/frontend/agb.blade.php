@@ -28,7 +28,7 @@
                             </li>
                             <li>
                                 <h3>1. Geltungsbereich</h3>
-                                <p>1.1 Diese Nutzungsbedingungen gelten sowohl für alle auf der DonatIQ-Plattform registrierten Nutzer als auch für alle nicht registrierte Nutzer der DonatIQ-Plattform (Besucher). Sie regeln ihre Rechte und Pflichten beim Besuch der DonatIQ-Plattform sowie bei der Nutzung aller angebotenen Leistungen. Alle vom Service erbrachten Leistungen auf der DonatIQ-Plattform werden ausschließlich auf Grundlage dieser Nutzungsbedingungen erbracht. Mit der Nutzung der DonatIQ-Plattform erklärt sich die Nutzer und Besucher mit diesen Nutzungsbedingungen einverstanden. Ergänzend zu diesen Nutzungsbedingungen gelten die Datenschutzbestimmungen, sowie die Teilnahmebedingungen für Vereine</p>
+                                <p>1.1 Diese Nutzungsbedingungen gelten sowohl für alle auf der DonatIQ-Plattform registrierten Nutzer als auch für alle nicht registrierte Nutzer der DonatIQ-Plattform (Besucher). Sie regeln ihre Rechte und Pflichten beim Besuch der DonatIQ-Plattform sowie bei der Nutzung aller angebotenen Leistungen. Alle vom Service erbrachten Leistungen auf der DonatIQ-Plattform werden ausschließlich auf Grundlage dieser Nutzungsbedingungen erbracht. Mit der Nutzung der DonatIQ-Plattform erklärt sich die Nutzer und Besucher mit diesen Nutzungsbedingungen einverstanden. Ergänzend zu diesen Nutzungsbedingungen gelten die <a href="/datenschutz/">Datenschutzbestimmungen</a>, sowie die Teilnahmebedingungen für Vereine</p>
                             </li>
                             <li>
                                 <h3>2. Anmeldung</h3>
