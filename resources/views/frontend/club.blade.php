@@ -5,8 +5,18 @@
     <div class="main-wrapper">
     @include('layouts.frontend.front-top')
         <!-- LISTINGS DETAILS IMAGE SECTION -->
+
         <section class="clearfix paddingAdjustBottom">
             <div class="container">
+                @if (isset($user) && empty($user->meta->club_id))
+                    <div class="row" id="set-main-club">
+                        <div class="col-xs-12">
+                            <button type="button" class="btn btn-danger btn-block raw-margin-bottom-10" onclick="mainclub({{ $club['id'] }})">
+                                <i class="fa fa-ball" aria-hidden="true"></i>Установить клуб моим
+                            </button>
+                        </div>
+                    </div>
+                @endif
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="servicesItem">

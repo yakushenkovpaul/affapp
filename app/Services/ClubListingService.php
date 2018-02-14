@@ -212,6 +212,8 @@ class ClubListingService
 
     protected function prepareResult($array, $params = [])
     {
+        if(empty($array))   return  $array;
+
         if(!empty($array['logo']))
         {
             $array['image'] = asset('storage/images/clubs/' . self::getPath($array['id']) . '/logo.png');

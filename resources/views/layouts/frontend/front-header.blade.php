@@ -15,17 +15,17 @@
     })(window,document,'script','dataLayer','GTM-M8TR6C6');</script>
     <!-- End Google Tag Manager -->
     <!-- PLUGINS CSS STYLE -->
-    <link href="{{ asset('plugins/jquery-ui/jquery-ui.min.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('plugins/bootstrap/css/bootstrap.min.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('plugins/font-awesome/css/font-awesome.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('plugins/listtyicons/style.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('plugins/bootstrapthumbnail/bootstrap-thumbnail.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('plugins/datepicker/datepicker.min.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('plugins/selectbox/select_option1.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('plugins/owl-carousel/owl.carousel.min.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('plugins/fancybox/jquery.fancybox.pack.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('plugins/isotope/isotope.min.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('plugins/map/css/map.css?rnd=28') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/jquery-ui/jquery-ui.min.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/bootstrap/css/bootstrap.min.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/font-awesome/css/font-awesome.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/listtyicons/style.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/bootstrapthumbnail/bootstrap-thumbnail.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/datepicker/datepicker.min.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/selectbox/select_option1.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/owl-carousel/owl.carousel.min.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/fancybox/jquery.fancybox.pack.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/isotope/isotope.min.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/map/css/map.css?rnd=30') }}" rel="stylesheet">
     <!-- GOOGLE FONT -->
 
     <!--
@@ -36,11 +36,11 @@
     -->
 
     <!-- CUSTOM CSS -->
-    <link href="{{ asset('css/raw.min.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('css/custom.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('css/reviews.css?rnd=28') }}" rel="stylesheet">
-    <link href="{{ asset('css/frontend.css?rnd=28') }}" rel="stylesheet">
+    <link href="{{ asset('css/raw.min.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('css/reviews.css?rnd=30') }}" rel="stylesheet">
+    <link href="{{ asset('css/frontend.css?rnd=30') }}" rel="stylesheet">
     <!-- FAVICON -->
     <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
 </head>

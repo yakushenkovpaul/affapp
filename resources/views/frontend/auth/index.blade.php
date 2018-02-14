@@ -4,6 +4,7 @@
     <div class="main-wrapper">
         @include('layouts.frontend.front-top')
 
+        @if(!empty($club))
         <section class="clearfix paddingAdjustBottom">
             <div class="container">
                 <div class="row">
@@ -23,7 +24,7 @@
                                         <i class="icon-listy icon-user3"></i>
                                     </div>
                                     <div class="servicesInfo">
-                                        <h2>100500 Nutzer</h2>
+                                        <h2>{{ $clubFansTotal }} Nutzer</h2>
                                         <p>helfen dem Verein beim Shoppen</p>
                                     </div>
                                 </li>
@@ -32,7 +33,7 @@
                                         <i class="icon-listy icon-candy"></i>
                                     </div>
                                     <div class="servicesInfo">
-                                        <h2>10250 Bestellungen</h2>
+                                        <h2>{{ $clubSalesTotal }} Bestellungen</h2>
                                         <p>sind registriert</p>
                                     </div>
                                 </li>
@@ -41,7 +42,7 @@
                                         <i class="icon-listy icon-money-bag"></i>
                                     </div>
                                     <div class="servicesInfo">
-                                        <h2>22943 Euro</h2>
+                                        <h2>{{ number_format($clubCommissionTotal, 0, '.', '') }} €</h2>
                                         <p>sind bereits eingesammelt</p>
                                     </div>
                                 </li>
@@ -51,6 +52,7 @@
                 </div>
             </div>
         </section>
+        @endif
 
         <section class="clearfix appDownload">
             <div class="container">

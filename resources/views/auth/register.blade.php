@@ -78,10 +78,12 @@
                                         <input id="password_confirmation" class="form-control" type="password" name="password_confirmation">
                                     </div>
 
+                                    <!--
                                     <div class="form-group">
                                         <label for="userName">Club</label>
                                         <input id="club" class="form-control" type="text" name="club" value="{{ old('club') }}">
                                     </div>
+                                    -->
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary pull-left">Registrieren</button>
@@ -98,7 +100,8 @@
                                         <a href="{!! url('/agb') !!}">Allgemeinen Geschäftsbedingungen</a> und den
                                             <a href="{!! url('/agb#datenschutz') !!}">Datenschutzbestimmungen</a> einverstanden.</p>
                                     </div>
-                                    <input type="hidden" name="club_id" id="club_id">
+                                    <!--<input type="hidden" name="club_id" id="club_id">-->
+                                    <input type="hidden" name="gender" value="male" />
                                 </form>
                             </div>
                         </div>

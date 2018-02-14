@@ -423,4 +423,19 @@ class UserService
         return $result;
     }
 
+    /**
+     * Устанавливает клуб по-умолчанию для пользователя
+     *
+     * @param $userId
+     * @param $club_id
+     * @return mixed
+     */
+
+    public function setClubMain($userId, $club_id)
+    {
+        $user = $this->model->find($userId);
+
+        return $user->meta->update(['club_id' => $club_id]);
+    }
+
 }

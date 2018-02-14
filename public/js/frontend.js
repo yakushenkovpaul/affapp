@@ -199,6 +199,45 @@ function fav(id, url) {
 }
 
 
+function fav(id, url) {
+
+    $.ajax({
+        url: location.origin + '/actions/' + url,
+        type:'POST',
+        data: { id : id, "_token": $('meta[name="csrf_token"]').attr('content') },
+        success:function(data){
+            if(data['result'] == true)
+            {
+                $('#' + url + '-' + id).removeClass('fa-heart-o');
+                $('#' + url + '-' + id).addClass('fa-heart');
+                $.notify("Thank you. " + data['name'] + " was added to favorites", "info");
+            }
+            else
+            {
+                $('#' + url + '-' + id).removeClass('fa-heart');
+                $('#' + url + '-' + id).addClass('fa-heart-o');
+                $.notify(data['name'] + " was removed from favorites", "info");
+            }
+        }
+    });
+}
+
+function mainclub(id) {
+
+    $.ajax({
+        url: location.origin + '/actions/main-club',
+        type:'POST',
+        data: { id : id, "_token": $('meta[name="csrf_token"]').attr('content') },
+        success:function(data){
+            if(data['result'] == true)
+            {
+                $('#set-main-club').hide();
+                $.notify("Thank you. " + data['name'] + " was added as main club", "info");
+            }
+        }
+    });
+}
+
 
 function getListing(page) {
     $.ajax({

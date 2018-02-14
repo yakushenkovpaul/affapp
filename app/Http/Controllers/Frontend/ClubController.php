@@ -55,10 +55,19 @@ class ClubController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
-    public function club($id, $name)
+    public function club(Request $request, $id, $name)
     {
-        return view('frontend.club')
-            ->with('club', $this->service->getClub($id));
+        if($user = $request->user())
+        {
+            return view('frontend.club')
+                ->with('user', $user)
+                ->with('club', $this->service->getClub($id));
+        }
+        else
+        {
+            return view('frontend.club')
+                ->with('club', $this->service->getClub($id));
+        }
     }
 
 

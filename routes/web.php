@@ -55,8 +55,9 @@ Route::get('/cashback', 'Frontend\CashbackController@index');
 */
 
 Route::group(['prefix' => 'actions', 'namespace' => 'Actions', 'middleware' => 'auth'], function () {
-    Route::any('fav-merchant', 'FavoritesController@merchant');
-    Route::any('fav-club', 'FavoritesController@club');
+    Route::any('fav-merchant', 'ActionsController@merchantFav');
+    Route::any('fav-club', 'ActionsController@clubFav');
+    Route::any('main-club', 'ActionsController@clubMain');
 });
 
 /*

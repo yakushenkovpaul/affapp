@@ -48,61 +48,31 @@
                                         </div>
                                         <div class="form-group col-xs-12">
                                                 @input_maker_label('Name')
-                                                @input_maker_create('name', ['type' => 'string'], $user)
+                                                @input_maker_create('name', ['type' => 'string', 'placeholder' => 'Name'], $user)
                                             </div>
                                         <div class="form-group col-xs-12">
                                                 @input_maker_label('Nachname')
-                                                @input_maker_create('meta[lastname]', ['type' => 'string'], $user)
+                                                @input_maker_create('meta[lastname]', ['type' => 'string', 'placeholder' => 'Nachname'], $user)
                                         </div>
                                         <div class="form-group col-xs-12">
                                                 @input_maker_label('Email')
-                                                @input_maker_create('email', ['type' => 'string'], $user)
+                                                @input_maker_create('email', ['type' => 'string', 'placeholder' => 'Email'], $user)
                                             </div>
 
                                          <div class="form-group col-xs-12">
                                                 @input_maker_label('Stadt')
-                                                @input_maker_create('meta[city]', ['type' => 'string'], $user)
+                                                @input_maker_create('meta[city]', ['type' => 'string', 'placeholder' => 'Stadt'], $user)
                                          </div>
 
                                          <div class="form-group col-xs-12">
                                                 @input_maker_label('Geburtstag')
-                                                @input_maker_create('meta[birthday]', ['type' => 'string' , 'class' => 'datepicker'], $user)
-                                         </div>
-
-                                            <!--
-                                         <div class="raw-margin-top-24">
-                                                <label for="Birthday">Birthday</label>
-                                                <input id="Meta[birthday]" class="form-control" type="text" name="meta[birthday]" value="09/06/1984" placeholder="Meta birthday">
-                                         </div>
-                                            -->
-
-                                         <div class="form-group col-xs-12">
-                                                @input_maker_label('Activate')
-                                                <input type="checkbox" name="meta[is_active]" value="1" @if ($user->meta->is_active) checked @endif>
+                                                @input_maker_create('meta[birthday]', ['type' => 'string' , 'class' => 'datepicker', 'placeholder' => 'Geburtstag'], $user)
                                          </div>
 
                                         </div>
                                     </div>
                                 </div>
-                                <!--<div class="dashboardBoxBg mt30">
-                                    <div class="profileIntro">
-                                        <h3>Passwort ändern</h3>
-                                            <div class="row">
-                                                <div class="form-group col-xs-12">
-                                                    <label for="currentPassword">Aktuelles Passwort</label>
-                                                    <input type="password" class="form-control" id="currentPassword" placeholder="********">
-                                                </div>
-                                                <div class="form-group col-xs-12">
-                                                    <label for="newPassword">Neues Passwort</label>
-                                                    <input type="password" class="form-control" id="newPassword" placeholder="Neues Passwort">
-                                                </div>
-                                                <div class="form-group col-xs-12">
-                                                    <label for="confirmPassword">Passwort bestätigen</label>
-                                                    <input type="password" class="form-control" id="confirmPassword" placeholder="Passwort bestätigen">
-                                                </div>
-                                            </div>
-                                      </div>
-                                   </div> -->
+
                                 <div class="form-footer text-center btn-area">
                                     <a class="btn btn-primary pull-left" href="{{ URL::previous() }}">Abbrechen</a>
                                     <!--<a class="btn btn-primary center-block" href="/user/password">Passwort ändern</a>-->

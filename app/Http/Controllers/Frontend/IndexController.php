@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Services\ClubListingService;
+use App\Services\IndexesService;
 use App\Services\MerchantListingService;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,10 +17,15 @@ class IndexController extends Controller
      * @param ClubListingService $clubListingService
      */
 
-    public function __construct(MerchantListingService $merchantListingService, ClubListingService $clubListingService)
+    public function __construct(
+        MerchantListingService $merchantListingService,
+        ClubListingService $clubListingService,
+        IndexesService $indexesService
+    )
     {
-        $this->serviceMerchant = $merchantListingService;
-        $this->serviceClub = $clubListingService;
+        $this->service_merchant = $merchantListingService;
+        $this->service_club = $clubListingService;
+        $this->service_indexes = $indexesService;
     }
 
     /**
@@ -32,20 +38,29 @@ class IndexController extends Controller
     {
         if($user = Auth::user())
         {
+            $club_id = $user->meta->club_id;
+
+            $clubCommissionTotal = $this->service_indexes->getClubCommissionTotal($club_id);
+            $clubSalesTotal = $this->service_indexes->getClubSalesTotal($club_id);
+            $clubFansTotal = $this->service_indexes->getClubFansTotal($club_id);
+
             return view('frontend.auth.index')
-                ->with('club', $this->serviceClub->getUserClub())
-                ->with('clubs', $this->serviceClub->getClubs())
-                ->with('clubs_total', $this->serviceClub->getClubsTotal())
-                ->with('merchants', $this->serviceMerchant->getMerchants())
-                ->with('merchants_total', $this->serviceMerchant->getMerchantsTotal());
+                ->with('clubCommissionTotal', $clubCommissionTotal)
+                ->with('clubSalesTotal', $clubSalesTotal)
+                ->with('clubFansTotal', $clubFansTotal)
+                ->with('club', $this->service_club->getUserClub())
+                ->with('clubs', $this->service_club->getClubs())
+                ->with('clubs_total', $this->service_club->getClubsTotal())
+                ->with('merchants', $this->service_merchant->getMerchants())
+                ->with('merchants_total', $this->service_merchant->getMerchantsTotal());
         }
         else
         {
             return view('frontend.index')
-                ->with('clubs', $this->serviceClub->getClubs())
-                ->with('clubs_total', $this->serviceClub->getClubsTotal())
-                ->with('merchants', $this->serviceMerchant->getMerchants())
-                ->with('merchants_total', $this->serviceMerchant->getMerchantsTotal());
+                ->with('clubs', $this->service_club->getClubs())
+                ->with('clubs_total', $this->service_club->getClubsTotal())
+                ->with('merchants', $this->service_merchant->getMerchants())
+                ->with('merchants_total', $this->service_merchant->getMerchantsTotal());
         }
     }
 
