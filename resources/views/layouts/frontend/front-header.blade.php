@@ -43,6 +43,7 @@
     <link href="{{ asset('css/frontend.css?rnd=30') }}" rel="stylesheet">
     <!-- FAVICON -->
     <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
+    <meta name="verification" content="61b69c252ac4fe78dd7d244b39601e23" />
 </head>
 <body class="body-wrapper">
 <!--<div class="page-loader" style="background: url({{ asset('img/preloader.gif') }}) center no-repeat #fff;"></div>-->
