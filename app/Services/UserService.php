@@ -477,6 +477,8 @@ class UserService
 
     public function referrals($program)
     {
+        if(!$program)   return false;
+
         $user = request()->user();
 
         return ReferralLink::getReferral($user, $program)->relationships()->paginate(env('PAGINATE', 25));
