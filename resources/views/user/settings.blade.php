@@ -10,7 +10,7 @@
         <section class="clearfix bg-dark listingSection">
             <div class="container">
                 <div class="row">
-                    <form method="POST" action="/user/settings">
+                    <form method="POST" action="/user/settings" id="userSettings">
                         {!! csrf_field() !!}
                         <div class="col-md-4 col-sm-5 col-xs-12">
                             <div class="dashboardBoxBg mb30">
@@ -28,6 +28,10 @@
                                 <div class="profileUserInfo bt profileName">
                                     <h2>{{ $user['name'] }} {{ $user->meta['lastname'] }}</h2>
                                     <h5>Nutzer seit: <span>{{ $user->meta['created_at']->format('d/m/Y') }}</span></h5>
+                                </div>
+                                <div class="profileUserInfo bt profileName">
+                                    <input class="form-control" type="email" name="email_invite" id="email_invite" placeholder="Enter email to invite friend">
+                                    <button class="btn btn-primary raw-margin-top-25" type="submit" id="send_invite">Send</button>
                                 </div>
                             </div>
                         </div>

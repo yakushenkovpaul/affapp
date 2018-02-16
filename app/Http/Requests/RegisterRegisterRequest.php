@@ -28,6 +28,7 @@ class RegisterRegisterRequest extends FormRequest
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
             //'club' => 'required|min:3',
+            'invite' => 'required|doorman:email',
         ];
     }
 

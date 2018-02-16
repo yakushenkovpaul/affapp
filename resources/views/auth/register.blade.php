@@ -78,6 +78,11 @@
                                         <input id="password_confirmation" class="form-control" type="password" name="password_confirmation">
                                     </div>
 
+                                    <div class="form-group">
+                                        <label for="userName">Invite code</label>
+                                        <input id="invite" class="form-control" type="text" name="invite" value="{{ old('invite') }}">
+                                    </div>
+
                                     <!--
                                     <div class="form-group">
                                         <label for="userName">Club</label>

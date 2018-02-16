@@ -5,14 +5,15 @@ namespace App\Notifications;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class NewAccountEmail extends Notification
+class NewInviteEmail extends Notification
 {
     /**
      * The password
      *
      * @var string
      */
-    public $password;
+    public $link;
+    public $code;
 
     /**
      * Create a notification instance.
@@ -20,9 +21,10 @@ class NewAccountEmail extends Notification
      * @param  string  $token
      * @return void
      */
-    public function __construct($password)
+    public function __construct($link, $code)
     {
-        $this->password = $password;
+        $this->link = $link;
+        $this->code = $code;
     }
 
     /**
@@ -46,12 +48,12 @@ class NewAccountEmail extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage())
-            ->subject('Bitte bestätige Вeine E-Mail-Adresse')
-            ->line('You\'ve got a new account!')
-            ->line('EM: '.$notifiable->email)
-            ->line('PW: '.$this->password)
-            ->line('Click the link below to login')
-            ->action('Login', url('login'));
+        return (new MailMessage)
+            ->subject('You\'ve invited!')
+            ->greeting('You\'ve invited!')
+            ->line('Your invite code is: ' . $this->code)
+            ->line('Click the link below to sing up')
+            ->action('Sing up', $this->link);
+
     }
 }

@@ -127,10 +127,12 @@ Route::group(['middleware' => ['auth', 'active']], function () {
         Route::post('dashboardGraph', 'DashboardController@ajaxGraph');
         Route::get('settings', 'SettingsController@settings');
         Route::post('settings', 'SettingsController@update');
+        Route::post('invite', 'SettingsController@invite');
         Route::get('password', 'PasswordController@password');
         Route::post('password', 'PasswordController@update');
         Route::resource('favoritesClubs', 'FavoritesClubs');
         Route::resource('favoritesMerchants', 'FavoritesMerchants');
+        Route::resource('referalUsers', 'ReferalUsers');
     });
 
     /*
@@ -201,3 +203,6 @@ Route::group(['middleware' => ['auth', 'active']], function () {
         Route::get('roles/search', 'RoleController@index');
     });
 });
+
+//удалить после отлидаки приложения, либо перенести в секцию администратора
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

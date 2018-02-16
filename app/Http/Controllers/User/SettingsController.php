@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Services\UserService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserUpdateRequest;
+use App\Http\Requests\UserInviteRequest;
 
 
 class SettingsController extends Controller
@@ -40,10 +41,27 @@ class SettingsController extends Controller
      */
     public function update(UserUpdateRequest $request)
     {
-        if ($this->service->update(auth()->id(), $request->all())) {
+        if ($this->service->update(auth()->id(), $request->except(['_token', 'invite']))) {
             return back()->with('message', 'Settings updated successfully');
         }
 
         return back()->withErrors(['Could not update user']);
+    }
+
+    /**
+     * Send invite
+     *
+     * @param UserInviteRequest $request
+     * @return $this|\Illuminate\Http\RedirectResponse
+     */
+
+    public function invite(UserInviteRequest $request)
+    {
+        if($this->service->invite(auth()->id(), $request->except(['_token'])))
+        {
+            return response()->json(['result' => true]);
+        }
+
+        return response()->json(['result' => false]);
     }
 }

@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Auth\Events\Registered;
+use Clarkeash\Doorman\Facades\Doorman;
+use Clarkeash\Doorman\Exceptions\DoormanException;
 
 
 class RegisterController extends Controller
@@ -81,6 +83,7 @@ class RegisterController extends Controller
 
     public function registered()
     {
+        $this->useInvite();
         return response()->json(['path' => $this->redirectTo]);
     }
 
@@ -115,5 +118,21 @@ class RegisterController extends Controller
 
             return $this->service->create($user, $data['password'], $data);
         });
+    }
+
+    /**
+     * Отмечает инвайт использованным
+     */
+
+    protected function useInvite()
+    {
+        if(!empty(request()->get('invite')))
+        {
+            try {
+                Doorman::redeem(request()->get('invite'));
+            } catch (DoormanException $e) {
+                #return response()->json(['error' => $e->getMessage()], 422);
+            }
+        }
     }
 }

@@ -64,7 +64,52 @@ $(document).ready(function()
             });
             return false;
         });
+
+
+        $("#send_invite").on('click' , function () {
+
+            $.ajax({
+                url: location.origin + "/user/invite",
+                type:'POST',
+                dataType: 'json',
+                data: { "_token": $('meta[name="csrf_token"]').attr('content'), "email_invite": $('#userSettings').find('input[name="email_invite"]').val() },
+                success:function(data){
+                    $.notify("Thank you. Invite was sent", "info");
+                    $('#userSettings').find('input[name="email_invite"]').val('');
+                },
+                error: function (data) {
+                    showErrors(data, 'top middle');
+                }
+            });
+            return false;
+        });
+
+
     });
 
     console.log('backend_ver8');
 });
+
+function showErrors(response, target)
+{
+    var gotErrors = false;
+
+    if(target)
+    {
+        var errorPostion = target;
+    }
+    else
+    {
+        var errorPostion = "right middle";
+    }
+
+    if(response.responseJSON.errors)
+    {
+        $.each(response.responseJSON.errors, function (key, item) {
+            $gotErrors = true;
+            $("#" + key).notify(item, {position: errorPostion});
+        });
+    }
+
+    return gotErrors;
+}

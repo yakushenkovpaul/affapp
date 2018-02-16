@@ -6,7 +6,6 @@ use DB;
 use Auth;
 use Mail;
 use Config;
-use SebastianBergmann\CodeCoverage\Report\PHP;
 use Session;
 use Exception;
 use App\Models\User;
@@ -17,6 +16,9 @@ use App\Models\Club;
 use App\Events\UserRegisteredEmail;
 use App\Notifications\ActivateUserEmail;
 use Illuminate\Support\Facades\Schema;
+use Clarkeash\Doorman\Facades\Doorman;
+use App\Models\ReferralProgram;
+use App\Models\ReferralLink;
 
 class UserService
 {
@@ -193,6 +195,8 @@ class UserService
 
             $this->setAndSendUserActivationToken($user);
 
+            event(new \App\Events\UserReferred(request()->cookie('ref'), $user));
+
             return $user;
         } catch (Exception $e) {
             #throw new Exception("We were unable to generate your profile, please try again later.", 1);
@@ -234,6 +238,8 @@ class UserService
      * @param  array $info
      * @return void
      */
+
+    /*
     public function invite($info)
     {
         $password = substr(md5(rand(1111, 9999)), 0, 10);
@@ -248,6 +254,30 @@ class UserService
             return $this->create($user, $password, $info['roles'], true);
         });
     }
+    */
+
+    /**
+     * Рассылает приглашение и реферальную ссылку
+     *
+     * @param $userId
+     * @param $payload
+     * @return bool
+     */
+
+    public function invite($userId, $payload)
+    {
+        $program = ReferralProgram::whereName('Sign-up Bonus')->first();
+        $user = $this->model->find($userId);
+
+        $link = ReferralLink::getReferral($user, $program);
+        #$code = Doorman::generate()->for($payload['email'])->make();
+        $code = Doorman::generate()->uses(1)->make();
+
+        event(new \App\Events\UserInvite($payload['email_invite'], $link->getLinkAttribute(), $code[0]->code));
+
+        return true;
+    }
+
 
     /**
      * Destroy the profile
@@ -436,6 +466,20 @@ class UserService
         $user = $this->model->find($userId);
 
         return $user->meta->update(['club_id' => $club_id]);
+    }
+
+
+    /**
+     * Возвращает приведенных пользователей по программе
+     *
+     * @param $program
+     */
+
+    public function referrals($program)
+    {
+        $user = request()->user();
+
+        return ReferralLink::getReferral($user, $program)->relationships()->paginate(env('PAGINATE', 25));
     }
 
 }

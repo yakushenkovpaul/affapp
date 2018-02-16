@@ -178,6 +178,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        Clarkeash\Doorman\Providers\DoormanServiceProvider::class,
 
     ],
 
@@ -229,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Format' => Regulus\TetraText\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Doorman' => Clarkeash\Doorman\Facades\Doorman::class,
     ],
 
 ];

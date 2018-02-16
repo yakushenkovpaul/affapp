@@ -93,6 +93,13 @@
                         @endif
                             <a href="{!! url('user/favoritesMerchants') !!}"><i class="fa fa-shopping-cart icon-dash" aria-hidden="true"></i> Lieblingsshops</a>
                         </li>
+                        @if (\Request::is('user/referal'))
+                            <li class="active">
+                        @else
+                            <li>
+                        @endif
+                            <a href="{!! url('user/referalUsers') !!}"><i class="fa fa-road icon-dash" aria-hidden="true"></i> Referal</a>
+                        </li>
                     </ul>
                     <div class="row adjustRow">
                         <div class="pull-right col-xs-12 col-sm-2">
