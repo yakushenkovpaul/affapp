@@ -264,9 +264,9 @@ class UserService
      * @return bool
      */
 
-    public function invite($userId, $payload)
+    public function invite($userId, $payload, $program)
     {
-        $program = ReferralProgram::whereName('Sign-up Bonus')->first();
+        $program = ReferralProgram::whereName($program)->first();
         $user = $this->model->find($userId);
 
         $link = ReferralLink::getReferral($user, $program);

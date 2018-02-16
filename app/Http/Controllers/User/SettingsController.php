@@ -57,7 +57,7 @@ class SettingsController extends Controller
 
     public function invite(UserInviteRequest $request)
     {
-        if($this->service->invite(auth()->id(), $request->except(['_token'])))
+        if($this->service->invite(auth()->id(), $request->except(['_token']), 'Sign-up'))
         {
             return response()->json(['result' => true]);
         }
