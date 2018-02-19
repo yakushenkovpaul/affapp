@@ -47,7 +47,8 @@ class ActivateUserEmail extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('You are receiving this email because we would like to activate your account.')
-            ->action('Activate Account', url('activate/token', $this->token));
+            ->line('Wir freuen uns über Deine Anmeldung bei DonatIQ!')
+            ->line('Um dein Konto zu aktivieren und die Registrierung erfolgreich abzuschliessen, klicke bitte den folgenden Button:')
+            ->action('Anmeldung abschliessen', url('activate/token', $this->token));
     }
 }
