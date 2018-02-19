@@ -3,7 +3,6 @@
 @section('front-content')
 
     <div class="main-wrapper">
-
         <!-- HEADER -->
         <header id="pageTop" class="header">
 

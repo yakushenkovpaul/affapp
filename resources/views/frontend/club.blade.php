@@ -32,7 +32,7 @@
                                         <i class="icon-listy icon-user3"></i>
                                     </div>
                                     <div class="servicesInfo">
-                                        <h2>100500 Nutzer</h2>
+                                        <h2>{{ $clubFansTotal }} Nutzer</h2>
                                         <p>unterstützen {{ $club['name'] }}</p>
                                     </div>
                                 </li>
@@ -41,7 +41,7 @@
                                         <i class="icon-listy icon-shopping-bag-2"></i>
                                     </div>
                                     <div class="servicesInfo">
-                                        <h2>10250 Bestellungen</h2>
+                                        <h2>{{ $clubSalesTotal }} Bestellungen</h2>
                                         <p>sind eingegangen</p>
                                     </div>
                                 </li>
@@ -50,7 +50,7 @@
                                         <i class="icon-listy icon-money-bag"></i>
                                     </div>
                                     <div class="servicesInfo">
-                                        <h2>22943 Euro</h2>
+                                        <h2>{{ number_format($clubCommissionTotal, 0, '.', '') }} €</h2>
                                         <p>sind bereits eingesammelt</p>
                                     </div>
                                 </li>
@@ -102,43 +102,23 @@
                         </div>
                         <button type="button" class="btn btn-primary btn-lg btn-block">Zu Lieblingsverein hinzufügen </button>
                         <br />
-                        <div class="panel panel-default panel-card">
-                            <div class="panel-heading">
-                                Aktive Nutzer
+                        @if (!$sales->isEmpty())
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-heading">
+                                    Aktive Nutzer
+                                </div>
+                                <div class="panel-body plr">
+                                    <ul class="list-styled panel-list list-padding-sm">
+                                        @foreach($sales as $sale)
+                                            <li class="listWrapper">
+                                                <span class="recentUserInfo"><img src="{{ asset('img/dashboard/' . $sale->user->meta->gender . '/' . $sale->user->meta->avatar . '.png') }}" alt="Image User" class="img-circle">{{ $sale->user->name }}</span>
+                                                <span class="userTime">Zuletzt online: {{ $sale->updated_at->diffForHumans() }} </span>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="panel-body plr">
-                                <ul class="list-styled panel-list list-padding-sm">
-                                    <li class="listWrapper">
-                                        <span class="recentUserInfo"><img src="{{ asset('img/dashboard/recent-user-1.jpg') }}" alt="Image User" class="img-circle">Adam Smith</span>
-                                        <span class="userTime">Zuletzt online: vor 10 Minuten </span>
-                                    </li>
-                                    <li class="listWrapper">
-                                        <span class="recentUserInfo"><img src="{{ asset('img/dashboard/recent-user-2.jpg') }}" alt="Image User" class="img-circle">Adam Smith</span>
-                                        <span class="userTime">Zuletzt online: vor 10 Minuten</span>
-                                    </li>
-                                    <li class="listWrapper">
-                                        <span class="recentUserInfo"><img src="{{ asset('img/dashboard/recent-user-3.jpg') }}" alt="Image User" class="img-circle">Adam Smith</span>
-                                        <span class="userTime">Zuletzt online: vor 10 Minuten</span>
-                                    </li>
-                                    <li class="listWrapper">
-                                        <span class="recentUserInfo"><img src="{{ asset('img/dashboard/recent-user-4.jpg') }}" alt="Image User" class="img-circle">Adam Smith</span>
-                                        <span class="userTime">Zuletzt online: vor 10 Minuten</span>
-                                    </li>
-                                    <li class="listWrapper">
-                                        <span class="recentUserInfo"><img src="{{ asset('img/dashboard/recent-user-1.jpg') }}" alt="Image User" class="img-circle">Adam Smith</span>
-                                        <span class="userTime">Zuletzt online: vor 10 Minuten</span>
-                                    </li>
-                                    <li class="listWrapper">
-                                        <span class="recentUserInfo"><img src="{{ asset('img/dashboard/recent-user-2.jpg') }}" alt="Image User" class="img-circle">Adam Smith</span>
-                                        <span class="userTime">Zuletzt online: vor 10 Tagen</span>
-                                    </li>
-                                    <li class="listWrapper">
-                                        <span class="recentUserInfo"><img src="{{ asset('img/dashboard/recent-user-3.jpg') }}" alt="Image User" class="img-circle">Adam Smith</span>
-                                        <span class="userTime">Zuletzt online: vor 10 Tagen</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        @endif
                     </div>
                     @if ($club['address'])
                     <div class="col-sm-6 col-md-4 col-xs-12">
@@ -156,8 +136,6 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-xs-12">
                         <div class="listSidebarButton">
                             <button type="button" class="btn btn-primary btn-lg btn-block">Neuen Verein hinzufügen</button>
                         </div>

@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Frontend\IndexController@index');
 
-Route::get('/club/{id}/{name}', 'Frontend\ClubController@club')->where(['id' => '[0-9]+'])->middleWare('storeClub');
+Route::get('/club/{club_id}/{name}', 'Frontend\ClubController@club')->where(['club_id' => '[0-9]+'])->middleWare('storeClub');
 Route::get('/clubs', 'Frontend\ClubController@clubs');
 Route::post('clubs/search', 'Frontend\ClubController@search');
 

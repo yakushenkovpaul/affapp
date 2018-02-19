@@ -6,19 +6,26 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ClubSearchGpsRequest;
 use App\Http\Requests\ClubSearchRequest;
 use App\Services\ClubListingService;
+use App\Services\SaleService;
 use Illuminate\Http\Request;
+use App\Services\IndexesService;
 
 
 class ClubController extends Controller
 {
     /**
      * ClubController constructor.
-     * @param ClubListingService $clubListingService
      */
 
-    public function __construct(ClubListingService $clubListingService)
+    public function __construct(
+        ClubListingService $clubListingService,
+        IndexesService $indexesService,
+        SaleService $saleService
+    )
     {
-        $this->service = $clubListingService;
+        $this->service_club = $clubListingService;
+        $this->service_indexes = $indexesService;
+        $this->service_sales = $saleService;
     }
 
     /**
@@ -30,7 +37,7 @@ class ClubController extends Controller
 
     public function clubs(Request $request)
     {
-        $result = $this->service->getClubsPaginate();
+        $result = $this->service_club->getClubsPaginate();
 
         if ($request->ajax()) {
 
@@ -50,23 +57,37 @@ class ClubController extends Controller
     /**
      * Вывод клуба
      *
-     * @param $id
+     * @param $club_id
      * @param $name
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
-    public function club(Request $request, $id, $name)
+    public function club(Request $request, $club_id, $name)
     {
+        $club = $this->service_club->getClub($club_id);
+        $clubCommissionTotal = $this->service_indexes->getClubCommissionTotal($club_id);
+        $clubSalesTotal = $this->service_indexes->getClubSalesTotal($club_id);
+        $clubFansTotal = $this->service_indexes->getClubFansTotal($club_id);
+        $sales = $this->service_sales->club($club_id);
+
         if($user = $request->user())
         {
             return view('frontend.club')
                 ->with('user', $user)
-                ->with('club', $this->service->getClub($id));
+                ->with('club', $club)
+                ->with('sales', $sales)
+                ->with('clubCommissionTotal', $clubCommissionTotal)
+                ->with('clubSalesTotal', $clubSalesTotal)
+                ->with('clubFansTotal', $clubFansTotal);
         }
         else
         {
             return view('frontend.club')
-                ->with('club', $this->service->getClub($id));
+                ->with('club', $club)
+                ->with('sales', $sales)
+                ->with('clubCommissionTotal', $clubCommissionTotal)
+                ->with('clubSalesTotal', $clubSalesTotal)
+                ->with('clubFansTotal', $clubFansTotal);
         }
     }
 
@@ -82,7 +103,7 @@ class ClubController extends Controller
 
     public function searchGps(ClubSearchGpsRequest $request, $lat, $lng)
     {
-        $result = $this->service->getSearchGps($lat, $lng);
+        $result = $this->service_club->getSearchGps($lat, $lng);
 
         return response()->json($result);
     }
@@ -103,7 +124,7 @@ class ClubController extends Controller
 
         if(!empty($query))
         {
-            $result = $this->service->getSearch($query);
+            $result = $this->service_club->getSearch($query);
         }
         else
         {
