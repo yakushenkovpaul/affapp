@@ -31,7 +31,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-heart.jpg') }}" alt="logo"></a>
+                            <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-dq.png') }}" alt="logo"></a>
                         </div>
                     </div>
                 </nav>
@@ -45,7 +45,7 @@
                 <div class="row">
                     <div class="center-block col-md-5 col-sm-6 col-xs-12">
                         <div class="panel panel-default loginPanel">
-                            <div class="panel-heading text-center">Password Reset</div>
+                            <div class="panel-heading text-center">Passwort ändern oder zurücksetzen</div>
                             <div class="panel-body">
                                 <form method="POST" action="{!! url('password/reset') !!}" class="loginForm">
                                     {!! csrf_field() !!}
@@ -55,15 +55,15 @@
                                         <input class="form-control" type="email" name="email" id="email" value="{{ old('email') }}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="userPassword">Password</label>
+                                        <label for="userPassword">Passwort</label>
                                         <input class="form-control" type="password" name="password" id="password">
                                     </div>
                                     <div class="form-group">
-                                        <label for="userPassword">Confirm Password</label>
+                                        <label for="userPassword">Passwort bestätigen</label>
                                         <input id="password_confirmation" class="form-control" type="password" name="password_confirmation">
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary pull-left">Reset</button>
+                                        <button type="submit" class="btn btn-primary pull-left">Abbrechen</button>
                                     </div>
                                 </form>
                             </div>
