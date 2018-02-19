@@ -58,13 +58,14 @@
                             </div>
                         @endif
                     </div>
-                </div>
                 <div class="col-xs-4">
                 <div class="dashboardPageTitle">
                 <h2><i class="fa fa-envelope-open icon-dash" aria-hidden="true"></i> Meine Freunde einladen</h2>
                 <input class="form-control" type="email" name="email_invite" id="email_invite" placeholder="E-Mail-Adresse Deiner Freunde">
                 <button class="btn btn-primary raw-margin-top-25" type="submit" id="send_invite">Senden</button>
+                </div>    
                 </div>
+                
                 <div class="row">
                     <div class="col-md-12 text-center">
                         {!! $referrals; !!}
