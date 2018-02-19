@@ -63,3 +63,10 @@
     </div>
 
 @stop
+
+@section('page_js')
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58"></script>
+    <script src="{{ asset('plugins/map/js/rich-marker.js?rnd=' . time()) }}"></script>
+    <script src="{{ asset('plugins/map/js/infobox_packed.js?rnd=' . time()) }}"></script>
+    <script src="{{ asset('js/map.js?rnd=' . time()) }}"></script>
+@stop

@@ -122,7 +122,8 @@ var mapStyles = [{
 }
 ];
 
-var id = document.getElementById('map-canvas');
+
+var id = document.getElementById('map');
 if(id){
     function initMap() {
       var map = new google.maps.Map( id, {
@@ -131,7 +132,7 @@ if(id){
         styles:mapStyles
       });
 
-      var input = document.getElementById('listingAddress');
+      var input = document.getElementById('address');
 
 
       var autocomplete = new google.maps.places.Autocomplete(input);

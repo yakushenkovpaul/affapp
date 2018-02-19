@@ -19,7 +19,7 @@
 <script src="{{ asset('plugins/isotope/isotope.min.js?rnd=' . time()) }}"></script>
 <script src="{{ asset('plugins/fancybox/jquery.fancybox.pack.js?rnd=' . time()) }}"></script>
 <script src="{{ asset('plugins/isotope/isotope-triger.min.js?rnd=' . time()) }}"></script>
-<script src="{{ asset('js/searchmap.js?rnd=' . time()) }}"></script>
+<script src="{{ asset('js/_searchmap.js?rnd=' . time()) }}"></script>
 <script src="{{ asset('js/custom.js?rnd=' . time()) }}"></script>
 <script src="{{ asset('js/backend.js?rnd=' . time()) }}"></script>
 <script src="{{ asset('js/notify.min.js?rnd=' . time()) }}"></script>

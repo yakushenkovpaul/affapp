@@ -5,6 +5,8 @@ namespace App\Services;
 use App\Models\Club;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
+use League\Flysystem\Directory;
+use Intervention\Image\Facades\Image;
 
 class ClubService
 {
@@ -86,7 +88,6 @@ class ClubService
         {
             $path = 'images/clubs/' . self::getPath($object_id);
 
-
             if(!Storage::disk('public')->exists($path))
             {
                 Storage::disk('public')->makeDirectory($path);
@@ -95,6 +96,10 @@ class ClubService
             Storage::disk('public')->putFileAs(
                 $path, request()->file('image'), 'logo.png'
             );
+
+            $image = Image::make( Storage::disk('public')->get($path . DIRECTORY_SEPARATOR . 'logo.png') )->fit(100)->stream();
+
+            Storage::disk('public')->put($path . DIRECTORY_SEPARATOR . 'logo.png', $image);
 
         }
     }

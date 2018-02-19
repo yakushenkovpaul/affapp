@@ -45,7 +45,7 @@
 <script src="{{ asset('plugins/isotope/isotope-triger.min.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58"></script>
 <script src="{{ asset('js/map.js') }}"></script>
-<script src="{{ asset('js/searchmap.js') }}"></script>
+<script src="{{ asset('js/_searchmap.js') }}"></script>
 <script src="{{ asset('js/custom.js') }}"></script>
 
 @if (isset($graphs))

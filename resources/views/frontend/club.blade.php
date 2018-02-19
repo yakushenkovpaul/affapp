@@ -141,12 +141,6 @@
                         </div>
                     </div>
 
-                    <script>
-                        var map_image = '{{ asset('img/map/marker.png') }}';
-                        var map_lat = {{ $club['lat'] }};
-                        var map_lng = {{ $club['lng'] }};
-                    </script>
-
                     @endif
                 </div>
             </div>
@@ -155,4 +149,18 @@
         @include('layouts.frontend.front-bottom')
     </div>
 
+@stop
+
+@section('page_js')
+
+    @if ($club['address'])
+    <script>
+        var map_image = '{{ asset('img/map/marker.png') }}';
+        var map_lat = {{ $club['lat'] }};
+        var map_lng = {{ $club['lng'] }};
+    </script>
+    @endif
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58&callback=initMap" async defer></script>
+    <script src="{{ asset('js/single-map.js?rnd=' . time()) }}"></script>
 @stop

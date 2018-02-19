@@ -124,14 +124,19 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
+    @include('layouts.frontend.front-bottom')
+    </div>
+
+@stop
+
+@section('page_js')
     <script>
         var map_image = '{{ asset('img/map/marker.png') }}';
         var map_lat = 52.4973777;
         var map_lng = 13.3957458;
     </script>
-       
-    <!-- FOOTER -->
-    @include('layouts.frontend.front-bottom')
-    </div>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58&libraries=places&callback=initMap" async defer></script>
+    <script src="{{ asset('js/single-map.js?rnd=' . time()) }}"></script>
 @stop
