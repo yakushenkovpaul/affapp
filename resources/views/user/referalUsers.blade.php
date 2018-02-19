@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-xs-8">
                         <div class="dashboardPageTitle">
-                             <h2><i class="fa fa-trophy icon-dash" aria-hidden="true"></i> Eingeladene Nutzer</h2>
+                             <h2>Bereits eingeladene Freunde</h2>
                         </div>
                         @if ($referrals->isEmpty())
                             <div class="well text-center">Noch keine Freunde registriert. <i class="fa fa-frown-o" aria-hidden="true"></i> <br>
@@ -60,9 +60,9 @@
                     </div>
                 <div class="col-xs-4">
                 <div class="dashboardPageTitle">
-                <h2><i class="fa fa-envelope-open icon-dash" aria-hidden="true"></i> Meine Freunde einladen</h2>
-                <input class="form-control" type="email" name="email_invite" id="email_invite" placeholder="E-Mail-Adresse Deiner Freunde">
-                <button class="btn btn-primary raw-margin-top-25" type="submit" id="send_invite">Senden</button>
+                <h2>Freunde einladen</h2>
+                <input class="form-control" type="email" name="email_invite" id="email_invite" placeholder="E-Mail-Adresse">
+                <button class="btn btn-primary raw-margin-top-25" type="submit" id="send_invite" style="width: 100px;">Senden</button>
                 </div>    
                 </div>
                 
