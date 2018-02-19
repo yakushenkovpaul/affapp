@@ -49,10 +49,12 @@ class NewInviteEmail extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('You\'ve invited!')
-            ->greeting('You\'ve invited!')
-            ->line('Your invite code is: ' . $this->code)
-            ->line('Click the link below to sing up')
+            ->subject('Du bist eingeladen!')
+            ->greeting('Herzlichen Glückwunsch! Du bist eingeladen!')
+            ->line('Deine Teamkollegen haben Dich nicht vergessen und haben Dich zum Donatiq eingeladen.')
+            ->line('Donatiq ist eine neue Art, gemeinsam Geld zu sammeln')
+            ->line('Kopiere Deinen persönlichen Einladungscode und klicke auf den Link unten, um Dich anzumelden')
+            ->line('Your invite code is: ' . $this->code)            
             ->action('Sing up', $this->link);
 
     }
