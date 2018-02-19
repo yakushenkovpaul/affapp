@@ -32,7 +32,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-heart.jpg') }}" alt="logo"></a>
+                            <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-dq.png') }}" alt="logo"></a>
                         </div>
                     </div>
                 </nav>
@@ -45,12 +45,12 @@
                 <div class="row">
                     <div class="center-block col-md-5 col-sm-6 col-xs-12">
                         <div class="panel panel-default loginPanel">
-                            <div class="panel-heading text-center">Re-send token</div>
+                            <div class="panel-heading text-center">Bestätigungsmail neu versenden</div>
                             <div class="panel-body">
-                                <p class="text-center">A new token has been emailed to you.</p>
+                                <p class="text-center">Eine neue wurde versandt.</p>
                             </div>
                             <div class="panel-footer text-center">
-                                <p><a class="btn btn-primary btn-padding" href="{{ url('activate/send-token') }}">Request new Token</a></p>
+                                <p><a class="btn btn-primary btn-padding" href="{{ url('activate/send-token') }}">Neue Email anfordern.</a></p>
                             </div>
                         </div>
                     </div>
