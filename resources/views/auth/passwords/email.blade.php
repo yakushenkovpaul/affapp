@@ -31,7 +31,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-heart.jpg') }}" alt="logo"></a>
+                            <a class="navbar-brand" href="/"><img src="{{ asset('img/logo-dq.png') }}" alt="logo"></a>
                         </div>
                     </div>
                 </nav>
@@ -45,7 +45,7 @@
                 <div class="row">
                     <div class="center-block col-md-5 col-sm-6 col-xs-12">
                         <div class="panel panel-default loginPanel">
-                            <div class="panel-heading text-center">Password Reset</div>
+                            <div class="panel-heading text-center">Passwort zurücksetzen</div>
                             <div class="panel-body">
                                 <form method="POST" action="{!! url('password/email') !!}" class="loginForm">
                                     {!! csrf_field() !!}
@@ -53,11 +53,11 @@
                                     @include('partials.status')
                                     <div class="form-group">
                                         <label for="userName">Email</label>
-                                        <input class="form-control" type="email" name="email" value="{{ old('email') }}" placeholder="Email Address">
+                                        <input class="form-control" type="email" name="email" value="{{ old('email') }}" placeholder="Deine Email">
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary pull-left">Reset</button>
-                                        <a href="{!! url('login') !!}" class="pull-right link">Wait, I remember!</a>
+                                        <button type="submit" class="btn btn-primary pull-left">Passwort zurücksetzen</button>
+                                        <a href="{!! url('login') !!}" class="pull-right link">Abbrechen.</a>
                                     </div>
                                 </form>
                             </div>
