@@ -9,12 +9,13 @@
         <section class="clearfix bg-dark dashboardOrders">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-xs-8">
                         <div class="dashboardPageTitle">
-                             <h2><i class="fa fa-trophy icon-dash" aria-hidden="true"></i> Meine Referal Users</h2>
+                             <h2><i class="fa fa-trophy icon-dash" aria-hidden="true"></i> Eingeladene Nutzer</h2>
                         </div>
                         @if ($referrals->isEmpty())
-                            <div class="well text-center">No refereal users found.</div>
+                            <div class="well text-center">Noch keine Freunde registriert. <i class="fa fa-frown-o" aria-hidden="true"></i> <br>
+                            Willst Du das ändern, lade Deine Freunde ein, indem Du Ihnen eine Einladungsmail verschickst <i class="fa fa-smile-o" aria-hidden="true"></i></div>
                         @else
                             <div class="table-responsive bgAdd"  data-pattern="priority-columns">
                                 <table id="ordersTable" class="table table-small-font table-bordered table-striped" cellspacing="0" width="100%">
@@ -30,10 +31,10 @@
                                     <tfoot>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Program</th>
-                                        <th>User</th>
-                                        <th>User status</th>
-                                        <th>Created</th>
+                                        <th>Einladung</th>
+                                        <th>Nutzer</th>
+                                        <th>Status</th>
+                                        <th>Erstellt</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
@@ -44,9 +45,9 @@
                                             <td>{{ $referral->user->name }}</td>
                                             <td>
                                                 @if ($referral->user->meta->is_active == 1)
-                                                    <span class="label label-success">Active</span>
+                                                    <span class="label label-success">Aktiver Nutzer</span>
                                                 @else
-                                                    <span class="label label-warning">Pending</span>
+                                                    <span class="label label-warning">Noch nicht registriert</span>
                                                 @endif
                                             </td>
                                             <td>{{ $referral->created_at->format('d/m/Y') }}</td>
@@ -57,6 +58,12 @@
                             </div>
                         @endif
                     </div>
+                </div>
+                <div class="col-xs-4">
+                <div class="dashboardPageTitle">
+                <h2><i class="fa fa-envelope-open icon-dash" aria-hidden="true"></i> Meine Freunde einladen</h2>
+                <input class="form-control" type="email" name="email_invite" id="email_invite" placeholder="E-Mail-Adresse Deiner Freunde">
+                <button class="btn btn-primary raw-margin-top-25" type="submit" id="send_invite">Senden</button>
                 </div>
                 <div class="row">
                     <div class="col-md-12 text-center">
