@@ -53,9 +53,9 @@ class NewInviteEmail extends Notification
             ->greeting('Herzlichen Glückwunsch! Du bist eingeladen!')
             ->line('Deine Teamkollegen haben Dich nicht vergessen und haben Dich zum Donatiq eingeladen.')
             ->line('Donatiq ist eine neue Art, gemeinsam Geld zu sammeln')
-            ->line('Kopiere Deinen persönlichen Einladungscode und klicke auf den Link unten, um Dich anzumelden')
-            ->line('Dein persönlicher Code ist:' . $this->code)            
-            ->action('Sing up', $this->link);
+            ->line('Kopiere Deinen persönlichen Einladungscode und klicke auf den Button unten, um Dich anzumelden')
+            ->line('Dein persönlicher Code ist: ' . $this->code)            
+            ->action('Anmelden!', $this->link);
 
     }
 }
