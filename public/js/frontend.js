@@ -186,7 +186,7 @@ function fav(id, url) {
             {
                 $('#' + url + '-' + id).removeClass('fa-heart-o');
                 $('#' + url + '-' + id).addClass('fa-heart');
-                $.notify("Super! " + data['name'] + " ist jetzt auf Deiner ♥ Liste!", "info");
+                $.notify("Super! " + data['name'] + " ist jetzt auf Deiner ♥ Liste!");
             }
             else
             {
