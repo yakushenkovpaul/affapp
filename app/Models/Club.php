@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Overtrue\LaravelFollow\Traits\CanBeLiked;
 use Overtrue\LaravelFollow\Traits\CanBeFavorited;
 use Illuminate\Support\Facades\Storage;
+use Regulus\TetraText\Facade as Format;
 
 class Club extends Model
 {
@@ -77,6 +78,8 @@ class Club extends Model
                 }
             }
         }
+
+        $array['dir'] = Format::slug($array['name']);
 
         if(!empty($array['image']))
         {

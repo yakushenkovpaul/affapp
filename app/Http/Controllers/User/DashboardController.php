@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Requests;
-use App\Services\ClubService;
 use App\Services\MerchantListingService;
 use Illuminate\Http\Request;
 use App\Services\UserService;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UserUpdateRequest;
 use App\Services\ClubListingService;
 use App\Services\IndexesService;
 use App\Services\SaleService;
-use Illuminate\Support\Carbon;
-use SebastianBergmann\CodeCoverage\Report\PHP;
+use App\Events\UserRegisteredEmail;
 
 
 
@@ -159,6 +155,12 @@ class DashboardController extends Controller
         }
 
         return back()->withErrors(['Could not find user']);
+    }
+
+
+    public function test()
+    {
+        event(new UserRegisteredEmail(\request()->user(), 'aaabbb'));
     }
 
 }
