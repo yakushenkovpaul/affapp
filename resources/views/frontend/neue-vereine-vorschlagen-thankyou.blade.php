@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <p>Thank you. Your club will send to approve</p>
+                    <p>Danke für Deinen Vorschlag. Dein Beitrag wird von uns überprüft.</p>
                 </div>
             </div>
         </div>
