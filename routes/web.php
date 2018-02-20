@@ -122,7 +122,7 @@ Route::group(['middleware' => ['auth', 'active']], function () {
     */
 
     Route::group(['prefix' => 'user', 'namespace' => 'User'], function () {
-        Route::get('test', 'DashboardController@test');
+        #Route::get('test', 'DashboardController@test');
         Route::get('dashboard', 'DashboardController@dashboard');
         Route::post('dashboard', 'DashboardController@ajaxListingSales');
         Route::post('dashboardGraph', 'DashboardController@ajaxGraph');
