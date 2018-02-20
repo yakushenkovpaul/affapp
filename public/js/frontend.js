@@ -186,13 +186,13 @@ function fav(id, url) {
             {
                 $('#' + url + '-' + id).removeClass('fa-heart-o');
                 $('#' + url + '-' + id).addClass('fa-heart');
-                $.notify("Thank you. " + data['name'] + " was added to favorites", "info");
+                $.notify("Super! " + data['name'] + " ist jetzt auf Deiner ♥ Liste!", "info");
             }
             else
             {
                 $('#' + url + '-' + id).removeClass('fa-heart');
                 $('#' + url + '-' + id).addClass('fa-heart-o');
-                $.notify(data['name'] + " was removed from favorites", "info");
+                $.notify(data['name'] + " wurde aus Deiner Liste entfernt", "info");
             }
         }
     });
@@ -210,13 +210,13 @@ function fav(id, url) {
             {
                 $('#' + url + '-' + id).removeClass('fa-heart-o');
                 $('#' + url + '-' + id).addClass('fa-heart');
-                $.notify("Thank you. " + data['name'] + " was added to favorites", "info");
+                $.notify("Super! " + data['name'] + " ist jetzt auf Deiner ♥-Liste!", "info");
             }
             else
             {
                 $('#' + url + '-' + id).removeClass('fa-heart');
                 $('#' + url + '-' + id).addClass('fa-heart-o');
-                $.notify(data['name'] + " was removed from favorites", "info");
+                $.notify(data['name'] + " wurde aus Deiner ♥ Liste entfernt", "info");
             }
         }
     });
@@ -232,7 +232,7 @@ function mainclub(id) {
             if(data['result'] == true)
             {
                 $('#set-main-club').hide();
-                $.notify("Thank you. " + data['name'] + " was added as main club", "info");
+                $.notify("Glückwunsch! " + data['name'] + " ist jetzt Dein Lieblingsverein!", "info");
             }
         }
     });
