@@ -12,7 +12,7 @@
                     <div class="row" id="set-main-club">
                         <div class="col-xs-12">
                             <button type="button" class="btn btn-danger btn-block raw-margin-bottom-10" onclick="mainclub({{ $club['id'] }})">
-                                <i class="fa fa-ball" aria-hidden="true"></i>Установить клуб моим
+                                <i class="fa fa-ball" aria-hidden="true"></i>Zu meinem Verein hinzufügen
                             </button>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-xs-12">
                         <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Verein merken und einkaufen
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Verein helfen und Online Shop auswählen
                         </button>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                             </div>
                         </div>
                         <div class="listSidebarButton">
-                            <button type="button" class="btn btn-primary btn-lg btn-block">Neuen Verein hinzufügen</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block onclick="location.href='https://www.donatiq.com/neue-vereine-vorschlagen'">Neuen Verein vorschlagen</button>
                         </div>
                     </div>
 
