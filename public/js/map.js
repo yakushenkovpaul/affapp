@@ -172,7 +172,7 @@ function initialize() {
                     '<div class="iw-content">' +
                     '<div class="iw-subTitle">'+ marker.data.title +'</div>' +
                     '<p>' + marker.data.address + '</p>'+
-                    '<br /><br /><p><a href="' + location.origin + '/club/' + marker.data.id + '/' + marker.data.dir + '">Go to club</a></p>'+
+                    '<br /><br /><p><a href="' + location.origin + '/club/' + marker.data.id + '/' + marker.data.dir + '">Zur Übersichtsseite des Vereins</a></p>'+
                     '</div>' +
                     '<div class="iw-bottom-gradient"></div>' +
                     '</div>';
