@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'accepted'             => 'Das Feld :attribute muss akzeptiert werdenY.',
-    'active_url'           => 'The :attribute is not a valid URL.',
+    'accepted'             => 'Das Feld :attribute muss akzeptiert werden.',
+    'active_url'           => 'Die :attribute ist nich korrekt.',
     'after'                => 'The :attribute must be a date after :date.',
     'after_or_equal'       => 'The :attribute must be a date after or equal to :date.',
     'alpha'                => 'The :attribute may only contain letters.',
@@ -56,8 +56,8 @@ return [
         'string'  => 'The :attribute may not be greater than :max characters.',
         'array'   => 'The :attribute may not have more than :max items.',
     ],
-    'mimes'                => 'The :attribute must be a file of type: :values.',
-    'mimetypes'            => 'The :attribute must be a file of type: :values.',
+    'mimes'                => 'Die Datei :attribute darf nur folgende Formate haben: :values.',
+    'mimetypes'            => 'Die Datei :attribute darf nur folgende Formate haben: :values.',
     'min'                  => [
         'numeric' => 'The :attribute must be at least :min.',
         'file'    => 'The :attribute must be at least :min kilobytes.',
@@ -68,10 +68,10 @@ return [
     'numeric'              => 'The :attribute must be a number.',
     'present'              => 'The :attribute field must be present.',
     'regex'                => 'The :attribute format is invalid.',
-    'required'             => 'The :attribute field is required.',
-    'required_if'          => 'The :attribute field is required when :other is :value.',
-    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
-    'required_with'        => 'The :attribute field is required when :values is present.',
+    'required'             => ':attribute ist ein Pflichtfeld.',
+    'required_if'          => 'Das Eingabefeld :attribute wird benötigt wenn :other ist :value.',
+    'required_unless'      => 'Das Eingabefeld :attribute wird benötigt wenn :other is in :values.',
+    'required_with'        => 'Das Eingabefeld :attribute field is required when :values is present.',
     'required_with_all'    => 'The :attribute field is required when :values is present.',
     'required_without'     => 'The :attribute field is required when :values is not present.',
     'required_without_all' => 'The :attribute field is required when none of :values are present.',
