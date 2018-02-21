@@ -119,7 +119,7 @@
                             </div>
                         </div>
                         <div class="listSidebarButton">
-                            <button type="button" class="btn btn-primary btn-lg btn-block onclick="location.href='https://www.donatiq.com/neue-vereine-vorschlagen'">Neuen Verein vorschlagen</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='https://www.donatiq.com/neue-vereine-vorschlagen';">Neuen Verein vorschlagen</button>
                         </div>
                     </div>
 
