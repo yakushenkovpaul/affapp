@@ -5,7 +5,7 @@
                 <div class="panel panel-default panel-card">
                     <div class="panel-heading" id="categories">Mein aktiver Verein
                         <span style="font-size: 12px;">
-                            ( <a href="{!! url('/clubs/?changeClub=true') !!}">change</a> )
+                            ( <a href="{!! url('/clubs/?changeClub=true') !!}">Ändern</a> )
                         </span>
                     </div>
                     <div class="panel-body plr">
