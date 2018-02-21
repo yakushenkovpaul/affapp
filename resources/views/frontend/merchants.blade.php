@@ -11,27 +11,13 @@
                 <div class="slide slideResize slide4" style="background-image: url({{ asset('img/banner/slider-12.jpg') }});">
                     <div class="container">
                         <div class="common-inner slide-inner4">
-                            <span class="h1 from-bottom">kaufe online und unterstütze Deinen Verein</span>
+                            <span class="h1 from-bottom">Unterstütze Deinen Verein während Du online kaufst</span>
                             <span class="h4 from-bottom">Kaufe online bei unseren Partnershops und Dein Verein erhält einen fixen oder prozentuellen Anteil von Deinem Einkauf zurück</span>
                             <br>
                         </div>
                     </div>
                 </div>
                 <div class="slide slide1" style="background-image: url({{ asset('img/banner/slider-10.jpg')}});">
-                    <div class="container">
-                        <div class="slide-inner1 common-inner">
-                            <br>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide slide1" style="background-image: url({{ asset('img/banner/slider-9.jpg') }});">
-                    <div class="container">
-                        <div class="slide-inner1 common-inner">
-                            <br>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide slide1" style="background-image: url({{ asset('img/banner/slider-8.png') }});">
                     <div class="container">
                         <div class="slide-inner1 common-inner">
                             <br>
