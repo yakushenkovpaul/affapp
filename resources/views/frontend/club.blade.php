@@ -60,7 +60,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-xs-12">
-                        <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
+                        <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10" onclick="location.href='https://www.donatiq.com/merchants';">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>Verein helfen und Online Shop auswählen
                         </button>
                     </div>
