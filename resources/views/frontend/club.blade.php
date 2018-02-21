@@ -59,28 +59,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    @if (isset($club['fav']))
-                        <div class="col-sm-6 col-md-6 col-xs-12">
-                            <a href="{{ $club['url'] }}" title="{{ $club['name'] }}" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>Verein merken und einkaufen
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-xs-12">
-                            <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10" onclick="fav({{ $club['id'] }}, 'fav-club')">
-                                    @if ($club['fav'])
-                                        <i id="fav-club-{{ $club['id'] }}" class="fa fa-heart" aria-hidden="true"></i>Zu meinem Verein hinzufügen
-                                    @else
-                                        <i id="fav-club-{{ $club['id'] }}" class="fa fa-heart-o" aria-hidden="true"></i>Zu meinem Verein hinzufügen
-                                    @endif
-                             </button>
-                        </div>
-                    @else
-                        <div class="col-sm-12 col-md-12 col-xs-12">
-                            <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>Verein merken und einkaufen
-                            </button>
-                        </div>
-                    @endif
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+                        <button type="button" class="btn btn-primary btn-lg btn-block raw-margin-top-10">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Verein merken und einkaufen
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -100,7 +83,6 @@
                                 <p>Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui </p>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary btn-lg btn-block">Zu Lieblingsverein hinzufügen </button>
                         <br />
                         @if (!$sales->isEmpty())
                             <div class="panel panel-default panel-card">

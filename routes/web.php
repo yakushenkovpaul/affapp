@@ -131,7 +131,7 @@ Route::group(['middleware' => ['auth', 'active']], function () {
         Route::post('invite', 'SettingsController@invite');
         Route::get('password', 'PasswordController@password');
         Route::post('password', 'PasswordController@update');
-        Route::resource('favoritesClubs', 'FavoritesClubs');
+        //Route::resource('favoritesClubs', 'FavoritesClubs');
         Route::resource('favoritesMerchants', 'FavoritesMerchants');
         Route::resource('referalUsers', 'ReferalUsers');
     });

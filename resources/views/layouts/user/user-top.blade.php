@@ -79,6 +79,7 @@
                         @endif
                             <a href="{!! url('user/settings') !!}"><i class="fa fa-cogs icon-dash" aria-hidden="true"></i> Benutzereinstellungen</a>
                         </li>
+                        <!--
                         @if (\Request::is('user/favoritesClubs'))
                             <li class="active">
                         @else
@@ -86,6 +87,7 @@
                         @endif
                             <a href="{!! url('user/favoritesClubs') !!}"><i class="fa fa-trophy icon-dash" aria-hidden="true"></i> Lieblingsvereine</a>
                         </li>
+                        -->
                         @if (\Request::is('user/favoritesMerchants'))
                             <li class="active">
                         @else
