@@ -128,7 +128,7 @@ Route::group(['middleware' => ['auth', 'active']], function () {
         Route::post('dashboardGraph', 'DashboardController@ajaxGraph');
         Route::get('settings', 'SettingsController@settings');
         Route::post('settings', 'SettingsController@update');
-        Route::post('invite', 'SettingsController@invite');
+        Route::post('invite', 'ReferalUsers@invite');
         Route::get('password', 'PasswordController@password');
         Route::post('password', 'PasswordController@update');
         //Route::resource('favoritesClubs', 'FavoritesClubs');
@@ -190,9 +190,9 @@ Route::group(['middleware' => ['auth', 'active']], function () {
         Route::resource('users', 'UserController', ['except' => ['create', 'show']]);
         Route::post('users/search', 'UserController@search');
         Route::get('users/search', 'UserController@index');
-        Route::get('users/invite', 'UserController@getInvite');
+        //Route::get('users/invite', 'UserController@getInvite');
         Route::get('users/switch/{id}', 'UserController@switchToUser');
-        Route::post('users/invite', 'UserController@postInvite');
+        //Route::post('users/invite', 'UserController@postInvite');
 
         /*
         |--------------------------------------------------------------------------

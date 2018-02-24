@@ -256,6 +256,23 @@ class UserService
     }
     */
 
+
+    public function getInviteLink($userId, $program)
+    {
+        $program = ReferralProgram::whereName($program)->first();
+        $user = $this->model->find($userId);
+        $link = ReferralLink::getReferral($user, $program);
+
+        if(!$code = Doorman::available($userId))
+        {
+            Doorman::generate()->user($userId)->uses(20)->make();
+            $code = Doorman::available($userId);
+        }
+
+        return $link->getLinkAttribute() . '&invite=' . $code->code;
+
+    }
+
     /**
      * Рассылает приглашение и реферальную ссылку
      *
@@ -270,10 +287,14 @@ class UserService
         $user = $this->model->find($userId);
 
         $link = ReferralLink::getReferral($user, $program);
-        #$code = Doorman::generate()->for($payload['email'])->make();
-        $code = Doorman::generate()->uses(1)->make();
 
-        event(new \App\Events\UserInvite($payload['email_invite'], $link->getLinkAttribute(), $code[0]->code));
+        if(!$code = Doorman::available($userId, $payload['email_invite']))
+        {
+            Doorman::generate()->uses(1)->user($userId)->for($payload['email_invite'])->make();
+            $code = Doorman::available($userId, $payload['email_invite']);
+        }
+
+        event(new \App\Events\UserInvite($payload['email_invite'], $link->getLinkAttribute(), $code->code));
 
         return true;
     }

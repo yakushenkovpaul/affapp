@@ -47,21 +47,4 @@ class SettingsController extends Controller
 
         return back()->withErrors(['Could not update user']);
     }
-
-    /**
-     * Send invite
-     *
-     * @param UserInviteRequest $request
-     * @return $this|\Illuminate\Http\RedirectResponse
-     */
-
-    public function invite(UserInviteRequest $request)
-    {
-        if($this->service->invite(auth()->id(), $request->except(['_token']), 'Sign-up'))
-        {
-            return response()->json(['result' => true]);
-        }
-
-        return response()->json(['result' => false]);
-    }
 }

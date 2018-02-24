@@ -61,10 +61,12 @@
                 <div class="col-xs-4">
                 <div class="dashboardPageTitle">
                 <h2>Freunde einladen</h2>
-                <div class="well text-center">https://www.donatiq.com/register?ref=cc5b801c-155a-11e8-9570-42010a9a0002</div>
-                <input class="form-control" type="email" name="email_invite" id="email_invite" placeholder="E-Mail-Adresse">
-                <button class="btn btn-primary raw-margin-top-25" type="submit" id="send_invite" style="width: 100px;">Senden</button>
-                </div>    
+                <div class="well text-center">{{ $link }}</div>
+                <form id="inviteForm">
+                    <input class="form-control" type="email" name="email_invite" id="email_invite" placeholder="Enter email to invite friend">
+                    <button class="btn btn-primary raw-margin-top-25" type="submit" id="send_invite" style="width: 100px;">Senden</button>
+                </form>
+                </div>
                 </div>
                 
                 <div class="row">

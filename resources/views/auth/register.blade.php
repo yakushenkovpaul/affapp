@@ -1,7 +1,6 @@
 @extends('layouts.frontend.front-master')
 
 @section('front-content')
-
     <div class="main-wrapper">
         <!-- HEADER -->
         <header id="pageTop" class="header">
@@ -80,7 +79,7 @@
 
                                     <div class="form-group">
                                         <label for="userName">Invite code</label>
-                                        <input id="invite" class="form-control" type="text" name="invite" value="{{ old('invite') }}">
+                                        <input id="invite" class="form-control" type="text" name="invite" value="{{ (!empty(old('invite'))) ? old('invite') : app('request')->input('invite') }}">
                                     </div>
 
                                     <!--

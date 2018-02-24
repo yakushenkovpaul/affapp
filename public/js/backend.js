@@ -72,10 +72,10 @@ $(document).ready(function()
                 url: location.origin + "/user/invite",
                 type:'POST',
                 dataType: 'json',
-                data: { "_token": $('meta[name="csrf_token"]').attr('content'), "email_invite": $('#userSettings').find('input[name="email_invite"]').val() },
+                data: { "_token": $('meta[name="csrf_token"]').attr('content'), "email_invite": $('#inviteForm').find('input[name="email_invite"]').val() },
                 success:function(data){
                     $.notify("Vielen Dank! Deine Einladung wurde versandt", "info");
-                    $('#userSettings').find('input[name="email_invite"]').val('');
+                    $('#inviteForm').find('input[name="email_invite"]').val('');
                 },
                 error: function (data) {
                     showErrors(data, 'top middle');
