@@ -14,6 +14,7 @@ class UserInvite
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $user;
     public $email;
     public $link;
     public $code;
@@ -26,8 +27,9 @@ class UserInvite
      * @param $link
      */
 
-    public function __construct($email, $link, $code)
+    public function __construct($user, $email, $link, $code)
     {
+        $this->user = $user;
         $this->email = $email;
         $this->link = $link;
         $this->code = $code;

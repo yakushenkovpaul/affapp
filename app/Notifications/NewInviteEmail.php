@@ -12,6 +12,7 @@ class NewInviteEmail extends Notification
      *
      * @var string
      */
+    public $user;
     public $link;
     public $code;
 
@@ -21,8 +22,9 @@ class NewInviteEmail extends Notification
      * @param  string  $token
      * @return void
      */
-    public function __construct($link, $code)
+    public function __construct($user, $link, $code)
     {
+        $this->user = $user;
         $this->link = $link;
         $this->code = $code;
     }
@@ -48,6 +50,7 @@ class NewInviteEmail extends Notification
      */
     public function toMail($notifiable)
     {
+        /*
         return (new MailMessage)
             ->subject('Du bist eingeladen!')
             ->greeting('Herzlichen Glückwunsch! Du bist eingeladen!')
@@ -56,6 +59,15 @@ class NewInviteEmail extends Notification
             ->line('Kopiere Deinen persönlichen Einladungscode und klicke auf den Button unten, um Dich anzumelden')
             ->line('Dein persönlicher Code ist: ' . $this->code)            
             ->action('Anmelden!', $this->link);
+        */
+
+        return (new MailMessage)
+            ->subject('Du bist eingeladen!')
+            ->markdown('mail.invite.message', [
+                'user' => $this->user,
+                'code' => $this->code,
+                'url' => $this->link
+            ]);
 
     }
 }

@@ -27,6 +27,6 @@ class UserInviteListener
     public function handle(UserInvite $event)
     {
         Notification::route('mail', $event->email)
-            ->notify(new NewInviteEmail($event->link, $event->code));
+            ->notify(new NewInviteEmail($event->user, $event->link, $event->code));
     }
 }

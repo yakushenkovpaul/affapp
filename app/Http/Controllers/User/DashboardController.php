@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Services\ClubListingService;
 use App\Services\IndexesService;
 use App\Services\SaleService;
-use App\Events\UserRegisteredEmail;
+use App\Events\UserInvite;
 
 
 
@@ -160,7 +160,7 @@ class DashboardController extends Controller
 
     public function test()
     {
-        event(new UserRegisteredEmail(\request()->user(), 'aaabbb'));
+        event(new UserInvite(\request()->user(), 'yakushenkovpaul@gmail.com', 'http://aaa.ru', 'abcdfr'));
     }
 
 }

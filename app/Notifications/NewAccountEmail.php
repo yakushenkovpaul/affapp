@@ -46,6 +46,7 @@ class NewAccountEmail extends Notification
      */
     public function toMail($notifiable)
     {
+        /*
         return (new MailMessage())
             ->subject('Bitte bestätige Вeine E-Mail-Adresse')
             ->line('You\'ve got a new account!')
@@ -53,5 +54,15 @@ class NewAccountEmail extends Notification
             ->line('PW: '.$this->password)
             ->line('Click the link below to login')
             ->action('Login', url('login'));
+        */
+
+        return (new MailMessage())
+            ->subject('Bitte bestätige Вeine E-Mail-Adresse')
+            ->markdown('mail.registration.message',
+                [
+                    'url' => url('login'),
+                    'email' => $notifiable->email,
+                    'password' => $this->password
+                ]);
     }
 }

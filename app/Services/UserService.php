@@ -294,7 +294,7 @@ class UserService
             $code = Doorman::available($userId, $payload['email_invite']);
         }
 
-        event(new \App\Events\UserInvite($payload['email_invite'], $link->getLinkAttribute(), $code->code));
+        event(new \App\Events\UserInvite($user, $payload['email_invite'], $link->getLinkAttribute(), $code->code));
 
         return true;
     }
