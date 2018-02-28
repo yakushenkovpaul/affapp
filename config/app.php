@@ -166,6 +166,7 @@ return [
         Regulus\TetraText\TetraTextServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Overtrue\LaravelFollow\FollowServiceProvider::class,
+        Clockwork\Support\Laravel\ClockworkServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -232,6 +233,7 @@ return [
         'Format' => Regulus\TetraText\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Doorman' => Clarkeash\Doorman\Facades\Doorman::class,
+        'Clockwork' => Clockwork\Support\Laravel\Facade::class,
     ],
 
 ];
