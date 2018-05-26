@@ -46,6 +46,19 @@ class ClubsController extends Controller
     }
 
     /**
+     * Display a listing of the pagination searches
+     *
+     * @param Request $request
+     * @return $this
+     */
+
+    public function show(Request $request)
+    {
+        $clubs = $this->service->search($request->search);
+        return view('admin.clubs.index')->with('clubs', $clubs);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

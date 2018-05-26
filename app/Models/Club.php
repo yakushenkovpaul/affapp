@@ -7,6 +7,7 @@ use Overtrue\LaravelFollow\Traits\CanBeLiked;
 use Overtrue\LaravelFollow\Traits\CanBeFavorited;
 use Illuminate\Support\Facades\Storage;
 use Regulus\TetraText\Facade as Format;
+use Illuminate\Support\Facades\Schema;
 
 class Club extends Model
 {
@@ -207,7 +208,24 @@ class Club extends Model
             ->where('name', 'LIKE', '%'.$abc.'%')
             ->where('status', '=', 1)
             ->select(['id', 'name', 'image', 'url', 'logo', 'dir'])
+            ->orderBy('logo', 'desc')
             ->paginate($paginate);
+
+        //если хотим выводим как в админке, то выводим так:
+        /*
+        $query = $this->newQuery();
+
+        $columns = Schema::getColumnListing('clubs');
+
+        foreach ($columns as $attribute) {
+            $query->orWhere($attribute, 'LIKE', '%'.$abc.'%');
+        };
+
+        return $query
+            ->where('status', '=', 1)
+            ->select(['id', 'name', 'image', 'url', 'logo', 'dir'])
+            ->paginate($paginate);
+        */
     }
 
     /**
