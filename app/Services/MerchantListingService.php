@@ -116,11 +116,11 @@ class MerchantListingService
      * @return array
      */
 
-    public function getMerchantsOffset($limit, $offset, $order = 'created_at', $sort = 'desc')
+    public function getMerchantsOffset($limit, $offset)
     {
         $result = [];
 
-        if($return = $this->merchant->getMerchantsOffset($limit, $offset, $order, $sort))
+        if($return = $this->merchant->getMerchantsOffset($limit, $offset))
         {
             $result['data'] = collect($return)->toArray();
         }

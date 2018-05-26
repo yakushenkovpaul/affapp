@@ -102,7 +102,7 @@ class Merchant extends Model
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
 
-    public function getMerchantsPaginate($paginate, $order = 'created_at', $sort = 'desc')
+    public function getMerchantsPaginate($paginate, $order = 'main', $sort = 'desc')
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
@@ -121,7 +121,7 @@ class Merchant extends Model
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
 
-    public function getMerchantsOffset($limit, $offset, $order, $sort)
+    public function getMerchantsOffset($limit, $offset, $order = 'main', $sort = 'desc')
     {
         return $this->newQuery()
             ->orderBy($order, $sort)
